@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout40"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thank you for placing order"
+                android:id="@+id/tv_tq"
+                android:textColor="@color/pink_text"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView10" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/relativeLayout2"
+                    android:orientation="vertical"
+                    android:background="@drawable/full_rounded_corners"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/brown_rounded_corners"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/linearLayout38"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tq_personal_details"
+                            android:layout_alignParentStart="false"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentTop="false"
+                            android:padding="8dp"
+                            android:textColor="#ffffff"
+                            android:textSize="15dp"
+                            android:layout_weight="1"
+                            android:text="Personal Details"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/fields_rounded_corners"
+                        android:id="@+id/linearLayout37"
+                        android:showDividers="middle"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:divider="@drawable/final_page_divider"
+                            android:showDividers="middle">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:divider="@drawable/order_details_divider"
+                                android:showDividers="middle">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Order Id"
+                                        android:id="@+id/sta_tq_order_id"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_id"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="2dp"
+                                        android:layout_marginLeft="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Order Date"
+                                        android:id="@+id/sta_tq_order_date"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_date"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Delivery Date"
+                                        android:id="@+id/sta_tq_delivery_date"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/delivery_date"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Name"
+                                        android:id="@+id/sta_tq_order_name"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_name"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mobile"
+                                        android:id="@+id/sta_tq_order_mobile"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_mobile"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="2dp"
+                                        android:layout_marginLeft="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Area"
+                                        android:id="@+id/sta_tq_order_area"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_area"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Block"
+                                        android:id="@+id/sta_tq_order_block"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_block"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="2dp"
+                                        android:layout_marginLeft="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Street Name/Number"
+                                        android:id="@+id/sta_tq_order_street"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_street"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/linearLayout34"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Building"
+                                        android:id="@+id/sta_tq_order_building"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_building"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="2dp"
+                                        android:layout_marginLeft="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/linearLayout35"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Floor"
+                                        android:id="@+id/sta_tq_order_floor"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_floor"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="2dp"
+                                        android:layout_marginLeft="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/linearLayout36"
+                                    android:layout_margin="5dp" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Flat"
+                                        android:id="@+id/sta_tq_order_flat"
+                                        android:textColor="@color/brown"
+                                        android:textSize="18dp"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/tq_order_flat"
+                                        android:textSize="14dp"
+                                        android:textColor="#c78e1e"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="2dp"
+                                        android:layout_marginLeft="2dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/full_rounded_corners">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Products"
+                        android:id="@+id/products_tq"
+                        android:layout_alignParentStart="false"
+                        android:background="@drawable/brown_rounded_corners"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="false"
+                        android:padding="8dp"
+                        android:textColor="#ffffff"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/fields_rounded_corners"
+                        android:weightSum="1"
+                        android:id="@+id/linearLayout39"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="30dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:showDividers="middle" >
+
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:id="@+id/tq_list" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#6e6e6e"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/sta_tq_sub_total"
+                                        android:textColor="@color/brown"
+                                        android:padding="3dp"
+                                        android:textSize="15dp"
+                                        android:layout_weight="1"
+                                        android:text="Total" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text=" 16.200 KD"
+                                        android:id="@+id/tq_sub_total"
+                                        android:textColor="@color/pink_text"
+                                        android:padding="3dp"
+                                        android:textSize="15dp"
+                                        android:gravity="end" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Delivery Charges"
+                                        android:id="@+id/sta_tq_dc"
+                                        android:textColor="@color/brown"
+                                        android:padding="3dp"
+                                        android:textSize="15dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="0.500 KD"
+                                        android:id="@+id/tq_dc"
+                                        android:textColor="@color/pink_text"
+                                        android:padding="3dp"
+                                        android:textSize="15dp"
+                                        android:gravity="center|end" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:id="@+id/static_dc_tq">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Discount"
+                                        android:id="@+id/sta_tq_discount"
+                                        android:textColor="@color/brown"
+                                        android:padding="3dp"
+                                        android:textSize="15dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="16.700 KD"
+                                        android:id="@+id/tq_discount"
+                                        android:textColor="@color/pink_text"
+                                        android:padding="3dp"
+                                        android:textSize="15dp"
+                                        android:gravity="center|end" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Darabeel Charges"
+                                        android:id="@+id/sta_dara_invoice"
+                                        android:textColor="@color/brown_text"
+                                        android:padding="3dp"
+                                        android:textSize="15dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="16.700 KD"
+                                        android:id="@+id/dara_invoice"
+                                        android:textColor="@color/pink_text"
+                                        android:padding="3dp"
+                                        android:textSize="15dp"
+                                        android:gravity="center|end" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Grand - Total"
+                                        android:id="@+id/sta_tq_grand_total"
+                                        android:textColor="@color/brown"
+                                        android:padding="3dp"
+                                        android:textSize="15dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="16.700 KD"
+                                        android:id="@+id/tq_grand_total"
+                                        android:textColor="@color/pink_text"
+                                        android:padding="3dp"
+                                        android:textSize="15dp"
+                                        android:gravity="center|end" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

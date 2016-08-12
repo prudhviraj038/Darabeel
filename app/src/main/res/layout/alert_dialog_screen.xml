@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ooo">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Rating:"
+                android:id="@+id/rating_tv"
+                android:textColor="@color/brown"
+                android:textSize="18dp"
+                android:layout_marginBottom="5dp" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                android:stepSize="0.5"
+                android:numStars="5"
+                android:layout_gravity="center"
+                android:mirrorForRtl="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Write Comments:"
+                android:id="@+id/comm_tv_alert"
+                android:textSize="18dp"
+                android:textColor="@color/brown"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/write_comm_et"
+                android:background="@drawable/full_rounded_corners"
+                android:minLines="5"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/brown_rounded_corners"
+            android:gravity="center"
+            android:id="@+id/alert_submit_ll"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/alert_submit"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
