@@ -39,8 +39,8 @@ public class CompanyPageFragment extends Fragment {
     ImageView company_logo,review_res_logo;
     TextView about_company,com_area,com_status,com_cuisines,com_wrk_hours,about_tab_tv,other_info_tab_tv,
             com_delivery_time,com_min_order,com_delivery_charges,sta_res_info,sta_about_title,sta_area,sta_status,sta_hours,
-            sta_time,sta_min,sta_dc,sta_cuisines,sta_payment,sta_promotion,sta_show,review;
-    LinearLayout show_menu,ll_promotion,rating,com_payment_type,tab_about_ll,tab_other_ll,about_ll,other_ll,review_rating,review_ll;
+            sta_time,sta_min,sta_dc,sta_cuisines,sta_payment,sta_promotion,sta_show,review,area_tv;
+    LinearLayout show_menu,ll_promotion,rating,com_payment_type,tab_about_ll,tab_other_ll,about_ll,other_ll,review_rating,review_ll,area_ll;
     FragmentTouchListner mCallBack;
     String head;
     ListView listView;
@@ -91,7 +91,7 @@ public class CompanyPageFragment extends Fragment {
         listView=(ListView)view.findViewById(R.id.reviews_list);
         reviewsAdapter=new ReviewsAdapter(getActivity(),restaurants);
         listView.setAdapter(reviewsAdapter);
-        Log.e("res_name",restaurants.getTitle(getActivity()));
+        Log.e("res_name", restaurants.getTitle(getActivity()));
         rating=(LinearLayout)view.findViewById(R.id.rating_com_page);
         Settings.set_rating(getActivity(), restaurants.rating, rating);
         review_rating=(LinearLayout)view.findViewById(R.id.review_rating);
@@ -128,6 +128,8 @@ public class CompanyPageFragment extends Fragment {
         sta_promotion.setText(Settings.getword(getActivity(),"promotions"));
         sta_show=(TextView)view.findViewById(R.id.tv_show_menu);
         sta_show.setText(Settings.getword(getActivity(),"show_menu"));
+        area_tv=(TextView)view.findViewById(R.id.select_area_tv);
+        area_tv.setText(Settings.getword(getActivity(),"select_area"));
         review=(TextView)view.findViewById(R.id.reviews_com_page);
         review.setText(Settings.getword(getActivity(),"review"));
         review_res_logo=(ImageView)view.findViewById(R.id.res_review_logo);
@@ -156,12 +158,19 @@ public class CompanyPageFragment extends Fragment {
                 about_tab_tv.setTextColor(Color.parseColor("#ffffff"));
             }
         });
+        area_ll=(LinearLayout)view.findViewById(R.id.select_area_ll);
+        area_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCallBack.area_list(restaurants.res_id);
+            }
+        });
         show_menu=(LinearLayout)view.findViewById(R.id.show_menu);
         show_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (Settings.getArea_id(getActivity()).equals("-1")) {
-                    mCallBack.area_list(restaurants.res_id);
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_area"), false);
                 } else {
                     if (restaurants.menu.size() == 0)
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "no_prodcts_in_restaurant"), false);

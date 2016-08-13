@@ -17,81 +17,6 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/linearLayout"
-                    android:gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_margin="2dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/menu_cat_rounded_corners"
-                        android:padding="5dp">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:id="@+id/resta_img"
-                            android:src="@drawable/img_restaurants" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|end"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:id="@+id/dd1">
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="15dp"
-                            android:layout_marginBottom="5dp"
-                            android:id="@+id/rating_com_page"></LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/pink_rounded_corners"
-                            android:layout_marginTop="5dp"
-                            android:id="@+id/review_ll">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Reviews"
-                                android:id="@+id/reviews_com_page"
-                                android:textColor="#ffffff"
-                                android:gravity="center"
-                                android:paddingLeft="25dp"
-                                android:paddingTop="3dp"
-                                android:paddingRight="25dp"
-                                android:paddingBottom="3dp"
-                                android:textSize="15dp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -108,6 +33,81 @@
                     android:showDividers="middle"
                     android:layout_alignParentBottom="true"
                     android:layout_weight="1">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/linearLayout"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_margin="2dp">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/menu_cat_rounded_corners"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:id="@+id/resta_img"
+                                    android:src="@drawable/img_restaurants" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center|end"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:id="@+id/dd1">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="15dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:id="@+id/rating_com_page"></LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/pink_rounded_corners"
+                                    android:layout_marginTop="5dp"
+                                    android:id="@+id/review_ll">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Reviews"
+                                        android:id="@+id/reviews_com_page"
+                                        android:textColor="#ffffff"
+                                        android:gravity="center"
+                                        android:paddingLeft="25dp"
+                                        android:paddingTop="3dp"
+                                        android:paddingRight="25dp"
+                                        android:paddingBottom="3dp"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -175,13 +175,14 @@
                                 android:background="@drawable/pink_rounded_corners"
                                 android:gravity="center"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginTop="10dp">
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/select_area_ll">
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Select area"
-                                    android:id="@+id/textView22"
+                                    android:id="@+id/select_area_tv"
                                     android:textColor="#ffffff"
                                     android:textSize="15dp"
                                     android:padding="5dp" />
