@@ -71,40 +71,50 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center|end"
+                                android:gravity="end"
                                 android:paddingLeft="20dp"
                                 android:paddingRight="20dp"
                                 android:id="@+id/dd1">
 
                                 <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginBottom="5dp"
-                                    android:id="@+id/rating_com_page"></LinearLayout>
-
-                                <LinearLayout
                                     android:orientation="vertical"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/pink_rounded_corners"
-                                    android:layout_marginTop="5dp"
-                                    android:id="@+id/review_ll">
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="20dp">
 
-                                    <TextView
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/rating_com_page"
+                                        android:layout_marginBottom="5dp"></LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Reviews"
-                                        android:id="@+id/reviews_com_page"
-                                        android:textColor="#ffffff"
-                                        android:gravity="center"
-                                        android:paddingLeft="25dp"
-                                        android:paddingTop="3dp"
-                                        android:paddingRight="25dp"
-                                        android:paddingBottom="3dp"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold" />
+                                        android:background="@drawable/pink_rounded_corners"
+                                        android:layout_marginTop="5dp"
+                                        android:id="@+id/review_ll">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Reviews"
+                                            android:id="@+id/reviews_com_page"
+                                            android:textColor="#ffffff"
+                                            android:gravity="center"
+                                            android:paddingLeft="25dp"
+                                            android:paddingTop="3dp"
+                                            android:paddingRight="25dp"
+                                            android:paddingBottom="3dp"
+                                            android:textSize="15dp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
                                 </LinearLayout>
+
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -671,6 +681,20 @@
                     android:id="@+id/reviews_list"
                     android:padding="10dp" />
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/yellow_background"
+            android:padding="10dp" >
+
+            <ListView
+                android:id="@+id/com_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/brown" />
         </LinearLayout>
 
     </ViewFlipper>

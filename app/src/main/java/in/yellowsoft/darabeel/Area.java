@@ -1,5 +1,7 @@
 package in.yellowsoft.darabeel;
 
+import android.content.Context;
+
 /**
  * Created by Chinni on 11-05-2016.
  */
@@ -20,8 +22,11 @@ public class Area {
         return id;
     }
 
-    public String getArea() {
-        return area;
+    public String getArea(Context context)  {
+        if(Settings.get_user_language(context).equals("ar"))
+            return area_ar;
+        else
+            return  area;
     }
     public String getArea_ar() {
         return area_ar;

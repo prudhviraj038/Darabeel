@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -22,11 +23,15 @@ import android.widget.ViewFlipper;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * Created by Chinni on 04-05-2016.
@@ -42,7 +47,9 @@ public class CompanyPageFragment extends Fragment {
             sta_time,sta_min,sta_dc,sta_cuisines,sta_payment,sta_promotion,sta_show,review,area_tv;
     LinearLayout show_menu,ll_promotion,rating,com_payment_type,tab_about_ll,tab_other_ll,about_ll,other_ll,review_rating,review_ll,area_ll;
     FragmentTouchListner mCallBack;
+    AreaAdapter personAdapter ;
     String head;
+    ArrayList<Area> area_list;
     ListView listView;
     ViewFlipper viewFlipper;
     public interface FragmentTouchListner {
@@ -51,7 +58,7 @@ public class CompanyPageFragment extends Fragment {
         public void text_back_butt(String header);
         public void clear_cart();
         public  Animation get_animation(Boolean enter,Boolean loaded);
-        public void area_list(String id);
+        public void area_list(String id,Restaurants restaurants);
         public void to_promotions(Restaurants restaurants);
     }
     @Override
@@ -162,7 +169,9 @@ public class CompanyPageFragment extends Fragment {
         area_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCallBack.area_list(restaurants.res_id);
+                getarea();
+                viewFlipper.setDisplayedChild(2);
+//                mCallBack.area_list(restaurants.res_id,restaurants);
             }
         });
         show_menu=(LinearLayout)view.findViewById(R.id.show_menu);
@@ -199,11 +208,20 @@ public class CompanyPageFragment extends Fragment {
             }
         });
         com_area=(TextView)view.findViewById(R.id.area);
-        if (Settings.getArea_name(getActivity()).equals("-1")){
-            com_area.setText(Settings.getword(getActivity(),"please_area"));
-        }else {
-            com_area.setText(Settings.getArea_name(getActivity()));
-        }
+        com_area.setText(Settings.getword(getActivity(),"please_area"));
+        area_list = new ArrayList<>();
+        ListView area_listView = (ListView)view.findViewById(R.id.com_list_view);
+        personAdapter = new AreaAdapter(getActivity(), area_list);
+        area_listView.setAdapter(personAdapter);
+        area_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                viewFlipper.setDisplayedChild(0);
+                Settings.setSignup_Area_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(getActivity()), area_list.get(position).getArea(getActivity()));
+                com_area.setText(Settings.getArea_name(getActivity()));
+                area_tv.setText(Settings.getArea_name(getActivity()));
+            }
+        });
         com_status=(TextView)view.findViewById(R.id.status);
         com_status.setText(restaurants.status);
         com_cuisines=(TextView)view.findViewById(R.id.cuisines);
@@ -242,6 +260,9 @@ public class CompanyPageFragment extends Fragment {
                     if (viewFlipper.getDisplayedChild() == 1) {
                         viewFlipper.setDisplayedChild(0);
                         return true;
+                    }else if (viewFlipper.getDisplayedChild() == 2) {
+                            viewFlipper.setDisplayedChild(0);
+                            return true;
                     }else{
                         loaded = true;
                         return false;
@@ -252,7 +273,9 @@ public class CompanyPageFragment extends Fragment {
         });
     }
 
+    public void dis_area(){
 
+    }
 
     public void delivery_charges(){
         String url;
@@ -293,5 +316,66 @@ public class CompanyPageFragment extends Fragment {
         AppController.getInstance().addToRequestQueue(jsObjRequest);
 
     }
+    private void getarea() {
+        String url = null;
+        try {
+            url = Settings.SERVERURL + "areas.php";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Log.e("url--->", url);
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Please wait....");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
 
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url,new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray jsonArray) {
+                progressDialog.dismiss();
+                Log.e("orders response is: ", jsonArray.toString());
+
+                try {
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject sub = jsonArray.getJSONObject(i);
+                        String id = jsonArray.getJSONObject(i).getString("id");
+                        String area = jsonArray.getJSONObject(i).getString("title");
+                        String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
+                        Area person = new Area(id,area,area_ar,true);
+                        area_list.add(person);
+
+                        Log.e("titleee", sub.getString("title"));
+
+                        JSONArray jsonArray1=sub.getJSONArray("areas");
+                        for (int j = 0; j < jsonArray1.length(); j++) {
+                            String idt = jsonArray1.getJSONObject(j).getString("id");
+                            String areat = jsonArray1.getJSONObject(j).getString("title");
+                            String areat_ar = jsonArray1.getJSONObject(j).getString("title_ar");
+                            Area persont = new Area(idt,areat,areat_ar,false);
+                            area_list.add(persont);
+                        }
+
+                    }
+                    personAdapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO Auto-generated method stub
+                Log.e("response is:", error.toString());
+                Toast.makeText(getActivity(), Settings.getword(getActivity(),"server_not_connected"), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+            }
+
+        });
+
+// Access the RequestQueue through your singleton class.
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
+
+    }
 }

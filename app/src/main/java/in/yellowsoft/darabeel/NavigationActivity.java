@@ -22,8 +22,8 @@ import java.util.ArrayList;
 
 public class NavigationActivity extends FragmentActivity implements HomeFragment.FragmentTouchListner ,
         LoginFragment.FragmentTouchListner, CompanyListFragment.FragmentTouchListner, CompanyPageFragment.FragmentTouchListner,
-        AreaFragment.FragmentTouchListner, MenuCategoryfragment.FragmentTouchListner, ProductListFragment.FragmentTouchListner,
-        ProductPageFragment.FragmentTouchListner, CartFragment.FragmentTouchListner, FinalFragment.FragmentTouchListner, NotificationFragment.FragmentTouchListner, AboutUsfragment.FragmentTouchListner, ContactUsFragment.FragmentTouchListner, TermsConditionsFragment.FragmentTouchListner, MyAccountFragment.FragmentTouchListner, Invoicefragment.FragmentTouchListner, OffersListFragment.FragmentTouchListner, PromotionsListFragment.FragmentTouchListner, SearchFragment.FragmentTouchListner, VerificationFragment.FragmentTouchListner, MyOrdersfragment.FragmentTouchListner, MyAddressfragment.FragmentTouchListner, ChangePasswordfragment.FragmentTouchListner, EditProfilefragment.FragmentTouchListner, Settingsfragment.FragmentTouchListner {
+         MenuCategoryfragment.FragmentTouchListner, ProductListFragment.FragmentTouchListner,
+        ProductPageFragment.FragmentTouchListner, CartFragment.FragmentTouchListner, FinalFragment.FragmentTouchListner, NotificationFragment.FragmentTouchListner, AboutUsfragment.FragmentTouchListner, ContactUsFragment.FragmentTouchListner, TermsConditionsFragment.FragmentTouchListner, MyAccountFragment.FragmentTouchListner, Invoicefragment.FragmentTouchListner, OffersListFragment.FragmentTouchListner, PromotionsListFragment.FragmentTouchListner, SearchFragment.FragmentTouchListner, VerificationFragment.FragmentTouchListner, MyOrdersfragment.FragmentTouchListner, MyAddressfragment.FragmentTouchListner, ChangePasswordfragment.FragmentTouchListner, EditProfilefragment.FragmentTouchListner, Settingsfragment.FragmentTouchListner, AreaFragment.FragmentTouchListner {
     ArrayList<Integer> prgmImages = new ArrayList<>();
     ArrayList<String> prgmTitles = new ArrayList<>();
     ArrayList<Integer> subprgmImages = new ArrayList<>();
@@ -361,6 +361,11 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     }
 
     @Override
+    public void area_list(String id) {
+
+    }
+
+    @Override
     public void showmenu(Restaurants restaurants) {
         animation_direction=true;
         MenuCategoryfragment fragment = new MenuCategoryfragment();
@@ -408,12 +413,13 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         finish();
     }
     @Override
-    public void area_list(String id) {
+    public void area_list(String id,Restaurants restaurants) {
         animation_direction=true;
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         AreaFragment areaFragment = new AreaFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("id",id);
+        bundle.putString("id", id);
+        bundle.putSerializable("restaurants", restaurants);
         areaFragment.setArguments(bundle);
         fragmentManager.beginTransaction().add(R.id.container_main, areaFragment).addToBackStack(null).commit();
     }
@@ -431,7 +437,6 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         filter.setVisibility(View.GONE);
         menu.setVisibility(View.VISIBLE);
     }
-
     @Override
     public void to_promotions(Restaurants restaurants) {
         animation_direction=true;
@@ -497,12 +502,13 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         fragment.setArguments(bundle);
         fragmentManager.beginTransaction().replace(R.id.container_main, fragment).addToBackStack(null).commit();
     }
-
-    @Override
-    public void area_selected() {
-//        cart_items.clear();
-        onBackPressed();
-    }
+//    CompanyPageFragment companyPageFragment = new CompanyPageFragment();
+//    @Override
+//    public void area_selected() {
+////        cart_items.clear();
+////        companyPageFragment.dis_area();
+//        onBackPressed();
+//    }
 
     @Override
     public void product_selected(Products products) {

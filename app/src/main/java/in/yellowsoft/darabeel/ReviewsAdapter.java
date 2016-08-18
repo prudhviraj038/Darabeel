@@ -60,7 +60,7 @@ public class ReviewsAdapter extends BaseAdapter{
         holder.name.setText(restaurants.allReviwses.get(position).namee);
         holder.description.setText(restaurants.allReviwses.get(position).review);
         holder.rating=(LinearLayout)rowView.findViewById(R.id.reviews_list_rating);
-        Settings.set_rating(context, restaurants.allReviwses.get(position).ratingg,holder.rating);
+        Settings.set_rating_yellow(context, restaurants.allReviwses.get(position).ratingg,holder.rating);
         return rowView;
     }
 }

@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 viewFlipper.setDisplayedChild(0);
-                Settings.setArea_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(), area_list.get(position).getArea());
+                Settings.setArea_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(getActivity()), area_list.get(position).getArea(getActivity()));
                 area_txt.setText(Settings.getArea_name(getActivity()));
             }
         });

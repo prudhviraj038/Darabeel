@@ -272,6 +272,7 @@ public class ProductPageFragment extends Fragment {
 
                 }
                 if (addon_ok) {
+                    Log.e("status",products.restaurant.status);
                   if(products.restaurant.status.equals("Open"))
 //                    alert_add_cart.setVisibility(View.VISIBLE);
                   mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());

@@ -176,7 +176,7 @@
                                         android:orientation="horizontal"
                                         android:layout_width="match_parent"
                                         android:layout_height="35dp"
-                                        android:background="@drawable/brown_rounded_corners"
+                                        android:background="@drawable/brown_rounded_corners_full"
                                         android:id="@+id/option_ll_img"
                                         android:gravity="center_vertical"
                                         android:padding="5dp">
@@ -226,7 +226,7 @@
                                         android:orientation="horizontal"
                                         android:layout_width="match_parent"
                                         android:layout_height="35dp"
-                                        android:background="@drawable/brown_rounded_corners"
+                                        android:background="@drawable/brown_rounded_corners_full"
                                         android:id="@+id/pro_ll"
                                         android:padding="5dp"
                                         android:gravity="center_vertical">

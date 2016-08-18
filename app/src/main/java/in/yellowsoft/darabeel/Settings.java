@@ -96,6 +96,7 @@ public class Settings {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(Area_id, area_id);
+        Log.e("area_nam",area);
         editor.putString(Area_name, area);
         editor.putString(Area_name_ar, area_ar);
         editor.commit();
@@ -116,7 +117,8 @@ public class Settings {
     }
     public static String getArea_name(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString(Area_name+get_lan(context), "-1");
+        Log.e("area_ne",sharedPreferences.getString(Area_name, "-1"));
+        return sharedPreferences.getString(Area_name, "-1");
     }
     public static String getUserid(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -219,13 +221,32 @@ public class Settings {
         rating_ll.removeAllViews();
         for(float i=1;i<=5;i++) {
             ImageView star = new ImageView(context);
+//            star.setMaxWidth(40);
+//            star.setMaxHeight(40);
             star.setAdjustViewBounds(true);
             if(i<=Float.parseFloat(value))
-                star.setImageResource(R.drawable.star_full);
+                star.setImageResource(R.drawable.brown_full_star);
             else if(i-Float.parseFloat(value)<1)
-                star.setImageResource(R.drawable.star_half);
+                star.setImageResource(R.drawable.brown_half_star);
             else
-                star.setImageResource(R.drawable.star_empty);
+                star.setImageResource(R.drawable.brown_empty_star);
+            rating_ll.addView(star);
+        }
+    }
+    public static  void set_rating_yellow(Context context,String value,LinearLayout rating_ll){
+
+        rating_ll.removeAllViews();
+        for(float i=1;i<=5;i++) {
+            ImageView star = new ImageView(context);
+//            star.setMaxWidth(35);
+//            star.setMaxHeight(35);
+            star.setAdjustViewBounds(true);
+            if(i<=Float.parseFloat(value))
+                star.setImageResource(R.drawable.yellow_full_star);
+            else if(i-Float.parseFloat(value)<1)
+                star.setImageResource(R.drawable.yellow_half_star);
+            else
+                star.setImageResource(R.drawable.yellow_emptyf_star);
             rating_ll.addView(star);
         }
     }

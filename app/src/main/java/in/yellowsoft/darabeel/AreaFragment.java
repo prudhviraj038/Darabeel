@@ -30,11 +30,12 @@ import java.util.ArrayList;
 public class AreaFragment extends Fragment {
     ArrayList<Area> area_list;
     AreaAdapter personAdapter ;
+    Restaurants restaurants;
     String sid;
     boolean loaded=false;
     FragmentTouchListner mCallBack;
     public interface FragmentTouchListner {
-        public void area_selected();
+        public void songselected(Restaurants restaurants);
         public  Animation get_animation(Boolean enter,Boolean loaded);
 
     }
@@ -66,6 +67,7 @@ public class AreaFragment extends Fragment {
         View view = getView();
 //        loaded=true;
         area_list = new ArrayList<>();
+        restaurants = (Restaurants)getArguments().getSerializable("restaurants");
         sid=(String)getArguments().getSerializable("id");
         ListView area_listView = (ListView)view.findViewById(R.id.area_listView1);
         personAdapter = new AreaAdapter(getActivity(),area_list);
@@ -73,8 +75,8 @@ public class AreaFragment extends Fragment {
         area_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Settings.setArea_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(), area_list.get(position).getArea_ar());
-                    mCallBack.area_selected();
+                    Settings.setArea_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(getActivity()), area_list.get(position).getArea_ar());
+                    mCallBack.songselected(restaurants);
 
             }
         });

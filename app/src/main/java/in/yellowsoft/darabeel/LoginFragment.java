@@ -273,7 +273,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 viewFlipper.setDisplayedChild(1);
-                Settings.setSignup_Area_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(), area_list.get(position).getArea());
+                Settings.setSignup_Area_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(getActivity()), area_list.get(position).getArea(getActivity()));
                 et_area.setText(Settings.getSignup_Area_name(getActivity()));
             }
         });

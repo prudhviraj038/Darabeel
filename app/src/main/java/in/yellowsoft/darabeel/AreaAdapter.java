@@ -15,10 +15,12 @@ import java.util.ArrayList;
 public class AreaAdapter extends BaseAdapter {
     private ArrayList<Area> personArray;
     private LayoutInflater inflater;
+    Context context;
     private static final int TYPE_PERSON = 0;
     private static final int TYPE_DIVIDER = 1;
 
     public AreaAdapter(Context context, ArrayList<Area> personArray) {
+        this.context=context;
         this.personArray = personArray;
         this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -75,12 +77,12 @@ public class AreaAdapter extends BaseAdapter {
             case TYPE_PERSON:
                 Area person = getItem(position);
                 TextView name = (TextView)convertView.findViewById(R.id.nameLabel);
-                name.setText(person.getArea());
+                name.setText(person.getArea(context));
 
                 break;
             case TYPE_DIVIDER:
                 TextView title = (TextView)convertView.findViewById(R.id.headerTitle);
-                String titleString = getItem(position).getArea();
+                String titleString = getItem(position).getArea(context);
                 title.setText(titleString);
                 break;
         }

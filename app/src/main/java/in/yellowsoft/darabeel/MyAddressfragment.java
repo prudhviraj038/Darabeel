@@ -170,7 +170,7 @@ public class MyAddressfragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 viewFlipper.setDisplayedChild(1);
-                Settings.setEditAdd_Area_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(), area_list.get(position).getArea_ar());
+                Settings.setEditAdd_Area_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(getActivity()), area_list.get(position).getArea_ar());
                 et_my_area.setText(Settings.getEditAdd_Area_name(getActivity()));
             }
         });
