@@ -47,10 +47,10 @@ public class ProductPageFragment extends Fragment {
     public interface FragmentTouchListner {
         public void product_page();
         public void add_to_cart(Products products, String quantity, String spl_req);
-        public void login();
+        public void cart_icon_dis(String header);
         public  Animation get_animation(Boolean enter,Boolean loaded);
         public void back_to_product();
-        public void text_back_butt(String header);
+//        public void text_back_butt(String header);
     }
     @Override
     public void onAttach(Activity activity) {
@@ -80,6 +80,7 @@ public class ProductPageFragment extends Fragment {
         View view = getView();
 //        loaded=true;
 //        about_image=(ImageView)view.findViewById(R.id.about_img);
+
         plus_img_option=(ImageView)view.findViewById(R.id.plus_option_listt);
         plus_spl_request=(ImageView)view.findViewById(R.id.plus_img_spl_request);
         option_img_ll=(LinearLayout)view.findViewById(R.id.option_ll_img);
@@ -90,7 +91,7 @@ public class ProductPageFragment extends Fragment {
         spl_request_ll=(LinearLayout)view.findViewById(R.id.spl_request_product_ll);
         products = (Products) getArguments().getSerializable("product");
         head=products.getTitle(getActivity());
-        mCallBack.text_back_butt(head);
+//        mCallBack.text_back_butt(head);
         mDemoSlider = (SliderLayout)view.findViewById(R.id.product_background_image);
         for(int i=0;i<products.images.size();i++){
             DefaultSliderView defaultSliderView = new DefaultSliderView(getActivity());
@@ -318,6 +319,7 @@ public class ProductPageFragment extends Fragment {
                 return false;
             }
         });
+        mCallBack.cart_icon_dis(head);
     }
     public static boolean setListViewHeightBasedOnItems(ListView listView) {
 
@@ -349,6 +351,7 @@ public class ProductPageFragment extends Fragment {
         } else {
             return false;
         }
+
     }
     public static boolean setGridViewHeightBasedOnItems(GridView gridView) {
 
@@ -385,4 +388,5 @@ public class ProductPageFragment extends Fragment {
     public  void call_list(){
         setListViewHeightBasedOnItems(group_list);
     }
+
 }

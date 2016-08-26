@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/scrollView3"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:background="#ffffff">
 
                 <LinearLayout
@@ -269,14 +269,13 @@
                                     android:textColor="#ffffff"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:textSize="15sp"
-                                    android:textStyle="bold" />
+                                    android:textSize="15sp" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="18dp"
+                                    android:layout_height="25dp"
                                     android:id="@+id/drop_down"
-                                    android:src="@drawable/down_arrow" />
+                                    android:src="@drawable/down_arrow_full_white" />
 
                                 <LinearLayout
                                     android:orientation="horizontal"
@@ -728,7 +727,7 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:text="Special Comments"
                                     android:id="@+id/tv_spl_comments"
                                     android:layout_alignParentStart="false"
@@ -736,8 +735,10 @@
                                     android:layout_alignParentTop="false"
                                     android:textColor="#ffffff"
                                     android:layout_weight="1"
-                                    android:padding="8dp"
-                                    android:textSize="15sp" />
+                                    android:textSize="15sp"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="8dp" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -785,20 +786,23 @@
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="35dp"
-                                android:background="@drawable/brown_rounded_corners_full">
+                                android:background="@drawable/brown_rounded_corners_full"
+                                android:gravity="center">
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:text="Coupon Code"
                                     android:id="@+id/tv_coupon"
                                     android:layout_alignParentStart="false"
                                     android:layout_centerHorizontal="true"
                                     android:layout_alignParentTop="false"
-                                    android:padding="8dp"
                                     android:textColor="#ffffff"
                                     android:layout_weight="1"
-                                    android:textSize="15sp" />
+                                    android:textSize="15sp"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -869,10 +873,10 @@
                                 android:layout_alignParentStart="false"
                                 android:layout_centerHorizontal="true"
                                 android:layout_alignParentTop="false"
-                                android:padding="8dp"
                                 android:textColor="#ffffff"
                                 android:background="@drawable/brown_rounded_corners_full"
-                                android:textSize="15sp" />
+                                android:textSize="15sp"
+                                android:padding="8dp" />
 
                             <LinearLayout
                                 android:orientation="vertical"
@@ -887,7 +891,9 @@
                                 <ListView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/final_listview" />
+                                    android:id="@+id/final_listview"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="10dp" />
 
                                 <LinearLayout
                                     android:orientation="horizontal"
@@ -1156,10 +1162,11 @@
                                     android:id="@+id/now_ll">
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="20dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/now_img"
-                                        android:src="@drawable/ic_option_brown" />
+                                        android:src="@drawable/ic_option_brown"
+                                        android:adjustViewBounds="true" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -1190,10 +1197,11 @@
                                     android:id="@+id/later_ll">
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="20dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/later_img"
-                                        android:src="@drawable/ic_option_brown" />
+                                        android:src="@drawable/ic_option_brown"
+                                        android:adjustViewBounds="true" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -1319,10 +1327,11 @@
                                         android:layout_marginBottom="5dp" />
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="20dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/cash_img"
-                                        android:src="@drawable/ic_option_brown" />
+                                        android:src="@drawable/ic_option_brown"
+                                        android:adjustViewBounds="true" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -1349,10 +1358,11 @@
                                         android:layout_marginBottom="5dp" />
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="20dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/knet_img"
-                                        android:src="@drawable/ic_option_brown" />
+                                        android:src="@drawable/ic_option_brown"
+                                        android:adjustViewBounds="true" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -1429,9 +1439,11 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/scrollView11"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:fillViewport="false"
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:orientation="vertical"

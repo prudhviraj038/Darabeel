@@ -17,7 +17,8 @@
             android:padding="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:adjustViewBounds="true" />
+            android:adjustViewBounds="true"
+            android:visibility="invisible" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -37,5 +38,11 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#22ffffff"></LinearLayout>
 
 </LinearLayout>

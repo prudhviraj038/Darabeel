@@ -63,7 +63,6 @@
                             android:textColor="@color/brown"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:textStyle="bold"
                             android:layout_marginBottom="5dp"
                             android:textSize="18sp" />
 
@@ -74,7 +73,6 @@
                             android:id="@+id/static_total_amount"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:textStyle="bold"
                             android:textColor="@color/brown"
                             android:textSize="18sp" />
 
@@ -98,7 +96,6 @@
                             android:text="KD 2,000"
                             android:id="@+id/min_order_amount"
                             android:textColor="@color/brown"
-                            android:textStyle="bold"
                             android:textSize="18sp"
                             android:layout_marginBottom="5dp" />
 
@@ -108,7 +105,6 @@
                             android:text="KD 12,000"
                             android:id="@+id/total_amount"
                             android:textColor="@color/brown"
-                            android:textStyle="bold"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -120,8 +116,8 @@
                     android:background="@drawable/pink_rounded_corners"
                     android:id="@+id/continue_cart"
                     android:gravity="center"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginRight="70dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:padding="5dp">
@@ -132,8 +128,8 @@
                         android:text="CONTINUE"
                         android:id="@+id/tv_continue"
                         android:textColor="#ffffff"
-                        android:textSize="15sp"
-                        android:padding="5dp" />
+                        android:textSize="18sp"
+                        android:padding="3dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

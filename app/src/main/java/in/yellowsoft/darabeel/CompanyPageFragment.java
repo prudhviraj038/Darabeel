@@ -319,7 +319,7 @@ public class CompanyPageFragment extends Fragment {
     private void getarea() {
         String url = null;
         try {
-            url = Settings.SERVERURL + "areas.php";
+            url = Settings.SERVERURL + "areas.php?member_id="+Settings.getUserid(getActivity());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -337,24 +337,47 @@ public class CompanyPageFragment extends Fragment {
 
                 try {
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject sub = jsonArray.getJSONObject(i);
-                        String id = jsonArray.getJSONObject(i).getString("id");
-                        String area = jsonArray.getJSONObject(i).getString("title");
-                        String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
-                        Area person = new Area(id,area,area_ar,true);
-                        area_list.add(person);
+                        if(i==0){
+                            JSONObject sub = jsonArray.getJSONObject(i);
+                            String id = jsonArray.getJSONObject(i).getString("id");
+                            String area = jsonArray.getJSONObject(i).getString("title");
+                            String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
+                            Area person = new Area(id,area,area_ar,true);
 
-                        Log.e("titleee", sub.getString("title"));
 
-                        JSONArray jsonArray1=sub.getJSONArray("areas");
-                        for (int j = 0; j < jsonArray1.length(); j++) {
-                            String idt = jsonArray1.getJSONObject(j).getString("id");
-                            String areat = jsonArray1.getJSONObject(j).getString("title");
-                            String areat_ar = jsonArray1.getJSONObject(j).getString("title_ar");
-                            Area persont = new Area(idt,areat,areat_ar,false);
-                            area_list.add(persont);
+                            Log.e("titleee", sub.getString("title"));
+
+                            JSONArray jsonArray1=sub.getJSONArray("areas");
+                            if(jsonArray1.length()>0){
+                                area_list.add(person);
+                            }
+                            for (int j = 0; j < jsonArray1.length(); j++) {
+                                String idt = jsonArray1.getJSONObject(j).getString("id");
+                                String areat = jsonArray1.getJSONObject(j).getString("title");
+                                String areat_ar = jsonArray1.getJSONObject(j).getString("title_ar");
+                                Area persont = new Area(idt,areat,areat_ar,false);
+                                area_list.add(persont);
+
+                            }
+                        }else {
+                            JSONObject sub = jsonArray.getJSONObject(i);
+                            String id = jsonArray.getJSONObject(i).getString("id");
+                            String area = jsonArray.getJSONObject(i).getString("title");
+                            String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
+                            Area person = new Area(id, area, area_ar, true);
+                            area_list.add(person);
+
+                            Log.e("titleee", sub.getString("title"));
+
+                            JSONArray jsonArray1 = sub.getJSONArray("areas");
+                            for (int j = 0; j < jsonArray1.length(); j++) {
+                                String idt = jsonArray1.getJSONObject(j).getString("id");
+                                String areat = jsonArray1.getJSONObject(j).getString("title");
+                                String areat_ar = jsonArray1.getJSONObject(j).getString("title_ar");
+                                Area persont = new Area(idt, areat, areat_ar, false);
+                                area_list.add(persont);
+                            }
                         }
-
                     }
                     personAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {

@@ -286,7 +286,7 @@ public class HomeFragment extends Fragment {
                                     tmp_json.getJSONArray("all_reviews"));
                             restaurantses.add(temp);
                             if (restaurantses.size()==1) {
-                                Picasso.with(getActivity()).load(restaurantses.get(0).image).into(im1);
+                                Picasso.with(getActivity()).load(restaurantses.get(0).image).placeholder(R.drawable.logo).into(im1);
                                 t1.setText(restaurantses.get(0).getTitle(getActivity()));
                                 l1.setOnClickListener(new View.OnClickListener() {
                                     @Override

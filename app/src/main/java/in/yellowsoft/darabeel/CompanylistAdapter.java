@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -14,14 +16,18 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class CompanylistAdapter extends BaseAdapter{
+public class CompanylistAdapter extends BaseAdapter implements Filterable{
     Context context;
     ArrayList<Restaurants> restaurants;
+    ArrayList<Restaurants> restaurants_all;
+    PlanetFilter planetFilter;
     private static LayoutInflater inflater=null;
     public CompanylistAdapter(Context mainActivity, ArrayList<Restaurants> restaurants) {
         context=mainActivity;
         this.restaurants = restaurants;
+        this.restaurants_all=restaurants;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -43,10 +49,17 @@ public class CompanylistAdapter extends BaseAdapter{
         return position;
     }
 
+    @Override
+    public Filter getFilter() {
+        if(planetFilter==null)
+            planetFilter=new PlanetFilter();
+        return planetFilter;
+    }
+
     public class Holder
     {
         TextView com_name,com_items,time,trally_charge,min_order,payment,delivery_time,reviews,status;
-        ImageView com_logo,card1,card2,card3,card4,com_status;
+        ImageView com_logo,card1,card2,card3,card4,com_status,offer;
         LinearLayout rating_ll,com_payment_type;
         RatingBar ratingBar;
     }
@@ -83,6 +96,12 @@ public class CompanylistAdapter extends BaseAdapter{
         holder.time=(TextView) rowView.findViewById(R.id.time_com_list);
         holder.trally_charge=(TextView) rowView.findViewById(R.id.travel_charge);
         holder.com_logo=(ImageView) rowView.findViewById(R.id.com_list_logo);
+        holder.offer=(ImageView) rowView.findViewById(R.id.img_offer);
+        if(restaurants.get(position).promotions.size()>0){
+            holder.offer.setVisibility(View.VISIBLE);
+        }else{
+            holder.offer.setVisibility(View.VISIBLE);
+        }
 //        holder.payment_ll=(LinearLayout) rowView.findViewById(R.id.pay_layout);
 
 
@@ -129,5 +148,56 @@ public class CompanylistAdapter extends BaseAdapter{
        // holder.com_name
         return rowView;
     }
+    private class PlanetFilter extends Filter {
+        Boolean clear_all=false;
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults results = new FilterResults();
+// We implement here the filter logic
+            clear_all=false;
+            if (constraint == null || constraint.length() == 0) {
+                clear_all=true;
+// No filter implemented we return all the list
+                results.values = restaurants;
+                results.count = restaurants.size();
+            }
+            else {
+// We perform filtering operation
+                String filters[] = String.valueOf(constraint).split("@_@");
+                List<Restaurants> nPlanetList = new ArrayList<Restaurants>();
+                for (Restaurants p : restaurants_all) {
+                    Log.e(p.status, filters[0]);
+                    if (filters[0]==null || p.status.equals(filters[0]))
+                    {
+                        if(filters[3]==null || p.rating.equals(filters[3]))
+                        {
+                            nPlanetList.add(p);
+                        }
 
+                        }
+                    }
+
+                results.values = nPlanetList;
+                results.count = nPlanetList.size();
+
+            }
+            return results;
+        }
+        @Override
+        protected void publishResults(CharSequence constraint,FilterResults results) {
+            if (results.count == 0) {
+                restaurants = (ArrayList<Restaurants>) results.values;
+                notifyDataSetChanged();
+            }
+            else if(clear_all){
+                restaurants = restaurants_all;
+                notifyDataSetChanged();
+            }
+            else {
+                restaurants = (ArrayList<Restaurants>) results.values;
+                notifyDataSetChanged();
+            }
+        }
+
+    }
 }

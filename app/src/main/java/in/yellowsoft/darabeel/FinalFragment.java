@@ -358,8 +358,8 @@ public class FinalFragment extends Fragment {
             public void onClick(View view) {
                 now_img.setImageResource(R.drawable.ic_option_pink);
                 later_img.setImageResource(R.drawable.ic_option_brown);
-                date1=mDay+" - "+mMonth+" - "+mYear;
-                time1=mHour+" : "+mMinute;
+//                date1=mDay+" - "+mMonth+" - "+mYear;
+//                time1=mHour+" : "+mMinute;
             }
         });
         later.setOnClickListener(new View.OnClickListener() {

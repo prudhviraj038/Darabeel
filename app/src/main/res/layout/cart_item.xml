@@ -45,15 +45,15 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:padding="5dp"
-                android:divider="@drawable/cart_item_divider"
                 android:showDividers="middle"
                 android:layout_weight="1"
                 android:gravity="center_vertical">
@@ -71,7 +71,7 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                         android:id="@+id/static_cart_item_quantity"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -89,7 +89,8 @@
                         android:id="@+id/textView10"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:textColor="@color/brown" />
+                        android:textColor="@color/brown"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -98,13 +99,13 @@
                         android:id="@+id/cart_item_quantity"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -113,7 +114,7 @@
                         android:id="@+id/static_cart_item_price"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -122,7 +123,8 @@
                         android:id="@+id/textView11"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:textColor="@color/brown" />
+                        android:textColor="@color/brown"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -131,14 +133,14 @@
                         android:id="@+id/cart_item_price"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -147,7 +149,7 @@
                         android:id="@+id/static_cart_item_total"
                         android:textColor="@color/pink_text"
                         android:layout_marginRight="5dp"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -156,7 +158,8 @@
                         android:id="@+id/textView12"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:textColor="@color/pink_text" />
+                        android:textColor="@color/pink_text"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -165,7 +168,7 @@
                         android:id="@+id/cart_item_total"
                         android:textColor="@color/pink_text"
                         android:layout_marginRight="5dp"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -201,11 +204,16 @@
 
                     <LinearLayout
                         android:orientation="vertical"
-                        android:layout_width="30dp"
+                        android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:background="@drawable/ic_option_brown"
                         android:gravity="center"
                         android:id="@+id/cart_minus_ll">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/imageView29"
+                            android:src="@drawable/white_minus" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -214,16 +222,22 @@
                             android:id="@+id/cart_minus"
                             android:textColor="#ffffff"
                             android:gravity="center"
-                            android:textSize="28dp" />
+                            android:textSize="28dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:orientation="vertical"
-                        android:layout_width="30dp"
+                        android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:background="@drawable/ic_option_brown"
                         android:gravity="center"
                         android:id="@+id/cart_plus_ll">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/imageView31"
+                            android:src="@drawable/white_pluse" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -232,7 +246,8 @@
                             android:id="@+id/cart_plus"
                             android:textColor="#ffffff"
                             android:gravity="center"
-                            android:textSize="25dp" />
+                            android:textSize="25dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                 </LinearLayout>

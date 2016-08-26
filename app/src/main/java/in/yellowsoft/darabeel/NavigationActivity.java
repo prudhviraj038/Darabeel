@@ -33,8 +33,10 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     private ListView mDrawerList2;
     FrameLayout container;
     int current_position=0;
+    CompanyListFragment companyListFragment;
     FragmentManager fragmentManager;
-    ImageView menu,back,search,menu_back;
+    ProductPageFragment productPageFragment;
+    ImageView menu,back,search,menu_back,cart_icon;
     TextView logout,nav_title,lang_tv,waste;
     LinearLayout lang_ll,filter;
     ArrayList<CartItem> cart_items=new ArrayList<>();
@@ -89,6 +91,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
             }
         });
         menu_back=(ImageView)findViewById(R.id.menu_back);
+        cart_icon=(ImageView)findViewById(R.id.cart_icon);
         menu_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,13 +121,26 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
                 fragmentManager.beginTransaction().replace(R.id.container_main, fragment4).addToBackStack(null).commit();
             }
         });
-//        prgmImages.add(R.drawable.home_icon);
-//        prgmImages.add(R.drawable.cart_icon);
-//        prgmImages.add(R.drawable.my_account_icon);
-//        prgmImages.add(R.drawable.notification_icon);
+        prgmImages.add(R.drawable.home_icon);
+        prgmImages.add(R.drawable.cart_icon_white);
+        prgmImages.add(R.drawable.my_account_icon);
+        prgmImages.add(R.drawable.my_account_icon);
+        prgmImages.add(R.drawable.home_icon);
+        prgmImages.add(R.drawable.cart_icon);
+        prgmImages.add(R.drawable.my_account_icon);
+        prgmImages.add(R.drawable.notification_icon);
+        prgmImages.add(R.drawable.home_icon);
+        prgmImages.add(R.drawable.cart_icon);
+        prgmImages.add(R.drawable.my_account_icon);
+        prgmImages.add(R.drawable.notification_icon);
+        prgmImages.add(R.drawable.home_icon);
+        prgmImages.add(R.drawable.cart_icon);
+        prgmImages.add(R.drawable.my_account_icon);
+        prgmImages.add(R.drawable.notification_icon);
+        prgmImages.add(R.drawable.notification_icon);
         prgmTitles.add(Settings.getword(this,"home"));
-        prgmTitles.add(Settings.getword(this,"cart"));
-        prgmTitles.add(Settings.getword(this,"live_support"));
+        prgmTitles.add(Settings.getword(this,"cart")+"("+cart_items.size()+")");
+        prgmTitles.add(Settings.getword(this, "live_support"));
         prgmTitles.add(Settings.getword(this,"my_account"));
         prgmTitles.add(Settings.getword(this, "my_orders"));
         prgmTitles.add(Settings.getword(this, "rate_my_order"));
@@ -145,7 +161,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         subprgmImages.add(R.drawable.book);
         mDrawerList1 = (ListView) findViewById(R.id.mdrawerlist1);
         mDrawerList2 = (ListView) findViewById(R.id.mdrawerlist2);
-        mDrawerList1.setAdapter(new NavigationListAdapter(this,prgmTitles));
+        mDrawerList1.setAdapter(new NavigationListAdapter(this,prgmTitles,prgmImages));
 //        mDrawerList2.setAdapter(new NavigationListAdapter(this, subprgmImages,subprgmTitles));
         container = (FrameLayout) findViewById(R.id.container_main);
         back.setVisibility(View.VISIBLE);
@@ -153,7 +169,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mDrawerLayout.closeDrawer(GravityCompat.START);
-                if(current_position!=position)
+//                if(current_position!=position)
                 switch (position) {
                     case 0:
                         mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -217,18 +233,117 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
 //                        }
 //                        break;
                     case 5:
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
+                        if(Settings.getUserid(getApplicationContext()).equals("-1")){
+                            animation_direction=true;
+                            LoginFragment loginFragment=new LoginFragment();
+                            fragmentManager.beginTransaction().replace(R.id.container_main, loginFragment).addToBackStack(null).commit();
+                        }else {
+                            animation_direction=true;
+                            MyAccountFragment fragment4 = new MyAccountFragment();
+                            fragmentManager.beginTransaction().replace(R.id.container_main, fragment4).addToBackStack(null).commit();
+                        }
+                        break;
+                    case 6:
+                        animation_direction=true;
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
+                        companyffragment("most_selling");
+                        break;
+                    case 7:
+                        animation_direction=true;
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
+                        companyffragment("new");
+                        break;
+                    case 8:
                         animation_direction=true;
                         mDrawerLayout.closeDrawer(GravityCompat.START);
                         PromotionsListFragment fragment1 = new PromotionsListFragment();
                         fragmentManager.beginTransaction().replace(R.id.container_main, fragment1).addToBackStack(null).commit();
                         break;
-                    case 6:
-                    case 7:
-                    case 8:
                     case 9:
+                        animation_direction=true;
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
+                        companyffragment("offers");
+                        break;
                     case 10:
+                        animation_direction=true;
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
+                        companyffragment("trending");
+                        break;
                     case 11:
+                        animation_direction=true;
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
+//                        Picasso.with(getActivity()).load(news.image).into(new Target() {
+//                            @Override
+//                            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+//                                Intent i = new Intent(Intent.ACTION_SEND);
+//                                i.setType("text/plain");
+//                                //     i.putExtra(Intent.EXTRA_STREAM, getLocalBitmapUri(bitmap));
+//                                //     i.putExtra(Intent.EXTRA_SUBJECT, html2text(news.title));
+//                                i.putExtra(Intent.EXTRA_TEXT, html2text(news.link));
+//                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                                i.setPackage("com.twitter.android");
+//                                try {
+//                                    startActivity(i);
+//                                }catch (Exception e){
+//
+//                                    try {
+//                                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.twitter.android")));
+//                                    } catch (android.content.ActivityNotFoundException anfe) {
+//                                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + "com.twitter.android")));
+//                                    }
+//                                }
+//
+//
+//
+//                            }
+//
+//                            @Override
+//                            public void onBitmapFailed(Drawable errorDrawable) {
+//                            }
+//
+//                            @Override
+//                            public void onPrepareLoad(Drawable placeHolderDrawable) {
+//                            }
+//                        });
+                        break;
                     case 12:
+                        animation_direction=true;
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
+//                        Picasso.with(NavigationActivity.this).load(news.image).into(new Target() {
+//                            @Override
+//                            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+//                                Intent i = new Intent(Intent.ACTION_SEND);
+//                                i.setType("image/*");
+//                                i.putExtra(Intent.EXTRA_STREAM, getLocalBitmapUri(bitmap));
+//                                i.putExtra(Intent.EXTRA_SUBJECT, html2text(news.title));
+//                                i.putExtra(Intent.EXTRA_TEXT, html2text(news.link));
+//                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                                i.setPackage("com.instagram.android");
+//                                try {
+//                                    startActivity(i);
+//                                }catch (Exception e){
+//
+//                                    try {
+//                                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.instagram.android")));
+//                                    } catch (android.content.ActivityNotFoundException anfe) {
+//                                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + "com.instagram.android")));
+//                                    }
+//                                }
+//
+//
+//
+//                            }
+//
+//                            @Override
+//                            public void onBitmapFailed(Drawable errorDrawable) {
+//                            }
+//
+//                            @Override
+//                            public void onPrepareLoad(Drawable placeHolderDrawable) {
+//                            }
+//                        });
+                        break;
                     case 13:
                         mDrawerLayout.closeDrawer(GravityCompat.START);
                         animation_direction=true;
@@ -252,7 +367,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
                         fragmentManager.beginTransaction().replace(R.id.container_main, fragment4).addToBackStack(null).commit();
                         break;
                 }
-                current_position=position;
+//                current_position=position;
             }
         });
     }
@@ -297,7 +412,36 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+    @Override
+    public void product_selected(Products products) {
+        animation_direction=true;
+        productPageFragment=new ProductPageFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("product",products);
+        productPageFragment.setArguments(bundle);
+        fragmentManager.beginTransaction().replace(R.id.container_main, productPageFragment).addToBackStack(null).commit();
+    }
 
+    @Override
+    public void cart_icon_dis(String head) {
+        nav_title.setVisibility(View.VISIBLE);
+        nav_title.setText(head);
+        lang_ll.setVisibility(View.GONE);
+        search.setVisibility(View.GONE);
+        logout.setVisibility(View.GONE);
+        back.setVisibility(View.GONE);
+        waste.setVisibility(View.GONE);
+        menu_back.setVisibility(View.VISIBLE);
+        filter.setVisibility(View.GONE);
+        menu.setVisibility(View.GONE);
+        cart_icon.setVisibility(View.VISIBLE);
+        cart_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                productPageFragment.add_to_cart_ll.performClick();
+            }
+        });
+    }
     @Override
     public void text_back_butt(String header) {
         nav_title.setVisibility(View.VISIBLE);
@@ -310,7 +454,9 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         menu_back.setVisibility(View.VISIBLE);
         filter.setVisibility(View.GONE);
         menu.setVisibility(View.GONE);
+        cart_icon.setVisibility(View.GONE);
     }
+    int count=0;
     @Override
     public void filter(String head) {
         nav_title.setVisibility(View.VISIBLE);
@@ -321,7 +467,14 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         back.setVisibility(View.GONE);
         waste.setVisibility(View.GONE);
         menu_back.setVisibility(View.VISIBLE);
+        cart_icon.setVisibility(View.GONE);
         filter.setVisibility(View.VISIBLE);
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                companyListFragment.filter();
+            }
+        });
         menu.setVisibility(View.GONE);
     }
 
@@ -388,9 +541,6 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         cart_items.clear();
     }
     @Override
-    public void login() {
-    }
-    @Override
     public void to_home() {
         animation_direction=true;
         fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
@@ -436,6 +586,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         menu_back.setVisibility(View.GONE);
         filter.setVisibility(View.GONE);
         menu.setVisibility(View.VISIBLE);
+        cart_icon.setVisibility(View.GONE);
     }
     @Override
     public void to_promotions(Restaurants restaurants) {
@@ -472,11 +623,22 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     @Override
     public void companyfragment(String cat) {
         animation_direction=true;
-        CompanyListFragment fragment = new CompanyListFragment();
+        companyListFragment=new CompanyListFragment();
         Bundle bundle = new Bundle();
+        bundle.putSerializable("url", "cat");
         bundle.putSerializable("cat", cat);
-        fragment.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.container_main, fragment).addToBackStack(null).commit();
+        companyListFragment.setArguments(bundle);
+        fragmentManager.beginTransaction().replace(R.id.container_main, companyListFragment).addToBackStack(null).commit();
+    }
+
+    public void companyffragment(String type) {
+        animation_direction=true;
+        companyListFragment=new CompanyListFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("url", "type");
+        bundle.putSerializable("cat", type);
+        companyListFragment.setArguments(bundle);
+        fragmentManager.beginTransaction().replace(R.id.container_main, companyListFragment).addToBackStack(null).commit();
     }
     @Override
     public void home_head(String head) {
@@ -490,6 +652,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         menu_back.setVisibility(View.GONE);
         filter.setVisibility(View.GONE);
         menu.setVisibility(View.VISIBLE);
+        cart_icon.setVisibility(View.GONE);
     }
     @Override
     public void product_list(String rest_id,String cat_id,String cat_name) {
@@ -510,15 +673,6 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
 //        onBackPressed();
 //    }
 
-    @Override
-    public void product_selected(Products products) {
-        animation_direction=true;
-        ProductPageFragment fragment = new ProductPageFragment();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("product",products);
-        fragment.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.container_main, fragment).addToBackStack(null).commit();
-    }
 
     @Override
     public void product_page() {

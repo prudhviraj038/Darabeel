@@ -9,6 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class NavigationListAdapter extends BaseAdapter{
@@ -16,7 +18,7 @@ public class NavigationListAdapter extends BaseAdapter{
     ArrayList<Integer> images;
     ArrayList<String> titles;
     private static LayoutInflater inflater=null;
-    public NavigationListAdapter(Activity mainActivity, ArrayList<String> titles) {
+    public NavigationListAdapter(Activity mainActivity, ArrayList<String> titles,  ArrayList<Integer> images) {
         // TODO Auto-generated constructor stu
         context=mainActivity;
         this.images=images;
@@ -58,8 +60,13 @@ public class NavigationListAdapter extends BaseAdapter{
         rowView = convertView;
         holder.tv=(TextView)rowView.findViewById(R.id.title);
         holder.img=(ImageView) rowView.findViewById(R.id.icon);
+        if(position==0||position==1||position==3){
+            holder.img.setVisibility(View.VISIBLE);
+        }else{
+            holder.img.setVisibility(View.INVISIBLE);
+        }
         holder.tv.setText(titles.get(position));
-//        holder.img.setImageResource(images.get(position));
+        Picasso.with(context).load(images.get(position)).into(holder.img);
         return rowView;
     }
 

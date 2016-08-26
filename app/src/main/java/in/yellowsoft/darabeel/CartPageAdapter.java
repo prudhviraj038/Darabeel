@@ -89,7 +89,7 @@ public class CartPageAdapter extends BaseAdapter{
             }
         });
         holder.cart_item_name.setText(cart_items.get(position).products.getTitle(context));
-        holder.cart_item_quantity.setText(":"+cart_items.get(position).quantity);
+        holder.cart_item_quantity.setText(" "+cart_items.get(position).quantity);
         number=Integer.parseInt(cart_items.get(position).quantity);
         holder.pluse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +98,7 @@ public class CartPageAdapter extends BaseAdapter{
                     alert.showAlertDialog(context, "Info",Settings.getword(context,"out_stock")+"   select"+cart_items.get(position).products.qut+" Products", true);
                 }else {
                     number++;
-                    holder.cart_item_quantity.setText(":" + String.valueOf(number));
+                    holder.cart_item_quantity.setText(" " + String.valueOf(number));
                     cart_items.get(position).quantity = String.valueOf(number);
                     notifyDataSetChanged();
                 }
@@ -109,7 +109,7 @@ public class CartPageAdapter extends BaseAdapter{
             public void onClick(View v) {
                 if (number > 1) {
                     number--;
-                    holder.cart_item_quantity.setText(":"+String.valueOf(number));
+                    holder.cart_item_quantity.setText(" "+String.valueOf(number));
                     cart_items.get(position).quantity =String.valueOf(number);
                     notifyDataSetChanged();
                 }

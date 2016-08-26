@@ -140,6 +140,15 @@
                     android:paddingBottom="3dp"
                     android:visibility="gone" />
 
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/cart_icon"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/cart_icon_white"
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="25dp"
@@ -189,7 +198,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/mdrawerlist1"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="15dp"
+            android:layout_weight="1" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -213,8 +223,8 @@
             android:textSize="13dp"
             android:gravity="center"
             android:layout_gravity="center|bottom"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="3dp" />
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp" />
 
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>
