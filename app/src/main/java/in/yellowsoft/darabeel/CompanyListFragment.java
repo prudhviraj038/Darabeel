@@ -152,13 +152,21 @@ public class CompanyListFragment extends Fragment {
         sta_status=(TextView)view.findViewById(R.id.sta_status_pop_tv);
         sta_status.setText(Settings.getword(getActivity(),"choose_status"));
         sta_rate=(TextView)view.findViewById(R.id.sta_rate_tv);
+        sta_rate.setText(Settings.getword(getActivity(),"choose_payment"));
         sta_pay=(TextView)view.findViewById(R.id.sta_pay_tv);
+        sta_pay.setText(Settings.getword(getActivity(),"rating"));
         open_tv=(TextView)view.findViewById(R.id.open_tv);
+        open_tv.setText(Settings.getword(getActivity(),"status_open"));
         busy_tv=(TextView)view.findViewById(R.id.busy_tv);
+        busy_tv.setText(Settings.getword(getActivity(),"status_busy"));
         close_tv=(TextView)view.findViewById(R.id.close_tv);
+        close_tv.setText(Settings.getword(getActivity(),"status_close"));
         cash_tv=(TextView)view.findViewById(R.id.cash_tvv);
+        cash_tv.setText(Settings.getword(getActivity(),"cash"));
         knet_tv=(TextView)view.findViewById(R.id.knet_tvv);
+        knet_tv.setText(Settings.getword(getActivity(),"knet"));
         submit_tv=(TextView)view.findViewById(R.id.sub_pop);
+        submit_tv.setText(Settings.getword(getActivity(),"submit"));
 
         open_ll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -261,10 +269,13 @@ public class CompanyListFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                filter_ll.setVisibility(View.GONE);
+                if(sta==null&&pay==null&&rate==null){
+                    filter_ll.setVisibility(View.GONE);
+                }else{
                 String constraint = sta+"@_@"+pay+"@_@"+pay+"@_@"+rate;
                 companylistAdapter.getFilter().filter(constraint);
-            }
+                    filter_ll.setVisibility(View.GONE);
+            }}
         });
 
         companylistAdapter=new CompanylistAdapter(getActivity(),restaurants);

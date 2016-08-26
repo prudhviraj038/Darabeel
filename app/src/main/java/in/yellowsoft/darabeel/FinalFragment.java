@@ -63,10 +63,10 @@ public class FinalFragment extends Fragment {
             et_fname,et_lname,et_email,et_work_ph,et_home_ph,add_et_addresss_name,add_et_block,add_et_street,add_et_floor,
             add_et_buillding,add_et_flat,add_et_mobile,add_et_directions;
     LinearLayout edit,add,cancel,save_ll,submit,ll_cash,ll_knet,ll_credit_card,ll_proceed_pay,date_lll,time_ll,drop_down_ll,
-            address_guest_ll,mobile_ll_final,spl_com_ll,coupon_ll,add_add_ll,later,now;
+            address_guest_ll,mobile_ll_final,spl_com_ll,coupon_ll,add_add_ll,later,now,dt_ll;
     JSONObject jsonObjecttosend = new JSONObject();
     FinalPageAdapter finalPageAdapter;
-    String rest_id,product_id,quantity,pricee,coupon,date,time,date1,time1;
+    String rest_id,product_id,quantity,pricee,coupon,date="0",time="0",date1,time1;
     String check;
     Float total = 0f;
     Float dara_charges=0f;
@@ -350,7 +350,8 @@ public class FinalFragment extends Fragment {
         coupon_code.setHint(Settings.getword(getActivity(), "coupon_code"));
         later_img=(ImageView)view.findViewById(R.id.later_img);
         now_img=(ImageView)view.findViewById(R.id.now_img);
-        date_time=(ImageView)view.findViewById(R.id.date_time);
+        date_time=(ImageView)view.findViewById(R.id.date_time1);
+        dt_ll=(LinearLayout)view.findViewById(R.id.date_time);
         date_lll=(LinearLayout)view.findViewById(R.id.date);
         time_ll=(LinearLayout)view.findViewById(R.id.time);
         now.setOnClickListener(new View.OnClickListener() {
@@ -358,8 +359,11 @@ public class FinalFragment extends Fragment {
             public void onClick(View view) {
                 now_img.setImageResource(R.drawable.ic_option_pink);
                 later_img.setImageResource(R.drawable.ic_option_brown);
-//                date1=mDay+" - "+mMonth+" - "+mYear;
-//                time1=mHour+" : "+mMinute;
+                date1=mDay+"-"+mMonth+"-"+mYear;
+                time1=mHour+":"+mMinute;
+                date=mDay+"-"+mMonth+"-"+mYear;
+                time=mHour+":"+mMinute;
+
             }
         });
         later.setOnClickListener(new View.OnClickListener() {
@@ -369,9 +373,30 @@ public class FinalFragment extends Fragment {
                 now_img.setImageResource(R.drawable.ic_option_brown);
             }
         });
-        date_time.setOnClickListener(new View.OnClickListener() {
+        dt_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                final Calendar c1 = Calendar.getInstance();
+                mHour = c1.get(Calendar.HOUR_OF_DAY);
+                mMinute = c1.get(Calendar.MINUTE);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        String temp=String.valueOf(hourOfDay);
+                        if(temp.length()<2)
+                            temp="0"+temp;
+                        String temp1=String.valueOf(minute);
+                        if(temp1.length()<2)
+                            temp1="0"+temp1;
+                        time = temp + ":" + temp1;
+                        time1 = temp+":"+temp1;
+                        time_tv.setText(time);
+                    }
+                }, mHour, mMinute, false);
+                timePickerDialog.show();
+
+
                 final Calendar c = Calendar.getInstance();
                 mYear = c.get(Calendar.YEAR);
                 mMonth = c.get(Calendar.MONTH);
@@ -388,36 +413,20 @@ public class FinalFragment extends Fragment {
                         date = year + "-" + temp + "-" + temp1;
                         date1 = temp1 + "-" + temp + "-" + year;
                         date_tv.setText(date);
-                        time_ll.performClick();
+//                        time_ll.performClick();
                     }
                 }, mYear, mMonth, mDay);
                 datePickerDialog.show();
 
+
             }
         });
-        time_ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Calendar c = Calendar.getInstance();
-                mHour = c.get(Calendar.HOUR_OF_DAY);
-                mMinute = c.get(Calendar.MINUTE);
-                TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        String temp=String.valueOf(hourOfDay);
-                        if(temp.length()<2)
-                            temp="0"+temp;
-                        String temp1=String.valueOf(minute);
-                        if(temp1.length()<2)
-                            temp1="0"+temp1;
-                        time = temp + ":" + temp1;
-                        time1 = temp+":"+temp1;
-                        time_tv.setText(time);
-                    }
-                }, mHour, mMinute, false);
-                timePickerDialog.show();
-            }
-        });
+//        time_ll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               );
+//            }
+//        });
         selected_area_id=Settings.getArea_id(getActivity());
         get_address_list();
 //        address_guest_ll=(LinearLayout)view.findViewById(R.id.address_guest_ll);

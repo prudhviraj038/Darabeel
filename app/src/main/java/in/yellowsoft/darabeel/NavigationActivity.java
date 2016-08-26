@@ -543,7 +543,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     @Override
     public void to_home() {
         animation_direction=true;
-        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+//        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         HomeFragment fragment4 = new HomeFragment();
         fragmentManager.beginTransaction().replace(R.id.container_main, fragment4).commit();
     }

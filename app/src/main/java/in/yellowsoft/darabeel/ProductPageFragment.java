@@ -111,7 +111,7 @@ public class ProductPageFragment extends Fragment {
         pro_name = (TextView) view.findViewById(R.id.product_name);
         add_more = (TextView) view.findViewById(R.id.add_more_pp);
         pro_cost = (TextView) view.findViewById(R.id.product_page_price);
-        pro_cost.setText("  : "+products.price+" KD");
+        pro_cost.setText(products.price+" KD");
         add_more.setText(Settings.getword(getActivity(), "text_continue"));
         go_to_cart = (TextView) view.findViewById(R.id.go_to_cart_tv);
         go_to_cart.setText(Settings.getword(getActivity(), "text_checkout"));
