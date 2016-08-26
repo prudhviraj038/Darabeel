@@ -22,7 +22,7 @@
                 android:text="Rating:"
                 android:id="@+id/rating_tv"
                 android:textColor="@color/brown"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:layout_marginBottom="5dp" />
 
             <RatingBar
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="Write Comments:"
                 android:id="@+id/comm_tv_alert"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/brown"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp" />
@@ -58,14 +58,15 @@
                 android:id="@+id/write_comm_et"
                 android:background="@drawable/full_rounded_corners"
                 android:minLines="5"
-                android:padding="5dp" />
+                android:padding="5dp"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/brown_rounded_corners"
+            android:background="@drawable/brown_rounded_corners_full"
             android:gravity="center"
             android:id="@+id/alert_submit_ll"
             android:padding="5dp">
@@ -75,7 +76,8 @@
                 android:layout_height="wrap_content"
                 android:text="Submit"
                 android:id="@+id/alert_submit"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>

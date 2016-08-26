@@ -18,12 +18,12 @@
             android:text="New Text"
             android:id="@+id/review_name"
             android:textColor="@color/black_text"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="15dp"
+            android:layout_height="17dp"
             android:layout_marginBottom="5dp"
             android:id="@+id/reviews_list_rating"
             android:layout_marginTop="5dp" />
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/review_des"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 </LinearLayout>

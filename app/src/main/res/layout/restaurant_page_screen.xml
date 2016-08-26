@@ -110,7 +110,7 @@
                                             android:paddingTop="3dp"
                                             android:paddingRight="25dp"
                                             android:paddingBottom="3dp"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:textStyle="bold" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -154,7 +154,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="Other info"
                                         android:id="@+id/other_info"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:textColor="#ffffff" />
                                 </LinearLayout>
 
@@ -173,7 +173,7 @@
                                         android:text="About"
                                         android:id="@+id/about_tab"
                                         android:textColor="#512918"
-                                        android:textSize="15dp" />
+                                        android:textSize="15sp" />
                                 </LinearLayout>
 
                             </LinearLayout>
@@ -194,7 +194,7 @@
                                     android:text="Select area"
                                     android:id="@+id/select_area_tv"
                                     android:textColor="#ffffff"
-                                    android:textSize="15dp"
+                                    android:textSize="18sp"
                                     android:padding="5dp" />
                             </LinearLayout>
 
@@ -212,7 +212,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/tv_Promotions"
                                     android:textColor="#ffffff"
-                                    android:textSize="15dp"
+                                    android:textSize="18sp"
                                     android:text="Promotions"
                                     android:gravity="center"
                                     android:padding="5dp" />
@@ -241,7 +241,7 @@
                                         android:id="@+id/sta_resta_info"
                                         android:gravity="center"
                                         android:textColor="#ffffff"
-                                        android:textSize="15dp" />
+                                        android:textSize="18sp" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -275,7 +275,8 @@
                                                 android:text="Area"
                                                 android:id="@+id/sat_area_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -290,7 +291,8 @@
                                                 android:text="Salmiya"
                                                 android:id="@+id/area"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -304,7 +306,8 @@
                                                 android:text="Status"
                                                 android:id="@+id/sat_status_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -324,7 +327,8 @@
                                                     android:text="OPEN"
                                                     android:id="@+id/status"
                                                     android:textColor="#d4005a"
-                                                    android:padding="3dp" />
+                                                    android:padding="3dp"
+                                                    android:textSize="15sp" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -340,7 +344,8 @@
                                                 android:text="Cuisines"
                                                 android:id="@+id/sat_cuisines_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -355,7 +360,8 @@
                                                 android:text="Desserts, Arabic Sweets"
                                                 android:id="@+id/cuisines"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -369,7 +375,8 @@
                                                 android:text="Working Hours"
                                                 android:id="@+id/sat_hours_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -384,7 +391,8 @@
                                                 android:text="10AM to 10PM"
                                                 android:id="@+id/working_hours"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -398,7 +406,8 @@
                                                 android:text="Delivery Time "
                                                 android:id="@+id/sat_time_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -418,7 +427,8 @@
                                                     android:text="60 mins"
                                                     android:id="@+id/delivery_time"
                                                     android:textColor="#323232"
-                                                    android:padding="3dp" />
+                                                    android:padding="3dp"
+                                                    android:textSize="15sp" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -434,7 +444,8 @@
                                                 android:text="Minimum Order"
                                                 android:id="@+id/sat_min_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -454,7 +465,8 @@
                                                     android:text="KD 10,000"
                                                     android:id="@+id/minimum_order"
                                                     android:textColor="#323232"
-                                                    android:padding="3dp" />
+                                                    android:padding="3dp"
+                                                    android:textSize="15sp" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -470,7 +482,8 @@
                                                 android:text="Restarant Dlivery Charges"
                                                 android:id="@+id/sat_dc_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -482,7 +495,8 @@
                                             <LinearLayout
                                                 android:orientation="vertical"
                                                 android:layout_width="match_parent"
-                                                android:layout_height="match_parent">
+                                                android:layout_height="match_parent"
+                                                android:gravity="center_vertical">
 
                                                 <TextView
                                                     android:layout_width="wrap_content"
@@ -490,7 +504,8 @@
                                                     android:id="@+id/rest_deli_charges"
                                                     android:textColor="#323232"
                                                     android:text="KD 0.500"
-                                                    android:padding="3dp" />
+                                                    android:padding="3dp"
+                                                    android:textSize="15sp" />
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -506,7 +521,8 @@
                                                 android:text="Payment Type"
                                                 android:id="@+id/sat_payment_cpage"
                                                 android:textColor="#323232"
-                                                android:padding="3dp" />
+                                                android:padding="3dp"
+                                                android:textSize="15sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -559,7 +575,7 @@
                                         android:id="@+id/sta_about_restaurant"
                                         android:gravity="center"
                                         android:textColor="#ffffff"
-                                        android:textSize="15dp" />
+                                        android:textSize="18sp" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -573,7 +589,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="Chocolateness is an exciting new concept managed by Kuwaiti youth. In 2007, four young entrepreneurs undertook an experiment in business. The product was an unbelievably rich and tempting chocolate molten cake."
                                         android:id="@+id/about_restauarnt"
-                                        android:textColor="#323232" />
+                                        android:textColor="#323232"
+                                        android:textSize="15sp" />
                                 </LinearLayout>
                             </LinearLayout>
 
@@ -610,8 +627,9 @@
                         android:text="SHOW MENU"
                         android:id="@+id/tv_show_menu"
                         android:textColor="#ffffff"
-                        android:textSize="15dp"
-                        android:gravity="center" />
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textIsSelectable="false" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -655,12 +673,14 @@
                     android:gravity="center|end"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:id="@+id/linearLayout6" >
+                    android:id="@+id/linearLayout6"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
 
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
-                        android:layout_height="15dp"
+                        android:layout_height="20dp"
                         android:layout_marginBottom="5dp"
                         android:id="@+id/review_rating" />
 
@@ -681,6 +701,7 @@
                     android:id="@+id/reviews_list"
                     android:padding="10dp" />
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout

@@ -18,7 +18,7 @@
 */
 -->
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/text1"
+    android:id="@+id/kjkh"
     style="?android:attr/dropDownItemStyle"
     android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
     android:singleLine="true"
@@ -26,4 +26,5 @@
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:ellipsize="marquee"
     android:text="fefwefe"
-    android:gravity="center" />
+    android:gravity="center"
+    android:textSize="15sp" />

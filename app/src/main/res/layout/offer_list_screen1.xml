@@ -48,7 +48,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="15dp"
+                android:layout_height="20dp"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/res_promotion_rating" />
 
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:text="New Text"
                     android:id="@+id/promotion_price"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:textColor="#ffffff"
                     android:padding="5dp" />
             </LinearLayout>

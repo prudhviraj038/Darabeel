@@ -89,7 +89,7 @@
                                     android:layout_alignParentTop="false"
                                     android:padding="8dp"
                                     android:textColor="#ffffff"
-                                    android:textSize="15dp"
+                                    android:textSize="18sp"
                                     android:text="Personal Details"
                                     android:gravity="center" />
                             </LinearLayout>
@@ -120,7 +120,7 @@
                                             android:text="Order Date"
                                             android:id="@+id/sta_order_date"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -133,7 +133,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/order_dat"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginLeft="2dp"
                                             android:layout_marginRight="2dp" />
@@ -160,7 +160,7 @@
                                             android:text="Delivery Date"
                                             android:id="@+id/sta_delivery_date"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18sp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -173,7 +173,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/delivery_dat"
-                                            android:textSize="14sp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginLeft="2dp"
                                             android:layout_marginRight="2dp" />
@@ -200,7 +200,7 @@
                                             android:text="Order Id"
                                             android:id="@+id/sta_order_id"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -213,7 +213,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/order_id_details"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginRight="2dp"
                                             android:layout_marginLeft="2dp" />
@@ -240,7 +240,7 @@
                                             android:text="Name"
                                             android:id="@+id/sta_or_det_name"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -253,7 +253,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_name"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginLeft="2dp"
                                             android:layout_marginRight="2dp" />
@@ -280,7 +280,7 @@
                                             android:text="Mobile"
                                             android:id="@+id/sta_or_det_number"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -293,7 +293,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_number"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginRight="2dp"
                                             android:layout_marginLeft="2dp" />
@@ -320,7 +320,7 @@
                                             android:text="Area"
                                             android:id="@+id/sta_or_det_area"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -333,7 +333,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_area"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginLeft="2dp"
                                             android:layout_marginRight="2dp" />
@@ -360,7 +360,7 @@
                                             android:text="Block"
                                             android:id="@+id/sta_or_det_block"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -373,7 +373,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_block"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginRight="2dp"
                                             android:layout_marginLeft="2dp" />
@@ -400,7 +400,7 @@
                                             android:text="Street Name/Number"
                                             android:id="@+id/sta_or_det_street"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -413,7 +413,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_street"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginLeft="2dp"
                                             android:layout_marginRight="2dp" />
@@ -441,7 +441,7 @@
                                             android:text="Building"
                                             android:id="@+id/sta_or_det_building"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -454,7 +454,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_building"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginRight="2dp"
                                             android:layout_marginLeft="2dp" />
@@ -482,7 +482,7 @@
                                             android:text="Floor"
                                             android:id="@+id/sta_or_det_floor"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -495,7 +495,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_floor"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginRight="2dp"
                                             android:layout_marginLeft="2dp" />
@@ -523,7 +523,7 @@
                                             android:text="Flat"
                                             android:id="@+id/sta_or_det_flat"
                                             android:textColor="@color/brown_text"
-                                            android:textSize="18dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -536,7 +536,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_flat"
-                                            android:textSize="14dp"
+                                            android:textSize="15sp"
                                             android:textColor="@color/pink_text"
                                             android:layout_marginRight="2dp"
                                             android:layout_marginLeft="2dp" />
@@ -573,7 +573,7 @@
                                 android:gravity="center"
                                 android:layout_marginLeft="70dp"
                                 android:layout_marginRight="70dp"
-                                android:textSize="15dp" />
+                                android:textSize="18sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -621,7 +621,7 @@
                                             android:id="@+id/sta_sub_total_details"
                                             android:textColor="@color/brown_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:text="Sub-Total" />
                                     </LinearLayout>
 
@@ -638,7 +638,7 @@
                                             android:id="@+id/sub_total_details"
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:gravity="center" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -661,7 +661,7 @@
                                             android:id="@+id/sta_res_dc_details"
                                             android:textColor="@color/brown_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -677,7 +677,7 @@
                                             android:id="@+id/res_dc_details"
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:gravity="center" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -700,7 +700,7 @@
                                             android:id="@+id/sta_discount_oreder"
                                             android:textColor="@color/brown_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -716,7 +716,7 @@
                                             android:id="@+id/discount_order"
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:gravity="center" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -739,7 +739,7 @@
                                             android:id="@+id/sta_dara_charges"
                                             android:textColor="@color/brown_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -755,7 +755,7 @@
                                             android:id="@+id/dara_charges"
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:gravity="center" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -778,7 +778,7 @@
                                             android:id="@+id/sta_grand_tot_details"
                                             android:textColor="@color/brown_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -794,7 +794,7 @@
                                             android:id="@+id/grand_tot_details"
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:gravity="center" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -807,6 +807,7 @@
             </ScrollView>
 
         </LinearLayout>
+
     </ViewFlipper>
 
 </LinearLayout>

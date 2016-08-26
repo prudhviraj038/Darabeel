@@ -106,6 +106,7 @@ public class ProductListFragment extends Fragment {
                                 jsonObject.getString("title_ar"),
                                 jsonObject.getString("stock"),
                                 jsonObject.getString("price"),
+                                jsonObject.getString("quantity"),
                                 jsonObject.getString("about"),
                                 jsonObject.getString("about_ar"),
                                 jsonObject.getString("description"),

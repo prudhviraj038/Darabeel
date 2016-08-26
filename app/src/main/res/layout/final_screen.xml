@@ -65,7 +65,7 @@
                                     android:layout_alignParentTop="false"
                                     android:padding="8dp"
                                     android:textColor="#ffffff"
-                                    android:textSize="15dp"
+                                    android:textSize="15sp"
                                     android:layout_weight="1"
                                     android:text="Personal Details"
                                     android:gravity="center" />
@@ -105,7 +105,7 @@
                                             android:id="@+id/guest_fname"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -113,7 +113,7 @@
                                             android:layout_height="wrap_content"
                                             android:id="@+id/et_guest_fname"
                                             android:textColor="#c78e1e"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:background="#eaeaea"
                                             android:padding="3dp"
                                             android:singleLine="true"
@@ -134,7 +134,7 @@
                                             android:id="@+id/guest_lname"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -142,7 +142,7 @@
                                             android:layout_height="wrap_content"
                                             android:id="@+id/et_guest_lname"
                                             android:textColor="#c78e1e"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:background="#eaeaea"
                                             android:padding="3dp"
                                             android:singleLine="true"
@@ -162,7 +162,7 @@
                                             android:id="@+id/guest_email"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -170,7 +170,7 @@
                                             android:layout_height="wrap_content"
                                             android:id="@+id/et_guest_email"
                                             android:textColor="#c78e1e"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:background="#eaeaea"
                                             android:padding="3dp"
                                             android:singleLine="true"
@@ -191,7 +191,7 @@
                                             android:id="@+id/guest_home_ph"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -199,7 +199,7 @@
                                             android:layout_height="wrap_content"
                                             android:id="@+id/et_guest_home_ph"
                                             android:textColor="#c78e1e"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:background="#eaeaea"
                                             android:padding="3dp"
                                             android:singleLine="true"
@@ -220,7 +220,7 @@
                                             android:id="@+id/guest_work_ph"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -228,7 +228,7 @@
                                             android:layout_height="wrap_content"
                                             android:id="@+id/et_guest_work_ph"
                                             android:textColor="#c78e1e"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:background="#eaeaea"
                                             android:padding="3dp"
                                             android:singleLine="true"
@@ -269,7 +269,7 @@
                                     android:textColor="#ffffff"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:textSize="15dp"
+                                    android:textSize="15sp"
                                     android:textStyle="bold" />
 
                                 <ImageView
@@ -348,7 +348,7 @@
                                             android:id="@+id/static_tv_area"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <TextView
@@ -358,7 +358,7 @@
                                             android:id="@+id/tv_area"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -387,7 +387,7 @@
                                             android:id="@+id/static_tv_block"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <TextView
@@ -397,7 +397,7 @@
                                             android:id="@+id/tv_block"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -426,7 +426,7 @@
                                             android:id="@+id/static_tv_street"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <TextView
@@ -436,7 +436,7 @@
                                             android:id="@+id/tv_street"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -465,7 +465,7 @@
                                             android:id="@+id/static_tv_building"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <TextView
@@ -475,7 +475,7 @@
                                             android:id="@+id/tv_buildng"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -504,7 +504,7 @@
                                             android:id="@+id/static_tv_floor"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <TextView
@@ -514,7 +514,7 @@
                                             android:id="@+id/tv_floor"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -543,7 +543,7 @@
                                             android:id="@+id/static_tv_aprtment"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <TextView
@@ -553,7 +553,7 @@
                                             android:id="@+id/tv_flat"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -583,7 +583,7 @@
                                             android:id="@+id/static_tv_mobile"
                                             android:textColor="@color/brown"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <TextView
@@ -593,7 +593,7 @@
                                             android:textColor="#c78e1e"
                                             android:text="9898989898"
                                             android:padding="3dp"
-                                            android:textSize="12dp"
+                                            android:textSize="12sp"
                                             android:layout_weight="1" />
 
                                         <EditText
@@ -638,7 +638,7 @@
                                             android:text="Edit Address"
                                             android:id="@+id/tv_edit_address"
                                             android:textColor="#ffffff"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:gravity="center" />
                                     </LinearLayout>
 
@@ -660,7 +660,7 @@
                                             android:text="Add Address"
                                             android:id="@+id/tv_add_address"
                                             android:textColor="#ffffff"
-                                            android:textSize="15dp" />
+                                            android:textSize="15sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -736,7 +736,8 @@
                                     android:layout_alignParentTop="false"
                                     android:textColor="#ffffff"
                                     android:layout_weight="1"
-                                    android:padding="8dp" />
+                                    android:padding="8dp"
+                                    android:textSize="15sp" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -763,7 +764,7 @@
                                     android:id="@+id/spl_instructions"
                                     android:textColor="@color/brown"
                                     android:gravity="center_vertical"
-                                    android:textSize="12dp"
+                                    android:textSize="12sp"
                                     android:hint="Enter any special instructions"
                                     android:background="#00000000"
                                     android:minLines="5"
@@ -796,7 +797,8 @@
                                     android:layout_alignParentTop="false"
                                     android:padding="8dp"
                                     android:textColor="#ffffff"
-                                    android:layout_weight="1" />
+                                    android:layout_weight="1"
+                                    android:textSize="15sp" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -824,7 +826,7 @@
                                     android:hint="ENTER YOUR CODE"
                                     android:textColor="#868686"
                                     android:textColorHint="#868686"
-                                    android:textSize="12dp"
+                                    android:textSize="12sp"
                                     android:gravity="center" />
 
                                 <LinearLayout
@@ -844,7 +846,7 @@
                                         android:text="Submit"
                                         android:id="@+id/tv_submit_final"
                                         android:textColor="#ffffff"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:gravity="center"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -869,7 +871,8 @@
                                 android:layout_alignParentTop="false"
                                 android:padding="8dp"
                                 android:textColor="#ffffff"
-                                android:background="@drawable/brown_rounded_corners_full" />
+                                android:background="@drawable/brown_rounded_corners_full"
+                                android:textSize="15sp" />
 
                             <LinearLayout
                                 android:orientation="vertical"
@@ -916,7 +919,7 @@
                                                 android:id="@+id/static_sub_total"
                                                 android:textColor="@color/brown"
                                                 android:padding="3dp"
-                                                android:textSize="12dp"
+                                                android:textSize="12sp"
                                                 android:text="Sub-Total" />
                                         </LinearLayout>
 
@@ -938,7 +941,7 @@
                                                 android:id="@+id/sub_total_final"
                                                 android:textColor="@color/pink_text"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
 
                                     </LinearLayout>
@@ -960,7 +963,7 @@
                                                 android:id="@+id/sta_discount"
                                                 android:textColor="@color/brown"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -981,7 +984,7 @@
                                                 android:id="@+id/discount_final"
                                                 android:textColor="@color/pink_text"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
                                     </LinearLayout>
 
@@ -1002,7 +1005,7 @@
                                                 android:id="@+id/static_delivery_charges"
                                                 android:textColor="@color/brown"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -1023,7 +1026,7 @@
                                                 android:id="@+id/delivery_charges_final"
                                                 android:textColor="@color/pink_text"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
 
                                     </LinearLayout>
@@ -1045,7 +1048,7 @@
                                                 android:id="@+id/sta_dara_charges_final"
                                                 android:textColor="@color/brown"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -1066,7 +1069,7 @@
                                                 android:id="@+id/dara_charges_final"
                                                 android:textColor="@color/pink_text"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
                                     </LinearLayout>
 
@@ -1087,7 +1090,7 @@
                                                 android:id="@+id/static_grand_total"
                                                 android:textColor="@color/brown"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -1108,7 +1111,7 @@
                                                 android:id="@+id/grand_total_final"
                                                 android:textColor="@color/pink_text"
                                                 android:padding="3dp"
-                                                android:textSize="12dp" />
+                                                android:textSize="12sp" />
                                         </LinearLayout>
 
                                     </LinearLayout>
@@ -1136,7 +1139,8 @@
                                 android:layout_alignParentTop="false"
                                 android:padding="8dp"
                                 android:textColor="#ffffff"
-                                android:gravity="center" />
+                                android:gravity="center"
+                                android:textSize="15sp" />
 
                             <LinearLayout
                                 android:orientation="vertical"
@@ -1162,7 +1166,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="Now"
                                         android:id="@+id/now_tv"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:textStyle="bold"
                                         android:textColor="@color/brown"
                                         android:layout_marginLeft="10dp"
@@ -1196,7 +1200,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="Later On"
                                         android:id="@+id/later_tv"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:textStyle="bold"
                                         android:textColor="@color/brown"
                                         android:layout_marginLeft="10dp"
@@ -1225,7 +1229,7 @@
                                         android:text=" Date"
                                         android:id="@+id/delivery_date"
                                         android:textColor="@color/brown"
-                                        android:textSize="15dp" />
+                                        android:textSize="15sp" />
                                 </LinearLayout>
 
                                 <TextView
@@ -1251,7 +1255,7 @@
                                         android:text="Time"
                                         android:id="@+id/delivery_time"
                                         android:textColor="@color/brown"
-                                        android:textSize="15dp" />
+                                        android:textSize="15sp" />
                                 </LinearLayout>
 
                                 <ImageView
@@ -1281,7 +1285,8 @@
                                 android:layout_alignParentTop="false"
                                 android:padding="8dp"
                                 android:textColor="#ffffff"
-                                android:gravity="center" />
+                                android:gravity="center"
+                                android:textSize="15sp" />
 
                             <LinearLayout
                                 android:orientation="horizontal"
@@ -1403,7 +1408,7 @@
                                 android:text="PROCEED TO PAY"
                                 android:id="@+id/tv_proceed_pay"
                                 android:textColor="#ffffff"
-                                android:textSize="15dp"
+                                android:textSize="15sp"
                                 android:padding="7dp"
                                 android:gravity="center"
                                 android:textStyle="bold" />

@@ -53,7 +53,7 @@
                 android:text="Quinoa Bil Laben "
                 android:id="@+id/meal_name"
                 android:textColor="#512918"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:singleLine="true" />
 
             <TextView
@@ -62,7 +62,7 @@
                 android:text="Lorem Ipsu."
                 android:id="@+id/stock_status"
                 android:textColor="#3b3b3b"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -80,7 +80,7 @@
             android:id="@+id/price_product"
             android:gravity="center"
             android:textColor="#d4005a"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp" />
 

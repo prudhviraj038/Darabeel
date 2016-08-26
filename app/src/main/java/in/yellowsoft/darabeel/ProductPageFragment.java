@@ -273,10 +273,15 @@ public class ProductPageFragment extends Fragment {
                 }
                 if (addon_ok) {
                     Log.e("status",products.restaurant.status);
-                  if(products.restaurant.status.equals("Open"))
+                  if(products.restaurant.status.equals("Open")) {
 //                    alert_add_cart.setVisibility(View.VISIBLE);
-                  mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
-                  else
+                      if(Integer.parseInt(products.qut)<quantity){
+                          alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"out_stock")+" select "+products.qut+" Products", true);
+                      }else{
+                          mCallBack.add_to_cart(products, String.valueOf(quantity), et_spl_request.getText().toString());
+                      }
+
+                  }else
                       alert.showAlertDialog(getActivity(),
                               "Info",
                               Settings.getword(getActivity(),"close_msg"), true);

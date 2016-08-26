@@ -53,7 +53,8 @@
                     android:text="English"
                     android:id="@+id/english"
                     android:textColor="#ffffff"
-                    android:layout_centerInParent="true" />
+                    android:layout_centerInParent="true"
+                    android:textSize="15sp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -81,7 +82,8 @@
                     android:text="Arabic"
                     android:id="@+id/arabic"
                     android:textColor="#ffffff"
-                    android:layout_centerInParent="true" />
+                    android:layout_centerInParent="true"
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 

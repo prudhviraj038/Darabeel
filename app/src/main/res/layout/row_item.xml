@@ -23,7 +23,7 @@
             android:id="@+id/nameLabel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:text="Name"
             android:textColor="@color/black_text"
             android:gravity="center" />

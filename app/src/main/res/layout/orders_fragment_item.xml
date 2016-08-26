@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:text="Rating"
                         android:id="@+id/reorder_tv"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:textColor="#ffffff"
                         android:textStyle="bold"
                         android:padding="2dp" />
@@ -90,7 +90,7 @@
                             android:layout_height="wrap_content"
                             android:text="Rating"
                             android:id="@+id/order_rating_tv"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textColor="#ffffff"
                             android:textStyle="bold"
                             android:padding="2dp" />
@@ -149,7 +149,7 @@
                         android:text="Order Id"
                         android:id="@+id/sta_order_id"
                         android:textColor="@color/brown"
-                        android:textSize="14dp"
+                        android:textSize="15sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp" />
 
@@ -167,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:text="4523654"
                         android:id="@+id/order_id"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textColor="@color/brown"
                         android:singleLine="true"
                         android:ellipsize="end" />
@@ -184,7 +184,7 @@
                         android:text="Order Date"
                         android:id="@+id/sta_order_date"
                         android:textColor="@color/brown"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp" />
 
@@ -201,7 +201,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/date"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textColor="@color/brown"
                         android:text="23/2/2016"
                         android:ellipsize="end"
@@ -219,7 +219,7 @@
                         android:text="Total"
                         android:id="@+id/sta_price_order"
                         android:textColor="@color/brown"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp" />
 
@@ -237,7 +237,7 @@
                         android:layout_height="wrap_content"
                         android:text="KD 20.33"
                         android:id="@+id/tot_price"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textColor="@color/brown"
                         android:ellipsize="end"
                         android:singleLine="true" />
@@ -254,7 +254,7 @@
                         android:text="Payment Method"
                         android:id="@+id/sta_order_pay_mode"
                         android:textColor="@color/brown"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp" />
 
@@ -271,7 +271,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/pay_method"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textColor="@color/brown"
                         android:text="cash"
                         android:ellipsize="end"
@@ -289,7 +289,7 @@
                         android:text="Status"
                         android:id="@+id/sta_order_status"
                         android:textColor="@color/brown"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp" />
 
@@ -306,7 +306,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/delivery_status"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textColor="@color/pink_text"
                         android:text="success"
                         android:ellipsize="end"

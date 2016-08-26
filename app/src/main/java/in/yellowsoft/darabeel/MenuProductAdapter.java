@@ -65,11 +65,13 @@ public class MenuProductAdapter extends BaseAdapter {
 //        holder.number = (TextView) rowView.findViewById(R.id.number);
         holder.img = (ImageView) rowView.findViewById(R.id.pro_image);
         holder.meal_name.setText(productses.get(position).getTitle(context));
-        holder.stock_status.setText(productses.get(position).stock);
-        if(productses.get(position).stock.equals("In Stock")){
-            holder.stock_status.setTextColor(context.getResources().getColor(R.color.green_text));
-        }else {
+//        holder.stock_status.setText(productses.get(position).stock);
+        if(productses.get(position).qut.equals("0")){
             holder.stock_status.setTextColor(context.getResources().getColor(R.color.red_text));
+            holder.stock_status.setText(Settings.getword(context,"out_stock"));
+        }else {
+            holder.stock_status.setTextColor(context.getResources().getColor(R.color.green_text));
+            holder.stock_status.setText(Settings.getword(context,"in_stock"));
         }
         holder.price.setText(productses.get(position).price+" KD");
         Picasso.with(context).load(productses.get(position).images.get(0).img).into(holder.img);

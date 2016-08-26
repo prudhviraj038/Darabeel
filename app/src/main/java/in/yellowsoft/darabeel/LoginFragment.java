@@ -302,7 +302,13 @@ public class LoginFragment extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
-                    loaded = true;
+                    if (viewFlipper.getDisplayedChild() == 1) {
+                        head = Settings.getword(getActivity(), "title_login");
+                        mCallBack.text_back_butt(head);
+                        viewFlipper.setDisplayedChild(0);
+                        return true;
+                    }
+//                    loaded = true;
                     return false;
                 }
                 return false;

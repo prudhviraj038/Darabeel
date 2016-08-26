@@ -240,6 +240,12 @@ public class Settings {
             ImageView star = new ImageView(context);
 //            star.setMaxWidth(35);
 //            star.setMaxHeight(35);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(10,2,10,2);
+            star.setLayoutParams(params);
             star.setAdjustViewBounds(true);
             if(i<=Float.parseFloat(value))
                 star.setImageResource(R.drawable.yellow_full_star);

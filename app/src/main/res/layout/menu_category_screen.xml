@@ -169,7 +169,7 @@
                                     android:id="@+id/sta_menu_category"
                                     android:gravity="center"
                                     android:textColor="#ffffff"
-                                    android:textSize="15dp" />
+                                    android:textSize="15sp" />
 
                             </LinearLayout>
 

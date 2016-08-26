@@ -13,19 +13,20 @@ import java.util.ArrayList;
  * Created by Chinni on 05-05-2016.
  */
 public class Products implements Serializable {
-    String res_id,title,title_ar,price,stock,about,about_ar,description,description_ar,cart_price,option_title,option__title_ar;
+    String res_id,title,title_ar,price,qut,stock,about,about_ar,description,description_ar,cart_price,option_title,option__title_ar;
     ArrayList<Images> images;
     Restaurants restaurant;
     ArrayList<Category> categories;
     ArrayList<Options> options;
     ArrayList<Groups> groups;
-    Products(String res_id, String title, String title_ar,String stock,String price, String about, String about_ar, String description, String description_ar,
+    Products(String res_id, String title, String title_ar,String stock,String price,String qut, String about, String about_ar, String description, String description_ar,
              String option_title, String option__title_ar, JSONArray jsonArray, JSONArray jsonArray1, JSONArray jsonArray2, JSONArray jsonArray3, JSONArray jsonArray4){
         this.res_id=res_id;
         this.title=title;
         this.title_ar=title_ar;
         this.stock=stock;
         this.price=price;
+        this.qut=qut;
         this.cart_price=price;
         this.about=about;
         this.about_ar=about_ar;

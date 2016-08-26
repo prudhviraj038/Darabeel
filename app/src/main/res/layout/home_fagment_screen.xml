@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/lkdksd">
 
     <ViewFlipper
         android:layout_width="wrap_content"
@@ -60,7 +61,8 @@
                                 android:id="@+id/tv_what_do_you_want"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:textColor="#8e8f8f" />
+                                android:textColor="#8e8f8f"
+                                android:textSize="15sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -104,7 +106,8 @@
                                 android:id="@+id/tv_choose_area"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:textColor="#8e8f8f" />
+                                android:textColor="#8e8f8f"
+                                android:textSize="15sp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -129,7 +132,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="Search Sweets"
                                 android:id="@+id/tv_search_sweets"
-                                android:textColor="#ffffff" />
+                                android:textColor="#ffffff"
+                                android:textSize="15sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -162,14 +166,308 @@
                             android:layout_marginBottom="10dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
-                            android:textSize="15dp" />
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:id="@+id/l1"
+                                android:layout_weight="1"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginLeft="2dp">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" >
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/im1"
+                                            android:padding="2dp"
+                                            android:adjustViewBounds="false"
+                                            android:src="@drawable/img_restaurants"
+                                            android:scaleType="fitXY" />
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/imageView22"
+                                            android:src="@drawable/home_rounded_corners" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kababji"
+                                    android:id="@+id/t1"
+                                    android:textColor="@color/brown"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:singleLine="true"
+                                    android:ellipsize="marquee"
+                                    android:gravity="center" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="13dp"
+                                        android:id="@+id/linearLayout2"
+                                        android:divider="@drawable/rating_divider"
+                                        android:showDividers="middle|end" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textView25"
+                                        android:textColor="#285b6e" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:id="@+id/l2"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" >
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/im2"
+                                            android:padding="2dp"
+                                            android:adjustViewBounds="false"
+                                            android:src="@drawable/img_restaurants"
+                                            android:scaleType="fitXY" />
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/imageView28"
+                                            android:src="@drawable/home_rounded_corners" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kababji"
+                                    android:id="@+id/t2"
+                                    android:textColor="@color/brown"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:singleLine="true"
+                                    android:ellipsize="marquee"
+                                    android:gravity="center" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone" >
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="13dp"
+                                        android:id="@+id/linearLayout10"
+                                        android:divider="@drawable/rating_divider"
+                                        android:showDividers="middle|end" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textView31"
+                                        android:textColor="#285b6e" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:id="@+id/l3"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" >
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/im3"
+                                            android:padding="2dp"
+                                            android:adjustViewBounds="false"
+                                            android:src="@drawable/img_restaurants"
+                                            android:scaleType="fitXY" />
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/imageView30"
+                                            android:src="@drawable/home_rounded_corners" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kababji"
+                                    android:id="@+id/t3"
+                                    android:textColor="@color/brown"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:singleLine="true"
+                                    android:ellipsize="marquee"
+                                    android:gravity="center" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone" >
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="13dp"
+                                        android:id="@+id/linearLayout16"
+                                        android:divider="@drawable/rating_divider"
+                                        android:showDividers="middle|end" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textView33"
+                                        android:textColor="#285b6e" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:id="@+id/l4"
+                                android:layout_weight="1"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginLeft="2dp">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" >
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/im4"
+                                            android:padding="2dp"
+                                            android:adjustViewBounds="false"
+                                            android:src="@drawable/img_restaurants"
+                                            android:scaleType="fitXY" />
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/imageView32"
+                                            android:src="@drawable/home_rounded_corners" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kababji"
+                                    android:id="@+id/t4"
+                                    android:textColor="@color/brown"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:singleLine="true"
+                                    android:ellipsize="marquee"
+                                    android:gravity="center" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone" >
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="13dp"
+                                        android:id="@+id/linearLayout21"
+                                        android:divider="@drawable/rating_divider"
+                                        android:showDividers="middle|end" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textView35"
+                                        android:textColor="#285b6e" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
 
                         <view
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             class="android.support.v17.leanback.widget.HorizontalGridView"
                             android:id="@+id/view5"
-                            android:numColumns="4"/>
+                            android:numColumns="4"
+                            android:visibility="gone" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -199,7 +497,7 @@
                     android:text="Select Category"
                     android:id="@+id/select_cat_text"
                     android:textColor="#ffffff"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:background="@drawable/bg_menu_category" />
 

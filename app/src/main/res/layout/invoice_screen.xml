@@ -28,7 +28,8 @@
                 android:singleLine="true"
                 android:ellipsize="marquee"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <ScrollView
@@ -56,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:background="@drawable/brown_rounded_corners"
+                        android:background="@drawable/brown_rounded_corners_full"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/linearLayout38"
                         android:gravity="center"
@@ -72,7 +73,7 @@
                             android:layout_alignParentTop="false"
                             android:padding="8dp"
                             android:textColor="#ffffff"
-                            android:textSize="15dp"
+                            android:textSize="18sp"
                             android:layout_weight="1"
                             android:text="Personal Details"
                             android:gravity="center" />
@@ -114,14 +115,14 @@
                                         android:text="Order Id"
                                         android:id="@+id/sta_tq_order_id"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_id"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginRight="2dp"
@@ -140,14 +141,14 @@
                                         android:text="Order Date"
                                         android:id="@+id/sta_tq_order_date"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_date"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginLeft="2dp"
@@ -166,14 +167,14 @@
                                         android:text="Delivery Date"
                                         android:id="@+id/sta_tq_delivery_date"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/delivery_date"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginLeft="2dp"
@@ -192,14 +193,14 @@
                                         android:text="Name"
                                         android:id="@+id/sta_tq_order_name"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_name"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginLeft="2dp"
@@ -218,18 +219,19 @@
                                         android:text="Mobile"
                                         android:id="@+id/sta_tq_order_mobile"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_mobile"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginRight="2dp"
-                                        android:layout_marginLeft="2dp" />
+                                        android:layout_marginLeft="2dp"
+                                        android:textIsSelectable="false" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -244,14 +246,14 @@
                                         android:text="Area"
                                         android:id="@+id/sta_tq_order_area"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_area"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginLeft="2dp"
@@ -270,14 +272,14 @@
                                         android:text="Block"
                                         android:id="@+id/sta_tq_order_block"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_block"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginRight="2dp"
@@ -296,14 +298,14 @@
                                         android:text="Street Name/Number"
                                         android:id="@+id/sta_tq_order_street"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_street"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginLeft="2dp"
@@ -323,14 +325,14 @@
                                         android:text="Building"
                                         android:id="@+id/sta_tq_order_building"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_building"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginRight="2dp"
@@ -350,14 +352,14 @@
                                         android:text="Floor"
                                         android:id="@+id/sta_tq_order_floor"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_floor"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginRight="2dp"
@@ -377,14 +379,14 @@
                                         android:text="Flat"
                                         android:id="@+id/sta_tq_order_flat"
                                         android:textColor="@color/brown"
-                                        android:textSize="18dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1" />
 
                                     <TextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_flat"
-                                        android:textSize="14dp"
+                                        android:textSize="15sp"
                                         android:textColor="#c78e1e"
                                         android:layout_weight="1"
                                         android:layout_marginRight="2dp"
@@ -409,12 +411,13 @@
                         android:text="Products"
                         android:id="@+id/products_tq"
                         android:layout_alignParentStart="false"
-                        android:background="@drawable/brown_rounded_corners"
+                        android:background="@drawable/brown_rounded_corners_full"
                         android:layout_centerHorizontal="true"
                         android:layout_alignParentTop="false"
                         android:padding="8dp"
                         android:textColor="#ffffff"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:textSize="18sp" />
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -466,7 +469,7 @@
                                         android:id="@+id/sta_tq_sub_total"
                                         android:textColor="@color/brown"
                                         android:padding="3dp"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:layout_weight="1"
                                         android:text="Total" />
                                 </LinearLayout>
@@ -484,7 +487,7 @@
                                         android:id="@+id/tq_sub_total"
                                         android:textColor="@color/pink_text"
                                         android:padding="3dp"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:gravity="end" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -507,7 +510,7 @@
                                         android:id="@+id/sta_tq_dc"
                                         android:textColor="@color/brown"
                                         android:padding="3dp"
-                                        android:textSize="15dp" />
+                                        android:textSize="15sp" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -523,7 +526,7 @@
                                         android:id="@+id/tq_dc"
                                         android:textColor="@color/pink_text"
                                         android:padding="3dp"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:gravity="center|end" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -547,7 +550,7 @@
                                         android:id="@+id/sta_tq_discount"
                                         android:textColor="@color/brown"
                                         android:padding="3dp"
-                                        android:textSize="15dp" />
+                                        android:textSize="15sp" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -563,7 +566,7 @@
                                         android:id="@+id/tq_discount"
                                         android:textColor="@color/pink_text"
                                         android:padding="3dp"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:gravity="center|end" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -586,7 +589,7 @@
                                         android:id="@+id/sta_dara_invoice"
                                         android:textColor="@color/brown_text"
                                         android:padding="3dp"
-                                        android:textSize="15dp" />
+                                        android:textSize="15sp" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -602,7 +605,7 @@
                                         android:id="@+id/dara_invoice"
                                         android:textColor="@color/pink_text"
                                         android:padding="3dp"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:gravity="center|end" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -625,7 +628,7 @@
                                         android:id="@+id/sta_tq_grand_total"
                                         android:textColor="@color/brown"
                                         android:padding="3dp"
-                                        android:textSize="15dp" />
+                                        android:textSize="15sp" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -641,7 +644,7 @@
                                         android:id="@+id/tq_grand_total"
                                         android:textColor="@color/pink_text"
                                         android:padding="3dp"
-                                        android:textSize="15dp"
+                                        android:textSize="15sp"
                                         android:gravity="center|end" />
                                 </LinearLayout>
                             </LinearLayout>

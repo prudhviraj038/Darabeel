@@ -64,7 +64,7 @@
                     android:text="Chicken Fillet Burger Meal"
                     android:id="@+id/cart_item_name"
                     android:textColor="@color/brown"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:singleLine="true"
                     android:ellipsize="end" />
 
@@ -80,7 +80,7 @@
                         android:id="@+id/static_cart_item_quantity"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                         android:id="@+id/cart_item_quantity"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -113,7 +113,7 @@
                         android:id="@+id/static_cart_item_price"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -131,7 +131,7 @@
                         android:id="@+id/cart_item_price"
                         android:textColor="@color/brown"
                         android:layout_marginRight="5dp"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -147,7 +147,7 @@
                         android:id="@+id/static_cart_item_total"
                         android:textColor="@color/pink_text"
                         android:layout_marginRight="5dp"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -165,7 +165,7 @@
                         android:id="@+id/cart_item_total"
                         android:textColor="@color/pink_text"
                         android:layout_marginRight="5dp"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
 

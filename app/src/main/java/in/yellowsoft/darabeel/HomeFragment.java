@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ import android.widget.ViewFlipper;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,9 +39,9 @@ public class HomeFragment extends Fragment {
     ArrayList<Restaurants> restaurantses;
     ArrayList<Category> categories;
     boolean loaded=false;
-    LinearLayout ll_search_sweets,what_you_want,choose_area;
-    TextView what_you_wanr_txt,area_txt,tv_search_sweets,we_recommend,select_cat;
-
+    LinearLayout ll_search_sweets,what_you_want,choose_area,l1,l2,l3,l4;
+    TextView what_you_wanr_txt,area_txt,tv_search_sweets,we_recommend,select_cat,t1,t2,t3,t4;
+    ImageView im1,im2,im3,im4;
     ListView cat_listView;
     CategoryAdapter categoryAdapter;
     ViewFlipper viewFlipper;
@@ -68,8 +70,21 @@ public class HomeFragment extends Fragment {
         categories = new ArrayList<>();
         head_home=Settings.getword(getActivity(),"home");
         mCallBack.home_head(head_home);
-        gridElementAdapter = new GridElementAdapter(getActivity(),restaurantses,this);
-        horizontalGridView.setAdapter(gridElementAdapter);
+        getRestaurants();
+        im1=(ImageView)view.findViewById(R.id.im1);
+        im2=(ImageView)view.findViewById(R.id.im2);
+        im3=(ImageView)view.findViewById(R.id.im3);
+        im4=(ImageView)view.findViewById(R.id.im4);
+        t1=(TextView)view.findViewById(R.id.t1);
+        t2=(TextView)view.findViewById(R.id.t2);
+        t3=(TextView)view.findViewById(R.id.t3);
+        t4=(TextView)view.findViewById(R.id.t4);
+        l1=(LinearLayout)view.findViewById(R.id.l1);
+        l2=(LinearLayout)view.findViewById(R.id.l2);
+        l3=(LinearLayout)view.findViewById(R.id.l3);
+        l4=(LinearLayout)view.findViewById(R.id.l4);
+//        gridElementAdapter = new GridElementAdapter(getActivity(),restaurantses,this);
+//        horizontalGridView.setAdapter(gridElementAdapter);
         what_you_wanr_txt = (TextView) view.findViewById(R.id.tv_what_do_you_want);
         what_you_wanr_txt.setText(Settings.getword(getActivity(), "what_do_you_want"));
         select_cat = (TextView) view.findViewById(R.id.select_cat_text);
@@ -133,7 +148,7 @@ public class HomeFragment extends Fragment {
         });
         we_recommend = (TextView) view.findViewById(R.id.we_recommend);
         we_recommend.setText(Settings.getword(getActivity(), "trending"));
-        getRestaurants();
+
         view.setFocusableInTouchMode(true);
         view.requestFocus();
         view.setOnKeyListener(new View.OnKeyListener() {
@@ -158,7 +173,7 @@ public class HomeFragment extends Fragment {
     private void getarea() {
         String url = null;
         try {
-            url = Settings.SERVERURL + "areas.php";
+            url = Settings.SERVERURL + "areas.php?member_id="+Settings.getUserid(getActivity());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -176,24 +191,47 @@ public class HomeFragment extends Fragment {
                 area_list.clear();
                 try {
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject sub = jsonArray.getJSONObject(i);
-                        String id = jsonArray.getJSONObject(i).getString("id");
-                        String area = jsonArray.getJSONObject(i).getString("title");
-                        String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
-                        Area person = new Area(id,area,area_ar,true);
-                        area_list.add(person);
+                        if(i==0){
+                            JSONObject sub = jsonArray.getJSONObject(i);
+                            String id = jsonArray.getJSONObject(i).getString("id");
+                            String area = jsonArray.getJSONObject(i).getString("title");
+                            String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
+                            Area person = new Area(id,area,area_ar,true);
 
-                        Log.e("titleee", sub.getString("title"));
 
-                        JSONArray jsonArray1=sub.getJSONArray("areas");
-                        for (int j = 0; j < jsonArray1.length(); j++) {
-                            String idt = jsonArray1.getJSONObject(j).getString("id");
-                            String areat = jsonArray1.getJSONObject(j).getString("title");
-                            String areat_ar = jsonArray1.getJSONObject(j).getString("title_ar");
-                            Area persont = new Area(idt,areat,areat_ar,false);
-                            area_list.add(persont);
+                            Log.e("titleee", sub.getString("title"));
+
+                            JSONArray jsonArray1=sub.getJSONArray("areas");
+                            if(jsonArray1.length()>0){
+                                area_list.add(person);
+                            }
+                            for (int j = 0; j < jsonArray1.length(); j++) {
+                                String idt = jsonArray1.getJSONObject(j).getString("id");
+                                String areat = jsonArray1.getJSONObject(j).getString("title");
+                                String areat_ar = jsonArray1.getJSONObject(j).getString("title_ar");
+                                Area persont = new Area(idt,areat,areat_ar,false);
+                                area_list.add(persont);
+
+                            }
+                        }else {
+                            JSONObject sub = jsonArray.getJSONObject(i);
+                            String id = jsonArray.getJSONObject(i).getString("id");
+                            String area = jsonArray.getJSONObject(i).getString("title");
+                            String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
+                            Area person = new Area(id, area, area_ar, true);
+                            area_list.add(person);
+
+                            Log.e("titleee", sub.getString("title"));
+
+                            JSONArray jsonArray1 = sub.getJSONArray("areas");
+                            for (int j = 0; j < jsonArray1.length(); j++) {
+                                String idt = jsonArray1.getJSONObject(j).getString("id");
+                                String areat = jsonArray1.getJSONObject(j).getString("title");
+                                String areat_ar = jsonArray1.getJSONObject(j).getString("title_ar");
+                                Area persont = new Area(idt, areat, areat_ar, false);
+                                area_list.add(persont);
+                            }
                         }
-
                     }
                     personAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
@@ -223,32 +261,72 @@ public class HomeFragment extends Fragment {
     private void display_data(JSONArray jsonArray){
         Log.e("reponse", jsonArray.toString());
                 try {
-                        for (int i=0;i<jsonArray.length();i++){
-                                JSONObject tmp_json = jsonArray.getJSONObject(i);
-                                Restaurants temp = new Restaurants(tmp_json.getString("id")
-                                        ,tmp_json.getString("title"),
-                                        tmp_json.getString("title_ar"),
-                                        tmp_json.getString("area"),
-                                        tmp_json.getString("current_status"),
-                                        tmp_json.getString("hours"),
-                                        tmp_json.getString("time"),
-                                        tmp_json.getString("minimum"),
-                                        tmp_json.getString("image"),
-                                        tmp_json.getString("banner"),
-                                        tmp_json.getString("description"),
-                                        tmp_json.getString("description_ar"),
-                                        tmp_json.getString("small_description"),
-                                        tmp_json.getString("small_description_ar"),
-                                        tmp_json.getString("rating"),
-                                        tmp_json.getString("reviews"),
-                                        tmp_json.getJSONArray("payment"),
-                                        tmp_json.getJSONArray("category"),
-                                        tmp_json.getJSONArray("menu"),
-                                        tmp_json.getJSONArray("promotions"),
-                                        tmp_json.getJSONArray("all_reviews"));
+                        for (int i=0;i<jsonArray.length();i++) {
+                            JSONObject tmp_json = jsonArray.getJSONObject(i);
+                            Restaurants temp = new Restaurants(tmp_json.getString("id")
+                                    , tmp_json.getString("title"),
+                                    tmp_json.getString("title_ar"),
+                                    tmp_json.getString("area"),
+                                    tmp_json.getString("current_status"),
+                                    tmp_json.getString("hours"),
+                                    tmp_json.getString("time"),
+                                    tmp_json.getString("minimum"),
+                                    tmp_json.getString("image"),
+                                    tmp_json.getString("banner"),
+                                    tmp_json.getString("description"),
+                                    tmp_json.getString("description_ar"),
+                                    tmp_json.getString("small_description"),
+                                    tmp_json.getString("small_description_ar"),
+                                    tmp_json.getString("rating"),
+                                    tmp_json.getString("reviews"),
+                                    tmp_json.getJSONArray("payment"),
+                                    tmp_json.getJSONArray("category"),
+                                    tmp_json.getJSONArray("menu"),
+                                    tmp_json.getJSONArray("promotions"),
+                                    tmp_json.getJSONArray("all_reviews"));
                             restaurantses.add(temp);
+                            if (restaurantses.size()==1) {
+                                Picasso.with(getActivity()).load(restaurantses.get(0).image).into(im1);
+                                t1.setText(restaurantses.get(0).getTitle(getActivity()));
+                                l1.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mCallBack.songselected(restaurantses.get(0));
+                                    }
+                                });
+                            }else if(restaurantses.size()==2) {
+                                Picasso.with(getActivity()).load(restaurantses.get(1).image).into(im2);
+                                t2.setText(restaurantses.get(1).getTitle(getActivity()));
+                                l2.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mCallBack.songselected(restaurantses.get(1));
+                                    }
+                                });
+                            }else if(restaurantses.size()==3) {
+                                Picasso.with(getActivity()).load(restaurantses.get(2).image).into(im3);
+                                t3.setText(restaurantses.get(2).getTitle(getActivity()));
+                                l3.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mCallBack.songselected(restaurantses.get(2));
+                                    }
+                                });
+                            }else if(restaurantses.size()==4) {
+                                Picasso.with(getActivity()).load(restaurantses.get(3).image).into(im4);
+                                t4.setText(restaurantses.get(3).getTitle(getActivity()));
+                                l4.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mCallBack.songselected(restaurantses.get(3));
+                                    }
+                                });
+                            }else {
+
+                            }
                         }
-                    gridElementAdapter.notifyDataSetChanged();
+
+//                    gridElementAdapter.notifyDataSetChanged();
                                         } catch (JSONException e) {
                         e.printStackTrace();
                 }

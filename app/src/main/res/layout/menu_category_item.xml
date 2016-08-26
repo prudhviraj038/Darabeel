@@ -30,7 +30,8 @@
                 android:id="@+id/menu_cat_name"
                 android:textColor="@color/brown"
                 android:gravity="center|start"
-                android:padding="5dp" />
+                android:padding="5dp"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <ImageView

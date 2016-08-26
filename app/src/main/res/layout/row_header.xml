@@ -9,9 +9,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_menu_category"
         android:gravity="center|center_vertical"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_menu_category">
 
         <TextView
            android:id="@+id/headerTitle"
@@ -20,7 +20,7 @@
            android:text="This is a header"
            android:layout_centerVertical="true"
              android:textColor="#ffffff"
-             android:textSize="18dp" />
+             android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

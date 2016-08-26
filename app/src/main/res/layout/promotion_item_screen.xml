@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:text="New Text"
                     android:id="@+id/showmenu_pro_list_tv"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:textColor="#ffffff"
                     android:padding="5dp" />
 

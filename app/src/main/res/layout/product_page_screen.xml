@@ -127,7 +127,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Cost:"
                                     android:id="@+id/sta_cost_pro"
-                                    android:textSize="20dp"
+                                    android:textSize="20sp"
                                     android:textColor="@color/brown"
                                     android:textStyle="bold" />
 
@@ -138,7 +138,7 @@
                                     android:textColor="@color/brown"
                                     android:text="KD 20.22"
                                     android:textStyle="bold"
-                                    android:textSize="18dp" />
+                                    android:textSize="18sp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -187,7 +187,7 @@
                                             android:text="Choices"
                                             android:id="@+id/choice_product_page"
                                             android:textColor="#ffffff"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:layout_weight="1" />
 
                                         <ImageView
@@ -237,7 +237,7 @@
                                             android:text="About chacolateness"
                                             android:id="@+id/spl_request_product"
                                             android:textColor="#ffffff"
-                                            android:textSize="15dp"
+                                            android:textSize="15sp"
                                             android:layout_weight="1" />
 
                                         <ImageView
@@ -264,7 +264,8 @@
                                             android:textColor="#323232"
                                             android:hint="Enter special requriment"
                                             android:minLines="3"
-                                            android:background="#00000000" />
+                                            android:background="#00000000"
+                                            android:textSize="14sp" />
                                     </LinearLayout>
                                 </LinearLayout>
                             </LinearLayout>
@@ -309,7 +310,7 @@
                                 android:text="+"
                                 android:id="@+id/add_cart"
                                 android:textColor="#ffffff"
-                                android:textSize="30dp"
+                                android:textSize="30sp"
                                 android:textStyle="bold"
                                 android:gravity="center"
                                 android:layout_gravity="center" />
@@ -329,7 +330,7 @@
                                 android:id="@+id/minus"
                                 android:textColor="#ffffff"
                                 android:text="-"
-                                android:textSize="30dp"
+                                android:textSize="30sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
 
@@ -340,7 +341,7 @@
                             android:id="@+id/number_pro"
                             android:textColor="#444447"
                             android:gravity="center"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/black_shade_rounded_corners" />
@@ -358,7 +359,7 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/plus"
                                 android:textColor="#ffffff"
-                                android:textSize="30dp"
+                                android:textSize="30sp"
                                 android:textStyle="bold"
                                 android:text="+" />
                         </LinearLayout>
@@ -412,7 +413,7 @@
                 android:text="New Text"
                 android:id="@+id/add_to_cart_msg"
                 android:textColor="@color/brown"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="5dp" />
@@ -439,7 +440,7 @@
                         android:layout_height="wrap_content"
                         android:text="New Text"
                         android:id="@+id/add_more_pp"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textColor="#ffffff"
                         android:singleLine="true"
                         android:ellipsize="end" />
@@ -461,7 +462,7 @@
                         android:layout_height="wrap_content"
                         android:text="New Text"
                         android:id="@+id/go_to_cart_tv"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textColor="#ffffff"
                         android:layout_weight="1"
                         android:singleLine="true"

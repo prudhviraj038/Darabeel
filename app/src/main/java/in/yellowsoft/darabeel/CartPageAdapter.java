@@ -23,7 +23,9 @@ public class CartPageAdapter extends BaseAdapter{
     int [] imageId;
     CartFragment cartFragment;
     ArrayList<CartItem> cart_items;
-//    ArrayList<CompanyDetails> companyDetailses;
+    AlertDialogManager alert = new AlertDialogManager();
+
+    //    ArrayList<CompanyDetails> companyDetailses;
     private static LayoutInflater inflater=null;
     public CartPageAdapter(Context mainActivity, ArrayList<CartItem> cart_items, CartFragment cartFragment) {
         // TODO Auto-generated constructor stub
@@ -92,10 +94,14 @@ public class CartPageAdapter extends BaseAdapter{
         holder.pluse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                number++;
-                holder.cart_item_quantity.setText(":"+String.valueOf(number));
-                cart_items.get(position).quantity =String.valueOf(number);
-                notifyDataSetChanged();
+                if(Integer.parseInt(cart_items.get(position).products.qut)<number){
+                    alert.showAlertDialog(context, "Info",Settings.getword(context,"out_stock")+"   select"+cart_items.get(position).products.qut+" Products", true);
+                }else {
+                    number++;
+                    holder.cart_item_quantity.setText(":" + String.valueOf(number));
+                    cart_items.get(position).quantity = String.valueOf(number);
+                    notifyDataSetChanged();
+                }
             }
         });
         holder. minus.setOnClickListener(new View.OnClickListener() {
