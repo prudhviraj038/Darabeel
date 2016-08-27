@@ -216,7 +216,7 @@ public class CompanyListFragment extends Fragment {
 //                    String constraint = sta + "@_@" + pay + "@_@" + pay + "@_@" + rate;
 //                    companylistAdapter.getFilter().filter(null);
                 get_filter_Resta();
-                    filter_ll.setVisibility(View.GONE);
+//                    filter_ll.setVisibility(View.GONE);
             }
         });
         open_ll.setOnClickListener(new View.OnClickListener() {

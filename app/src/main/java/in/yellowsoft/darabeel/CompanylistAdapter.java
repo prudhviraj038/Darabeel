@@ -135,7 +135,7 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         holder.com_payment_type.removeAllViews();
         for(int i=0;i<restaurants.get(position).payment.size();i++){
             ImageView temp_img = new ImageView(context);
-            temp_img.setAdjustViewBounds(true);
+//            temp_img.setAdjustViewBounds(true);
             Picasso.with(context).load(restaurants.get(position).payment.get(i).image).into(temp_img);
             holder.com_payment_type.addView(temp_img);
         }
