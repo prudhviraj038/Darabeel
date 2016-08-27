@@ -66,10 +66,10 @@ public class AllApis {
                                 String mem_id=jsonObject.getString("member_id");
                                 String code=jsonObject.getString("code");
                                 String msg=jsonObject.getString("message");
-                                Settings.setUserid(context, mem_id, name);
+//                                Settings.setUserid(context, mem_id, name);
                                 Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                                 update_gcm(mem_id, context);;
-                                mcallback.register(code);
+                                mcallback.register(code,mem_id);
                             }
 
                         } catch (JSONException e) {

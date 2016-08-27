@@ -20,7 +20,7 @@ import android.widget.TextView;
  * Created by Chinni on 04-05-2016.
  */
 public class VerificationFragment extends Fragment {
-    String head,code;
+    String head,code,id;
     boolean loaded=false;
     FragmentTouchListner mCallBack;
     EditText enter_code;
@@ -61,6 +61,7 @@ public class VerificationFragment extends Fragment {
         View view = getView();
 //        loaded=true;
         code=(String)getArguments().getString("code");
+        id=(String)getArguments().getString("id");
         tick=(ImageView)view.findViewById(R.id.tick_verification);
         enter_code=(EditText)view.findViewById(R.id.eenter_your_code);
         enter_code.setHint(Settings.getword(getActivity(),"enter_coupon"));
@@ -101,6 +102,7 @@ public class VerificationFragment extends Fragment {
                     alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"valid_verification_code"), true);
 //                    Toast.makeText(getActivity(), Settings.getword(getActivity(), "valid_verification_code"), Toast.LENGTH_SHORT).show();
                 } else {
+                    Settings.setUserid(getActivity(), id, id);
                     mCallBack.after_login();
                 }
             }

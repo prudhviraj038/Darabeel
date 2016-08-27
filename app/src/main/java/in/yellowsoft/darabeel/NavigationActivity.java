@@ -525,13 +525,14 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     }
 
     @Override
-    public void register(String code) {
+    public void register(String code,String mem_id) {
 //            onBackPressed();
         animation_direction=true;
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         VerificationFragment verificationFragment = new VerificationFragment();
         Bundle bundle = new Bundle();
         bundle.putString("code",code);
+        bundle.putString("id",mem_id);
         verificationFragment.setArguments(bundle);
         fragmentManager.beginTransaction().replace(R.id.container_main, verificationFragment).commit();
     }

@@ -54,7 +54,7 @@ public class LoginFragment extends Fragment {
     public interface FragmentTouchListner {
         public void after_login();
         public void text_back_butt(String header);
-        public void register(String code);
+        public void register(String code,String id);
         public void  area_list(String id);
         public  Animation get_animation(Boolean enter,Boolean loaded);
 
