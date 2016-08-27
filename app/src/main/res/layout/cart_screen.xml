@@ -136,83 +136,94 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@drawable/companylist_item_rounded_corners"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:divider="@drawable/cart_page_aleret_divider"
-            android:showDividers="middle"
+            android:background="#33000000"
+            android:clickable="false"
             android:id="@+id/cart_alert"
             android:visibility="gone">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="How do you want to checkout?"
-                android:id="@+id/alert_cart_title"
-                android:textColor="@color/brown"
-                android:textSize="22sp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="10dp" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/pink_rounded_corners_empty"
                 android:gravity="center"
-                android:id="@+id/cart_login_ll"
-                android:padding="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
+                android:divider="@drawable/cart_page_aleret_divider"
+                android:showDividers="middle"
+                android:id="@+id/jjhiuhu">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Login/Register"
-                    android:id="@+id/cart_login"
-                    android:textColor="#ff20b0ff"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                    android:text="How do you want to checkout?"
+                    android:id="@+id/alert_cart_title"
+                    android:textColor="@color/brown"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:id="@+id/cart_guest_ll"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Guest Checkout"
-                    android:id="@+id/cart_guest"
-                    android:textColor="#ff20b0ff"
-                    android:textSize="18sp"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/cart_login_ll"
+                    android:padding="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp" />
-            </LinearLayout>
+                    android:layout_marginBottom="5dp">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/cart_cancel_ll"
-                android:padding="5dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login/Register"
+                        android:id="@+id/cart_login"
+                        android:textColor="@color/brown"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cancel"
-                    android:id="@+id/cart_cancel"
-                    android:textColor="@color/pink_text"
-                    android:textSize="18sp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/cart_guest_ll"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Guest Checkout"
+                        android:id="@+id/cart_guest"
+                        android:textColor="@color/brown"
+                        android:textSize="18sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/cart_cancel_ll"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancel"
+                        android:id="@+id/cart_cancel"
+                        android:textColor="@color/pink_text"
+                        android:textSize="18sp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
     </RelativeLayout>
 
 </LinearLayout>

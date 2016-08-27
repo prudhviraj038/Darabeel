@@ -38,7 +38,7 @@ import java.util.ArrayList;
  */
 public class CompanyPageFragment extends Fragment {
     Restaurants restaurants;
-    ReviewsAdapter reviewsAdapter;
+
     boolean loaded=false;
     AlertDialogManager alert = new AlertDialogManager();
     ImageView company_logo,review_res_logo;
@@ -60,6 +60,7 @@ public class CompanyPageFragment extends Fragment {
         public  Animation get_animation(Boolean enter,Boolean loaded);
         public void area_list(String id,Restaurants restaurants);
         public void to_promotions(Restaurants restaurants);
+        public void reviews_page(Restaurants restaurants);
     }
     @Override
     public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
@@ -95,14 +96,11 @@ public class CompanyPageFragment extends Fragment {
         head=restaurants.getTitle(getActivity());
         mCallBack.text_back_butt(head);
         viewFlipper=(ViewFlipper)view.findViewById(R.id.viewFlipper5);
-        listView=(ListView)view.findViewById(R.id.reviews_list);
-        reviewsAdapter=new ReviewsAdapter(getActivity(),restaurants);
-        listView.setAdapter(reviewsAdapter);
+
         Log.e("res_name", restaurants.getTitle(getActivity()));
         rating=(LinearLayout)view.findViewById(R.id.rating_com_page);
         Settings.set_rating(getActivity(), restaurants.rating, rating);
-        review_rating=(LinearLayout)view.findViewById(R.id.review_rating);
-        Settings.set_rating(getActivity(), restaurants.rating, review_rating);
+
         tab_about_ll=(LinearLayout)view.findViewById(R.id.about_tab_ll);
         tab_other_ll=(LinearLayout)view.findViewById(R.id.other_info_tab_ll);
         about_ll=(LinearLayout)view.findViewById(R.id.ll_res_about);
@@ -136,11 +134,14 @@ public class CompanyPageFragment extends Fragment {
         sta_show=(TextView)view.findViewById(R.id.tv_show_menu);
         sta_show.setText(Settings.getword(getActivity(),"show_menu"));
         area_tv=(TextView)view.findViewById(R.id.select_area_tv);
-        area_tv.setText(Settings.getword(getActivity(),"select_area"));
+        if(Settings.getArea_id(getActivity()).equals("-1")){
+            area_tv.setText(Settings.getword(getActivity(),"select_area"));
+        }else {
+            area_tv.setText(Settings.getArea_name(getActivity()));
+        }
         review=(TextView)view.findViewById(R.id.reviews_com_page);
-        review.setText(Settings.getword(getActivity(),"review"));
-        review_res_logo=(ImageView)view.findViewById(R.id.res_review_logo);
-        Picasso.with(getActivity()).load(restaurants.image).into(review_res_logo);
+        review.setText(Settings.getword(getActivity(), "review"));
+
         company_logo=(ImageView)view.findViewById(R.id.resta_img);
         Picasso.with(getActivity()).load(restaurants.image).into(company_logo);
         tab_other_ll.setOnClickListener(new View.OnClickListener() {
@@ -170,7 +171,7 @@ public class CompanyPageFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 getarea();
-                viewFlipper.setDisplayedChild(2);
+                viewFlipper.setDisplayedChild(1);
 //                mCallBack.area_list(restaurants.res_id,restaurants);
             }
         });
@@ -192,7 +193,7 @@ public class CompanyPageFragment extends Fragment {
         review_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewFlipper.setDisplayedChild(1);;
+               mCallBack.reviews_page(restaurants);
             }
         });
         about_company=(TextView)view.findViewById(R.id.about_restauarnt);
@@ -260,9 +261,6 @@ public class CompanyPageFragment extends Fragment {
                     if (viewFlipper.getDisplayedChild() == 1) {
                         viewFlipper.setDisplayedChild(0);
                         return true;
-                    }else if (viewFlipper.getDisplayedChild() == 2) {
-                            viewFlipper.setDisplayedChild(0);
-                            return true;
                     }else{
                         loaded = true;
                         return false;

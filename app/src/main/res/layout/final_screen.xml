@@ -67,8 +67,7 @@
                                     android:textColor="#ffffff"
                                     android:textSize="15sp"
                                     android:layout_weight="1"
-                                    android:text="Personal Details"
-                                    android:gravity="center" />
+                                    android:text="Personal Details" />
 
                             </LinearLayout>
 
@@ -282,7 +281,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="25dp"
                                     android:id="@+id/drop_down"
-                                    android:src="@drawable/down_arrow_full_white" />
+                                    android:src="@drawable/down_arrow_full_white"
+                                    android:visibility="gone" />
 
                                 <LinearLayout
                                     android:orientation="horizontal"
@@ -771,12 +771,12 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/spl_instructions"
                                     android:textColor="@color/brown"
-                                    android:gravity="center_vertical"
                                     android:textSize="12sp"
                                     android:hint="Enter any special instructions"
                                     android:background="#00000000"
                                     android:minLines="5"
-                                    android:textColorHint="@color/brown" />
+                                    android:textColorHint="@color/brown"
+                                    android:gravity="top" />
 
                             </LinearLayout>
 
@@ -1201,7 +1201,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_vertical"
-                                    android:id="@+id/later_ll">
+                                    android:id="@+id/later_ll"
+                                    android:layout_weight="1">
 
                                     <ImageView
                                         android:layout_width="20dp"
@@ -1228,7 +1229,7 @@
                                     android:text="New Text"
                                     android:id="@+id/textView26"
                                     android:layout_weight="1"
-                                    android:visibility="invisible" />
+                                    android:visibility="gone" />
 
                                 <LinearLayout
                                     android:orientation="horizontal"

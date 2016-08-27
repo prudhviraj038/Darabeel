@@ -16,7 +16,10 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class CompanylistAdapter extends BaseAdapter implements Filterable{
     Context context;
@@ -129,10 +132,10 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         holder.trally_charge.setText(restaurants.get(position).min+" KD ");
         Picasso.with(context).load(restaurants.get(position).image).into(holder.com_logo);
         holder.com_payment_type=(LinearLayout)rowView.findViewById(R.id.payment_com_item);
-        holder.com_payment_type.removeAllViews();
+//        holder.com_payment_type.removeAllViews();
         for(int i=0;i<restaurants.get(position).payment.size();i++){
             ImageView temp_img = new ImageView(context);
-            temp_img.setAdjustViewBounds(true);
+//            temp_img.setAdjustViewBounds(true);
             Picasso.with(context).load(restaurants.get(position).payment.get(i).image).into(temp_img);
             holder.com_payment_type.addView(temp_img);
         }
@@ -163,19 +166,13 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
             }
             else {
 // We perform filtering operation
-                String filters[] = String.valueOf(constraint).split("@_@");
                 List<Restaurants> nPlanetList = new ArrayList<Restaurants>();
-                for (Restaurants p : restaurants_all) {
-                    Log.e(p.status, filters[0]);
-                    if (filters[0]==null || p.status.equals(filters[0]))
-                    {
-                        if(filters[3]==null || p.rating.equals(filters[3]))
-                        {
-                            nPlanetList.add(p);
-                        }
 
-                        }
-                    }
+                for (Restaurants p : restaurants_all) {
+                    Log.e(p.rating,String.valueOf(constraint));
+                    if (Integer.parseInt(p.rating)>=Integer.parseInt(String.valueOf(constraint)));
+                        nPlanetList.add(p);
+                }
 
                 results.values = nPlanetList;
                 results.count = nPlanetList.size();
@@ -185,12 +182,12 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         }
         @Override
         protected void publishResults(CharSequence constraint,FilterResults results) {
-            if (results.count == 0) {
-                restaurants = (ArrayList<Restaurants>) results.values;
+            if(clear_all){
+                restaurants = restaurants_all;
                 notifyDataSetChanged();
             }
-            else if(clear_all){
-                restaurants = restaurants_all;
+            else if (results.count == 0) {
+                restaurants = (ArrayList<Restaurants>) results.values;
                 notifyDataSetChanged();
             }
             else {

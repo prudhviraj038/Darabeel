@@ -72,6 +72,9 @@ public class FinalFragment extends Fragment {
     Float dara_charges=0f;
     Float del_total = 0f;
     Float grn_total = 0f;
+    String delivery;
+    boolean islater=false;
+    int hour,minutes;
     Float g_total = 0f;
     Float dis_amount = 0f;
     ViewFlipper viewFlipper;
@@ -217,9 +220,9 @@ public class FinalFragment extends Fragment {
         sub_total=(TextView)view.findViewById(R.id.sub_total_final);
         discount=(TextView)view.findViewById(R.id.discount_final);
         delivery_charges=(TextView)view.findViewById(R.id.delivery_charges_final);
-        delivery_charges.setText(Settings.getDelivery_charges(getActivity()));
+        delivery_charges.setText(Settings.getDelivery_charges(getActivity())+" KD");
         dara=(TextView)view.findViewById(R.id.dara_charges_final);
-        dara.setText(Settings.getSettings(getActivity(), "darabeel_charges"));
+        dara.setText(Settings.getSettings(getActivity(), "darabeel_charges")+" KD");
         grand_total=(TextView)view.findViewById(R.id.grand_total_final);
         stat_sub_total=(TextView)view.findViewById(R.id.static_sub_total);
         stat_sub_total.setText(Settings.getword(getActivity(), "sub_total"));
@@ -282,7 +285,27 @@ public class FinalFragment extends Fragment {
         date_tv=(TextView)view.findViewById(R.id.delivery_date);
         date_tv.setText(mDay+" - "+mMonth+" - "+mYear);
         time_tv=(TextView)view.findViewById(R.id.delivery_time);
-        time_tv.setText(mHour+" : "+mMinute);
+        hour = mHour;
+        minutes = mMinute;
+        String timeSet = "";
+        if (hour > 12) {
+            hour -= 12;
+            timeSet = "PM";
+        } else if (hour == 0) {
+            hour += 12;
+            timeSet = "AM";
+        } else if (hour == 12)
+            timeSet = "PM";
+        else
+            timeSet = "AM";
+
+        String min = "";
+        if (minutes < 10)
+            min = "0" + minutes ;
+        else
+            min = String.valueOf(minutes);
+        time_tv.setText(new StringBuilder().append(hour).append(':')
+                .append(min ).append(" ").append(timeSet).toString());
         plus_spl_comments=(ImageView)view.findViewById(R.id.plus_img_spl_comm);
         plue_img_coupon=(ImageView)view.findViewById(R.id.plus_img_coupon);
         spl_com_ll=(LinearLayout)view.findViewById(R.id.spl_comm_ll);
@@ -330,12 +353,13 @@ public class FinalFragment extends Fragment {
 
         }
         discount.setText("0 KD");
-        sub_total.setText(String.valueOf(total) + "KD");
+        sub_total.setText(String.valueOf(total) + " KD");
         del_total = Float.parseFloat(Settings.getDelivery_charges(getActivity()));
         dara_charges=Float.parseFloat(Settings.getSettings(getActivity(), "darabeel_charges"));
+
         grn_total= total+del_total+dara_charges;
         g_total=grn_total;
-        grand_total.setText(String.valueOf(g_total) + "KD");
+        grand_total.setText(String.valueOf(g_total) + " KD");
 
         spl_comment = (EditText) view.findViewById(R.id.spl_instructions);
         spl_comment.setHint(Settings.getword(getActivity(), "special_comments"));
@@ -359,68 +383,100 @@ public class FinalFragment extends Fragment {
             public void onClick(View view) {
                 now_img.setImageResource(R.drawable.ic_option_pink);
                 later_img.setImageResource(R.drawable.ic_option_brown);
-                date1=mDay+"-"+mMonth+"-"+mYear;
-                time1=mHour+":"+mMinute;
-                date=mDay+"-"+mMonth+"-"+mYear;
-                time=mHour+":"+mMinute;
+//                date1=mDay+"-"+mMonth+"-"+mYear;
+//                time1=mHour+":"+mMinute;
+                delivery="1";
+                islater=false;
+                date="";
+                time="";
+                date1="0";
+                time1="0";
 
             }
         });
+
         later.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 later_img.setImageResource(R.drawable.ic_option_pink);
                 now_img.setImageResource(R.drawable.ic_option_brown);
+                delivery="2";
+                islater=true;
             }
         });
-        dt_ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        if(islater) {
+            dt_ll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                final Calendar c1 = Calendar.getInstance();
-                mHour = c1.get(Calendar.HOUR_OF_DAY);
-                mMinute = c1.get(Calendar.MINUTE);
-                TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        String temp=String.valueOf(hourOfDay);
-                        if(temp.length()<2)
-                            temp="0"+temp;
-                        String temp1=String.valueOf(minute);
-                        if(temp1.length()<2)
-                            temp1="0"+temp1;
-                        time = temp + ":" + temp1;
-                        time1 = temp+":"+temp1;
-                        time_tv.setText(time);
-                    }
-                }, mHour, mMinute, false);
-                timePickerDialog.show();
+                    final Calendar c1 = Calendar.getInstance();
+                    mHour = c1.get(Calendar.HOUR_OF_DAY);
+                    mMinute = c1.get(Calendar.MINUTE);
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                            String temp = String.valueOf(hourOfDay);
+                            if (temp.length() < 2)
+                                temp = "0" + temp;
+                            String temp1 = String.valueOf(minute);
+                            if (temp1.length() < 2)
+                                temp1 = "0" + temp1;
+                            hour = hourOfDay;
+                            minutes = minute;
+                            String timeSet = "";
+                            if (hour > 12) {
+                                hour -= 12;
+                                timeSet = "PM";
+                            } else if (hour == 0) {
+                                hour += 12;
+                                timeSet = "AM";
+                            } else if (hour == 12)
+                                timeSet = "PM";
+                            else
+                                timeSet = "AM";
+
+                            String min = "";
+                            if (minutes < 10)
+                                min = "0" + minutes;
+                            else
+                                min = String.valueOf(minutes);
+
+                            // Append in a StringBuilder
+                            time1 = new StringBuilder().append(hour).append(':')
+                                    .append(min).append(" ").append(timeSet).toString();
+                            time = temp1;
+//                        time1 = temp+":"+temp1;
+                            time_tv.setText(time1);
+                        }
+                    }, mHour, mMinute, false);
+                    timePickerDialog.show();
 
 
-                final Calendar c = Calendar.getInstance();
-                mYear = c.get(Calendar.YEAR);
-                mMonth = c.get(Calendar.MONTH);
-                mDay = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        String temp = String.valueOf(monthOfYear + 1);
-                        if (temp.length() < 2)
-                            temp = "0" + temp;
-                        String temp1 = String.valueOf(dayOfMonth);
-                        if (temp1.length() < 2)
-                            temp1 = "0" + temp1;
-                        date = year + "-" + temp + "-" + temp1;
-                        date1 = temp1 + "-" + temp + "-" + year;
-                        date_tv.setText(date);
+                    final Calendar c = Calendar.getInstance();
+                    mYear = c.get(Calendar.YEAR);
+                    mMonth = c.get(Calendar.MONTH);
+                    mDay = c.get(Calendar.DAY_OF_MONTH);
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                            String temp = String.valueOf(monthOfYear + 1);
+                            if (temp.length() < 2)
+                                temp = "0" + temp;
+                            String temp1 = String.valueOf(dayOfMonth);
+                            if (temp1.length() < 2)
+                                temp1 = "0" + temp1;
+                            date = temp1 + "-" + temp + "-" + year;
+                            date1 = temp1 + "-" + temp + "-" + year;
+                            date_tv.setText(date);
 //                        time_ll.performClick();
-                    }
-                }, mYear, mMonth, mDay);
-                datePickerDialog.show();
+                        }
+                    }, mYear, mMonth, mDay);
+                    datePickerDialog.show();
 
 
-            }
-        });
+                }
+            });
+        }
 //        time_ll.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -431,8 +487,13 @@ public class FinalFragment extends Fragment {
         get_address_list();
 //        address_guest_ll=(LinearLayout)view.findViewById(R.id.address_guest_ll);
         drop_down=(ImageView)view.findViewById(R.id.drop_down);
+        if(Settings.getUserid(getActivity()).equals("-1")){
+            drop_down.setVisibility(View.GONE);
+        }else{
+            drop_down.setVisibility(View.VISIBLE);
+        }
         drop_down_ll=(LinearLayout)view.findViewById(R.id.drop_down_ll);
-        drop_down_ll.setOnClickListener(new View.OnClickListener() {
+        drop_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TextView title1 = new TextView(getActivity());
@@ -749,15 +810,18 @@ public class FinalFragment extends Fragment {
 //                    else if (e_mobile.getText().toString().equals(""))
 //                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"please_enter_mobile"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_mobile"), Toast.LENGTH_SHORT).show();
-                    else if (time.equals(""))
+                    else if (time1.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"empty_delivery_time"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"empty_delivery_time"), Toast.LENGTH_SHORT).show();
-                    else if (date.equals(""))
+                    else if (date1.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_delivery_date"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"empty_delivery_date"), Toast.LENGTH_SHORT).show();
                     else if (pay_met.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_payment"), false);
                     else {
+                        if(delivery.equals("1"))
+                            place_set_data();
+                        else
                         check_date_time();
 
                  }
@@ -774,16 +838,19 @@ public class FinalFragment extends Fragment {
 //                    else if (e_mobile.getText().toString().equals(""))
 //                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"please_enter_mobile"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_mobile"), Toast.LENGTH_SHORT).show();
-                    else if (time.equals(""))
+                    else if (time1.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"empty_delivery_time"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"empty_delivery_time"), Toast.LENGTH_SHORT).show();
-                    else if (date.equals(""))
+                    else if (date1.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_delivery_date"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"empty_delivery_date"), Toast.LENGTH_SHORT).show();
                     else if (pay_met.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_payment"), false);
                     else {
-                        check_date_time();
+                        if(delivery.equals("1"))
+                            place_set_data();
+                        else
+                            check_date_time();
                     }
                 }
                 }
@@ -884,6 +951,7 @@ public class FinalFragment extends Fragment {
                         place_order_object.put("delivery_charges", Settings.getDelivery_charges(getActivity()));
                         place_order_object.put("total_price", String.valueOf(g_total));
                         place_order_object.put("payment_method", pay_met);
+                        place_order_object.put("delivery", delivery);
                         place_order_object.put("delivery_date", date);
                         place_order_object.put("delivery_time", time);
                         place_order_object.put("member_id", Settings.getUserid(getActivity()));
@@ -1119,7 +1187,7 @@ public class FinalFragment extends Fragment {
                             add.performClick();
                             cancel.setVisibility(View.GONE);
                         } else {
-                            drop_down_ll.performClick();
+                            drop_down.performClick();
                         }
                     }
                 } catch (JSONException e) {

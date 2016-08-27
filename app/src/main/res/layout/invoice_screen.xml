@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/linearLayout40"
-        android:background="#ffffff">
+        android:background="#ffffff"
+        android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -27,7 +28,7 @@
                 android:layout_marginRight="3dp"
                 android:singleLine="true"
                 android:ellipsize="marquee"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -654,5 +655,27 @@
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/pink_rounded_corners"
+        android:gravity="center"
+        android:id="@+id/home_iv_ll">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/home_tv"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:padding="5dp" />
     </LinearLayout>
 </LinearLayout>

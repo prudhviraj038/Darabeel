@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class ProductPageFragment extends Fragment {
     Products  products;
     int quantity=1,count=0,seek_value;
-    int click=1;
+    int click=2,click1=1;
     boolean loaded=false;
     OptionsAdapter optionsAdapter;
     ListView group_list;
@@ -138,13 +138,13 @@ public class ProductPageFragment extends Fragment {
         plus_img_option.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (click == 1) {
-                    options_ll_list.setVisibility(View.VISIBLE);
-                    plus_img_option.setImageResource(R.drawable.minus_for_dara);
-                    click = 2;
-                } else {
+                if (options_ll_list.getVisibility()==View.VISIBLE) {
                     options_ll_list.setVisibility(View.GONE);
                     plus_img_option.setImageResource(R.drawable.plus_for_dara);
+                    click = 2;
+                } else {
+                    options_ll_list.setVisibility(View.VISIBLE);
+                    plus_img_option.setImageResource(R.drawable.minus_for_dara);
                     click = 1;
                 }
             }
@@ -152,14 +152,14 @@ public class ProductPageFragment extends Fragment {
         plus_spl_request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(click==1){
+                if(click1==1){
                     spl_request_ll.setVisibility(View.VISIBLE);
                     plus_spl_request.setImageResource(R.drawable.minus_for_dara);
-                    click=2;
+                    click1=2;
                 }else{
                     spl_request_ll.setVisibility(View.GONE);
                     plus_spl_request.setImageResource(R.drawable.plus_for_dara);
-                    click=1;
+                    click1=1;
                 }
             }
         });

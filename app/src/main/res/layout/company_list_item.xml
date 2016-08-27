@@ -231,11 +231,19 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:id="@+id/payment_com_item">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:id="@+id/payment_com_item"
+                        android:layout_margin="3dp">
+
+                    </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

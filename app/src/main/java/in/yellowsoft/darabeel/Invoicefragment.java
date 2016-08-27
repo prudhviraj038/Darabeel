@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,9 +18,10 @@ import android.widget.TextView;
 public class Invoicefragment extends Fragment {
     TextView sta_ord_id, sta_ord_date, Sta_ord_name, sta_ord_mobile, sta_ord_area, sta_ord_block, sta_ord_street, sta_ord_bilding,sta_delivery_date,
             sta_discount_oreder, discount_order, sta_or_det_floor, sta_or_det_flat, or_det_floor,or_det_flat,sta_sub_total, sta_dc, sta_grand_total, ord_date, ord_id, ord_name,
-            ord_mobile, ord_area, ord_block, ord_street, ord_building,ord_sub_total, ord_dc, ord_grand_total,tq,delivery_date,sta_dara,dara;
+            ord_mobile, ord_area, ord_block, ord_street, ord_building,ord_sub_total, ord_dc, ord_grand_total,tq,delivery_date,sta_dara,dara,home_tv;
     ListView ord_detail_list;
     String head;
+    LinearLayout home_ll;
     JsonOrders orderses;
     boolean loaded=false;
     InvoiceDetailsAdapter invoiceDetailsAdapter;
@@ -93,7 +95,9 @@ public class Invoicefragment extends Fragment {
         sta_discount_oreder.setText(Settings.getword(getActivity(), "discount"));
         sta_dara = (TextView) view.findViewById(R.id.sta_dara_invoice);
         sta_dara.setText(Settings.getword(getActivity(), "darabeel_charges"));
-
+        home_tv = (TextView) view.findViewById(R.id.home_tv);
+        home_tv.setText(Settings.getword(getActivity(), "home"));
+        home_ll = (LinearLayout) view.findViewById(R.id.home_iv_ll);
 
         ord_date = (TextView) view.findViewById(R.id.tq_order_date);
         delivery_date = (TextView) view.findViewById(R.id.delivery_date);
@@ -135,7 +139,12 @@ public class Invoicefragment extends Fragment {
         ord_detail_list = (ListView) view.findViewById(R.id.tq_list);
         ord_detail_list.setAdapter(invoiceDetailsAdapter);
         setListViewHeightBasedOnItems(ord_detail_list);
-
+        home_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCallBack.to_home();
+            }
+        });
         mCallBack.clear_cart();
         view.setFocusableInTouchMode(true);
         view.requestFocus();

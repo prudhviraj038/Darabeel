@@ -48,9 +48,9 @@
                 android:background="#00000000"
                 android:hint="Enter Your Code"
                 android:textSize="15sp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:textCursorDrawable = "@null"/>
+                android:textColorHint="#918d8d"
+                android:textCursorDrawable = "@null"
+                android:textColor="#918d8d" />
 
             <ImageView
                 android:layout_width="wrap_content"

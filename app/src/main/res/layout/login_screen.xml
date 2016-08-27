@@ -284,7 +284,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/brown_rounded_corners"
@@ -307,11 +307,20 @@
                             android:layout_marginBottom="5dp"
                             android:singleLine="true"
                             android:textColorHint="#918d8d"
-                            android:textCursorDrawable = "@null"/>
+                            android:textCursorDrawable = "@null"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tick_signup_mobile"
+                            android:src="@drawable/tick_icon"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/brown_rounded_corners"
@@ -333,11 +342,20 @@
                             android:textSize="15sp"
                             android:singleLine="true"
                             android:textColorHint="#918d8d"
-                            android:textCursorDrawable = "@null"/>
+                            android:textCursorDrawable = "@null"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tick_signup_email"
+                            android:src="@drawable/tick_icon"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/brown_rounded_corners"
@@ -360,7 +378,16 @@
                             android:textSize="15sp"
                             android:singleLine="true"
                             android:textColorHint="#918d8d"
-                            android:textCursorDrawable = "@null"/>
+                            android:textCursorDrawable = "@null"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tick_signup_pass"
+                            android:src="@drawable/tick_icon"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -393,12 +420,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/imageView26"
-                            android:src="@drawable/down_arrow_black"
+                            android:src="@drawable/down_arrow_brown"
                             android:layout_weight="1" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/brown_rounded_corners"
@@ -419,11 +446,20 @@
                             android:textSize="15sp"
                             android:singleLine="true"
                             android:textColorHint="#918d8d"
-                            android:textCursorDrawable = "@null"/>
+                            android:textCursorDrawable = "@null"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tick_signup_block"
+                            android:src="@drawable/tick_icon"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/brown_rounded_corners"
@@ -444,11 +480,20 @@
                             android:textSize="15sp"
                             android:singleLine="true"
                             android:textColorHint="#918d8d"
-                            android:textCursorDrawable = "@null"/>
+                            android:textCursorDrawable = "@null"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tick_signup_street"
+                            android:src="@drawable/tick_icon"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/brown_rounded_corners"
@@ -469,7 +514,16 @@
                             android:textSize="15sp"
                             android:singleLine="true"
                             android:textColorHint="#918d8d"
-                            android:textCursorDrawable = "@null"/>
+                            android:textCursorDrawable = "@null"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tick_signup_house"
+                            android:src="@drawable/tick_icon"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout

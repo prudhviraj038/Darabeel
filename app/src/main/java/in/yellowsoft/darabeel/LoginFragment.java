@@ -49,7 +49,7 @@ public class LoginFragment extends Fragment {
     FragmentTouchListner mCallBack;
     ArrayList<Area> area_list;
     AreaAdapter personAdapter ;
-    ImageView tick_login_email,tick_login_pass,tick_fname,tick_lname;
+    ImageView tick_login_email,tick_login_pass,tick_fname,tick_lname,tick_signup_email,tick_signup_pass,tick_mobile,tick_block,tick_street,tick_house;
     String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     public interface FragmentTouchListner {
         public void after_login();
@@ -90,6 +90,12 @@ public class LoginFragment extends Fragment {
         mCallBack.text_back_butt(head);
         tick_fname=(ImageView)view.findViewById(R.id.tick_signup_fname);
         tick_lname=(ImageView)view.findViewById(R.id.tick_signup_lname);
+        tick_mobile=(ImageView)view.findViewById(R.id.tick_signup_mobile);
+        tick_signup_email=(ImageView)view.findViewById(R.id.tick_signup_email);
+        tick_signup_pass=(ImageView)view.findViewById(R.id.tick_signup_pass);
+        tick_block=(ImageView)view.findViewById(R.id.tick_signup_block);
+        tick_street=(ImageView)view.findViewById(R.id.tick_signup_street);
+        tick_house=(ImageView)view.findViewById(R.id.tick_signup_house);
         tick_login_email=(ImageView)view.findViewById(R.id.tick_login_email);
         tick_login_pass=(ImageView)view.findViewById(R.id.tick_login_password);
         final LinearLayout login = (LinearLayout) view.findViewById(R.id.login);
@@ -181,12 +187,19 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
                 alert.setTitle(Settings.getword(getActivity(), "forgot_password_sent"));
+                LinearLayout layout = new LinearLayout(getActivity());
                 final EditText input = new EditText(getActivity());
-                input.setMinLines(5);
+                input.setMinLines(2);
+                input.setHint(Settings.getword(getActivity(),"email_address"));
                 input.setVerticalScrollBarEnabled(true);
-                input.setBackgroundResource(R.drawable.comments_bg);
-                input.setPadding(10, 10, 10, 10);
-                alert.setView(input);
+                input.setBackgroundResource(R.drawable.pink_rounded_corners_e);
+                LinearLayout.LayoutParams buttonLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                buttonLayoutParams.setMargins(20, 10, 20, 10);
+                input.setLayoutParams(buttonLayoutParams);
+                layout.setOrientation(LinearLayout.VERTICAL);
+                layout.addView(input);
+
+                alert.setView(layout);
                 alert.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -250,10 +263,73 @@ public class LoginFragment extends Fragment {
 
         et_phone = (EditText) view.findViewById(R.id.mobile_signup);
         et_phone.setHint(Settings.getword(getActivity(),"mobile_number")+"*");
+        et_phone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() != 0) {
+                    tick_mobile.setVisibility(View.VISIBLE);
+                } else
+                    tick_mobile.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         etr_email = (EditText) view.findViewById(R.id.email_signup);
         etr_email.setHint(Settings.getword(getActivity(),"email_address"));
+        etr_email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.toString().matches(emailPattern)) {
+                    tick_signup_email.setVisibility(View.VISIBLE);
+                } else
+                    tick_signup_email.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
          etr_password = (EditText) view.findViewById(R.id.pass_signup);
         etr_password.setHint(Settings.getword(getActivity(),"password")+"*");
+        etr_password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() > 6) {
+                    tick_signup_pass.setVisibility(View.VISIBLE);
+                } else
+                    tick_signup_pass.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         et_area = (TextView) view.findViewById(R.id.area_signup);
         et_area.setText(Settings.getword(getActivity(), "area") + "*");
         area_list_signup = (LinearLayout) view.findViewById(R.id.area_list_signup);
@@ -279,10 +355,73 @@ public class LoginFragment extends Fragment {
         });
         et_block = (EditText) view.findViewById(R.id.block_signup);
         et_block.setHint(Settings.getword(getActivity(), "block") + "*");
+        et_block.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() != 0) {
+                    tick_block.setVisibility(View.VISIBLE);
+                } else
+                    tick_block.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         et_street = (EditText) view.findViewById(R.id.street_signup);
         et_street.setHint(Settings.getword(getActivity(),"street")+"*");
+        et_street.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() != 0) {
+                    tick_street.setVisibility(View.VISIBLE);
+                } else
+                    tick_street.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         et_house = (EditText) view.findViewById(R.id.house_signup);
         et_house.setHint(Settings.getword(getActivity(),"house")+"*");
+        et_house.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if (s.length() != 0) {
+                    tick_house.setVisibility(View.VISIBLE);
+                } else
+                    tick_house.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         et_floor = (EditText) view.findViewById(R.id.floor_signup);
         et_floor.setHint(Settings.getword(getActivity(),"floor_number"));
         et_flat = (EditText) view.findViewById(R.id.flat_signup);

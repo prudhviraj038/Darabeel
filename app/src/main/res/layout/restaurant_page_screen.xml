@@ -634,75 +634,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout7"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="2dp"
-                android:layout_margin="2dp" >
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/menu_cat_rounded_corners"
-                    android:padding="5dp" >
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:id="@+id/res_review_logo"
-                        android:src="@drawable/img_restaurants" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|end"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:id="@+id/linearLayout6"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp">
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:layout_marginBottom="5dp"
-                        android:id="@+id/review_rating" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/menu_cat_rounded_corners"
-                android:id="@+id/linearLayout15"
-                android:layout_marginTop="10dp" >
-
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/reviews_list"
-                    android:padding="10dp" />
-            </LinearLayout>
-
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"

@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 public class NavigationActivity extends FragmentActivity implements HomeFragment.FragmentTouchListner ,
         LoginFragment.FragmentTouchListner, CompanyListFragment.FragmentTouchListner, CompanyPageFragment.FragmentTouchListner,
          MenuCategoryfragment.FragmentTouchListner, ProductListFragment.FragmentTouchListner,
-        ProductPageFragment.FragmentTouchListner, CartFragment.FragmentTouchListner, FinalFragment.FragmentTouchListner, NotificationFragment.FragmentTouchListner, AboutUsfragment.FragmentTouchListner, ContactUsFragment.FragmentTouchListner, TermsConditionsFragment.FragmentTouchListner, MyAccountFragment.FragmentTouchListner, Invoicefragment.FragmentTouchListner, OffersListFragment.FragmentTouchListner, PromotionsListFragment.FragmentTouchListner, SearchFragment.FragmentTouchListner, VerificationFragment.FragmentTouchListner, MyOrdersfragment.FragmentTouchListner, MyAddressfragment.FragmentTouchListner, ChangePasswordfragment.FragmentTouchListner, EditProfilefragment.FragmentTouchListner, Settingsfragment.FragmentTouchListner, AreaFragment.FragmentTouchListner {
+        ProductPageFragment.FragmentTouchListner, CartFragment.FragmentTouchListner, FinalFragment.FragmentTouchListner, NotificationFragment.FragmentTouchListner, AboutUsfragment.FragmentTouchListner, ContactUsFragment.FragmentTouchListner, TermsConditionsFragment.FragmentTouchListner, MyAccountFragment.FragmentTouchListner, Invoicefragment.FragmentTouchListner, OffersListFragment.FragmentTouchListner, PromotionsListFragment.FragmentTouchListner, SearchFragment.FragmentTouchListner, VerificationFragment.FragmentTouchListner, MyOrdersfragment.FragmentTouchListner, MyAddressfragment.FragmentTouchListner, ChangePasswordfragment.FragmentTouchListner, EditProfilefragment.FragmentTouchListner, Settingsfragment.FragmentTouchListner, AreaFragment.FragmentTouchListner, Reviewsfragment.FragmentTouchListner {
     ArrayList<Integer> prgmImages = new ArrayList<>();
     ArrayList<String> prgmTitles = new ArrayList<>();
     ArrayList<Integer> subprgmImages = new ArrayList<>();
@@ -96,6 +97,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
             @Override
             public void onClick(View v) {
                 onBackPressed();
+//                NavigationActivity.this.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
             }
         });
         lang_ll=(LinearLayout)findViewById(R.id.lang_nav_ll);
@@ -456,6 +458,20 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         menu.setVisibility(View.GONE);
         cart_icon.setVisibility(View.GONE);
     }
+    @Override
+    public void review_page_head(String head) {
+        nav_title.setVisibility(View.VISIBLE);
+        nav_title.setText(head);
+        lang_ll.setVisibility(View.GONE);
+        search.setVisibility(View.GONE);
+        logout.setVisibility(View.GONE);
+        back.setVisibility(View.GONE);
+        waste.setVisibility(View.GONE);
+        menu_back.setVisibility(View.VISIBLE);
+        cart_icon.setVisibility(View.GONE);
+        filter.setVisibility(View.GONE);
+        menu.setVisibility(View.GONE);
+    }
     int count=0;
     @Override
     public void filter(String head) {
@@ -477,7 +493,14 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         });
         menu.setVisibility(View.GONE);
     }
-
+    @Override
+    public void reviews_page(Restaurants restaurants){
+        Reviewsfragment fragment4 = new Reviewsfragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("restaurant",restaurants);
+        fragment4.setArguments(bundle);
+        fragmentManager.beginTransaction().replace(R.id.container_main, fragment4).addToBackStack(null).commit();
+    }
     @Override
     public void gotoinvoicepage(JsonOrders invoice) {
         Invoicefragment fragment4 = new Invoicefragment();
@@ -498,7 +521,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         animation_direction=true;
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         LoginFragment loginFragment = new LoginFragment();
-        fragmentManager.beginTransaction().replace(R.id.container_main, loginFragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.container_main, loginFragment).addToBackStack(null).commit();
     }
 
     @Override
@@ -534,7 +557,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         bundle.putSerializable("cart_items", cart_items);
         FinalFragment finalFragment = new FinalFragment();
         finalFragment.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.container_main, finalFragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.container_main, finalFragment).addToBackStack(null).commit();
     }
     @Override
     public void clear_cart() {

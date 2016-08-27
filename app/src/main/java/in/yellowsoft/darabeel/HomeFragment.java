@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
     AlertDialogManager alert = new AlertDialogManager();
     ArrayList<Area> area_list;
     AreaAdapter personAdapter ;
-    String cat,head_home;
+    String cat="0",head_home;
     @Override
     public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
         return mCallBack.get_animation(enter,loaded);
