@@ -28,12 +28,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Chinni on 04-05-2016.
@@ -41,6 +44,7 @@ import java.util.ArrayList;
 public class LoginFragment extends Fragment {
     String head,write;
     TextView et_area;
+    AlertDialogManager alert = new AlertDialogManager();
     EditText et_fname, et_lname, et_phone, etr_email, etr_password,et_block,et_street,et_house,et_floor,et_flat,et_email,et_password;
     LinearLayout register,area_list_signup;
     AllApis allApis=new AllApis();
@@ -511,11 +515,77 @@ public class LoginFragment extends Fragment {
                 catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Settings.set_Address_json(getActivity(),jsonObject.toString());
-                allApis.signup(getActivity(),fname,lname,phone,email,password,area,block,street,house,floor,flat,mCallBack);
+//                Settings.set_Address_json(getActivity(),jsonObject.toString());
+//                allApis.signup(getActivity(),fname,lname,phone,email,password,area,block,street,house,floor,flat,mCallBack);
+                final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+                progressDialog.setMessage(Settings.getword(getActivity(), "please_wait"));
+                progressDialog.show();
+                progressDialog.setCancelable(false);
+                String url = Settings.SERVERURL+"member.php";
+
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("res",response);
+                        if(progressDialog!=null)
+                            progressDialog.dismiss();
+                        try {
+                            JSONObject jsonObject=new JSONObject(response);
+                            String reply=jsonObject.getString("status");
+                            if(reply.equals("Failed")) {
+                                String msg = jsonObject.getString("message");
+//                            viewFlipper.setDisplayedChild(1);
+                                alert.showAlertDialog(getActivity(), "Info", msg, true);
+//                            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                String mem_id=jsonObject.getString("member_id");
+                                String code=jsonObject.getString("code");
+                                Log.e("code",code);
+                                String msg=jsonObject.getString("message");
+//                                Settings.setUserid(getActivity(), mem_id, "name");
+                                Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+                                //  ServerUtilities.register2(context, name, mem_id, Settings.get_gcmid(context));
+                                allApis.update_gcm(mem_id,getActivity());
+                                mCallBack.register(code,mem_id);
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                if(progressDialog!=null)
+                                    progressDialog.dismiss();
+                                Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }){
+                    @Override
+                    protected Map<String,String> getParams(){
+                        Map<String,String> params = new HashMap<String, String>();
+                        params.put("fname",fname);
+                        params.put("lname",lname);
+                        params.put("phone",phone);
+                        params.put("email",email);
+                        params.put("password",password);
+                        params.put("area",area);
+                        params.put("block",block);
+                        params.put("street",street);
+                        params.put("house",house);
+                        params.put("floor",floor);
+                        params.put("flat",flat);
+                        params.put("android_token",flat);
+                        return params;
+                    }
+                };
+                AppController.getInstance().addToRequestQueue(stringRequest);
+            }
             }
 
-        }
+
     private void getarea() {
         String url = null;
         try {

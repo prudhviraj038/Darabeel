@@ -135,7 +135,7 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         holder.com_payment_type.removeAllViews();
         for(int i=0;i<restaurants.get(position).payment.size();i++){
             ImageView temp_img = new ImageView(context);
-//            temp_img.setAdjustViewBounds(true);
+            temp_img.setAdjustViewBounds(true);
             Picasso.with(context).load(restaurants.get(position).payment.get(i).image).into(temp_img);
             holder.com_payment_type.addView(temp_img);
         }
@@ -170,7 +170,7 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
 
                 for (Restaurants p : restaurants_all) {
                     Log.e(p.rating,String.valueOf(constraint));
-                    if (Integer.parseInt(p.rating)>=Integer.parseInt(String.valueOf(constraint)));
+                    if (Float.parseFloat(p.rating)>=Float.parseFloat(String.valueOf(constraint)));
                         nPlanetList.add(p);
                 }
 
@@ -182,12 +182,12 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         }
         @Override
         protected void publishResults(CharSequence constraint,FilterResults results) {
-            if(clear_all){
-                restaurants = restaurants_all;
+            if (results.count == 0) {
+//                restaurants = (ArrayList<Restaurants>) results.values;
                 notifyDataSetChanged();
             }
-            else if (results.count == 0) {
-                restaurants = (ArrayList<Restaurants>) results.values;
+            else if(clear_all){
+                restaurants = restaurants_all;
                 notifyDataSetChanged();
             }
             else {

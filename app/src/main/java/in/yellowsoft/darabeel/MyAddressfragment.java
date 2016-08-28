@@ -177,10 +177,41 @@ public class MyAddressfragment extends Fragment {
         update_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isadd)
-                    add_address("-1");
-                else
-                    add_address(adds_id);
+                if (isadd) {
+                    if (et_my_alias.getText().toString().equals(""))
+                        Toast.makeText(getActivity(),  "Please enter address name", Toast.LENGTH_SHORT).show();
+                    else if (et_my_area.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_area"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_block.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_block"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_street.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_street"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_building.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_building"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_floor.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_floor"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_flat.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_flat"), Toast.LENGTH_SHORT).show();
+                    else {
+                        add_address("-1");
+                    }
+                }else {
+                    if (et_my_area.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_area"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_block.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_block"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_street.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_street"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_building.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_building"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_floor.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_floor"), Toast.LENGTH_SHORT).show();
+                    else if (et_my_flat.getText().toString().equals(""))
+                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_flat"), Toast.LENGTH_SHORT).show();
+                    else {
+                        add_address(adds_id);
+                    }
+                }
 
             }
         });
@@ -297,8 +328,8 @@ public class MyAddressfragment extends Fragment {
                     if(reply.equals("Success")) {
                         String msg = jsonObject.getString("message");
                         Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
-                        my_address_ll.performClick();
-//                        viewFlipper.setDisplayedChild(4);
+                        get_address_list();
+                        viewFlipper.setDisplayedChild(0);
                     }
                     else {
                         String msg=jsonObject.getString("message");
@@ -355,7 +386,8 @@ public class MyAddressfragment extends Fragment {
                     if(reply.equals("Success")) {
                         String msg = jsonObject.getString("message");
                         Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
-                        my_address_ll.performClick();
+                        get_address_list();
+                        viewFlipper.setDisplayedChild(0);
                     }
                     else {
                         String msg = jsonObject.getString("message");

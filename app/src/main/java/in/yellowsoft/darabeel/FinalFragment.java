@@ -404,79 +404,80 @@ public class FinalFragment extends Fragment {
                 islater=true;
             }
         });
-        if(islater) {
+
             dt_ll.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if (islater) {
+                        final Calendar c1 = Calendar.getInstance();
+                        mHour = c1.get(Calendar.HOUR_OF_DAY);
+                        mMinute = c1.get(Calendar.MINUTE);
+                        TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                String temp = String.valueOf(hourOfDay);
+                                if (temp.length() < 2)
+                                    temp = "0" + temp;
+                                String temp1 = String.valueOf(minute);
+                                if (temp1.length() < 2)
+                                    temp1 = "0" + temp1;
+                                hour = hourOfDay;
+                                minutes = minute;
+                                String timeSet = "";
+                                if (hour > 12) {
+                                    hour -= 12;
+                                    timeSet = "PM";
+                                } else if (hour == 0) {
+                                    hour += 12;
+                                    timeSet = "AM";
+                                } else if (hour == 12)
+                                    timeSet = "PM";
+                                else
+                                    timeSet = "AM";
 
-                    final Calendar c1 = Calendar.getInstance();
-                    mHour = c1.get(Calendar.HOUR_OF_DAY);
-                    mMinute = c1.get(Calendar.MINUTE);
-                    TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
-                        @Override
-                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                            String temp = String.valueOf(hourOfDay);
-                            if (temp.length() < 2)
-                                temp = "0" + temp;
-                            String temp1 = String.valueOf(minute);
-                            if (temp1.length() < 2)
-                                temp1 = "0" + temp1;
-                            hour = hourOfDay;
-                            minutes = minute;
-                            String timeSet = "";
-                            if (hour > 12) {
-                                hour -= 12;
-                                timeSet = "PM";
-                            } else if (hour == 0) {
-                                hour += 12;
-                                timeSet = "AM";
-                            } else if (hour == 12)
-                                timeSet = "PM";
-                            else
-                                timeSet = "AM";
+                                String min = "";
+                                if (minutes < 10)
+                                    min = "0" + minutes;
+                                else
+                                    min = String.valueOf(minutes);
 
-                            String min = "";
-                            if (minutes < 10)
-                                min = "0" + minutes;
-                            else
-                                min = String.valueOf(minutes);
-
-                            // Append in a StringBuilder
-                            time1 = new StringBuilder().append(hour).append(':')
-                                    .append(min).append(" ").append(timeSet).toString();
-                            time = temp1;
+                                // Append in a StringBuilder
+                                time1 = new StringBuilder().append(hour).append(':')
+                                        .append(min).append(" ").append(timeSet).toString();
+                                time = temp1;
 //                        time1 = temp+":"+temp1;
-                            time_tv.setText(time1);
-                        }
-                    }, mHour, mMinute, false);
-                    timePickerDialog.show();
+                                time_tv.setText(time1);
+                            }
+                        }, mHour, mMinute, false);
+                        timePickerDialog.show();
 
 
-                    final Calendar c = Calendar.getInstance();
-                    mYear = c.get(Calendar.YEAR);
-                    mMonth = c.get(Calendar.MONTH);
-                    mDay = c.get(Calendar.DAY_OF_MONTH);
-                    DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                            String temp = String.valueOf(monthOfYear + 1);
-                            if (temp.length() < 2)
-                                temp = "0" + temp;
-                            String temp1 = String.valueOf(dayOfMonth);
-                            if (temp1.length() < 2)
-                                temp1 = "0" + temp1;
-                            date = temp1 + "-" + temp + "-" + year;
-                            date1 = temp1 + "-" + temp + "-" + year;
-                            date_tv.setText(date);
+                        final Calendar c = Calendar.getInstance();
+                        mYear = c.get(Calendar.YEAR);
+                        mMonth = c.get(Calendar.MONTH);
+                        mDay = c.get(Calendar.DAY_OF_MONTH);
+                        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                String temp = String.valueOf(monthOfYear + 1);
+                                if (temp.length() < 2)
+                                    temp = "0" + temp;
+                                String temp1 = String.valueOf(dayOfMonth);
+                                if (temp1.length() < 2)
+                                    temp1 = "0" + temp1;
+                                date = temp1 + "-" + temp + "-" + year;
+                                date1 = temp1 + "-" + temp + "-" + year;
+                                date_tv.setText(date);
 //                        time_ll.performClick();
-                        }
-                    }, mYear, mMonth, mDay);
-                    datePickerDialog.show();
+                            }
+                        }, mYear, mMonth, mDay);
+                        datePickerDialog.show();
 
 
+                    }
                 }
             });
-        }
+
 //        time_ll.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

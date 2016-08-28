@@ -317,7 +317,7 @@ public class CompanyPageFragment extends Fragment {
     private void getarea() {
         String url = null;
         try {
-            url = Settings.SERVERURL + "areas.php?member_id="+Settings.getUserid(getActivity());
+            url = Settings.SERVERURL + "areas.php?member_id="+Settings.getUserid(getActivity())+"&rest_id="+restaurants.res_id;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -363,11 +363,14 @@ public class CompanyPageFragment extends Fragment {
                             String area = jsonArray.getJSONObject(i).getString("title");
                             String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
                             Area person = new Area(id, area, area_ar, true);
-                            area_list.add(person);
+//                            area_list.add(person);
 
                             Log.e("titleee", sub.getString("title"));
 
                             JSONArray jsonArray1 = sub.getJSONArray("areas");
+                            if(jsonArray1.length()>0) {
+                                area_list.add(person);
+                            }
                             for (int j = 0; j < jsonArray1.length(); j++) {
                                 String idt = jsonArray1.getJSONObject(j).getString("id");
                                 String areat = jsonArray1.getJSONObject(j).getString("title");

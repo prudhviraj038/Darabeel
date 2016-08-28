@@ -91,7 +91,7 @@ public class SearchFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                     search1 = s.toString();
-                if(search1.length()>2){
+                if(search1.length()>0){
                     getRestaurants();
                 }
                 else{

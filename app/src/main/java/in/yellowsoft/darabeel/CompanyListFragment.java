@@ -109,7 +109,7 @@ public class CompanyListFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 search1 = s.toString();
-                if (search1.length() > 2) {
+                if (search1.length() > 0) {
                     getResta();
                 } else {
                     restaurants.clear();
@@ -455,9 +455,9 @@ public class CompanyListFragment extends Fragment {
 //                    companylistAdapter.getFilter().filter(constraint);
                 get_filter_Resta();
                     filter_ll.setVisibility(View.GONE);
-                if(!rate.equals("")){
-                    companylistAdapter.getFilter().filter(rate);
-                }
+//                if(!rate.equals("")){
+//                    companylistAdapter.getFilter().filter(rate);
+//                }
             }
         });
 
@@ -654,7 +654,7 @@ public class CompanyListFragment extends Fragment {
 
     private void get_filter_Resta(){
         String url = null;
-        restaurants.clear();
+//        restaurants.clear();
         progressBar.setVisibility(View.VISIBLE);
 
         try {
