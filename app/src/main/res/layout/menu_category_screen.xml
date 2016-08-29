@@ -22,7 +22,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="350dp" >
+                    android:layout_height="300dp"
+                    android:id="@+id/de">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -34,14 +35,13 @@
                             android:id="@+id/company_background_image_cat"
                             android:src="@drawable/bg_category_item"
                             android:adjustViewBounds="false"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             android:background="#f3f3f3" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/imageView7"
-                            android:src="@drawable/bg_shadow"
                             android:scaleType="matrix" />
                     </RelativeLayout>
 
@@ -130,8 +130,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/linearLayout14"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="170dp">
+                    android:layout_below="@+id/de"
+                    android:layout_marginTop="-100dp">
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -143,7 +143,7 @@
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/yellow_background"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"

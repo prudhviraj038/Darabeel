@@ -26,7 +26,7 @@ import java.util.Locale;
 public class Settings {
     public static final String SERVERURL = "https://www.darabeel.com/api/";
     public static final String PAYMENT_URL    = "https://www.darabeel.com/Tap2.php?";
-    public  static final long DURATION=1000;
+    public  static final long DURATION=500;
     static String Area_id="area_id";
     static String Address="Address";
     static String Area_name="area_name";
