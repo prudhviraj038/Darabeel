@@ -455,9 +455,7 @@ public class CompanyListFragment extends Fragment {
 //                    companylistAdapter.getFilter().filter(constraint);
                 get_filter_Resta();
                     filter_ll.setVisibility(View.GONE);
-//                if(!rate.equals("")){
-//                    companylistAdapter.getFilter().filter(rate);
-//                }
+
             }
         });
 
@@ -718,9 +716,22 @@ public class CompanyListFragment extends Fragment {
                         tmp_json.getJSONArray("menu"),
                         tmp_json.getJSONArray("promotions"),
                         tmp_json.getJSONArray("all_reviews"));
-                restaurants.add(temp);
+                if(!rate.equals("")){
+//                    companylistAdapter.getFilter().filter(rate);
+                    if(Float.parseFloat(tmp_json.getString("rating"))>=Float.parseFloat(rate)){
+                        restaurants.add(temp);
+                    }else{
+                        no_res.setVisibility(View.VISIBLE);
+                    }
+
+                }
+
+
             }
             companylistAdapter.notifyDataSetChanged();
+//            if(!rate.equals("")){
+//                companylistAdapter.getFilter().filter(rate);
+//            }
             if(restaurants.size()==0){
                 no_res.setVisibility(View.VISIBLE);
                 no_res.setText(Settings.getword(getActivity(), "no_products"));

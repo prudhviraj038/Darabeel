@@ -24,7 +24,13 @@ import java.util.ArrayList;
 public class NavigationActivity extends FragmentActivity implements HomeFragment.FragmentTouchListner ,
         LoginFragment.FragmentTouchListner, CompanyListFragment.FragmentTouchListner, CompanyPageFragment.FragmentTouchListner,
          MenuCategoryfragment.FragmentTouchListner, ProductListFragment.FragmentTouchListner,
-        ProductPageFragment.FragmentTouchListner, CartFragment.FragmentTouchListner, FinalFragment.FragmentTouchListner, NotificationFragment.FragmentTouchListner, AboutUsfragment.FragmentTouchListner, ContactUsFragment.FragmentTouchListner, TermsConditionsFragment.FragmentTouchListner, MyAccountFragment.FragmentTouchListner, Invoicefragment.FragmentTouchListner, OffersListFragment.FragmentTouchListner, PromotionsListFragment.FragmentTouchListner, SearchFragment.FragmentTouchListner, VerificationFragment.FragmentTouchListner, MyOrdersfragment.FragmentTouchListner, MyAddressfragment.FragmentTouchListner, ChangePasswordfragment.FragmentTouchListner, EditProfilefragment.FragmentTouchListner, Settingsfragment.FragmentTouchListner, AreaFragment.FragmentTouchListner, Reviewsfragment.FragmentTouchListner {
+        ProductPageFragment.FragmentTouchListner, CartFragment.FragmentTouchListner, FinalFragment.FragmentTouchListner,
+        NotificationFragment.FragmentTouchListner, AboutUsfragment.FragmentTouchListner, ContactUsFragment.FragmentTouchListner,
+        TermsConditionsFragment.FragmentTouchListner, MyAccountFragment.FragmentTouchListner, Invoicefragment.FragmentTouchListner,
+        OffersListFragment.FragmentTouchListner, PromotionsListFragment.FragmentTouchListner, SearchFragment.FragmentTouchListner,
+        VerificationFragment.FragmentTouchListner, MyOrdersfragment.FragmentTouchListner, MyAddressfragment.FragmentTouchListner,
+        ChangePasswordfragment.FragmentTouchListner, EditProfilefragment.FragmentTouchListner, Settingsfragment.FragmentTouchListner,
+        AreaFragment.FragmentTouchListner, Reviewsfragment.FragmentTouchListner {
     ArrayList<Integer> prgmImages = new ArrayList<>();
     ArrayList<String> prgmTitles = new ArrayList<>();
     ArrayList<Integer> subprgmImages = new ArrayList<>();
@@ -41,7 +47,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     TextView logout,nav_title,lang_tv,waste;
     LinearLayout lang_ll,filter;
     ArrayList<CartItem> cart_items=new ArrayList<>();
-    public  static final long DURATION=1000;
+    public  static final long DURATION=300;
     boolean animation_direction=true;
     AlertDialogManager alert = new AlertDialogManager();
     @Override
@@ -249,27 +255,32 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
                     case 6:
                         animation_direction=true;
                         mDrawerLayout.closeDrawer(GravityCompat.START);
+                        Settings.setArea_id(NavigationActivity.this, "-1", "", "");
                         companyffragment("most_selling");
                         break;
                     case 7:
                         animation_direction=true;
                         mDrawerLayout.closeDrawer(GravityCompat.START);
+                        Settings.setArea_id(NavigationActivity.this, "-1", "", "");
                         companyffragment("new");
                         break;
                     case 8:
                         animation_direction=true;
                         mDrawerLayout.closeDrawer(GravityCompat.START);
+                        Settings.setArea_id(NavigationActivity.this, "-1", "", "");
                         PromotionsListFragment fragment1 = new PromotionsListFragment();
                         fragmentManager.beginTransaction().replace(R.id.container_main, fragment1).addToBackStack(null).commit();
                         break;
                     case 9:
                         animation_direction=true;
                         mDrawerLayout.closeDrawer(GravityCompat.START);
+                        Settings.setArea_id(NavigationActivity.this, "-1", "", "");
                         companyffragment("offers");
                         break;
                     case 10:
                         animation_direction=true;
                         mDrawerLayout.closeDrawer(GravityCompat.START);
+                        Settings.setArea_id(NavigationActivity.this, "-1", "", "");
                         companyffragment("trending");
                         break;
                     case 11:
@@ -454,6 +465,20 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         back.setVisibility(View.GONE);
         waste.setVisibility(View.GONE);
         menu_back.setVisibility(View.VISIBLE);
+        filter.setVisibility(View.GONE);
+        menu.setVisibility(View.GONE);
+        cart_icon.setVisibility(View.GONE);
+    }
+    @Override
+    public void text_back_butt_final_add(String header) {
+        nav_title.setVisibility(View.VISIBLE);
+        nav_title.setText(header);
+        lang_ll.setVisibility(View.GONE);
+        search.setVisibility(View.GONE);
+        logout.setVisibility(View.GONE);
+        back.setVisibility(View.GONE);
+        waste.setVisibility(View.GONE);
+        menu_back.setVisibility(View.GONE);
         filter.setVisibility(View.GONE);
         menu.setVisibility(View.GONE);
         cart_icon.setVisibility(View.GONE);

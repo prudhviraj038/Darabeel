@@ -1,6 +1,7 @@
 package in.yellowsoft.darabeel;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,7 @@ public class PromotionAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView show_menu;
+        TextView show_menu,title_tv,des_tv,price_tv,sta_price;
         SquareImageview promotion_img;
         ImageView res_img;
         LinearLayout rating_ll,show_menu_ll;
@@ -65,6 +66,15 @@ public class PromotionAdapter extends BaseAdapter{
         rowView = inflater.inflate(R.layout.promotion_item_screen, null);
         holder.show_menu = (TextView) rowView.findViewById(R.id.showmenu_pro_list_tv);
         holder.show_menu.setText(Settings.getword(context,"show_menu"));
+        holder.sta_price = (TextView) rowView.findViewById(R.id.p_price_sta);
+        holder.sta_price.setText(Settings.getword(context,"price"));
+        holder.title_tv = (TextView) rowView.findViewById(R.id.p_title);
+        holder.title_tv.setText(restaurants.get(position).getTitle(context));
+        holder.des_tv = (TextView) rowView.findViewById(R.id.p_des);
+        holder.des_tv.setText(Html.fromHtml(restaurants.get(position).getdescription(context)));
+        holder.price_tv = (TextView) rowView.findViewById(R.id.p_price);
+        holder.price_tv.setText(restaurants.get(position).price+" KD ");
+
         holder.res_img = (ImageView) rowView.findViewById(R.id.res_img_promtions);
         Picasso.with(context).load(restaurants.get(position).rest.get(0).image).fit().into(holder.res_img);
         holder.rating_ll=(LinearLayout)rowView.findViewById(R.id.res_promotionlist_rating);

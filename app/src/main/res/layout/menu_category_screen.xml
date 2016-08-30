@@ -42,7 +42,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/imageView7"
-                            android:scaleType="matrix" />
+                            android:scaleType="matrix"
+                            android:src="@drawable/bg_shadow" />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -131,7 +132,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/linearLayout14"
                     android:layout_below="@+id/de"
-                    android:layout_marginTop="-100dp">
+                    android:layout_marginTop="-130dp">
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -152,7 +153,7 @@
                         <LinearLayout
                             android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/menu_cat_rounded_corners">
 
                             <LinearLayout

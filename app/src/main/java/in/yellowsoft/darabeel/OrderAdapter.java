@@ -133,90 +133,41 @@ public class OrderAdapter extends BaseAdapter{
         holder.rating_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                alert = new Dialog(context);
-                alert.setContentView(R.layout.alert_dialog_screen);
-                alert.setCancelable(true);
-                alert.setTitle(Settings.getword(context,"rate_order"));
-                final RatingBar ratingBar = (RatingBar)alert.findViewById(R.id.ratingBar);
-                ratingBar.setIsIndicator(false);
-                final EditText comm=(EditText)alert.findViewById(R.id.write_comm_et);
-                LinearLayout submit=(LinearLayout)alert.findViewById(R.id.alert_submit_ll);
-                submit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        rate=ratingBar.getRating();
-                        Log.e("rating", String.valueOf(rate));
-                        write=comm.getText().toString();
-                        Log.e("comments", write);
-//                        holder.rating_ll.setVisibility(View.GONE);
-//                        holder.rating.setVisibility(View.VISIBLE);
-//                        Settings.set_rating(context, String.valueOf(rate), holder.rating);
-                        send_rating(position);
-
-                    }
-                });
-                alert.show();
+                myAccountFragment.get_order_id(orderses.get(position).id);
+//                alert = new Dialog(context);
+//                View view1 = inflater.inflate(R.layout.alert_dialog_screen, null);
+//                alert.setContentView(view1);
+//                alert.setCancelable(true);
+//                alert.setTitle(Settings.getword(context,"rate_order"));
+////                final RatingBar ratingBar = (RatingBar)alert.findViewById(R.id.ratingBar);
+////                ratingBar.setIsIndicator(false);
+//                final EditText comm=(EditText)view1.findViewById(R.id.write_comm_et);
+//                LinearLayout submit=(LinearLayout)view1.findViewById(R.id.alert_submit_ll);
+//                LinearLayout rating_ll=(LinearLayout)view1.findViewById(R.id.give_rating_ll);
+//                set__give_rating(context, "0", rating_ll);
+//                submit.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+////                        rate=ratingBar.getRating();
+//                        Log.e("rating", String.valueOf(rate));
+//                        write=comm.getText().toString();
+//                        Log.e("comments", write);
+////                        holder.rating_ll.setVisibility(View.GONE);
+////                        holder.rating.setVisibility(View.VISIBLE);
+////                        Settings.set_rating(context, String.valueOf(rate), holder.rating);
+//                        send_rating(position);
+//
+//                    }
+//                });
+//                alert.show();
             }
         });
 
         return rowView;
 
     }
-    public  void send_rating(final int position){
-        final ProgressDialog progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage(Settings.getword(context, "please_wait"));
-        progressDialog.show();
-        progressDialog.setCancelable(false);
-        String url = Settings.SERVERURL+"add-rating.php?";
-        Log.e("ratingggg",String.valueOf(rate));
-        Log.e("review", write);
-        Log.e("id",orderses.get(position).id);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if(progressDialog!=null)
-                    progressDialog.dismiss();
-                try {
-                    JSONObject jsonObject=new JSONObject(response);
-                    String reply=jsonObject.getString("status");
-                    if(reply.equals("Success")) {
-                        String msg = jsonObject.getString("message");
-                        String address_id = jsonObject.getString("address_id");
-                        myAccountFragment.get_orders();
-                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-                        alert.dismiss();
 
 
-                    }
-                    else {
-                        String msg=jsonObject.getString("message");
-                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        if(progressDialog!=null)
-                            progressDialog.dismiss();
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                }){
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("order_id", orderses.get(position).id);
-                params.put("rating", String.valueOf(rate));
-                params.put("review",write);
-                return params;
-            }
-        };
-        AppController.getInstance().addToRequestQueue(stringRequest);
-    }
     private void getRes(String id) {
         final ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setMessage(Settings.getword(context, "please_wait"));

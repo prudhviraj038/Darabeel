@@ -201,6 +201,8 @@ public class CompanyPageFragment extends Fragment {
         ll_promotion=(LinearLayout)view.findViewById(R.id.ll_Promotions);
         if (restaurants.promotions.size()>0){
             ll_promotion.setVisibility(View.VISIBLE);
+        }else{
+            ll_promotion.setVisibility(View.GONE);
         }
         ll_promotion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,6 +223,7 @@ public class CompanyPageFragment extends Fragment {
                 Settings.setSignup_Area_id(getActivity(), area_list.get(position).getId(), area_list.get(position).getArea(getActivity()), area_list.get(position).getArea(getActivity()));
                 com_area.setText(Settings.getArea_name(getActivity()));
                 area_tv.setText(Settings.getArea_name(getActivity()));
+                delivery_charges();
             }
         });
         com_status=(TextView)view.findViewById(R.id.status);

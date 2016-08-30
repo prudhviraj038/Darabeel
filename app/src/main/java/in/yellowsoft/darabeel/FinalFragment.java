@@ -58,12 +58,12 @@ public class FinalFragment extends Fragment {
             tv_cash,tv_knet,tv_credit_card,payment_option,tv_proceed_pay,stat_sub_total,sta_discount,stat_delivery_charges,sta_dara,dara,address_guest,
             stat_grand_total,stat_tv_area,stat_tv_block,stat_tv_street,stat_tv_building,stat_tv_floor,stat_tv_apartment,addr_name_tv,
             stat_tv_mobile,tv_edit,cancel_tv,save_tv,tv_add,tv_spl_com,tv_coupon_code,tv_submit,date_tv,time_tv,gues_fname,
-            guest_lname,guest_email,guest_home_ph,guest_work_ph,add_add,add_area,later_tv,now_tv;
+            guest_lname,guest_email,guest_home_ph,guest_work_ph,add_add,add_area,later_tv,now_tv,cancel_add_tv;
     EditText e_area, e_block, e_street, e_building, e_floor,e_aprtment,e_mobile,spl_comment,coupon_code,addr_name,
             et_fname,et_lname,et_email,et_work_ph,et_home_ph,add_et_addresss_name,add_et_block,add_et_street,add_et_floor,
             add_et_buillding,add_et_flat,add_et_mobile,add_et_directions;
     LinearLayout edit,add,cancel,save_ll,submit,ll_cash,ll_knet,ll_credit_card,ll_proceed_pay,date_lll,time_ll,drop_down_ll,
-            address_guest_ll,mobile_ll_final,spl_com_ll,coupon_ll,add_add_ll,later,now,dt_ll;
+            address_guest_ll,mobile_ll_final,spl_com_ll,coupon_ll,add_add_ll,cancel_add_address_fin,later,now,dt_ll;
     JSONObject jsonObjecttosend = new JSONObject();
     FinalPageAdapter finalPageAdapter;
     String rest_id,product_id,quantity,pricee,coupon,date="0",time="0",date1,time1;
@@ -94,6 +94,7 @@ public class FinalFragment extends Fragment {
     FragmentTouchListner mCallBack;
     AlertDialogManager alert = new AlertDialogManager();
     public interface FragmentTouchListner {
+        public void text_back_butt_final_add(String header);
         public void text_back_butt(String header);
         public void gotoinvoicepage(JsonOrders invoice);
         public  Animation get_animation(Boolean enter,Boolean loaded);
@@ -127,8 +128,8 @@ public class FinalFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view = getView();
 //        loaded=true;
-//        String head=Settings.getword(getActivity(), "");
-//        mCallBack.text_back_butt(head);
+        String head=Settings.getword(getActivity(), "final");
+        mCallBack.text_back_butt(head);
         viewFlipper=(ViewFlipper)view.findViewById(R.id.viewFlipper6);
         time="";
         date="";
@@ -193,6 +194,15 @@ public class FinalFragment extends Fragment {
         add_add=(TextView)view.findViewById(R.id.add_address_final_tv);
         add_add.setText(Settings.getword(getActivity(),"add_address"));
         add_add_ll=(LinearLayout)view.findViewById(R.id.add_address_final_ll);
+        cancel_add_address_fin=(LinearLayout)view.findViewById(R.id.cancel_final_add_address_ll);
+        cancel_add_address_fin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewFlipper.setDisplayedChild(0);
+                String head2=Settings.getword(getActivity(), "final");
+                mCallBack.text_back_butt(head2);
+            }
+        });
 
         e_area.setText(Settings.getArea_name(getActivity()));
         areaa.setText(Settings.getArea_name(getActivity()));
@@ -369,9 +379,11 @@ public class FinalFragment extends Fragment {
         later=(LinearLayout)view.findViewById(R.id.later_ll);
         now=(LinearLayout)view.findViewById(R.id.now_ll);
         later_tv=(TextView)view.findViewById(R.id.later_tv);
-        coupon_code.setHint(Settings.getword(getActivity(), "coupon_code"));
+        later_tv.setText(Settings.getword(getActivity(), "later"));
         now_tv=(TextView)view.findViewById(R.id.now_tv);
-        coupon_code.setHint(Settings.getword(getActivity(), "coupon_code"));
+        now_tv.setText(Settings.getword(getActivity(), "now"));
+        cancel_add_tv=(TextView)view.findViewById(R.id.cancel_final_add_address_tv);
+        cancel_add_tv.setText(Settings.getword(getActivity(), "cancel"));
         later_img=(ImageView)view.findViewById(R.id.later_img);
         now_img=(ImageView)view.findViewById(R.id.now_img);
         date_time=(ImageView)view.findViewById(R.id.date_time1);
@@ -727,6 +739,8 @@ public class FinalFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 viewFlipper.setDisplayedChild(1);
+                String head1=Settings.getword(getActivity(), "add_address");
+                mCallBack.text_back_butt_final_add(head1);
                 add_area.setText(Settings.getArea_name(getActivity()));
             }
         });
@@ -789,12 +803,12 @@ public class FinalFragment extends Fragment {
         ll_proceed_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Settings.getUserid(getActivity()).equals("-1")){
+                if (Settings.getUserid(getActivity()).equals("-1")) {
                     if (et_fname.getText().toString().equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_name"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_name"), Toast.LENGTH_SHORT).show();
                     else if (et_lname.getText().toString().equals(""))
-                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"please_enter_lastname"), false);
+                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_lastname"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_lastname"), Toast.LENGTH_SHORT).show();
                     else if (et_home_ph.getText().toString().equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_mobile"), false);
@@ -812,7 +826,7 @@ public class FinalFragment extends Fragment {
 //                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"please_enter_mobile"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_mobile"), Toast.LENGTH_SHORT).show();
                     else if (time1.equals(""))
-                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"empty_delivery_time"), false);
+                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_delivery_time"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"empty_delivery_time"), Toast.LENGTH_SHORT).show();
                     else if (date1.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_delivery_date"), false);
@@ -820,13 +834,13 @@ public class FinalFragment extends Fragment {
                     else if (pay_met.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_payment"), false);
                     else {
-                        if(delivery.equals("1"))
+                        if (delivery.equals("1"))
                             place_set_data();
                         else
-                        check_date_time();
+                            check_date_time();
 
-                 }
-                }else{
+                    }
+                } else {
                     if (e_block.getText().toString().equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_block"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_block"), Toast.LENGTH_SHORT).show();
@@ -840,7 +854,7 @@ public class FinalFragment extends Fragment {
 //                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"please_enter_mobile"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_mobile"), Toast.LENGTH_SHORT).show();
                     else if (time1.equals(""))
-                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(),"empty_delivery_time"), false);
+                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_delivery_time"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"empty_delivery_time"), Toast.LENGTH_SHORT).show();
                     else if (date1.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_delivery_date"), false);
@@ -848,14 +862,14 @@ public class FinalFragment extends Fragment {
                     else if (pay_met.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_payment"), false);
                     else {
-                        if(delivery.equals("1"))
+                        if (delivery.equals("1"))
                             place_set_data();
                         else
                             check_date_time();
                     }
                 }
-                }
-            });
+            }
+        });
 
 
         view.setFocusableInTouchMode(true);
@@ -864,6 +878,12 @@ public class FinalFragment extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                    if (viewFlipper.getDisplayedChild() == 1) {
+                        viewFlipper.setDisplayedChild(0);
+                        String head2=Settings.getword(getActivity(), "final");
+                        mCallBack.text_back_butt(head2);
+                        return true;
+                    }
                     loaded = true;
                     return false;
                 }
@@ -1231,6 +1251,8 @@ public class FinalFragment extends Fragment {
                     Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
                     if(id.equals("-1")) {
                         viewFlipper.setDisplayedChild(0);
+                        String head2=Settings.getword(getActivity(), "final");
+                        mCallBack.text_back_butt(head2);
                         selected_area_id=Settings.getArea_id(getActivity());
                     }else{
                         add.setVisibility(View.VISIBLE);

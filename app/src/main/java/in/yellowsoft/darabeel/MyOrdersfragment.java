@@ -2,6 +2,8 @@ package in.yellowsoft.darabeel;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -11,28 +13,41 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class MyOrdersfragment extends Fragment {
     String head;
+    LinearLayout rate_pop,rating_ll,submit,cancel;
     TextView res_name, sta_ord_id, sta_ord_date, Sta_ord_name, sta_ord_mobile, sta_ord_area, sta_ord_block, sta_ord_street, sta_ord_bilding,
             sta_discount_oreder, discount_order, sta_or_det_floor, sta_or_det_flat, or_det_floor,or_det_flat,sta_sub_total,sta_dara, sta_dc, sta_grand_total, ord_date, ord_id, ord_name,
             ord_mobile, ord_area, ord_block, ord_street, ord_building, ord_pay_mode, ord_sub_total, ord_dc,dara, ord_grand_total,delivery_date,
-            sta_delivery_date,sta_reorder;
+            sta_delivery_date,sta_reorder,cancel_tv,submit_tv,write_comments_tv,rateing_tv;
+    EditText comments;
+    String write="";
+    AlertDialogManager alert = new AlertDialogManager();
     ViewFlipper viewFlipper;
     ArrayList<JsonOrders> orderses;
     FragmentTouchListner mCallBack;
@@ -110,7 +125,40 @@ public class MyOrdersfragment extends Fragment {
         sta_dara = (TextView) view.findViewById(R.id.sta_dara_charges);
         sta_dara.setText(Settings.getword(getActivity(), "darabeel_charges"));
 
+        comments=(EditText)view.findViewById(R.id.write_comm_ett);
+        comments.setHint(Settings.getword(getActivity(), "comments"));
+        rateing_tv=(TextView)view.findViewById(R.id.rate_tv);
+        rateing_tv.setText(Settings.getword(getActivity(), "rate"));
+        write_comments_tv=(TextView)view.findViewById(R.id.comm_tv_alertt);
+        write_comments_tv.setText(Settings.getword(getActivity(), "comments"));
+        submit_tv=(TextView)view.findViewById(R.id.alert_submitt);
+        submit_tv.setText(Settings.getword(getActivity(), "submit"));
+        cancel_tv=(TextView)view.findViewById(R.id.cancel_pop_tv);
+        cancel_tv.setText(Settings.getword(getActivity(), "cancel"));
+        submit=(LinearLayout)view.findViewById(R.id.alert_submit_lll);
+        cancel=(LinearLayout)view.findViewById(R.id.cancel_pop_ll);
+        rate_pop=(LinearLayout)view.findViewById(R.id.rate_pop);
+        rating_ll=(LinearLayout)view.findViewById(R.id.rating_alert_ll);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                write="";
+                write=comments.getText().toString();
+                if(rating_user.equals(""))
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_rating"), false);
+                else  if(write.equals(""))
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_comments"), false);
+                else
+                send_rating();
 
+            }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rate_pop.setVisibility(View.GONE);
+            }
+        });
 
         ord_date = (TextView) view.findViewById(R.id.order_dat);
         delivery_date = (TextView) view.findViewById(R.id.delivery_dat);
@@ -179,6 +227,14 @@ public class MyOrdersfragment extends Fragment {
                 return false;
             }
         });
+    }
+    String o_id;
+    public void get_order_id(String id){
+        o_id=id;
+        write="";rating_user="";
+        comments.setText("");
+        set__give_rating(getActivity(), "0", rating_ll);
+        rate_pop.setVisibility(View.VISIBLE);
     }
     public void get_orders(){
         String url=Settings.SERVERURL+"order-history.php?member_id="+Settings.getUserid(getActivity());
@@ -260,5 +316,91 @@ public class MyOrdersfragment extends Fragment {
         } else {
             return false;
         }
+    }
+    String rating_user="";
+    public   void set__give_rating(final Context context,String value, final LinearLayout rating_ll){
+//        rating_user="";
+        rating_ll.removeAllViews();
+        for(float i=1;i<=5;i++) {
+            ImageView star = new ImageView(context);
+//            star.setMaxWidth(50);
+//            star.setMaxHeight(50);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(2,0,2,0);
+            star.setLayoutParams(lp);
+            star.setAdjustViewBounds(true);
+            final float finalI = i;
+            star.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    rating_user=String.valueOf(finalI);
+                    set__give_rating(context,String.valueOf(finalI),rating_ll);
+                }
+            });
+            if(i<=Float.parseFloat(value))
+                star.setImageResource(R.drawable.brown_full_star);
+            else if(i-Float.parseFloat(value)<1)
+                star.setImageResource(R.drawable.brown_half_star);
+            else
+                star.setImageResource(R.drawable.brown_empty_star);
+            rating_ll.addView(star);
+        }
+    }
+
+    public  void send_rating(){
+
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage(Settings.getword(getActivity(), "please_wait"));
+        progressDialog.show();
+        progressDialog.setCancelable(false);
+        String url = Settings.SERVERURL+"add-rating.php?";
+        Log.e("ratingggg",rating_user);
+        Log.e("review", write);
+        Log.e("id",o_id);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(progressDialog!=null)
+                    progressDialog.dismiss();
+                try {
+                    JSONObject jsonObject=new JSONObject(response);
+                    String reply=jsonObject.getString("status");
+                    if(reply.equals("Success")) {
+                        String msg = jsonObject.getString("message");
+                        String address_id = jsonObject.getString("address_id");
+                        get_orders();
+                        Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+                        rate_pop.setVisibility(View.GONE);
+
+
+                    }
+                    else {
+                        String msg=jsonObject.getString("message");
+                        Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        if(progressDialog!=null)
+                            progressDialog.dismiss();
+                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("order_id", o_id);
+                params.put("rating", rating_user);
+                params.put("review",write);
+                return params;
+            }
+        };
+        AppController.getInstance().addToRequestQueue(stringRequest);
     }
 }

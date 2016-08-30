@@ -17,6 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.nullwire.trace.ExceptionHandler;
 
 import org.json.JSONObject;
 
@@ -29,7 +30,10 @@ public class SplashActivity extends Activity {
         Settings.setArea_id(getApplicationContext(), "-1","-1","-1");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
         ImageView imageView=(ImageView)findViewById(R.id.splash);
-        imageView.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation));
+        ExceptionHandler.register(this, "https://www.darabeel.com/api/error.php");
+     //   https://www.darabeel.com/api/error.php
+        Settings.setArea_id(this,"-1","","");
+//        imageView.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation));
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

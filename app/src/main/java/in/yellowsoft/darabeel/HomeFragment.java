@@ -63,6 +63,7 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = getView();
+        Settings.setArea_id(getActivity(),"-1","","");
         horizontalGridView = (HorizontalGridView) view.findViewById(R.id.view5);
         cat_listView = (ListView) view.findViewById(R.id.category_listview);
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper);
@@ -101,6 +102,12 @@ public class HomeFragment extends Fragment {
                 viewFlipper.setDisplayedChild(0);
             }
         });
+        area_txt = (TextView) view.findViewById(R.id.tv_choose_area);
+//        if(Settings.getArea_id(getActivity()).equals("-1")){
+            area_txt.setText(Settings.getword(getActivity(), "choose_area"));
+//        }else{
+//            area_txt.setText(Settings.getArea_name(getActivity()));
+//        }
         area_list = new ArrayList<>();
         ListView area_listView = (ListView)view.findViewById(R.id.area_listView);
         personAdapter = new AreaAdapter(getActivity(), area_list);
@@ -129,8 +136,7 @@ public class HomeFragment extends Fragment {
         });
         what_you_want = (LinearLayout) view.findViewById(R.id.ll_what_do_you_want);
         choose_area = (LinearLayout) view.findViewById(R.id.ll_choose_area);
-        area_txt = (TextView) view.findViewById(R.id.tv_choose_area);
-        area_txt.setText(Settings.getword(getActivity(), "choose_area"));
+
         choose_area.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -291,6 +297,7 @@ public class HomeFragment extends Fragment {
                                 l1.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
+                                        Settings.setArea_id(getActivity(),"-1","","");
                                         mCallBack.songselected(restaurantses.get(0));
                                     }
                                 });
@@ -300,10 +307,12 @@ public class HomeFragment extends Fragment {
                                 l2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
+                                        Settings.setArea_id(getActivity(),"-1","","");
                                         mCallBack.songselected(restaurantses.get(1));
                                     }
                                 });
                             }else if(restaurantses.size()==3) {
+                                Settings.setArea_id(getActivity(),"-1","","");
                                 Picasso.with(getActivity()).load(restaurantses.get(2).image).into(im3);
                                 t3.setText(restaurantses.get(2).getTitle(getActivity()));
                                 l3.setOnClickListener(new View.OnClickListener() {
@@ -313,6 +322,7 @@ public class HomeFragment extends Fragment {
                                     }
                                 });
                             }else if(restaurantses.size()==4) {
+                                Settings.setArea_id(getActivity(),"-1","","");
                                 Picasso.with(getActivity()).load(restaurantses.get(3).image).into(im4);
                                 t4.setText(restaurantses.get(3).getTitle(getActivity()));
                                 l4.setOnClickListener(new View.OnClickListener() {

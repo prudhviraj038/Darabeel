@@ -37,7 +37,7 @@ public class SplashScreen extends Activity {
             // stop executing code by return
            goto_next_screen();
         }
-//        GCMRegistrar.checkDevice(this);
+        GCMRegistrar.checkDevice(this);
         GCMRegistrar.checkManifest(this);
         registerReceiver(mHandleMessageReceiver, new IntentFilter(
                 DISPLAY_MESSAGE_ACTION));

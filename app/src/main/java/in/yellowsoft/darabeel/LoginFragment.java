@@ -191,7 +191,7 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
                 alert.setTitle(Settings.getword(getActivity(), "forgot_password_sent"));
-                LinearLayout layout = new LinearLayout(getActivity());
+                    LinearLayout layout = new LinearLayout(getActivity());
                 final EditText input = new EditText(getActivity());
                 input.setMinLines(2);
                 input.setHint(Settings.getword(getActivity(),"email_address"));

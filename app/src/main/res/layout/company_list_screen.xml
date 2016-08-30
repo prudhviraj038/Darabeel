@@ -43,7 +43,8 @@
                     android:textColor="#000000"
                     android:textColorHint="#cbcbd2"
                     android:textSize="15sp"
-                    android:textCursorDrawable="@null" />
+                    android:textCursorDrawable="@null"
+                    android:singleLine="true" />
             </LinearLayout>
 
             <RelativeLayout

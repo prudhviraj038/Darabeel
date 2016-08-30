@@ -2,41 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="7dp"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:padding="3dp">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:gravity="center"
-        android:layout_marginTop="5dp">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/promotionlist_img_ll"
-                android:padding="10dp">
-
-                <view
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    class="in.yellowsoft.darabeel.SquareImageview"
-                    android:id="@+id/promotionlist_img" />
-
-            </LinearLayout>
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_cat_rounded_corners">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_margin="20dp">
+                android:layout_margin="3dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -57,7 +41,66 @@
                 </FrameLayout>
 
             </LinearLayout>
-        </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/p_title"
+                    android:textSize="18sp"
+                    android:textColor="@color/pink_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/p_des"
+                    android:textColor="@color/brown"
+                    android:textSize="15sp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Text"
+                        android:id="@+id/p_price_sta"
+                        android:textColor="@color/pink_text"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" : "
+                        android:id="@+id/textView38"
+                        android:textColor="@color/pink_text"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:id="@+id/p_price"
+                        android:textColor="@color/pink_text"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
@@ -65,7 +108,40 @@
             android:layout_height="1dp"
             android:background="#d3d3d3"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"></LinearLayout>
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/promotionlist_img_ll"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <view
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    class="in.yellowsoft.darabeel.SquareImageview"
+                    android:id="@+id/promotionlist_img" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
         <LinearLayout
             android:orientation="vertical"

@@ -26,7 +26,7 @@ import java.util.Locale;
 public class Settings {
     public static final String SERVERURL = "https://www.darabeel.com/api/";
     public static final String PAYMENT_URL    = "https://www.darabeel.com/Tap2.php?";
-    public  static final long DURATION=500;
+    public  static final long DURATION=300;
     static String Area_id="area_id";
     static String Address="Address";
     static String Area_name="area_name";
@@ -233,6 +233,7 @@ public class Settings {
             rating_ll.addView(star);
         }
     }
+
     public static  void set_rating_yellow(Context context,String value,LinearLayout rating_ll){
 
         rating_ll.removeAllViews();

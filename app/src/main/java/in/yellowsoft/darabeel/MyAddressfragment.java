@@ -179,7 +179,7 @@ public class MyAddressfragment extends Fragment {
             public void onClick(View view) {
                 if (isadd) {
                     if (et_my_alias.getText().toString().equals(""))
-                        Toast.makeText(getActivity(),  "Please enter address name", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Please enter address name", Toast.LENGTH_SHORT).show();
                     else if (et_my_area.getText().toString().equals(""))
                         Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_area"), Toast.LENGTH_SHORT).show();
                     else if (et_my_block.getText().toString().equals(""))
@@ -195,7 +195,7 @@ public class MyAddressfragment extends Fragment {
                     else {
                         add_address("-1");
                     }
-                }else {
+                } else {
                     if (et_my_area.getText().toString().equals(""))
                         Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_area"), Toast.LENGTH_SHORT).show();
                     else if (et_my_block.getText().toString().equals(""))
@@ -230,11 +230,17 @@ public class MyAddressfragment extends Fragment {
                     if (viewFlipper.getDisplayedChild() == 1) {
                         viewFlipper.setDisplayedChild(0);
                         return true;
+                    } else if (viewFlipper.getDisplayedChild() == 2) {
+                        viewFlipper.setDisplayedChild(0);
+                        return true;
+                    } else {
+                        return false;
                     }
                 }
+
                 return false;
             }
-        });
+    });
         area_list_my_acc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

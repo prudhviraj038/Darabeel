@@ -103,7 +103,7 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         if(restaurants.get(position).promotions.size()>0){
             holder.offer.setVisibility(View.VISIBLE);
         }else{
-            holder.offer.setVisibility(View.VISIBLE);
+            holder.offer.setVisibility(View.GONE);
         }
 //        holder.payment_ll=(LinearLayout) rowView.findViewById(R.id.pay_layout);
 

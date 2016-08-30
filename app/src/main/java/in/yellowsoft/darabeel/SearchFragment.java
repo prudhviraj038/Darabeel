@@ -44,6 +44,7 @@ public class SearchFragment extends Fragment {
     TextView no_products;
     public interface FragmentTouchListner {
         public void songselected(Restaurants restaurant);
+        public void text_back_butt(String head2);
         public  Animation get_animation(Boolean enter,Boolean loaded);
     }
     @Override
@@ -73,6 +74,8 @@ public class SearchFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view = getView();
 //        loaded=true;
+        String head2=Settings.getword(getActivity(), "title_search_restaurants");
+        mCallBack.text_back_butt(head2);
         progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
         no_products = (TextView) view.findViewById(R.id.no_products);
         no_products.setText(Settings.getword(getActivity(),"no_products"));

@@ -36,6 +36,146 @@
                 android:id="@+id/progressBar5"
                 android:layout_centerInParent="true"
                 android:visibility="gone" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:gravity="center"
+                android:id="@+id/rate_pop"
+                android:background="#99b6b6b6"
+                android:baselineAligned="false"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pink_rounded_corners_empty"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Rating:"
+                            android:id="@+id/rate_tv"
+                            android:textColor="@color/brown_text"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:id="@+id/rating_alert_ll"
+                                android:gravity="center"
+                                android:divider="@drawable/rating_divider"
+                                android:showDividers="middle"></LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp" >
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="Write Comments:"
+                            android:id="@+id/comm_tv_alertt"
+                            android:textSize="18sp"
+                            android:textColor="@color/brown_text"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/write_comm_ett"
+                            android:minLines="5"
+                            android:padding="5dp"
+                            android:textSize="14sp"
+                            android:gravity="top"
+                            android:background="@drawable/pink_rounded_corners_empty"
+                            android:textColor="@color/brown_text"
+                            android:textColorHint="@color/brown_text"
+                            android:hint="write comments" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/pink_rounded_corners"
+                            android:gravity="center"
+                            android:id="@+id/alert_submit_lll"
+                            android:padding="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Submit"
+                                android:id="@+id/alert_submitt"
+                                android:textColor="#ffffff"
+                                android:textSize="15sp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/pink_rounded_corners"
+                            android:gravity="center"
+                            android:id="@+id/cancel_pop_ll"
+                            android:padding="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cancel"
+                                android:id="@+id/cancel_pop_tv"
+                                android:textColor="#ffffff"
+                                android:textSize="15sp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
         </RelativeLayout>
 
         <LinearLayout

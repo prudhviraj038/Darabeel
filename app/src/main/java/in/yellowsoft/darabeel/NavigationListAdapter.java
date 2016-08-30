@@ -60,11 +60,11 @@ public class NavigationListAdapter extends BaseAdapter{
         rowView = convertView;
         holder.tv=(TextView)rowView.findViewById(R.id.title);
         holder.img=(ImageView) rowView.findViewById(R.id.icon);
-        if(position==0||position==1||position==3){
-            holder.img.setVisibility(View.VISIBLE);
-        }else{
-            holder.img.setVisibility(View.INVISIBLE);
-        }
+//        if(position==0||position==1||position==3){
+//            holder.img.setVisibility(View.VISIBLE);
+//        }else{
+//            holder.img.setVisibility(View.INVISIBLE);
+//        }
         holder.tv.setText(titles.get(position));
         Picasso.with(context).load(images.get(position)).into(holder.img);
         return rowView;
