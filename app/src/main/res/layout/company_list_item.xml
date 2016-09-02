@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Angelato"
@@ -110,7 +110,7 @@
                     android:textSize="18sp"
                     android:singleLine="true" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
@@ -121,7 +121,7 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Desserts, Chocolates, Shakes, Arabic Sweets..."
@@ -137,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Minimum Order amount"
@@ -147,17 +147,17 @@
                     android:singleLine="true"
                     android:ellipsize="end" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=":"
-                    android:id="@+id/textView"
+                    android:id="@+id/in.yellowsoft.darabeel.MyTextView"
                     android:textColor="@color/black_text"
                     android:textSize="15dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10 KD"
@@ -172,7 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Delivery Time"
@@ -184,17 +184,17 @@
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=":"
-                    android:id="@+id/textView5"
+                    android:id="@+id/in.yellowsoft.darabeel.MyTextView5"
                     android:textColor="@color/black_text"
                     android:textSize="15dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1Hr"
@@ -209,7 +209,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Payment type"
@@ -219,11 +219,11 @@
                     android:singleLine="true"
                     android:ellipsize="end" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=":"
-                    android:id="@+id/textView6"
+                    android:id="@+id/in.yellowsoft.darabeel.MyTextView6"
                     android:textColor="@color/black_text"
                     android:textSize="15dp"
                     android:layout_marginLeft="2dp"
@@ -260,7 +260,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#44ff00bb"></LinearLayout>
+            android:background="@color/pink_text"></LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"

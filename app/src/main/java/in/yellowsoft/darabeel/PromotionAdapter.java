@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -53,7 +53,7 @@ public class PromotionAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView show_menu,title_tv,des_tv,price_tv,sta_price;
+        MyTextView show_menu,title_tv,des_tv,price_tv,sta_price;
         SquareImageview promotion_img;
         ImageView res_img;
         LinearLayout rating_ll,show_menu_ll;
@@ -64,15 +64,15 @@ public class PromotionAdapter extends BaseAdapter{
         Holder holder = new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.promotion_item_screen, null);
-        holder.show_menu = (TextView) rowView.findViewById(R.id.showmenu_pro_list_tv);
+        holder.show_menu = (MyTextView) rowView.findViewById(R.id.showmenu_pro_list_tv);
         holder.show_menu.setText(Settings.getword(context,"show_menu"));
-        holder.sta_price = (TextView) rowView.findViewById(R.id.p_price_sta);
+        holder.sta_price = (MyTextView) rowView.findViewById(R.id.p_price_sta);
         holder.sta_price.setText(Settings.getword(context,"price"));
-        holder.title_tv = (TextView) rowView.findViewById(R.id.p_title);
+        holder.title_tv = (MyTextView) rowView.findViewById(R.id.p_title);
         holder.title_tv.setText(restaurants.get(position).getTitle(context));
-        holder.des_tv = (TextView) rowView.findViewById(R.id.p_des);
+        holder.des_tv = (MyTextView) rowView.findViewById(R.id.p_des);
         holder.des_tv.setText(Html.fromHtml(restaurants.get(position).getdescription(context)));
-        holder.price_tv = (TextView) rowView.findViewById(R.id.p_price);
+        holder.price_tv = (MyTextView) rowView.findViewById(R.id.p_price);
         holder.price_tv.setText(restaurants.get(position).price+" KD ");
 
         holder.res_img = (ImageView) rowView.findViewById(R.id.res_img_promtions);

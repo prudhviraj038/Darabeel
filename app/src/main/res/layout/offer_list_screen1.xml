@@ -62,7 +62,7 @@
                 android:layout_marginRight="50dp"
                 android:id="@+id/show_mwnu_pro_ll" >
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"

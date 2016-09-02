@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -57,7 +57,7 @@ public class CartPageAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView cart_item_name,cart_item_quantity,catr_item_price,cart_item_total,stat_quantity,stat_price,stat_total,delete;
+        MyTextView cart_item_name,cart_item_quantity,catr_item_price,cart_item_total,stat_quantity,stat_price,stat_total,delete;
         ImageView cart_item_image;
        LinearLayout pluse,minus;
       }
@@ -67,18 +67,18 @@ public class CartPageAdapter extends BaseAdapter{
         final Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.cart_item, null);
-        holder.stat_quantity=(TextView) rowView.findViewById(R.id.static_cart_item_quantity);
+        holder.stat_quantity=(MyTextView) rowView.findViewById(R.id.static_cart_item_quantity);
         holder.stat_quantity.setText(Settings.getword(context,"quantity"));
-        holder.stat_price=(TextView) rowView.findViewById(R.id.static_cart_item_price);
+        holder.stat_price=(MyTextView) rowView.findViewById(R.id.static_cart_item_price);
         holder.stat_price.setText(Settings.getword(context,"price"));
-        holder.stat_total=(TextView) rowView.findViewById(R.id.static_cart_item_total);
+        holder.stat_total=(MyTextView) rowView.findViewById(R.id.static_cart_item_total);
         holder.stat_total.setText(Settings.getword(context,"total"));
-        holder.cart_item_name=(TextView) rowView.findViewById(R.id.cart_item_name);
-        holder.cart_item_quantity=(TextView) rowView.findViewById(R.id.cart_item_quantity);
-        holder.catr_item_price=(TextView) rowView.findViewById(R.id.cart_item_price);
-        holder.cart_item_total=(TextView) rowView.findViewById(R.id.cart_item_total);
+        holder.cart_item_name=(MyTextView) rowView.findViewById(R.id.cart_item_name);
+        holder.cart_item_quantity=(MyTextView) rowView.findViewById(R.id.cart_item_quantity);
+        holder.catr_item_price=(MyTextView) rowView.findViewById(R.id.cart_item_price);
+        holder.cart_item_total=(MyTextView) rowView.findViewById(R.id.cart_item_total);
         holder.cart_item_image=(ImageView) rowView.findViewById(R.id.cart_item_img);
-        holder.delete=(TextView) rowView.findViewById(R.id.cart_delete);
+        holder.delete=(MyTextView) rowView.findViewById(R.id.cart_delete);
         holder.pluse=(LinearLayout) rowView.findViewById(R.id.cart_plus_ll);
         holder.minus=(LinearLayout) rowView.findViewById(R.id.cart_minus_ll);
         holder.delete.setOnClickListener(new View.OnClickListener() {

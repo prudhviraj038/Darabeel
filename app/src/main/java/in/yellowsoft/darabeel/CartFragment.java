@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.GridView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * Created by Chinni on 04-05-2016.
  */
 public class CartFragment extends Fragment {
-    TextView min_order_amount,total_amount,stat_min_order,stat_total,tv_continuee,sta_how_do,sta_login,sta_guest,sta_cancel;
+    MyTextView min_order_amount,total_amount,stat_min_order,stat_total,tv_continuee,sta_how_do,sta_login,sta_guest,sta_cancel;
     GridView cart_list;
     ArrayList<CartItem> cart_items;
     LinearLayout cart_continue,cancel_ll,login_ll,guest_ll,cart_alert;
@@ -63,21 +63,21 @@ public class CartFragment extends Fragment {
 //        loaded=true;
         cart_items=new ArrayList<>();
         cart_items=(ArrayList)getArguments().getSerializable("cart_items");
-        stat_min_order=(TextView)v.findViewById(R.id.static_min_order_amount);
+        stat_min_order=(MyTextView)v.findViewById(R.id.static_min_order_amount);
         stat_min_order.setText(Settings.getword(getActivity(),"min_order_amount"));
-        stat_total=(TextView)v.findViewById(R.id.static_total_amount);
+        stat_total=(MyTextView)v.findViewById(R.id.static_total_amount);
         stat_total.setText(Settings.getword(getActivity(),"your_total_amount"));
-        tv_continuee=(TextView)v.findViewById(R.id.tv_continue);
+        tv_continuee=(MyTextView)v.findViewById(R.id.tv_continue);
         tv_continuee.setText(Settings.getword(getActivity(),"continue"));
-        min_order_amount=(TextView)v.findViewById(R.id.min_order_amount);
+        min_order_amount=(MyTextView)v.findViewById(R.id.min_order_amount);
 
-        sta_how_do=(TextView)v.findViewById(R.id.alert_cart_title);
+        sta_how_do=(MyTextView)v.findViewById(R.id.alert_cart_title);
         sta_how_do.setText(Settings.getword(getActivity(),"login_to_checkout"));
-        sta_login=(TextView)v.findViewById(R.id.cart_login);
+        sta_login=(MyTextView)v.findViewById(R.id.cart_login);
         sta_login.setText(Settings.getword(getActivity(),"login"));
-        sta_guest=(TextView)v.findViewById(R.id.cart_guest);
+        sta_guest=(MyTextView)v.findViewById(R.id.cart_guest);
         sta_guest.setText(Settings.getword(getActivity(),"guest_checkout"));
-        sta_cancel=(TextView)v.findViewById(R.id.cart_cancel);
+        sta_cancel=(MyTextView)v.findViewById(R.id.cart_cancel);
         sta_cancel.setText(Settings.getword(getActivity(),"cancel"));
         login_ll=(LinearLayout)v.findViewById(R.id.cart_login_ll);
         guest_ll=(LinearLayout)v.findViewById(R.id.cart_guest_ll);
@@ -85,7 +85,7 @@ public class CartFragment extends Fragment {
         cart_alert=(LinearLayout)v.findViewById(R.id.cart_alert);
 
 
-        total_amount=(TextView)v.findViewById(R.id.total_amount);
+        total_amount=(MyTextView)v.findViewById(R.id.total_amount);
         for(int i=0;i<cart_items.size();i++){
             Float quty=0f;
             Float price=0f;

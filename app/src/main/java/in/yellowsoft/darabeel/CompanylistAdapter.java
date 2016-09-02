@@ -11,7 +11,7 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -61,7 +61,7 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
 
     public class Holder
     {
-        TextView com_name,com_items,time,trally_charge,min_order,payment,delivery_time,reviews,status;
+        MyTextView com_name,com_items,time,trally_charge,min_order,payment,delivery_time,reviews,status;
         ImageView com_logo,card1,card2,card3,card4,com_status,offer;
         LinearLayout rating_ll,com_payment_type;
         RatingBar ratingBar;
@@ -77,14 +77,14 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         holder.rating_ll=(LinearLayout) rowView.findViewById(R.id.rating_com_list_item);
         Log.e("rating",restaurants.get(position).rating);
         Settings.set_rating(context, restaurants.get(position).rating, holder.rating_ll);
-        holder.min_order=(TextView) rowView.findViewById(R.id.min_order_item);
+        holder.min_order=(MyTextView) rowView.findViewById(R.id.min_order_item);
         holder.min_order.setText(Settings.getword(context,"minimum_order_amout"));
-        holder.payment=(TextView) rowView.findViewById(R.id.item_payment);
-        holder.payment.setText(Settings.getword(context,"text_payment"));
-        holder.delivery_time=(TextView) rowView.findViewById(R.id.item_delivery_time);
+        holder.payment=(MyTextView) rowView.findViewById(R.id.item_payment);
+        holder.payment.setText(Settings.getword(context,"text_payment_type"));
+        holder.delivery_time=(MyTextView) rowView.findViewById(R.id.item_delivery_time);
         holder.delivery_time.setText(Settings.getword(context,"text_delivery_time"));
-//        holder.reviews=(TextView) rowView.findViewById(R.id.review_com_list_item);
-        holder.status=(TextView) rowView.findViewById(R.id.com_status);
+//        holder.reviews=(MyTextView) rowView.findViewById(R.id.review_com_list_item);
+        holder.status=(MyTextView) rowView.findViewById(R.id.com_status);
         if(restaurants.get(position).status.equals("Open")){
             holder.status.setTextColor(context.getResources().getColor(R.color.green_text));
         }else if(restaurants.get(position).status.equals("Closed")){
@@ -94,10 +94,10 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         }
         holder.status.setText("("+restaurants.get(position).status+")");
 //        holder.reviews.setText("("+restaurants.get(position).reviews+")");
-        holder.com_name=(TextView) rowView.findViewById(R.id.company_list_name);
-        holder.com_items=(TextView) rowView.findViewById(R.id.company_list_items);
-        holder.time=(TextView) rowView.findViewById(R.id.time_com_list);
-        holder.trally_charge=(TextView) rowView.findViewById(R.id.travel_charge);
+        holder.com_name=(MyTextView) rowView.findViewById(R.id.company_list_name);
+        holder.com_items=(MyTextView) rowView.findViewById(R.id.company_list_items);
+        holder.time=(MyTextView) rowView.findViewById(R.id.time_com_list);
+        holder.trally_charge=(MyTextView) rowView.findViewById(R.id.travel_charge);
         holder.com_logo=(ImageView) rowView.findViewById(R.id.com_list_logo);
         holder.offer=(ImageView) rowView.findViewById(R.id.img_offer);
         if(restaurants.get(position).promotions.size()>0){

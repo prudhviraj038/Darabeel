@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
+
 
 import com.labo.kaji.fragmentanimations.MoveAnimation;
 
@@ -43,7 +43,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     FragmentManager fragmentManager;
     ProductPageFragment productPageFragment;
     ImageView menu,back,search,menu_back,cart_icon;
-    TextView logout,nav_title,lang_tv,waste;
+    MyTextView logout,nav_title,lang_tv,waste;
     LinearLayout lang_ll,filter;
     ArrayList<CartItem> cart_items=new ArrayList<>();
     public  static final long DURATION=300;
@@ -64,15 +64,15 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         fragmentManager = getSupportFragmentManager();
         HomeFragment fragment = new HomeFragment();
         fragmentManager.beginTransaction().add(R.id.container_main, fragment).commit();
-        nav_title=(TextView)findViewById(R.id.nav_title);
-        waste=(TextView)findViewById(R.id.nav_waste);
-        lang_tv=(TextView)findViewById(R.id.lang_nav_tv);
+        nav_title=(MyTextView)findViewById(R.id.nav_title);
+        waste=(MyTextView)findViewById(R.id.nav_waste);
+        lang_tv=(MyTextView)findViewById(R.id.lang_nav_tv);
         if(Settings.get_user_language(this).equals("ar")){
             lang_tv.setText("EN");
         }else{
             lang_tv.setText("AR");
         }
-        logout=(TextView)findViewById(R.id.logout);
+        logout=(MyTextView)findViewById(R.id.logout);
         logout.setText(Settings.getword(this, "logout"));
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -436,7 +436,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         Bundle bundle = new Bundle();
         bundle.putSerializable("product",products);
         productPageFragment.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.container_main, productPageFragment).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container_main, productPageFragment).commit();
     }
 
     @Override
@@ -722,13 +722,14 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         cart_icon.setVisibility(View.GONE);
     }
     @Override
-    public void product_list(String rest_id,String cat_id,String cat_name) {
+    public void product_list(String rest_id,String cat_id,String cat_name,String type) {
         animation_direction=true;
         ProductListFragment fragment = new ProductListFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("rest_id", rest_id);
         bundle.putSerializable("cat_id", cat_id);
         bundle.putSerializable("cat_name", cat_name);
+        bundle.putSerializable("type", type);
         fragment.setArguments(bundle);
         fragmentManager.beginTransaction().replace(R.id.container_main, fragment).addToBackStack(null).commit();
     }

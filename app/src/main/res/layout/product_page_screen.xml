@@ -71,7 +71,7 @@
                                     android:layout_weight="1"
                                     android:visibility="gone">
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Quinoa Bil Laben "
@@ -80,7 +80,7 @@
                                         android:textColor="#ffffff"
                                         android:textStyle="bold" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -117,7 +117,7 @@
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp">
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Cost"
@@ -126,15 +126,15 @@
                                     android:textColor="@color/brown"
                                     android:textStyle="bold" />
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text=" : "
-                                    android:id="@+id/textView22"
+                                    android:id="@+id/in.yellowsoft.darabeel.MyTextView22"
                                     android:textSize="20sp"
                                     android:textColor="@color/brown" />
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/product_page_price"
@@ -185,7 +185,7 @@
                                         android:gravity="center_vertical"
                                         android:padding="5dp">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Choices"
@@ -235,7 +235,7 @@
                                         android:padding="5dp"
                                         android:gravity="center_vertical">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="About chacolateness"
@@ -261,7 +261,7 @@
                                         android:visibility="gone"
                                         android:focusable="false">
 
-                                        <EditText
+                                        <in.yellowsoft.darabeel.MyEditText
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/about_product"
@@ -313,7 +313,7 @@
                                 android:id="@+id/imageView13"
                                 android:src="@drawable/circle_plus" />
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="+"
@@ -339,7 +339,7 @@
                                 android:id="@+id/imageView20"
                                 android:src="@drawable/balck_minus" />
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/minus"
@@ -350,7 +350,7 @@
                                 android:visibility="gone" />
                         </LinearLayout>
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
                             android:text="5"
@@ -375,7 +375,7 @@
                                 android:id="@+id/imageView25"
                                 android:src="@drawable/black_pluse" />
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/plus"
@@ -437,7 +437,7 @@
                 android:focusable="false"
                 android:padding="10dp">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="New Text"
@@ -465,7 +465,7 @@
                         android:background="@drawable/pink_rounded_corners"
                         android:layout_margin="10dp">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="New Text"
@@ -487,7 +487,7 @@
                         android:background="@drawable/pink_rounded_corners"
                         android:layout_margin="10dp">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="New Text"

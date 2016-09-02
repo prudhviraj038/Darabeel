@@ -8,12 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 public class Settingsfragment extends Fragment {
     String head;
     LinearLayout eng,arabic;
-    TextView choose;
+    MyTextView choose;
     FragmentTouchListner mCallBack;
     boolean loaded=false;
     public interface FragmentTouchListner {
@@ -51,7 +51,7 @@ public class Settingsfragment extends Fragment {
 //        mCallBack.text_back_butt(head);
         eng=(LinearLayout)v.findViewById(R.id.sett_eng);
         arabic=(LinearLayout)v.findViewById(R.id.set_arabic);
-        choose=(TextView)v.findViewById(R.id.choose_lang_settings);
+        choose=(MyTextView)v.findViewById(R.id.choose_lang_settings);
         choose.setText(Settings.getword(getActivity(),"choose_language"));
         eng.setOnClickListener(new View.OnClickListener() {
             @Override

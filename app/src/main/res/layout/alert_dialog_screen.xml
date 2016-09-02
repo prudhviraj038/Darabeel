@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Rating:"
@@ -58,7 +58,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Write Comments:"
@@ -87,7 +87,7 @@
             android:id="@+id/alert_submit_ll"
             android:padding="5dp">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submit"

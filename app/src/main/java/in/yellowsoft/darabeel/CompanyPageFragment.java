@@ -16,7 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
+
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -42,7 +42,7 @@ public class CompanyPageFragment extends Fragment {
     boolean loaded=false;
     AlertDialogManager alert = new AlertDialogManager();
     ImageView company_logo,review_res_logo;
-    TextView about_company,com_area,com_status,com_cuisines,com_wrk_hours,about_tab_tv,other_info_tab_tv,
+    MyTextView about_company,com_area,com_status,com_cuisines,com_wrk_hours,about_tab_tv,other_info_tab_tv,
             com_delivery_time,com_min_order,com_delivery_charges,sta_res_info,sta_about_title,sta_area,sta_status,sta_hours,
             sta_time,sta_min,sta_dc,sta_cuisines,sta_payment,sta_promotion,sta_show,review,area_tv;
     LinearLayout show_menu,ll_promotion,rating,com_payment_type,tab_about_ll,tab_other_ll,about_ll,other_ll,review_rating,review_ll,area_ll;
@@ -57,6 +57,7 @@ public class CompanyPageFragment extends Fragment {
 //        public void five_items();
         public void text_back_butt(String header);
         public void clear_cart();
+        public void product_list(String rest_id,String cat_id,String cat_name,String type);
         public  Animation get_animation(Boolean enter,Boolean loaded);
         public void area_list(String id,Restaurants restaurants);
         public void to_promotions(Restaurants restaurants);
@@ -105,41 +106,47 @@ public class CompanyPageFragment extends Fragment {
         tab_other_ll=(LinearLayout)view.findViewById(R.id.other_info_tab_ll);
         about_ll=(LinearLayout)view.findViewById(R.id.ll_res_about);
         other_ll=(LinearLayout)view.findViewById(R.id.ll_res_other_info);
-        about_tab_tv=(TextView)view.findViewById(R.id.about_tab);
+        about_tab_tv=(MyTextView)view.findViewById(R.id.about_tab);
         about_tab_tv.setText(Settings.getword(getActivity(), "about"));
-        other_info_tab_tv=(TextView)view.findViewById(R.id.other_info);
+        other_info_tab_tv=(MyTextView)view.findViewById(R.id.other_info);
         other_info_tab_tv.setText(Settings.getword(getActivity(), "restaurant_info"));
-        sta_about_title=(TextView)view.findViewById(R.id.sta_about_restaurant);
+        sta_about_title=(MyTextView)view.findViewById(R.id.sta_about_restaurant);
         sta_about_title.setText(Settings.getword(getActivity(), "about" )+ " " + Html.fromHtml(restaurants.getTitle(getActivity())));
-        sta_res_info=(TextView)view.findViewById(R.id.sta_resta_info);
+        sta_res_info=(MyTextView)view.findViewById(R.id.sta_resta_info);
         sta_res_info.setText(Settings.getword(getActivity(), "restaurant_info"));
-        sta_area=(TextView)view.findViewById(R.id.sat_area_cpage);
+        sta_area=(MyTextView)view.findViewById(R.id.sat_area_cpage);
         sta_area.setText(Settings.getword(getActivity(),"area"));
-        sta_status=(TextView)view.findViewById(R.id.sat_status_cpage);
+        sta_status=(MyTextView)view.findViewById(R.id.sat_status_cpage);
         sta_status.setText(Settings.getword(getActivity(),"text_status"));
-        sta_cuisines=(TextView)view.findViewById(R.id.sat_cuisines_cpage);
+        sta_cuisines=(MyTextView)view.findViewById(R.id.sat_cuisines_cpage);
         sta_cuisines.setText(Settings.getword(getActivity(),"text_cuisines"));
-        sta_hours=(TextView)view.findViewById(R.id.sat_hours_cpage);
+        sta_hours=(MyTextView)view.findViewById(R.id.sat_hours_cpage);
         sta_hours.setText(Settings.getword(getActivity(),"text_working_hours"));
-        sta_time=(TextView)view.findViewById(R.id.sat_time_cpage);
+        sta_time=(MyTextView)view.findViewById(R.id.sat_time_cpage);
         sta_time.setText(Settings.getword(getActivity(),"text_delivery_time"));
-        sta_dc=(TextView)view.findViewById(R.id.sat_dc_cpage);
+        sta_dc=(MyTextView)view.findViewById(R.id.sat_dc_cpage);
         sta_dc.setText(Settings.getword(getActivity(),"delivery_charges"));
-        sta_min=(TextView)view.findViewById(R.id.sat_min_cpage);
+        sta_min=(MyTextView)view.findViewById(R.id.sat_min_cpage);
         sta_min.setText(Settings.getword(getActivity(),"min_order_amount"));
-        sta_payment=(TextView)view.findViewById(R.id.sat_payment_cpage);
+        sta_payment=(MyTextView)view.findViewById(R.id.sat_payment_cpage);
         sta_payment.setText(Settings.getword(getActivity(),"text_payment_type"));
-        sta_promotion=(TextView)view.findViewById(R.id.tv_Promotions);
+        sta_promotion=(MyTextView)view.findViewById(R.id.tv_Promotions);
         sta_promotion.setText(Settings.getword(getActivity(),"promotions"));
-        sta_show=(TextView)view.findViewById(R.id.tv_show_menu);
+        sta_show=(MyTextView)view.findViewById(R.id.tv_show_menu);
         sta_show.setText(Settings.getword(getActivity(),"show_menu"));
-        area_tv=(TextView)view.findViewById(R.id.select_area_tv);
+        com_area=(MyTextView)view.findViewById(R.id.area);
+        area_tv=(MyTextView)view.findViewById(R.id.select_area_tv);
+        area_ll=(LinearLayout)view.findViewById(R.id.select_area_ll);
         if(Settings.getArea_id(getActivity()).equals("-1")){
             area_tv.setText(Settings.getword(getActivity(),"select_area"));
+            com_area.setText(Settings.getword(getActivity(),"please_area"));
+            area_ll.setVisibility(View.VISIBLE);
         }else {
             area_tv.setText(Settings.getArea_name(getActivity()));
+            com_area.setText(Settings.getArea_name(getActivity()));
+            area_ll.setVisibility(View.GONE);
         }
-        review=(TextView)view.findViewById(R.id.reviews_com_page);
+        review=(MyTextView)view.findViewById(R.id.reviews_com_page);
         review.setText(Settings.getword(getActivity(), "review"));
 
         company_logo=(ImageView)view.findViewById(R.id.resta_img);
@@ -166,7 +173,7 @@ public class CompanyPageFragment extends Fragment {
                 about_tab_tv.setTextColor(Color.parseColor("#ffffff"));
             }
         });
-        area_ll=(LinearLayout)view.findViewById(R.id.select_area_ll);
+
         area_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,7 +190,8 @@ public class CompanyPageFragment extends Fragment {
                     alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_area"), false);
                 } else {
                     if (restaurants.menu.size() == 0)
-                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "no_prodcts_in_restaurant"), false);
+                        mCallBack.product_list(restaurants.res_id,restaurants.res_id,restaurants.getTitle(getActivity()),"1");
+//                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "no_prodcts_in_restaurant"), false);
                     else
                         mCallBack.showmenu(restaurants);
                 }
@@ -196,7 +204,7 @@ public class CompanyPageFragment extends Fragment {
                mCallBack.reviews_page(restaurants);
             }
         });
-        about_company=(TextView)view.findViewById(R.id.about_restauarnt);
+        about_company=(MyTextView)view.findViewById(R.id.about_restauarnt);
         about_company.setText(Html.fromHtml(restaurants.getdescription(getActivity())));
         ll_promotion=(LinearLayout)view.findViewById(R.id.ll_Promotions);
         if (restaurants.promotions.size()>0){
@@ -207,11 +215,15 @@ public class CompanyPageFragment extends Fragment {
         ll_promotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mCallBack. to_promotions(restaurants);
+                if (Settings.getArea_id(getActivity()).equals("-1")) {
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_area"), false);
+                } else {
+                    mCallBack.to_promotions(restaurants);
+                }
             }
         });
-        com_area=(TextView)view.findViewById(R.id.area);
-        com_area.setText(Settings.getword(getActivity(),"please_area"));
+
+//        com_area.setText(Settings.getword(getActivity(),"please_area"));
         area_list = new ArrayList<>();
         ListView area_listView = (ListView)view.findViewById(R.id.com_list_view);
         personAdapter = new AreaAdapter(getActivity(), area_list);
@@ -226,9 +238,9 @@ public class CompanyPageFragment extends Fragment {
                 delivery_charges();
             }
         });
-        com_status=(TextView)view.findViewById(R.id.status);
+        com_status=(MyTextView)view.findViewById(R.id.status);
         com_status.setText(restaurants.status);
-        com_cuisines=(TextView)view.findViewById(R.id.cuisines);
+        com_cuisines=(MyTextView)view.findViewById(R.id.cuisines);
         String temp="";
         for(int i=0;i<restaurants.category.size();i++){
             if(i==0)
@@ -239,18 +251,19 @@ public class CompanyPageFragment extends Fragment {
         com_cuisines.setText(temp);
 
 
-        com_wrk_hours=(TextView)view.findViewById(R.id.working_hours);
+        com_wrk_hours=(MyTextView)view.findViewById(R.id.working_hours);
         com_wrk_hours.setText(restaurants.hours);
-        com_delivery_time=(TextView)view.findViewById(R.id.delivery_time);
+        com_delivery_time=(MyTextView)view.findViewById(R.id.delivery_time);
         com_delivery_time.setText(restaurants.time);
-        com_min_order=(TextView)view.findViewById(R.id.minimum_order);
+        com_min_order=(MyTextView)view.findViewById(R.id.minimum_order);
         com_min_order.setText(restaurants.min+" KD ");
-        com_delivery_charges=(TextView)view.findViewById(R.id.rest_deli_charges);
+        com_delivery_charges=(MyTextView)view.findViewById(R.id.rest_deli_charges);
         delivery_charges();
 
         com_payment_type=(LinearLayout)view.findViewById(R.id.payment_type);
         for(int i=0;i<restaurants.payment.size();i++){
             ImageView temp_img = new ImageView(getActivity());
+            temp_img.setAdjustViewBounds(true);
             Picasso.with(getActivity()).load(restaurants.payment.get(i).image).into(temp_img);
             com_payment_type.addView(temp_img);
         }

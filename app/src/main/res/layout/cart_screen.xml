@@ -55,7 +55,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp">
 
-                        <TextView
+                         <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="MNIMUM ORDER AMOUNT"
@@ -66,7 +66,7 @@
                             android:layout_marginBottom="5dp"
                             android:textSize="18sp" />
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="YOUR TOTAL AMOUNT"
@@ -90,7 +90,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="KD 2,000"
@@ -99,7 +99,7 @@
                             android:textSize="18sp"
                             android:layout_marginBottom="5dp" />
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="KD 12,000"
@@ -122,7 +122,7 @@
                     android:layout_marginBottom="10dp"
                     android:padding="5dp">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="CONTINUE"
@@ -155,7 +155,7 @@
                 android:showDividers="middle"
                 android:id="@+id/jjhiuhu">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="How do you want to checkout?"
@@ -176,7 +176,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Login/Register"
@@ -193,7 +193,7 @@
                     android:id="@+id/cart_guest_ll"
                     android:padding="5dp">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Guest Checkout"
@@ -213,7 +213,7 @@
                     android:layout_marginBottom="10dp"
                     android:gravity="center">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cancel"

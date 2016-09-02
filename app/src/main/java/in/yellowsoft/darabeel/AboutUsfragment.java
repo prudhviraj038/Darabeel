@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.TextView;
+
 
 public class AboutUsfragment extends Fragment {
     String head;
@@ -46,8 +46,8 @@ public class AboutUsfragment extends Fragment {
         super.onCreate(savedInstanceState);
         View v = getView();
 //        loaded=true;
-        TextView about_us=(TextView)v.findViewById(R.id.aboutus_descri);
-        TextView title_about_us=(TextView)v.findViewById(R.id.tittle_aboutus);
+        MyTextView about_us=(MyTextView)v.findViewById(R.id.aboutus_descri);
+        MyTextView title_about_us=(MyTextView)v.findViewById(R.id.tittle_aboutus);
             head=String.valueOf(Html.fromHtml(Settings.getword(getActivity(), "about_us")));
             mCallBack.text_back_butt(head);
             title_about_us.setText(Html.fromHtml( Settings.getword(getActivity(),"about_us")));

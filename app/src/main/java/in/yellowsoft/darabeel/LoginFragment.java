@@ -15,11 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
-import android.widget.EditText;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
+
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -43,9 +43,9 @@ import java.util.Map;
  */
 public class LoginFragment extends Fragment {
     String head,write;
-    TextView et_area;
+    MyTextView et_area;
     AlertDialogManager alert = new AlertDialogManager();
-    EditText et_fname, et_lname, et_phone, etr_email, etr_password,et_block,et_street,et_house,et_floor,et_flat,et_email,et_password;
+    MyEditText et_fname, et_lname, et_phone, etr_email, etr_password,et_block,et_street,et_house,et_floor,et_flat,et_email,et_password;
     LinearLayout register,area_list_signup;
     AllApis allApis=new AllApis();
     ViewFlipper viewFlipper;
@@ -103,16 +103,16 @@ public class LoginFragment extends Fragment {
         tick_login_email=(ImageView)view.findViewById(R.id.tick_login_email);
         tick_login_pass=(ImageView)view.findViewById(R.id.tick_login_password);
         final LinearLayout login = (LinearLayout) view.findViewById(R.id.login);
-        TextView tv_login = (TextView) view.findViewById(R.id.login_tv);
+        MyTextView tv_login = (MyTextView) view.findViewById(R.id.login_tv);
         tv_login.setText(Settings.getword(getActivity(),"title_login"));
-        TextView fpassword = (TextView) view.findViewById(R.id.forgot_pass);
+        MyTextView fpassword = (MyTextView) view.findViewById(R.id.forgot_pass);
         fpassword.setText(Settings.getword(getActivity(),"forgot_password"));
-        TextView new_here1 = (TextView) view.findViewById(R.id.signup_newhere);
+        MyTextView new_here1 = (MyTextView) view.findViewById(R.id.signup_newhere);
         new_here1.setText(Settings.getword(getActivity(),"new_here"));
-        TextView register_tv = (TextView) view.findViewById(R.id.signup);
+        MyTextView register_tv = (MyTextView) view.findViewById(R.id.signup);
         register_tv.setText(Settings.getword(getActivity(),"register"));
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper2);
-        et_email = (EditText) view.findViewById(R.id.login_email);
+        et_email = (MyEditText) view.findViewById(R.id.login_email);
         et_email.setHint(Settings.getword(getActivity(), "email_address"));
         et_email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -136,7 +136,7 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        et_password = (EditText) view.findViewById(R.id.login_password);
+        et_password = (MyEditText) view.findViewById(R.id.login_password);
         et_password.setHint(Settings.getword(getActivity(), "password"));
         et_password.addTextChangedListener(new TextWatcher() {
             @Override
@@ -192,7 +192,7 @@ public class LoginFragment extends Fragment {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
                 alert.setTitle(Settings.getword(getActivity(), "forgot_password_sent"));
                     LinearLayout layout = new LinearLayout(getActivity());
-                final EditText input = new EditText(getActivity());
+                final MyEditText input = new MyEditText(getActivity());
                 input.setMinLines(2);
                 input.setHint(Settings.getword(getActivity(),"email_address"));
                 input.setVerticalScrollBarEnabled(true);
@@ -219,7 +219,7 @@ public class LoginFragment extends Fragment {
                 alert.show();
             }
         });
-        et_fname = (EditText) view.findViewById(R.id.fname_signup);
+        et_fname = (MyEditText) view.findViewById(R.id.fname_signup);
         et_fname.setHint(Settings.getword(getActivity(), "first_name") + "*");
         et_fname.addTextChangedListener(new TextWatcher() {
             @Override
@@ -242,7 +242,7 @@ public class LoginFragment extends Fragment {
 
             }
         });
-        et_lname = (EditText) view.findViewById(R.id.lname_signup);
+        et_lname = (MyEditText) view.findViewById(R.id.lname_signup);
         et_lname.setHint(Settings.getword(getActivity(), "last_name") + "*");
         et_lname.addTextChangedListener(new TextWatcher() {
             @Override
@@ -265,7 +265,7 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        et_phone = (EditText) view.findViewById(R.id.mobile_signup);
+        et_phone = (MyEditText) view.findViewById(R.id.mobile_signup);
         et_phone.setHint(Settings.getword(getActivity(),"mobile_number")+"*");
         et_phone.addTextChangedListener(new TextWatcher() {
             @Override
@@ -288,7 +288,7 @@ public class LoginFragment extends Fragment {
 
             }
         });
-        etr_email = (EditText) view.findViewById(R.id.email_signup);
+        etr_email = (MyEditText) view.findViewById(R.id.email_signup);
         etr_email.setHint(Settings.getword(getActivity(),"email_address"));
         etr_email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -311,7 +311,7 @@ public class LoginFragment extends Fragment {
 
             }
         });
-         etr_password = (EditText) view.findViewById(R.id.pass_signup);
+         etr_password = (MyEditText) view.findViewById(R.id.pass_signup);
         etr_password.setHint(Settings.getword(getActivity(),"password")+"*");
         etr_password.addTextChangedListener(new TextWatcher() {
             @Override
@@ -334,7 +334,7 @@ public class LoginFragment extends Fragment {
 
             }
         });
-        et_area = (TextView) view.findViewById(R.id.area_signup);
+        et_area = (MyTextView) view.findViewById(R.id.area_signup);
         et_area.setText(Settings.getword(getActivity(), "area") + "*");
         area_list_signup = (LinearLayout) view.findViewById(R.id.area_list_signup);
         area_list_signup.setOnClickListener(new View.OnClickListener() {
@@ -357,7 +357,7 @@ public class LoginFragment extends Fragment {
                 et_area.setText(Settings.getSignup_Area_name(getActivity()));
             }
         });
-        et_block = (EditText) view.findViewById(R.id.block_signup);
+        et_block = (MyEditText) view.findViewById(R.id.block_signup);
         et_block.setHint(Settings.getword(getActivity(), "block") + "*");
         et_block.addTextChangedListener(new TextWatcher() {
             @Override
@@ -380,7 +380,7 @@ public class LoginFragment extends Fragment {
 
             }
         });
-        et_street = (EditText) view.findViewById(R.id.street_signup);
+        et_street = (MyEditText) view.findViewById(R.id.street_signup);
         et_street.setHint(Settings.getword(getActivity(),"street")+"*");
         et_street.addTextChangedListener(new TextWatcher() {
             @Override
@@ -403,7 +403,7 @@ public class LoginFragment extends Fragment {
 
             }
         });
-        et_house = (EditText) view.findViewById(R.id.house_signup);
+        et_house = (MyEditText) view.findViewById(R.id.house_signup);
         et_house.setHint(Settings.getword(getActivity(),"house")+"*");
         et_house.addTextChangedListener(new TextWatcher() {
             @Override
@@ -426,9 +426,9 @@ public class LoginFragment extends Fragment {
 
             }
         });
-        et_floor = (EditText) view.findViewById(R.id.floor_signup);
+        et_floor = (MyEditText) view.findViewById(R.id.floor_signup);
         et_floor.setHint(Settings.getword(getActivity(),"floor_number"));
-        et_flat = (EditText) view.findViewById(R.id.flat_signup);
+        et_flat = (MyEditText) view.findViewById(R.id.flat_signup);
         et_flat.setHint(Settings.getword(getActivity(),"flat_number"));
         register = (LinearLayout) view.findViewById(R.id.register);
         register.setOnClickListener(new View.OnClickListener() {

@@ -13,13 +13,13 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 /**
  * Created by Chinni on 04-05-2016.
  */
 public class MyAccountFragment extends Fragment implements ViewPager.OnPageChangeListener  {
-    TextView sta_logout, sta_my_orders, sta_my_address, sta_edit_address, sta_change_pass, setting_tv,language_tv;
+    MyTextView sta_logout, sta_my_orders, sta_my_address, sta_edit_address, sta_change_pass, setting_tv,language_tv;
     LinearLayout my_order_ll, my_address_ll, edit_address, change_pass, settings, logout,area_list_my_acc, language;
     String head, member_id;
     int posi;
@@ -83,15 +83,15 @@ public class MyAccountFragment extends Fragment implements ViewPager.OnPageChang
             edit_profile_img = (ImageView) view.findViewById(R.id.edit_profile_img);
             settings_img = (ImageView) view.findViewById(R.id.settings_img);
             change_password_img = (ImageView) view.findViewById(R.id.change_pass_img);
-            sta_my_orders = (TextView) view.findViewById(R.id.my_orders_tv);
+            sta_my_orders = (MyTextView) view.findViewById(R.id.my_orders_tv);
             sta_my_orders.setText(Settings.getword(getActivity(), "my_orders"));
-            sta_my_address = (TextView) view.findViewById(R.id.my_address_tv);
+            sta_my_address = (MyTextView) view.findViewById(R.id.my_address_tv);
             sta_my_address.setText(Settings.getword(getActivity(), "address_list"));
-            sta_edit_address = (TextView) view.findViewById(R.id.edit_address_my_acc_tv);
+            sta_edit_address = (MyTextView) view.findViewById(R.id.edit_address_my_acc_tv);
             sta_edit_address.setText(Settings.getword(getActivity(), "edit_profile"));
-            sta_change_pass = (TextView) view.findViewById(R.id.change_password_my_acc_tv);
+            sta_change_pass = (MyTextView) view.findViewById(R.id.change_password_my_acc_tv);
             sta_change_pass.setText(Settings.getword(getActivity(), "change_password"));
-            setting_tv = (TextView) view.findViewById(R.id.setting_tv);
+            setting_tv = (MyTextView) view.findViewById(R.id.setting_tv);
             setting_tv.setText(Settings.getword(getActivity(), "settings"));
 
 //            order details
@@ -103,7 +103,7 @@ public class MyAccountFragment extends Fragment implements ViewPager.OnPageChang
 //                    area_list_ll.setVisibility(View.GONE);
 //                }
 //            });
-//            select_area_txt = (TextView) view.findViewById(R.id.select_area_my_acc);
+//            select_area_txt = (MyTextView) view.findViewById(R.id.select_area_my_acc);
 //            select_area_txt.setText(Settings.getword(getActivity(), "area"));
             my_order_ll = (LinearLayout) view.findViewById(R.id.my_orders_ll);
             my_order_ll.setOnClickListener(new View.OnClickListener() {
@@ -189,7 +189,7 @@ public class MyAccountFragment extends Fragment implements ViewPager.OnPageChang
 //                    setting_tv.setTextColor(Color.parseColor("#d4005a"));
                 }
             });
-////            sta_logout = (TextView) view.findViewById(R.id.logout_tv);
+////            sta_logout = (MyTextView) view.findViewById(R.id.logout_tv);
 //            sta_logout.setText(Settings.getword(getActivity(), "logout"));
 //            logout = (LinearLayout) view.findViewById(R.id.logout);
 //            logout.setOnClickListener(new View.OnClickListener() {
@@ -200,7 +200,7 @@ public class MyAccountFragment extends Fragment implements ViewPager.OnPageChang
 //
 //                }
 //            });
-//            language_tv = (TextView) view.findViewById(R.id.language_tv);
+//            language_tv = (MyTextView) view.findViewById(R.id.language_tv);
 //            language_tv.setText(Settings.getword(getActivity(), "language"));
 //            language = (LinearLayout) view.findViewById(R.id.language);
 //            language.setOnClickListener(new View.OnClickListener() {

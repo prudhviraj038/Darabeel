@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddonAdapter extends BaseAdapter{
@@ -49,7 +48,7 @@ public class AddonAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView addon_title,addon_price;
+        MyTextView addon_title,addon_price;
         ImageView addon_image;
         LinearLayout addon_linear;
     }
@@ -59,7 +58,7 @@ public class AddonAdapter extends BaseAdapter{
         final Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.addon_grid_item, null);
-        holder.addon_title=(TextView) rowView.findViewById(R.id.addon_name);
+        holder.addon_title=(MyTextView) rowView.findViewById(R.id.addon_name);
 
         if (Float.parseFloat(products.groups.get(posi).addons.get(position).price)==0){
             holder.addon_title.setText(products.groups.get(posi).addons.get(position).get_addon(context)+" ( )");

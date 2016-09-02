@@ -31,7 +31,7 @@
                     android:id="@+id/s_img"
                     android:src="@drawable/search_icon_sear" />
 
-                <EditText
+                <in.yellowsoft.darabeel.MyEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/search_com_list_et"
@@ -65,7 +65,7 @@
                     android:layout_centerInParent="true"
                     android:visibility="gone" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
@@ -126,7 +126,7 @@
                                 android:padding="5dp"
                                 android:background="@drawable/brown_rounded_corners_full">
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="New Text"
@@ -156,7 +156,7 @@
                                         android:id="@+id/open_img"
                                         android:src="@drawable/ic_option_brown" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Open"
@@ -183,7 +183,7 @@
                                         android:id="@+id/busy_img"
                                         android:src="@drawable/ic_option_brown" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Open"
@@ -209,7 +209,7 @@
                                         android:id="@+id/close_img"
                                         android:src="@drawable/ic_option_brown" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Open"
@@ -238,7 +238,7 @@
                                 android:padding="5dp"
                                 android:background="@drawable/brown_rounded_corners_full" >
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="New Text"
@@ -268,7 +268,7 @@
                                         android:id="@+id/cash_im"
                                         android:src="@drawable/ic_option_brown" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Open"
@@ -294,7 +294,7 @@
                                         android:id="@+id/knet_im"
                                         android:src="@drawable/ic_option_brown" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Open"
@@ -324,7 +324,7 @@
                                 android:padding="5dp"
                                 android:background="@drawable/brown_rounded_corners_full" >
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="New Text"
@@ -360,11 +360,11 @@
                                             android:id="@+id/r1_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="1"
-                                            android:id="@+id/textView30"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView30"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -387,11 +387,11 @@
                                             android:id="@+id/r2_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="2"
-                                            android:id="@+id/textView32"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView32"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -413,11 +413,11 @@
                                             android:id="@+id/r3_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="3"
-                                            android:id="@+id/textView34"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView34"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -446,11 +446,11 @@
                                             android:id="@+id/r4_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="4"
-                                            android:id="@+id/textView36"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView36"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -472,11 +472,11 @@
                                             android:id="@+id/r5_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="5"
-                                            android:id="@+id/textView37"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView37"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -499,11 +499,11 @@
                                             android:id="@+id/imageView33"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="5"
-                                            android:id="@+id/textView40"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView40"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -531,7 +531,7 @@
                                 android:padding="5dp"
                                 android:background="@drawable/brown_rounded_corners_full" >
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="New Text"
@@ -567,11 +567,11 @@
                                             android:id="@+id/d1_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="1 Day"
-                                            android:id="@+id/textView41"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView41"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -593,7 +593,7 @@
                                             android:id="@+id/d2_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="2 Days"
@@ -619,11 +619,11 @@
                                             android:id="@+id/d3_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="3 Days"
-                                            android:id="@+id/textView43"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView43"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -652,11 +652,11 @@
                                             android:id="@+id/d4_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="4 Days"
-                                            android:id="@+id/textView44"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView44"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -678,11 +678,11 @@
                                             android:id="@+id/d5_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="5 Days"
-                                            android:id="@+id/textView45"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView45"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -704,11 +704,11 @@
                                             android:id="@+id/d6_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="6 Days"
-                                            android:id="@+id/textView46"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView46"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -737,11 +737,11 @@
                                             android:id="@+id/d7_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="7 Days"
-                                            android:id="@+id/textView42"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView42"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -763,7 +763,7 @@
                                             android:id="@+id/d8_im"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="More"
@@ -790,11 +790,11 @@
                                             android:id="@+id/imageView36"
                                             android:src="@drawable/ic_option_brown" />
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="6 Days"
-                                            android:id="@+id/textView48"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView48"
                                             android:textColor="@color/brown_text"
                                             android:textSize="15sp"
                                             android:layout_marginLeft="10dp"
@@ -823,11 +823,11 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Reset"
-                            android:id="@+id/textView39"
+                            android:id="@+id/in.yellowsoft.darabeel.MyTextView39"
                             android:textColor="#ffffff"
                             android:textSize="18sp"
                             android:layout_marginLeft="15dp"
@@ -846,7 +846,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Submit"

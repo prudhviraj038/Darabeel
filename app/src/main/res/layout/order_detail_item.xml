@@ -17,7 +17,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Text"
@@ -42,7 +42,7 @@
                 android:layout_weight="1"
                 android:gravity="end">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical|end">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"

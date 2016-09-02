@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -51,7 +51,7 @@ public class NotificationAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView offer_name,offer_descri,pro_price;
+        MyTextView offer_name,offer_descri,pro_price;
         ImageView com_logo,offer_background;
     }
     @Override
@@ -60,9 +60,9 @@ public class NotificationAdapter extends BaseAdapter{
         Holder holder = new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.notification_item_screen, null);
-        holder.offer_name = (TextView) rowView.findViewById(R.id.promotion_title);
-        holder.offer_descri = (TextView) rowView.findViewById(R.id.promotion_description);
-        holder.pro_price = (TextView) rowView.findViewById(R.id.promotion_price);
+        holder.offer_name = (MyTextView) rowView.findViewById(R.id.promotion_title);
+        holder.offer_descri = (MyTextView) rowView.findViewById(R.id.promotion_description);
+        holder.pro_price = (MyTextView) rowView.findViewById(R.id.promotion_price);
         holder.offer_background = (ImageView) rowView.findViewById(R.id.offer_img_promtions);
 
         holder.offer_name.setText(restaurants.get(position).getTitle(context));

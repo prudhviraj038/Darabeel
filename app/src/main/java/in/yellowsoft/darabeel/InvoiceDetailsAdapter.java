@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
 public class InvoiceDetailsAdapter extends BaseAdapter{
     Context context;
@@ -43,7 +42,7 @@ public class InvoiceDetailsAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView item_name,item_qty,item_price;
+        MyTextView item_name,item_qty,item_price;
       }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -51,12 +50,12 @@ public class InvoiceDetailsAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.order_detail_item, null);
-        holder.item_name=(TextView) rowView.findViewById(R.id.item_name_details);
+        holder.item_name=(MyTextView) rowView.findViewById(R.id.item_name_details);
         holder.item_name.setText(orderses.product.get(position).product_name);
-        holder.item_qty=(TextView) rowView.findViewById(R.id.item_qnty_details);
-        holder.item_qty.setText(orderses.product.get(position).quantity+" x "+orderses.product.get(position).pro_price);
-        holder.item_price=(TextView) rowView.findViewById(R.id.item_price_details);
-        holder.item_price.setText(String.valueOf(Integer.parseInt(orderses.product.get(position).quantity)*Float.parseFloat(orderses.product.get(position).pro_price))+" KD");
+        holder.item_qty=(MyTextView) rowView.findViewById(R.id.item_qnty_details);
+        holder.item_qty.setText(orderses.product.get(position).quantity+" x "+String.format("%.3f",Float.parseFloat(orderses.product.get(position).pro_price)));
+        holder.item_price=(MyTextView) rowView.findViewById(R.id.item_price_details);
+        holder.item_price.setText(String.format("%.3f",Integer.parseInt(orderses.product.get(position).quantity)*Float.parseFloat(orderses.product.get(position).pro_price))+" KD");
         return rowView;
     }
 

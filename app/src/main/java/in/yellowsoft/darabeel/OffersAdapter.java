@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -50,7 +50,7 @@ public class OffersAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView show_menu;
+        MyTextView show_menu;
         SquareImageview promotion_img;
         LinearLayout rating_ll,show_menu_ll;
     }

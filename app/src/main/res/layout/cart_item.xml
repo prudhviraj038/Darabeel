@@ -9,8 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="@drawable/full_rounded_corners">
+        android:layout_marginBottom="2dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -58,7 +57,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chicken Fillet Burger Meal"
@@ -73,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Quantity"
@@ -82,17 +81,17 @@
                         android:layout_marginRight="5dp"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        android:id="@+id/textView10"
+                        android:id="@+id/in.yellowsoft.darabeel.MyTextView10"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:textColor="@color/brown"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2"
@@ -107,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Price"
@@ -116,17 +115,17 @@
                         android:layout_marginRight="5dp"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        android:id="@+id/textView11"
+                        android:id="@+id/in.yellowsoft.darabeel.MyTextView11"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:textColor="@color/brown"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="KD 3,500"
@@ -142,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total"
@@ -151,17 +150,17 @@
                         android:layout_marginRight="5dp"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        android:id="@+id/textView12"
+                        android:id="@+id/in.yellowsoft.darabeel.MyTextView12"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:textColor="@color/pink_text"
                         android:textSize="14sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="KD 7,000"
@@ -187,7 +186,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="X"
@@ -216,7 +215,7 @@
                             android:id="@+id/imageView29"
                             android:src="@drawable/minus_pink" />
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="-"
@@ -240,7 +239,7 @@
                             android:id="@+id/imageView31"
                             android:src="@drawable/plus_pink" />
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+"
@@ -258,4 +257,10 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/pink_text"></LinearLayout>
 </LinearLayout>

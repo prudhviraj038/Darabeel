@@ -2,12 +2,14 @@ package in.yellowsoft.darabeel;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -46,8 +48,9 @@ public class NavigationListAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView tv;
+        MyTextView tv;
         ImageView img;
+        LinearLayout bg,line;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -58,13 +61,27 @@ public class NavigationListAdapter extends BaseAdapter{
         rowView = inflater.inflate(R.layout.menu_item, parent,false);
         else
         rowView = convertView;
-        holder.tv=(TextView)rowView.findViewById(R.id.title);
+        holder.tv=(MyTextView)rowView.findViewById(R.id.title);
         holder.img=(ImageView) rowView.findViewById(R.id.icon);
+        holder.bg=(LinearLayout)rowView.findViewById(R.id.nav_item_back);
+        holder.line=(LinearLayout)rowView.findViewById(R.id.nav_line);
 //        if(position==0||position==1||position==3){
 //            holder.img.setVisibility(View.VISIBLE);
 //        }else{
 //            holder.img.setVisibility(View.INVISIBLE);
 //        }
+        if(position==9||position==10){
+            holder.line.setVisibility(View.GONE);
+        }else{
+            holder.line.setVisibility(View.VISIBLE);
+        }
+        if(position==10){
+            holder.bg.setBackgroundColor(Color.parseColor("#d4005a"));
+
+        }else{
+            holder.bg.setBackgroundColor(Color.parseColor("#71422a"));
+
+        }
         holder.tv.setText(titles.get(position));
         Picasso.with(context).load(images.get(position)).into(holder.img);
         return rowView;

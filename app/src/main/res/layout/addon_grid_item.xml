@@ -38,7 +38,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
 
-                <TextView
+                <cin.yellowsoft.darabeel.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="New Text"

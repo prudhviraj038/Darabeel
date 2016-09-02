@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -70,7 +70,7 @@ public class OrderAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView res_name,order_id,pri,date,pay_method,deli_status,sta_reorder,rating_tv,
+        MyTextView res_name,order_id,pri,date,pay_method,deli_status,sta_reorder,rating_tv,
         sta_order_id,sta_pri,sta_date,sta_pay_method,sta_deli_status;
         ImageView res_image;
         LinearLayout reorder_ll,rating_ll,rating;
@@ -82,33 +82,33 @@ public class OrderAdapter extends BaseAdapter{
         View rowView;
 
         rowView = inflater.inflate(R.layout.orders_fragment_item, null);
-        holder.res_name=(TextView) rowView.findViewById(R.id.res_name);
+        holder.res_name=(MyTextView) rowView.findViewById(R.id.res_name);
         holder.res_name.setText(orderses.get(position).get_res_Title(context));
-        holder.order_id=(TextView) rowView.findViewById(R.id.order_id);
+        holder.order_id=(MyTextView) rowView.findViewById(R.id.order_id);
         holder.order_id.setText(orderses.get(position).id);
-        holder.pri=(TextView) rowView.findViewById(R.id.tot_price);
+        holder.pri=(MyTextView) rowView.findViewById(R.id.tot_price);
         holder.pri.setText(" KD "+orderses.get(position).tot_price);
-        holder.date=(TextView) rowView.findViewById(R.id.date);
+        holder.date=(MyTextView) rowView.findViewById(R.id.date);
         holder.date.setText(orderses.get(position).date);
-        holder.pay_method=(TextView) rowView.findViewById(R.id.pay_method);
+        holder.pay_method=(MyTextView) rowView.findViewById(R.id.pay_method);
         holder.pay_method.setText(orderses.get(position).payment_method);
-        holder.deli_status=(TextView) rowView.findViewById(R.id.delivery_status);
+        holder.deli_status=(MyTextView) rowView.findViewById(R.id.delivery_status);
         holder.deli_status.setText(orderses.get(position).deli_status);
 
-        holder.sta_order_id=(TextView) rowView.findViewById(R.id.sta_order_id);
+        holder.sta_order_id=(MyTextView) rowView.findViewById(R.id.sta_order_id);
         holder.sta_order_id.setText(Settings.getword(context, "order_id"));
-        holder.sta_pri=(TextView) rowView.findViewById(R.id.sta_price_order);
+        holder.sta_pri=(MyTextView) rowView.findViewById(R.id.sta_price_order);
         holder.sta_pri.setText(Settings.getword(context, "total"));
-        holder.sta_date=(TextView) rowView.findViewById(R.id.sta_order_date);
+        holder.sta_date=(MyTextView) rowView.findViewById(R.id.sta_order_date);
         holder.sta_date.setText(Settings.getword(context, "order_date"));
-        holder.sta_pay_method=(TextView) rowView.findViewById(R.id.sta_order_pay_mode);
+        holder.sta_pay_method=(MyTextView) rowView.findViewById(R.id.sta_order_pay_mode);
         holder.sta_pay_method.setText(Settings.getword(context, "order_payment_method"));
-        holder.sta_deli_status=(TextView) rowView.findViewById(R.id.sta_order_status);
+        holder.sta_deli_status=(MyTextView) rowView.findViewById(R.id.sta_order_status);
         holder.sta_deli_status.setText(Settings.getword(context, "order_status"));
-        holder.sta_reorder = (TextView)rowView.findViewById(R.id.reorder_tv);
+        holder.sta_reorder = (MyTextView)rowView.findViewById(R.id.reorder_tv);
         holder.sta_reorder.setText(Settings.getword(context, "reorder"));
 
-        holder.rating_tv=(TextView) rowView.findViewById(R.id.order_rating_tv);
+        holder.rating_tv=(MyTextView) rowView.findViewById(R.id.order_rating_tv);
         holder.rating_tv.setText(Settings.getword(context, "rate_order"));
         holder.res_image=(ImageView)rowView.findViewById(R.id.res_image);
         Picasso.with(context).load(orderses.get(position).res_image).fit().into(holder.res_image);

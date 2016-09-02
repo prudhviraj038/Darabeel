@@ -33,4 +33,5 @@ dependencies {
     compile 'com.daimajia.slider:library:1.1.5@aar'
     compile 'com.minimize.library:seekbar-compat:0.2.4'
     compile 'com.labo.kaji:fragmentanimations:0.1.0'
+    compile 'com.makeramen:roundedimageview:2.2.1'
 }

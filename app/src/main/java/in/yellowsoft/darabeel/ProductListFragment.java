@@ -30,7 +30,7 @@ public class ProductListFragment extends Fragment {
     MenuProductAdapter menuProductAdapter;
     ArrayList<Products> productses;
     ArrayList<Area> group_item;
-    String res_id,cat_id,head;
+    String res_id,cat_id,head,type;
     boolean loaded=false;
     @Override
     public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
@@ -53,6 +53,7 @@ public class ProductListFragment extends Fragment {
 //        head=String.valueOf(Html.fromHtml(Settings.getword(getActivity(), "products")));
         productses = new ArrayList<>();
         group_item = new ArrayList<>();
+        type=(String)getArguments().getSerializable("type");
         res_id=(String)getArguments().getSerializable("rest_id");
         Log.e("resta,cat",res_id+cat_id);
         cat_id=(String)getArguments().getSerializable("cat_id");
@@ -83,9 +84,13 @@ public class ProductListFragment extends Fragment {
         });
     }
     private void getProducts(){
-        String url;
+        String url = null;
       //  restaurantses.clear();
-        url = Settings.SERVERURL + "products.php?rest_id="+res_id+"&category="+cat_id;
+        if(type.equals("1")){
+            url = Settings.SERVERURL + "products.php?rest_id=" + res_id;
+        }else {
+            url = Settings.SERVERURL + "products.php?rest_id=" + res_id + "&category=" + cat_id;
+        }
         Log.e("url", url);
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.show();

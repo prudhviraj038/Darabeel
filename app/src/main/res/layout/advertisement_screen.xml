@@ -43,7 +43,7 @@
             android:background="@drawable/skip_rounded_corners"
             android:id="@+id/skip_btn">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ENTER"

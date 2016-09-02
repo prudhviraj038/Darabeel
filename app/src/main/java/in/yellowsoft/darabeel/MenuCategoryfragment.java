@@ -14,7 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -25,13 +25,13 @@ public class MenuCategoryfragment extends Fragment {
     String head;
     ArrayList<Category> categories;
     LinearLayout rating;
-    TextView review;
+    MyTextView review;
     boolean loaded=false;
     MenuCategoryAdapter menuCategoryAdapter;
     FragmentTouchListner mCallBack;
     public interface FragmentTouchListner {
         public void text_back_butt(String header);
-        public void product_list(String rest_id,String cat_id,String cat_name);
+        public void product_list(String rest_id,String cat_id,String cat_name,String type);
         public  Animation get_animation(Boolean enter,Boolean loaded);
     }
     @Override
@@ -63,14 +63,14 @@ public class MenuCategoryfragment extends Fragment {
         categories = new ArrayList<>();
         restaurants = (Restaurants)getArguments().getSerializable("restaurant");
         menuCategoryAdapter=new MenuCategoryAdapter(getActivity(),restaurants);
-        review=(TextView)v.findViewById(R.id.review_res_page);
+        review=(MyTextView)v.findViewById(R.id.review_res_page);
         review.setText("(" + restaurants.reviews + ")");
         rating=(LinearLayout)v.findViewById(R.id.rating_resta_page_ll);
         Settings.set_rating(getActivity(), restaurants.rating, rating);
-        TextView resta_name=(TextView)v.findViewById(R.id.resta_name_cat_page);
-        TextView sta_menu_cat=(TextView)v.findViewById(R.id.sta_menu_category);
+        MyTextView resta_name=(MyTextView)v.findViewById(R.id.resta_name_cat_page);
+        MyTextView sta_menu_cat=(MyTextView)v.findViewById(R.id.sta_menu_category);
         sta_menu_cat.setText(Settings.getword(getActivity(),"title_select_category"));
-        TextView resta_items=(TextView)v.findViewById(R.id.resta_items_cat_page);
+        MyTextView resta_items=(MyTextView)v.findViewById(R.id.resta_items_cat_page);
         ImageView res_img=(ImageView)v.findViewById(R.id.company_image);
         ImageView res_back_img=(ImageView)v.findViewById(R.id.company_background_image_cat);
         ListView cat_list=(ListView)v.findViewById(R.id.menu_cat_list);
@@ -78,7 +78,7 @@ public class MenuCategoryfragment extends Fragment {
         cat_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mCallBack.product_list(restaurants.res_id,restaurants.menu.get(i).id,restaurants.menu.get(i).getTitle(getActivity()));
+                mCallBack.product_list(restaurants.res_id,restaurants.menu.get(i).id,restaurants.menu.get(i).getTitle(getActivity()),"2");
             }
         });
             head=String.valueOf(Html.fromHtml(Settings.getword(getActivity(), "menu")));
@@ -86,7 +86,7 @@ public class MenuCategoryfragment extends Fragment {
 
         resta_name.setText(restaurants.getTitle(getActivity()));
         resta_items.setText(restaurants.getsdescription(getActivity()));
-        Picasso.with(getActivity()).load(restaurants.image).into(res_img);
+        Picasso.with(getActivity()).load(restaurants.image).fit().into(res_img);
         Picasso.with(getActivity()).load(restaurants.banner).into(res_back_img);
 
         v.setFocusableInTouchMode(true);

@@ -27,7 +27,7 @@
                 android:id="@+id/my_order_img"
                 android:src="@drawable/my_orders" />
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="My Orders"
@@ -52,7 +52,7 @@
                 android:id="@+id/my_address_img"
                 android:src="@drawable/addresses" />
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="My Address"
@@ -77,7 +77,7 @@
                 android:id="@+id/edit_profile_img"
                 android:src="@drawable/login_details" />
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit Profile"
@@ -103,7 +103,7 @@
                 android:id="@+id/settings_img"
                 android:src="@drawable/settings_icon" />
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Settings"
@@ -126,7 +126,7 @@
                 android:id="@+id/change_pass_img"
                 android:src="@drawable/lock" />
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ChangePassword"

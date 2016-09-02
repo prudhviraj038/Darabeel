@@ -22,13 +22,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></LinearLayout>
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/pro_image"
                     android:src="@drawable/img_sweet_item"
-                    android:padding="8dp"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:layout_margin="4dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -49,7 +54,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center_vertical">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Quinoa Bil Laben "
@@ -58,7 +63,7 @@
                 android:textSize="15sp"
                 android:singleLine="true" />
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lorem Ipsu."
@@ -75,7 +80,7 @@
                 android:visibility="gone" />
         </LinearLayout>
 
-        <TextView
+        <in.yellowsoft.darabeel.MyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="KD 10.00"
@@ -106,7 +111,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#44ff00bb">
+        android:background="@color/pink_text">
 
     </LinearLayout>
 </LinearLayout>

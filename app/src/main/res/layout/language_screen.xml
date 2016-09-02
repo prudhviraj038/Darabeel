@@ -47,7 +47,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="English"
@@ -76,10 +76,10 @@
                     android:layout_toLeftOf="@+id/relativeLayout_english"
                     android:layout_toStartOf="@+id/relativeLayout_english" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Arabic"
+                    android:text="العربية"
                     android:id="@+id/arabic"
                     android:textColor="#ffffff"
                     android:layout_centerInParent="true"

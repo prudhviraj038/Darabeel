@@ -13,7 +13,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/bg_menu_category">
 
-        <TextView
+        <in.yellowsoft.darabeel.MyTextView
            android:id="@+id/headerTitle"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"

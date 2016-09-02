@@ -11,7 +11,7 @@ import android.view.animation.Animation;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -20,7 +20,7 @@ import com.squareup.picasso.Picasso;
  */
 public class OffersListFragment extends Fragment {
     String head;
-    TextView show_menu;
+    MyTextView show_menu;
     ImageView res_img;
     LinearLayout rating_ll,show_menu_ll;
     Restaurants restaurants;
@@ -30,6 +30,8 @@ public class OffersListFragment extends Fragment {
     public interface FragmentTouchListner {
         public void text_back_butt(String header);
         public void songselected(Restaurants restaurant);
+        public void showmenu(Restaurants restaurants);
+        public void product_list(String rest_id,String cat_id,String cat_name,String type);
         public  Animation get_animation(Boolean enter,Boolean loaded);
     }
     @Override
@@ -67,7 +69,7 @@ public class OffersListFragment extends Fragment {
         offers.setAdapter(offersAdapter);
         mCallBack.text_back_butt(head);
 //        mCallBack.songselected(restaurants);
-        show_menu = (TextView) view.findViewById(R.id.promotion_price);
+        show_menu = (MyTextView) view.findViewById(R.id.promotion_price);
         show_menu.setText(Settings.getword(getActivity(),"show_menu"));
         res_img = (ImageView) view.findViewById(R.id.offer_img_promtions);
         Picasso.with(getActivity()).load(restaurants.image).fit().into(res_img);
@@ -77,7 +79,11 @@ public class OffersListFragment extends Fragment {
         show_menu_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCallBack.songselected(restaurants);
+                if (restaurants.menu.size() == 0)
+                    mCallBack.product_list(restaurants.res_id,restaurants.res_id,restaurants.getTitle(getActivity()),"1");
+//                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "no_prodcts_in_restaurant"), false);
+                else
+                    mCallBack.showmenu(restaurants);
             }
         });
         view.setFocusableInTouchMode(true);

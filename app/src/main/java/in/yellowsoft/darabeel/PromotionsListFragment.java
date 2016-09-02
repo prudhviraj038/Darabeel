@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+
 import android.widget.ViewFlipper;
 
 import com.android.volley.Response;
@@ -35,7 +35,7 @@ public class PromotionsListFragment extends Fragment {
     ProgressBar progressBar;
     String id,head;
     boolean loaded=false;
-    TextView select_cat;
+    MyTextView select_cat;
     ArrayList<Category> categories;
     ListView cat_listView;
     CategoryAdapter categoryAdapter;

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:gravity="center">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thank you for placing order"
@@ -66,7 +66,7 @@
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp" >
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/tq_personal_details"
@@ -111,7 +111,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Order Id"
@@ -120,7 +120,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_id"
@@ -137,7 +137,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Order Date"
@@ -146,7 +146,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_date"
@@ -163,7 +163,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Delivery Date"
@@ -172,7 +172,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/delivery_date"
@@ -189,7 +189,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Name"
@@ -198,7 +198,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_name"
@@ -215,7 +215,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Mobile"
@@ -224,7 +224,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_mobile"
@@ -242,7 +242,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Area"
@@ -251,7 +251,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_area"
@@ -268,7 +268,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Block"
@@ -277,7 +277,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_block"
@@ -294,7 +294,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Street Name/Number"
@@ -303,7 +303,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_street"
@@ -321,7 +321,7 @@
                                     android:id="@+id/linearLayout34"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Building"
@@ -330,7 +330,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_building"
@@ -348,7 +348,7 @@
                                     android:id="@+id/linearLayout35"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Floor"
@@ -357,7 +357,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_floor"
@@ -375,7 +375,7 @@
                                     android:id="@+id/linearLayout36"
                                     android:layout_margin="5dp" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:text="Flat"
@@ -384,7 +384,7 @@
                                         android:textSize="15sp"
                                         android:layout_weight="1" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/tq_order_flat"
@@ -407,7 +407,7 @@
                     android:orientation="vertical"
                     android:background="@drawable/full_rounded_corners">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Products"
@@ -465,7 +465,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/sta_tq_sub_total"
@@ -482,7 +482,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text=" 16.200 KD"
@@ -505,7 +505,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Delivery Charges"
@@ -521,7 +521,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="0.500 KD"
@@ -545,7 +545,7 @@
                                     android:layout_weight="1"
                                     android:id="@+id/static_dc_tq">
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Discount"
@@ -561,7 +561,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="16.700 KD"
@@ -584,7 +584,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Darabeel Charges"
@@ -600,7 +600,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="16.700 KD"
@@ -623,7 +623,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Grand - Total"
@@ -639,7 +639,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1" >
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="16.700 KD"
@@ -670,7 +670,7 @@
         android:gravity="center"
         android:id="@+id/home_iv_ll">
 
-        <TextView
+        <in.yellowsoft.darabeel.MyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home"
@@ -679,4 +679,5 @@
             android:textSize="18sp"
             android:padding="5dp" />
     </LinearLayout>
+
 </LinearLayout>

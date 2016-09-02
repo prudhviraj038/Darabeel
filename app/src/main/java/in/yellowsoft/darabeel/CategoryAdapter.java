@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -40,7 +40,7 @@ public class CategoryAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView com_name;
+        MyTextView com_name;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -48,7 +48,7 @@ public class CategoryAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.category_item, null);
-        holder.com_name=(TextView) rowView.findViewById(R.id.cat_name);
+        holder.com_name=(MyTextView) rowView.findViewById(R.id.cat_name);
         holder.com_name.setText(categories.get(position).getTitle(context));
         return rowView;
         

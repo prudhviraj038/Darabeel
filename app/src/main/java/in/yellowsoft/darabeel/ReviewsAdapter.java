@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 public class ReviewsAdapter extends BaseAdapter{
     String [] result;
@@ -45,7 +45,7 @@ public class ReviewsAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView name,description,date;
+        MyTextView name,description,date;
         LinearLayout rating;
       }
     @Override
@@ -55,9 +55,9 @@ public class ReviewsAdapter extends BaseAdapter{
         View rowView;
         rowView = inflater.inflate(R.layout.reviews_item, null);
         Log.e("res_name",restaurants.getTitle(context));
-        holder.name=(TextView) rowView.findViewById(R.id.review_name);
-        holder.date=(TextView) rowView.findViewById(R.id.date_reviews);
-        holder.description=(TextView) rowView.findViewById(R.id.review_des);
+        holder.name=(MyTextView) rowView.findViewById(R.id.review_name);
+        holder.date=(MyTextView) rowView.findViewById(R.id.date_reviews);
+        holder.description=(MyTextView) rowView.findViewById(R.id.review_des);
         holder.name.setText(restaurants.allReviwses.get(position).namee);
         holder.date.setText(restaurants.allReviwses.get(position).date);
         holder.description.setText(restaurants.allReviwses.get(position).review);

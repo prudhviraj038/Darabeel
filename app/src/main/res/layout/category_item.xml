@@ -17,7 +17,7 @@
         android:paddingRight="20dp"
         android:layout_margin="3dp">
 
-        <TextView
+        <in.yellowsoft.darabeel.MyTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="New Text"

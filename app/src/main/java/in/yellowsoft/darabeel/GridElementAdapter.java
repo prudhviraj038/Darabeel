@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -29,14 +29,14 @@ public class GridElementAdapter extends RecyclerView.Adapter<GridElementAdapter.
     }
 
     public static class SimpleViewHolder extends RecyclerView.ViewHolder {
-        TextView tv;
+        MyTextView tv;
         ImageView img;
         LinearLayout artist_select_view,rating;
 
         public SimpleViewHolder(View view) {
             super(view);
 
-            tv=(TextView) view.findViewById(R.id.artist_name);
+            tv=(MyTextView) view.findViewById(R.id.artist_name);
             img=(ImageView) view.findViewById(R.id.artist_image);
             artist_select_view = (LinearLayout) view.findViewById(R.id.artist_select_view);
             rating = (LinearLayout) view.findViewById(R.id.rating_home);

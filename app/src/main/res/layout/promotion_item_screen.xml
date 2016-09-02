@@ -52,7 +52,7 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="3dp">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
@@ -60,7 +60,7 @@
                     android:textSize="18sp"
                     android:textColor="@color/pink_text" />
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
@@ -74,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="New Text"
@@ -82,15 +82,15 @@
                         android:textColor="@color/pink_text"
                         android:textSize="18sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" : "
-                        android:id="@+id/textView38"
+                        android:id="@+id/in.yellowsoft.darabeel.MyTextView38"
                         android:textColor="@color/pink_text"
                         android:textSize="18sp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="10"
@@ -169,7 +169,7 @@
                 android:layout_marginRight="50dp"
                 android:id="@+id/show_mwnu_pro_list_ll">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"

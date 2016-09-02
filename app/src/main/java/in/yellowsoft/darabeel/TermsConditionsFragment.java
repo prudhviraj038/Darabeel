@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.TextView;
+
 
 public class TermsConditionsFragment extends Fragment {
     String head;
@@ -45,8 +45,8 @@ public class TermsConditionsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View v = getView();
 //        loaded=true;
-        TextView what_we_do_title=(TextView)v.findViewById(R.id.title_what_we_do);
-        TextView what_we_do_descri=(TextView)v.findViewById(R.id.descri_what_we_do);
+        MyTextView what_we_do_title=(MyTextView)v.findViewById(R.id.title_what_we_do);
+        MyTextView what_we_do_descri=(MyTextView)v.findViewById(R.id.descri_what_we_do);
 
             head=String.valueOf(Html.fromHtml(Settings.getword(getActivity(), "menu_terms_and_conditions")));
             mCallBack.text_back_butt(head);

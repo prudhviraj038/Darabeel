@@ -64,7 +64,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:text="Rating:"
@@ -97,7 +97,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp" >
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:text="Write Comments:"
@@ -107,7 +107,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp" />
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/write_comm_ett"
@@ -140,7 +140,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp">
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Submit"
@@ -162,7 +162,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp">
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Cancel"
@@ -220,10 +220,10 @@
                                 android:gravity="center"
                                 android:background="@drawable/bg_menu_category">
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/textView13"
+                                    android:id="@+id/in.yellowsoft.darabeel.MyTextView13"
                                     android:layout_alignParentStart="false"
                                     android:layout_centerHorizontal="true"
                                     android:layout_alignParentTop="false"
@@ -253,7 +253,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Order Date"
@@ -268,7 +268,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/order_dat"
@@ -293,7 +293,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Delivery Date"
@@ -308,7 +308,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/delivery_dat"
@@ -333,7 +333,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="Order Id"
@@ -348,7 +348,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/order_id_details"
@@ -373,7 +373,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Name"
@@ -388,7 +388,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_name"
@@ -413,7 +413,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Mobile"
@@ -428,7 +428,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_number"
@@ -453,7 +453,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Area"
@@ -468,7 +468,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_area"
@@ -493,7 +493,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Block"
@@ -508,7 +508,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_block"
@@ -533,7 +533,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Street Name/Number"
@@ -548,7 +548,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_street"
@@ -574,7 +574,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Building"
@@ -589,7 +589,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_building"
@@ -615,7 +615,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Floor"
@@ -630,7 +630,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_floor"
@@ -656,7 +656,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Flat"
@@ -671,7 +671,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/or_det_flat"
@@ -699,7 +699,7 @@
                             android:layout_height="35dp"
                             android:background="@drawable/bg_menu_category">
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Products"
@@ -751,7 +751,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:id="@+id/sta_sub_total_details"
@@ -767,7 +767,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1">
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text=" 16.200 KD"
@@ -775,7 +775,7 @@
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
                                             android:textSize="15sp"
-                                            android:gravity="center" />
+                                            android:gravity="end" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -790,7 +790,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Delivery Charges"
@@ -806,7 +806,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="0.500 KD"
@@ -814,7 +814,7 @@
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
                                             android:textSize="15sp"
-                                            android:gravity="center" />
+                                            android:gravity="end" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -829,7 +829,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Discount"
@@ -845,7 +845,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="16.700 KD"
@@ -853,7 +853,7 @@
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
                                             android:textSize="15sp"
-                                            android:gravity="center" />
+                                            android:gravity="end" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -868,7 +868,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Darabeel Charges"
@@ -884,7 +884,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="16.700 KD"
@@ -892,7 +892,7 @@
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
                                             android:textSize="15sp"
-                                            android:gravity="center" />
+                                            android:gravity="end" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -907,7 +907,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Grand - Total"
@@ -923,7 +923,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1" >
 
-                                        <TextView
+                                        <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="16.700 KD"
@@ -931,7 +931,7 @@
                                             android:textColor="@color/pink_text"
                                             android:padding="3dp"
                                             android:textSize="15sp"
-                                            android:gravity="center" />
+                                            android:gravity="end" />
                                     </LinearLayout>
                                 </LinearLayout>
                             </LinearLayout>

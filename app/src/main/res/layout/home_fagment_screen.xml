@@ -54,7 +54,7 @@
                                 android:id="@+id/imageView"
                                 android:src="@drawable/ic_want_item" />
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="What do you want to eat?"
@@ -99,7 +99,7 @@
                                 android:id="@+id/imageView2"
                                 android:src="@drawable/ic_map" />
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Choose your area"
@@ -127,7 +127,7 @@
                             android:gravity="center"
                             android:id="@+id/ll_search_sweets">
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Search Sweets"
@@ -157,7 +157,7 @@
                         android:background="@color/yellow_background"
                         android:id="@+id/home_ll">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="We Recommend"
@@ -213,7 +213,7 @@
                                     </FrameLayout>
                                 </LinearLayout>
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/t1"
@@ -238,10 +238,10 @@
                                         android:divider="@drawable/rating_divider"
                                         android:showDividers="middle|end" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/textView25"
+                                        android:id="@+id/in.yellowsoft.darabeel.MyTextView25"
                                         android:textColor="#285b6e" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -283,7 +283,7 @@
                                     </FrameLayout>
                                 </LinearLayout>
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/t2"
@@ -308,10 +308,10 @@
                                         android:divider="@drawable/rating_divider"
                                         android:showDividers="middle|end" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/textView31"
+                                        android:id="@+id/in.yellowsoft.darabeel.MyTextView31"
                                         android:textColor="#285b6e" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -353,7 +353,7 @@
                                     </FrameLayout>
                                 </LinearLayout>
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/t3"
@@ -378,10 +378,10 @@
                                         android:divider="@drawable/rating_divider"
                                         android:showDividers="middle|end" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/textView33"
+                                        android:id="@+id/in.yellowsoft.darabeel.MyTextView33"
                                         android:textColor="#285b6e" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -423,7 +423,7 @@
                                     </FrameLayout>
                                 </LinearLayout>
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/t4"
@@ -448,10 +448,10 @@
                                         android:divider="@drawable/rating_divider"
                                         android:showDividers="middle|end" />
 
-                                    <TextView
+                                    <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/textView35"
+                                        android:id="@+id/in.yellowsoft.darabeel.MyTextView35"
                                         android:textColor="#285b6e" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -487,7 +487,7 @@
                 android:background="@drawable/menu_cat_rounded_corners"
                 android:layout_marginTop="5dp">
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="Select Category"

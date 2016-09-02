@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 public class OptionsAdapter extends BaseAdapter {
     int total;
@@ -50,7 +50,7 @@ public class OptionsAdapter extends BaseAdapter {
     }
 
     public class Holder {
-        TextView opt_title, opt_price;
+        MyTextView opt_title, opt_price;
         ImageView opt_img;
         LinearLayout option_linear;
     }
@@ -61,7 +61,7 @@ public class OptionsAdapter extends BaseAdapter {
         final Holder holder = new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.optional_item, null);
-        holder.opt_title = (TextView) rowView.findViewById(R.id.option_title);
+        holder.opt_title = (MyTextView) rowView.findViewById(R.id.option_title);
         holder.opt_img = (ImageView) rowView.findViewById(R.id.option_img);
         holder.opt_title.setText(products.options.get(position).get_option(context) + "   (" + products.options.get(position).price + " KD)");
         holder.option_linear = (LinearLayout) rowView.findViewById(R.id.option_ll);

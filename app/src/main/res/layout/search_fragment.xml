@@ -23,7 +23,7 @@
             android:id="@+id/search_image"
             android:src="@drawable/search_icon_sear" />
 
-        <EditText
+        <in.yellowsoft.darabeel.MyEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/search_edit"
@@ -40,7 +40,7 @@
 
     </LinearLayout>
 
-    <TextView
+    <in.yellowsoft.darabeel.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"

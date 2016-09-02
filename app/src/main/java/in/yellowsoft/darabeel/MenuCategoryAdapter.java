@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+
 
 public class MenuCategoryAdapter extends BaseAdapter{
     Context context;
@@ -39,7 +39,7 @@ public class MenuCategoryAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView com_name;
+        MyTextView com_name;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -47,7 +47,7 @@ public class MenuCategoryAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.menu_category_item, null);
-        holder.com_name=(TextView) rowView.findViewById(R.id.menu_cat_name);
+        holder.com_name=(MyTextView) rowView.findViewById(R.id.menu_cat_name);
         holder.com_name.setText(restaurantses.menu.get(position).getTitle(context));
         return rowView;
         

@@ -39,7 +39,7 @@
             </FrameLayout>
         </LinearLayout>
 
-        <TextView
+        <in.yellowsoft.darabeel.MyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kababji"
@@ -66,10 +66,10 @@
                 android:divider="@drawable/rating_divider"
                 android:showDividers="middle|end" />
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2"
+                android:id="@+id/in.yellowsoft.darabeel.MyTextView2"
                 android:textColor="#285b6e" />
         </LinearLayout>
 

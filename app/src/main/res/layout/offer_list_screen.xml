@@ -45,11 +45,11 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/menu_cat_rounded_corners" >
 
-                <TextView
+                <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="Select Category"
-                    android:id="@+id/textView9"
+                    android:id="@+id/in.yellowsoft.darabeel.MyTextView9"
                     android:textColor="#ffffff"
                     android:textSize="18sp"
                     android:gravity="center"

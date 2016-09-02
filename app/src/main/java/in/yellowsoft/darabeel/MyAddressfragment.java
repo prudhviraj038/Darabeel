@@ -12,11 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
-import android.widget.EditText;
+
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -39,9 +39,9 @@ public class MyAddressfragment extends Fragment {
     String head,adds_id;
     FragmentTouchListner mCallBack;
     boolean loaded=false;
-    TextView et_my_area, my_alias, my_area, my_block, my_street, my_building, my_floor, my_flat, my_mobile, update,
+    MyTextView et_my_area, my_alias, my_area, my_block, my_street, my_building, my_floor, my_flat, my_mobile, update,
             delete_tv,edit_email, edit_tv, cp_submit_tv, add_new_address_tv;
-    EditText et_my_alias, et_my_block, et_my_street, et_my_building, et_my_floor, et_my_flat, et_my_mobile;
+    MyEditText et_my_alias, et_my_block, et_my_street, et_my_building, et_my_floor, et_my_flat, et_my_mobile;
     LinearLayout my_order_ll, my_address_ll, edit_address, change_pass, settings, logout, edit, cp_submit, add_new_address_ll,
             update_ll,delete, area_list_my_acc, language,area_list_ll;
     ViewFlipper viewFlipper;
@@ -87,40 +87,40 @@ public class MyAddressfragment extends Fragment {
         get_address_list();
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper8);
         viewFlipper.setDisplayedChild(0);
-        my_alias = (TextView) view.findViewById(R.id.sta_my_alias_tv);
+        my_alias = (MyTextView) view.findViewById(R.id.sta_my_alias_tv);
         my_alias.setText(Settings.getword(getActivity(), "text_alias"));
-        my_area = (TextView) view.findViewById(R.id.sta_my_area_tv);
+        my_area = (MyTextView) view.findViewById(R.id.sta_my_area_tv);
         my_area.setText(Settings.getword(getActivity(), "area"));
-        my_block = (TextView) view.findViewById(R.id.sta_my_block_tv);
+        my_block = (MyTextView) view.findViewById(R.id.sta_my_block_tv);
         my_block.setText(Settings.getword(getActivity(), "block"));
-        my_street = (TextView) view.findViewById(R.id.sta_my_street_tv);
+        my_street = (MyTextView) view.findViewById(R.id.sta_my_street_tv);
         my_street.setText(Settings.getword(getActivity(), "street_name"));
-        my_building = (TextView) view.findViewById(R.id.sta_my_building_tv);
+        my_building = (MyTextView) view.findViewById(R.id.sta_my_building_tv);
         my_building.setText(Settings.getword(getActivity(), "building_name"));
-        my_floor = (TextView) view.findViewById(R.id.sta_my_floor_tv);
+        my_floor = (MyTextView) view.findViewById(R.id.sta_my_floor_tv);
         my_floor.setText(Settings.getword(getActivity(), "floor"));
-        my_flat = (TextView) view.findViewById(R.id.sta_my_flat_tv);
+        my_flat = (MyTextView) view.findViewById(R.id.sta_my_flat_tv);
         my_flat.setText(Settings.getword(getActivity(), "apartment"));
-        my_mobile = (TextView) view.findViewById(R.id.sta_my_mobile_tv);
+        my_mobile = (MyTextView) view.findViewById(R.id.sta_my_mobile_tv);
         my_mobile.setText(Settings.getword(getActivity(), "mobile"));
-        update = (TextView) view.findViewById(R.id.update_tv);
+        update = (MyTextView) view.findViewById(R.id.update_tv);
         update.setText(Settings.getword(getActivity(), "update"));
-        delete_tv = (TextView) view.findViewById(R.id.delete_my_address);
+        delete_tv = (MyTextView) view.findViewById(R.id.delete_my_address);
         delete_tv.setText(Settings.getword(getActivity(), "delete_address"));
-        et_my_alias = (EditText) view.findViewById(R.id.my_alias_et);
-        et_my_area = (TextView) view.findViewById(R.id.my_area_et);
-        et_my_block = (EditText) view.findViewById(R.id.my_block_et);
-        et_my_street = (EditText) view.findViewById(R.id.my_street_et);
-        et_my_building = (EditText) view.findViewById(R.id.my_buiding_et);
-        et_my_floor = (EditText) view.findViewById(R.id.my_floor_et);
-        et_my_flat = (EditText) view.findViewById(R.id.my_flat_et);
-        et_my_mobile = (EditText) view.findViewById(R.id.my_mobile_et);
+        et_my_alias = (MyEditText) view.findViewById(R.id.my_alias_et);
+        et_my_area = (MyTextView) view.findViewById(R.id.my_area_et);
+        et_my_block = (MyEditText) view.findViewById(R.id.my_block_et);
+        et_my_street = (MyEditText) view.findViewById(R.id.my_street_et);
+        et_my_building = (MyEditText) view.findViewById(R.id.my_buiding_et);
+        et_my_floor = (MyEditText) view.findViewById(R.id.my_floor_et);
+        et_my_flat = (MyEditText) view.findViewById(R.id.my_flat_et);
+        et_my_mobile = (MyEditText) view.findViewById(R.id.my_mobile_et);
         area_list_my_acc = (LinearLayout) view.findViewById(R.id.area_list_my_acc);
         update_ll = (LinearLayout) view.findViewById(R.id.update_ll);
         delete = (LinearLayout) view.findViewById(R.id.delete_my_address_ll);
 //            area_list_ll = (LinearLayout) view.findViewById(R.id.area_list_ll);
         add_new_address_ll = (LinearLayout) view.findViewById(R.id.add_new_address_ll);
-        add_new_address_tv = (TextView) view.findViewById(R.id.add_new_address_tv);
+        add_new_address_tv = (MyTextView) view.findViewById(R.id.add_new_address_tv);
         add_new_address_tv.setText(Settings.getword(getActivity(), "add_address"));
         my_address_list = (ListView) view.findViewById(R.id.my_address_list);
         myAccountAddressAdapter = new MyAccountAddressAdapter(getActivity(), address_list);

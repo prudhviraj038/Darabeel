@@ -57,7 +57,7 @@
                         android:paddingTop="2dp"
                         android:gravity="center_vertical">
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:inputType="textEmailAddress"
@@ -95,7 +95,7 @@
                         android:paddingTop="2dp"
                         android:background="@drawable/brown_rounded_corners">
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:inputType="textPassword"
@@ -128,7 +128,7 @@
                     android:gravity="center"
                     android:padding="10dp">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Forgot password"
@@ -139,7 +139,7 @@
                         android:gravity="center"
                         android:layout_marginBottom="10dp" />
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="New here? Sign Up"
@@ -173,7 +173,7 @@
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/pink_high_rounded_corners">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="LOGIN"
@@ -223,7 +223,7 @@
                         android:paddingBottom="2dp"
                         android:paddingTop="2dp">
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/fname_signup"
@@ -257,7 +257,7 @@
                         android:gravity="center"
                         android:padding="2dp">
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/lname_signup"
@@ -291,7 +291,7 @@
                         android:padding="2dp"
                         android:gravity="center">
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="phone"
@@ -327,7 +327,7 @@
                         android:padding="2dp"
                         android:gravity="center">
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="textEmailAddress"
@@ -362,7 +362,7 @@
                         android:padding="2dp"
                         android:gravity="center_vertical">
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="textPassword"
@@ -402,7 +402,7 @@
                         android:paddingBottom="2dp"
                         android:id="@+id/area_list_signup">
 
-                        <TextView
+                        <in.yellowsoft.darabeel.MyTextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/area_signup"
@@ -432,7 +432,7 @@
                         android:padding="2dp"
                         android:gravity="center" >
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/block_signup"
@@ -466,7 +466,7 @@
                         android:padding="2dp"
                         android:gravity="center" >
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/street_signup"
@@ -500,7 +500,7 @@
                         android:padding="2dp"
                         android:gravity="center" >
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/house_signup"
@@ -534,7 +534,7 @@
                         android:padding="2dp"
                         android:gravity="center" >
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/floor_signup"
@@ -559,7 +559,7 @@
                         android:padding="2dp"
                         android:gravity="center" >
 
-                        <EditText
+                        <in.yellowsoft.darabeel.MyEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/flat_signup"
@@ -600,7 +600,7 @@
                     android:paddingTop="7dp"
                     android:paddingBottom="7dp">
 
-                    <TextView
+                    <in.yellowsoft.darabeel.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="REGISTER"

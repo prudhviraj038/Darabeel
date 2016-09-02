@@ -10,9 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.EditText;
+
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -30,9 +30,9 @@ public class ChangePasswordfragment extends Fragment {
     String head,member_id;
     FragmentTouchListner mCallBack;
     boolean loaded=false;
-    TextView cp_submit_tv;
+    MyTextView cp_submit_tv;
     LinearLayout cp_submit;
-    EditText  cp_new_pass, cp_confirm_pass,current_password;
+    MyEditText  cp_new_pass, cp_confirm_pass,current_password;
     AlertDialogManager alert = new AlertDialogManager();
     public interface FragmentTouchListner {
         public void text_back_butt(String header);
@@ -64,13 +64,13 @@ public class ChangePasswordfragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view = getView();
 //        loaded=true;
-        current_password = (EditText) view.findViewById(R.id.old_password);
+        current_password = (MyEditText) view.findViewById(R.id.old_password);
         current_password.setHint(Settings.getword(getActivity(), "current_password") + "*");
-        cp_new_pass = (EditText) view.findViewById(R.id.cp_new_password);
+        cp_new_pass = (MyEditText) view.findViewById(R.id.cp_new_password);
         cp_new_pass.setHint(Settings.getword(getActivity(), "new_password") + "*");
-        cp_confirm_pass = (EditText) view.findViewById(R.id.cp_confirm_password);
+        cp_confirm_pass = (MyEditText) view.findViewById(R.id.cp_confirm_password);
         cp_confirm_pass.setHint(Settings.getword(getActivity(), "confirm_password") + "*");
-        cp_submit_tv = (TextView) view.findViewById(R.id.cp_submit_tv);
+        cp_submit_tv = (MyTextView) view.findViewById(R.id.cp_submit_tv);
         cp_submit_tv.setText(Settings.getword(getActivity(),"change_password"));
         cp_submit = (LinearLayout) view.findViewById(R.id.cp_submit_ll);
         cp_submit.setOnClickListener(new View.OnClickListener() {

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class FinalPageAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView final_items_name,final_multification,final_item_price;
+        MyTextView final_items_name,final_multification,final_item_price;
         ImageView cart_item_image;
       }
     @Override
@@ -55,9 +55,9 @@ public class FinalPageAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.final_item, null);
-        holder.final_items_name=(TextView) rowView.findViewById(R.id.final_item_name);
-        holder.final_multification=(TextView) rowView.findViewById(R.id.multification_final);
-        holder.final_item_price=(TextView) rowView.findViewById(R.id.final_item_price);
+        holder.final_items_name=(MyTextView) rowView.findViewById(R.id.final_item_name);
+        holder.final_multification=(MyTextView) rowView.findViewById(R.id.multification_final);
+        holder.final_item_price=(MyTextView) rowView.findViewById(R.id.final_item_price);
         holder.final_items_name.setText(cart_items.get(position).products.getTitle(context));
         holder.final_multification.setText(cart_items.get(position).quantity+" x "+cart_items.get(position).products.cart_price);
         holder.final_item_price.setText(String.format("%.3f",Integer.parseInt(cart_items.get(position).quantity) * Float.parseFloat(cart_items.get(position).products.cart_price))+ "KD" );

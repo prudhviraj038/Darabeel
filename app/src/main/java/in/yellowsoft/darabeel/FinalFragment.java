@@ -18,12 +18,12 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
-import android.widget.EditText;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -54,12 +54,12 @@ import java.util.Map;
 public class FinalFragment extends Fragment {
     ArrayList<CartItem> cart_items;
     ImageView cash_image,knet_image,cash_img,knet_img,credit_card_image,drop_down,plus_spl_comments,plue_img_coupon,later_img,now_img,date_time;
-    TextView areaa,block,street,building,floor,apartment,mobile,sub_total,discount,delivery_charges,grand_total,summery,
+    MyTextView areaa,block,street,building,floor,apartment,mobile,sub_total,discount,delivery_charges,grand_total,summery,
             tv_cash,tv_knet,tv_credit_card,payment_option,tv_proceed_pay,stat_sub_total,sta_discount,stat_delivery_charges,sta_dara,dara,address_guest,
             stat_grand_total,stat_tv_area,stat_tv_block,stat_tv_street,stat_tv_building,stat_tv_floor,stat_tv_apartment,addr_name_tv,
             stat_tv_mobile,tv_edit,cancel_tv,save_tv,tv_add,tv_spl_com,tv_coupon_code,tv_submit,date_tv,time_tv,gues_fname,
             guest_lname,guest_email,guest_home_ph,guest_work_ph,add_add,add_area,later_tv,now_tv,cancel_add_tv;
-    EditText e_area, e_block, e_street, e_building, e_floor,e_aprtment,e_mobile,spl_comment,coupon_code,addr_name,
+    MyEditText e_area, e_block, e_street, e_building, e_floor,e_aprtment,e_mobile,spl_comment,coupon_code,addr_name,
             et_fname,et_lname,et_email,et_work_ph,et_home_ph,add_et_addresss_name,add_et_block,add_et_street,add_et_floor,
             add_et_buillding,add_et_flat,add_et_mobile,add_et_directions;
     LinearLayout edit,add,cancel,save_ll,submit,ll_cash,ll_knet,ll_credit_card,ll_proceed_pay,date_lll,time_ll,drop_down_ll,
@@ -87,7 +87,7 @@ public class FinalFragment extends Fragment {
     LinearLayout personal_details;
     ArrayList<String> address_id;
     ArrayList<String> address_title;
-    String addrs_id,selected_area_id;
+    String addrs_id,selected_area_id,t1;
     String spl_req;
     ArrayList<Addresss> address_list;
     int click=1,click1=1;
@@ -142,56 +142,56 @@ public class FinalFragment extends Fragment {
         address_title=new ArrayList<>();
         address_list=new ArrayList<>();
         mobile_ll_final=(LinearLayout)view.findViewById(R.id.mobile_ll_final);
-        summery=(TextView)view.findViewById(R.id.summery);
+        summery=(MyTextView)view.findViewById(R.id.summery);
         summery.setText(Settings.getword(getActivity(),"summary"));
-        gues_fname=(TextView)view.findViewById(R.id.guest_fname);
+        gues_fname=(MyTextView)view.findViewById(R.id.guest_fname);
         gues_fname.setText(Settings.getword(getActivity(),"title_first_name"));
-        guest_lname=(TextView)view.findViewById(R.id.guest_lname);
+        guest_lname=(MyTextView)view.findViewById(R.id.guest_lname);
         guest_lname.setText(Settings.getword(getActivity(),"title_last_name"));
-        guest_home_ph=(TextView)view.findViewById(R.id.guest_home_ph);
+        guest_home_ph=(MyTextView)view.findViewById(R.id.guest_home_ph);
         guest_home_ph.setText(Settings.getword(getActivity(),"mobile"));
-        guest_work_ph=(TextView)view.findViewById(R.id.guest_work_ph);
+        guest_work_ph=(MyTextView)view.findViewById(R.id.guest_work_ph);
         guest_work_ph.setText(Settings.getword(getActivity(),"extra_mobile"));
-        guest_email=(TextView)view.findViewById(R.id.guest_email);
+        guest_email=(MyTextView)view.findViewById(R.id.guest_email);
         guest_email.setText(Settings.getword(getActivity(),"email_address"));
-        et_fname = (EditText) view.findViewById(R.id.et_guest_fname);
-        et_lname = (EditText) view.findViewById(R.id.et_guest_lname);
-        et_email = (EditText) view.findViewById(R.id.et_guest_email);
-        et_home_ph = (EditText) view.findViewById(R.id.et_guest_home_ph);
-        et_work_ph = (EditText) view.findViewById(R.id.et_guest_work_ph);
+        et_fname = (MyEditText) view.findViewById(R.id.et_guest_fname);
+        et_lname = (MyEditText) view.findViewById(R.id.et_guest_lname);
+        et_email = (MyEditText) view.findViewById(R.id.et_guest_email);
+        et_home_ph = (MyEditText) view.findViewById(R.id.et_guest_home_ph);
+        et_work_ph = (MyEditText) view.findViewById(R.id.et_guest_work_ph);
         personal_details=(LinearLayout)view.findViewById(R.id.personal_details_rl);
         if(Settings.getUserid(getActivity()).equals("-1")){
             personal_details.setVisibility(View.VISIBLE);
         }else {
             personal_details.setVisibility(View.GONE);
         }
-        areaa=(TextView)view.findViewById(R.id.tv_area);
-        block=(TextView)view.findViewById(R.id.tv_block);
-        street=(TextView)view.findViewById(R.id.tv_street);
-        building=(TextView)view.findViewById(R.id.tv_buildng);
-        floor=(TextView)view.findViewById(R.id.tv_floor);
-        apartment=(TextView)view.findViewById(R.id.tv_flat);
-        mobile=(TextView)view.findViewById(R.id.tv_mobile);
-//        addr_name_tv=(TextView)view.findViewById(R.id.et_addr_name_tv);
-//        addr_name = (EditText) view.findViewById(R.id.et_addr_name);
-        e_area = (EditText) view.findViewById(R.id.et_area);
-        e_block = (EditText) view.findViewById(R.id.et_block);
-        e_street = (EditText) view.findViewById(R.id.et_street);
-        e_building = (EditText) view.findViewById(R.id.et_building);
-        e_floor = (EditText) view.findViewById(R.id.et_floor);
-        e_aprtment = (EditText) view.findViewById(R.id.et_flat);
-        e_mobile = (EditText) view.findViewById(R.id.et_mobile);
+        areaa=(MyTextView)view.findViewById(R.id.tv_area);
+        block=(MyTextView)view.findViewById(R.id.tv_block);
+        street=(MyTextView)view.findViewById(R.id.tv_street);
+        building=(MyTextView)view.findViewById(R.id.tv_buildng);
+        floor=(MyTextView)view.findViewById(R.id.tv_floor);
+        apartment=(MyTextView)view.findViewById(R.id.tv_flat);
+        mobile=(MyTextView)view.findViewById(R.id.tv_mobile);
+//        addr_name_tv=(MyTextView)view.findViewById(R.id.et_addr_name_tv);
+//        addr_name = (MyEditText) view.findViewById(R.id.et_addr_name);
+        e_area = (MyEditText) view.findViewById(R.id.et_area);
+        e_block = (MyEditText) view.findViewById(R.id.et_block);
+        e_street = (MyEditText) view.findViewById(R.id.et_street);
+        e_building = (MyEditText) view.findViewById(R.id.et_building);
+        e_floor = (MyEditText) view.findViewById(R.id.et_floor);
+        e_aprtment = (MyEditText) view.findViewById(R.id.et_flat);
+        e_mobile = (MyEditText) view.findViewById(R.id.et_mobile);
 
-        add_et_block = (EditText) view.findViewById(R.id.block_add_fin);
-        add_et_street = (EditText) view.findViewById(R.id.street_add_fin);
-        add_et_buillding = (EditText) view.findViewById(R.id.buillding_add_fin);
-        add_et_floor = (EditText) view.findViewById(R.id.floor_add_fin);
-        add_et_flat = (EditText) view.findViewById(R.id.flat_add_fine);
-        add_et_mobile = (EditText) view.findViewById(R.id.mobile_add_fin);
-        add_et_directions = (EditText) view.findViewById(R.id.extra_direction_fin);
-        add_et_addresss_name = (EditText) view.findViewById(R.id.address_name_fin);
-        add_area=(TextView)view.findViewById(R.id.area_add_fin);
-        add_add=(TextView)view.findViewById(R.id.add_address_final_tv);
+        add_et_block = (MyEditText) view.findViewById(R.id.block_add_fin);
+        add_et_street = (MyEditText) view.findViewById(R.id.street_add_fin);
+        add_et_buillding = (MyEditText) view.findViewById(R.id.buillding_add_fin);
+        add_et_floor = (MyEditText) view.findViewById(R.id.floor_add_fin);
+        add_et_flat = (MyEditText) view.findViewById(R.id.flat_add_fine);
+        add_et_mobile = (MyEditText) view.findViewById(R.id.mobile_add_fin);
+        add_et_directions = (MyEditText) view.findViewById(R.id.extra_direction_fin);
+        add_et_addresss_name = (MyEditText) view.findViewById(R.id.address_name_fin);
+        add_area=(MyTextView)view.findViewById(R.id.area_add_fin);
+        add_add=(MyTextView)view.findViewById(R.id.add_address_final_tv);
         add_add.setText(Settings.getword(getActivity(),"add_address"));
         add_add_ll=(LinearLayout)view.findViewById(R.id.add_address_final_ll);
         cancel_add_address_fin=(LinearLayout)view.findViewById(R.id.cancel_final_add_address_ll);
@@ -227,64 +227,64 @@ public class FinalFragment extends Fragment {
 //                e.printStackTrace();
 //            }
 //        }
-        sub_total=(TextView)view.findViewById(R.id.sub_total_final);
-        discount=(TextView)view.findViewById(R.id.discount_final);
-        delivery_charges=(TextView)view.findViewById(R.id.delivery_charges_final);
+        sub_total=(MyTextView)view.findViewById(R.id.sub_total_final);
+        discount=(MyTextView)view.findViewById(R.id.discount_final);
+        delivery_charges=(MyTextView)view.findViewById(R.id.delivery_charges_final);
         delivery_charges.setText(Settings.getDelivery_charges(getActivity())+" KD");
-        dara=(TextView)view.findViewById(R.id.dara_charges_final);
+        dara=(MyTextView)view.findViewById(R.id.dara_charges_final);
         dara.setText(Settings.getSettings(getActivity(), "darabeel_charges")+" KD");
-        grand_total=(TextView)view.findViewById(R.id.grand_total_final);
-        stat_sub_total=(TextView)view.findViewById(R.id.static_sub_total);
+        grand_total=(MyTextView)view.findViewById(R.id.grand_total_final);
+        stat_sub_total=(MyTextView)view.findViewById(R.id.static_sub_total);
         stat_sub_total.setText(Settings.getword(getActivity(), "sub_total"));
-        sta_discount=(TextView)view.findViewById(R.id.sta_discount);
+        sta_discount=(MyTextView)view.findViewById(R.id.sta_discount);
         sta_discount.setText(Settings.getword(getActivity(),"discount"));
-        stat_delivery_charges=(TextView)view.findViewById(R.id.static_delivery_charges);
+        stat_delivery_charges=(MyTextView)view.findViewById(R.id.static_delivery_charges);
         stat_delivery_charges.setText(Settings.getword(getActivity(),"delivery_charges"));
-        stat_grand_total=(TextView)view.findViewById(R.id.static_grand_total);
+        stat_grand_total=(MyTextView)view.findViewById(R.id.static_grand_total);
         stat_grand_total.setText(Settings.getword(getActivity(),"grand_total"));
-        sta_dara=(TextView)view.findViewById(R.id.sta_dara_charges_final);
+        sta_dara=(MyTextView)view.findViewById(R.id.sta_dara_charges_final);
         Log.e("dara_c", Settings.getword(getActivity(), "darabeel_charges"));
         sta_dara.setText(Settings.getword(getActivity(), "darabeel_charges"));
-        tv_cash=(TextView)view.findViewById(R.id.tv_cash_final);
+        tv_cash=(MyTextView)view.findViewById(R.id.tv_cash_final);
         tv_cash.setText(Settings.getword(getActivity(), "cash"));
-        tv_knet=(TextView)view.findViewById(R.id.tv_knet_final);
+        tv_knet=(MyTextView)view.findViewById(R.id.tv_knet_final);
         tv_knet.setText(Settings.getword(getActivity(),"knet"));
-        tv_credit_card=(TextView)view.findViewById(R.id.tv_credit_card_final);
+        tv_credit_card=(MyTextView)view.findViewById(R.id.tv_credit_card_final);
         tv_credit_card.setText(Settings.getword(getActivity(),"credit_cards"));
-        payment_option=(TextView)view.findViewById(R.id.tv_payment_option);
+        payment_option=(MyTextView)view.findViewById(R.id.tv_payment_option);
         payment_option.setText(Settings.getword(getActivity(),"payment_option"));
-        tv_proceed_pay=(TextView)view.findViewById(R.id.tv_proceed_pay);
+        tv_proceed_pay=(MyTextView)view.findViewById(R.id.tv_proceed_pay);
         tv_proceed_pay.setText(Settings.getword(getActivity(),"proceed_to_pay"));
-        address_guest=(TextView)view.findViewById(R.id.address_guest);
+        address_guest=(MyTextView)view.findViewById(R.id.address_guest);
         address_guest.setText(Settings.getword(getActivity(),"address"));
 //        addr_name_tv.setText(Settings.getword(getActivity(),"address"));
-        stat_tv_area=(TextView)view.findViewById(R.id.static_tv_area);
+        stat_tv_area=(MyTextView)view.findViewById(R.id.static_tv_area);
         stat_tv_area.setText(Settings.getword(getActivity(),"area"));
-        stat_tv_block=(TextView)view.findViewById(R.id.static_tv_block);
+        stat_tv_block=(MyTextView)view.findViewById(R.id.static_tv_block);
         stat_tv_block.setText(Settings.getword(getActivity(),"block"));
-        stat_tv_street=(TextView)view.findViewById(R.id.static_tv_street);
+        stat_tv_street=(MyTextView)view.findViewById(R.id.static_tv_street);
         stat_tv_street.setText(Settings.getword(getActivity(),"street_name"));
-        stat_tv_building=(TextView)view.findViewById(R.id.static_tv_building);
+        stat_tv_building=(MyTextView)view.findViewById(R.id.static_tv_building);
         stat_tv_building.setText(Settings.getword(getActivity(),"building_name"));
-        stat_tv_floor=(TextView)view.findViewById(R.id.static_tv_floor);
+        stat_tv_floor=(MyTextView)view.findViewById(R.id.static_tv_floor);
         stat_tv_floor.setText(Settings.getword(getActivity(),"floor"));
-        stat_tv_apartment=(TextView)view.findViewById(R.id.static_tv_aprtment);
+        stat_tv_apartment=(MyTextView)view.findViewById(R.id.static_tv_aprtment);
         stat_tv_apartment.setText(Settings.getword(getActivity(),"apartment"));
-        stat_tv_mobile=(TextView)view.findViewById(R.id.static_tv_mobile);
+        stat_tv_mobile=(MyTextView)view.findViewById(R.id.static_tv_mobile);
         stat_tv_mobile.setText(Settings.getword(getActivity(),"mobile"));
-        tv_edit=(TextView)view.findViewById(R.id.tv_edit_address);
+        tv_edit=(MyTextView)view.findViewById(R.id.tv_edit_address);
         tv_edit.setText(Settings.getword(getActivity(),"edit_address"));
-        tv_add=(TextView)view.findViewById(R.id.tv_add_address);
+        tv_add=(MyTextView)view.findViewById(R.id.tv_add_address);
         tv_add.setText(Settings.getword(getActivity(),"add_address"));
-        cancel_tv=(TextView)view.findViewById(R.id.cancel);
+        cancel_tv=(MyTextView)view.findViewById(R.id.cancel);
         cancel_tv.setText(Settings.getword(getActivity(),"cancel"));
-        save_tv=(TextView)view.findViewById(R.id.save_tv);
+        save_tv=(MyTextView)view.findViewById(R.id.save_tv);
         save_tv.setText(Settings.getword(getActivity(),"save"));
-        tv_spl_com=(TextView)view.findViewById(R.id.tv_spl_comments);
+        tv_spl_com=(MyTextView)view.findViewById(R.id.tv_spl_comments);
         tv_spl_com.setText(Settings.getword(getActivity(),"special_comments"));
-        tv_coupon_code=(TextView)view.findViewById(R.id.tv_coupon);
+        tv_coupon_code=(MyTextView)view.findViewById(R.id.tv_coupon);
         tv_coupon_code.setText(Settings.getword(getActivity(),"coupon_code"));
-        tv_submit=(TextView)view.findViewById(R.id.tv_submit_final);
+        tv_submit=(MyTextView)view.findViewById(R.id.tv_submit_final);
         tv_submit.setText(Settings.getword(getActivity(),"submit"));
         Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -292,9 +292,19 @@ public class FinalFragment extends Fragment {
         mDay = c.get(Calendar.DAY_OF_MONTH);
         mHour = c.get(Calendar.HOUR_OF_DAY);
         mMinute = c.get(Calendar.MINUTE);
-        date_tv=(TextView)view.findViewById(R.id.delivery_date);
-        date_tv.setText(mDay+" - "+mMonth+" - "+mYear);
-        time_tv=(TextView)view.findViewById(R.id.delivery_time);
+        date_tv=(MyTextView)view.findViewById(R.id.delivery_date);
+        String md1;
+        if (mDay < 10)
+            md1 = "0" + mDay;
+        else
+            md1 = String.valueOf(mDay);
+        String mm1;
+        if (mMonth < 10)
+            mm1 = "0" + mMonth;
+        else
+            mm1 = String.valueOf(mMonth);
+        date_tv.setText(md1+" - "+mm1+" - "+mYear);
+        time_tv=(MyTextView)view.findViewById(R.id.delivery_time);
         hour = mHour;
         minutes = mMinute;
         String timeSet = "";
@@ -308,13 +318,17 @@ public class FinalFragment extends Fragment {
             timeSet = "PM";
         else
             timeSet = "AM";
-
+        String  hour1;
+        if (hour < 10)
+            hour1 = "0" + hour;
+        else
+            hour1 = String.valueOf(hour);
         String min = "";
         if (minutes < 10)
             min = "0" + minutes ;
         else
             min = String.valueOf(minutes);
-        time_tv.setText(new StringBuilder().append(hour).append(':')
+        time_tv.setText(new StringBuilder().append(hour1).append(':')
                 .append(min ).append(" ").append(timeSet).toString());
         plus_spl_comments=(ImageView)view.findViewById(R.id.plus_img_spl_comm);
         plue_img_coupon=(ImageView)view.findViewById(R.id.plus_img_coupon);
@@ -371,18 +385,18 @@ public class FinalFragment extends Fragment {
         g_total=grn_total;
         grand_total.setText(String.format("%.3f", g_total) + " KD");
 
-        spl_comment = (EditText) view.findViewById(R.id.spl_instructions);
+        spl_comment = (MyEditText) view.findViewById(R.id.spl_instructions);
         spl_comment.setHint(Settings.getword(getActivity(), "special_comments"));
-        coupon_code = (EditText) view.findViewById(R.id.coupon_codes);
+        coupon_code = (MyEditText) view.findViewById(R.id.coupon_codes);
         coupon_code.setHint(Settings.getword(getActivity(), "coupon_code"));
 
         later=(LinearLayout)view.findViewById(R.id.later_ll);
         now=(LinearLayout)view.findViewById(R.id.now_ll);
-        later_tv=(TextView)view.findViewById(R.id.later_tv);
+        later_tv=(MyTextView)view.findViewById(R.id.later_tv);
         later_tv.setText(Settings.getword(getActivity(), "later"));
-        now_tv=(TextView)view.findViewById(R.id.now_tv);
+        now_tv=(MyTextView)view.findViewById(R.id.now_tv);
         now_tv.setText(Settings.getword(getActivity(), "now"));
-        cancel_add_tv=(TextView)view.findViewById(R.id.cancel_final_add_address_tv);
+        cancel_add_tv=(MyTextView)view.findViewById(R.id.cancel_final_add_address_tv);
         cancel_add_tv.setText(Settings.getword(getActivity(), "cancel"));
         later_img=(ImageView)view.findViewById(R.id.later_img);
         now_img=(ImageView)view.findViewById(R.id.now_img);
@@ -433,6 +447,7 @@ public class FinalFragment extends Fragment {
                                 String temp1 = String.valueOf(minute);
                                 if (temp1.length() < 2)
                                     temp1 = "0" + temp1;
+                                t1=temp+":"+temp1;
                                 hour = hourOfDay;
                                 minutes = minute;
                                 String timeSet = "";
@@ -446,7 +461,11 @@ public class FinalFragment extends Fragment {
                                     timeSet = "PM";
                                 else
                                     timeSet = "AM";
-
+                                String  hour1;
+                                if (hour < 10)
+                                    hour1 = "0" + hour;
+                                else
+                                    hour1 = String.valueOf(hour);
                                 String min = "";
                                 if (minutes < 10)
                                     min = "0" + minutes;
@@ -454,9 +473,10 @@ public class FinalFragment extends Fragment {
                                     min = String.valueOf(minutes);
 
                                 // Append in a StringBuilder
-                                time1 = new StringBuilder().append(hour).append(':')
-                                        .append(min).append(" ").append(timeSet).toString();
-                                time = temp1;
+//                                time1 = new StringBuilder().append(hour1).append(':')
+//                                        .append(min).append(" ").append(timeSet).toString();
+                                time1=hour1+":"+min+" "+timeSet;
+                                time = time1;
 //                        time1 = temp+":"+temp1;
                                 time_tv.setText(time1);
                             }
@@ -510,7 +530,7 @@ public class FinalFragment extends Fragment {
         drop_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView title1 = new TextView(getActivity());
+                MyTextView title1 = new MyTextView(getActivity());
                 title1.setText(Settings.getword(getActivity(), "select_address"));
                 title1.setPadding(10, 10, 10, 10);
                 title1.setGravity(Gravity.CENTER);
@@ -584,17 +604,33 @@ public class FinalFragment extends Fragment {
         knet_image=(ImageView)view.findViewById(R.id.knet_img);
         credit_card_image=(ImageView)view.findViewById(R.id.credit_card_img);
         cash_img=(ImageView)view.findViewById(R.id.cash_img_dis);
-        Picasso.with(getActivity()).load(cart_items.get(0).products.restaurant.payment.get(0).image).into(cash_img);
         knet_img=(ImageView)view.findViewById(R.id.knet_img_dis);
-        Picasso.with(getActivity()).load(cart_items.get(0).products.restaurant.payment.get(1).image).into(knet_img);
+//        Picasso.with(getActivity()).load(cart_items.get(0).products.restaurant.payment.get(1).image).into(knet_img);
+        for(int i=0;i<cart_items.get(0).products.restaurant.payment.size();i++){
+            if(i==0){
+                if(cart_items.get(0).products.restaurant.payment.get(i).id.equals("1")){
+                    Picasso.with(getActivity()).load(cart_items.get(0).products.restaurant.payment.get(i).image).into(cash_img);
+                    ll_cash.setVisibility(View.VISIBLE);
+                    ll_knet.setVisibility(View.GONE);
+                }else{
+                    Picasso.with(getActivity()).load(cart_items.get(0).products.restaurant.payment.get(i).image).into(knet_img);
+                    ll_knet.setVisibility(View.VISIBLE);
+                    ll_cash.setVisibility(View.GONE);
+                }
+            }else{
+                Picasso.with(getActivity()).load(cart_items.get(0).products.restaurant.payment.get(i).image).into(knet_img);
+                ll_knet.setVisibility(View.VISIBLE);
+//                ll_cash.setVisibility(View.GONE);
+            }
+        }
 
         ll_cash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pay_met = "cash";
-                        cash_image.setImageResource(R.drawable.ic_option_pink);
-                        knet_image.setImageResource(R.drawable.ic_option_brown);
-                        credit_card_image.setImageResource(R.drawable.ic_option_brown);
+                cash_image.setImageResource(R.drawable.ic_option_pink);
+                knet_image.setImageResource(R.drawable.ic_option_brown);
+                credit_card_image.setImageResource(R.drawable.ic_option_brown);
 
             }
         });
@@ -895,7 +931,13 @@ public class FinalFragment extends Fragment {
         });
     }
     public  void check_date_time(){
-        String url = Settings.SERVERURL+"delivery-date-check.php?rest_id="+cart_items.get(0).products.restaurant.res_id+"&date="+date1+"&time="+time1;
+        String url = null;
+        try {
+            url = Settings.SERVERURL+"delivery-date-check.php?rest_id="+ URLEncoder.encode(cart_items.get(0).products.restaurant.res_id, "utf-8")+
+                    "&date="+URLEncoder.encode(date1, "utf-8")+"&time="+URLEncoder.encode(t1, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         Log.e("url--->", url);
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage(Settings.getword(getActivity(), "please_wait"));
@@ -969,11 +1011,15 @@ public class FinalFragment extends Fragment {
 
                         place_order_object.put("comments", spl_comment.getText().toString());
                         place_order_object.put("coupon_code", coupon_code.getText().toString());
-                        place_order_object.put("discount_amount", dis_amount);
+                        place_order_object.put("discount_amount", String.format("%.3f", dis_amount));
+                        Log.e("dam", String.format("%.3f", dis_amount));
                         place_order_object.put("darabeel_charges", Settings.getSettings(getActivity(), "darabeel_charges"));
-                        place_order_object.put("price", String.format("%.3f",total));
+                        place_order_object.put("price", String.format("%.3f", total));
+                        Log.e("sub", String.format("%.3f", total));
                         place_order_object.put("delivery_charges", Settings.getDelivery_charges(getActivity()));
+                        Log.e("darac", Settings.getDelivery_charges(getActivity()));
                         place_order_object.put("total_price", String.format("%.3f", g_total));
+                        Log.e("tp", String.format("%.3f", g_total));
                         place_order_object.put("payment_method", pay_met);
                         place_order_object.put("delivery", delivery);
                         place_order_object.put("delivery_date", date);
@@ -985,7 +1031,8 @@ public class FinalFragment extends Fragment {
                             JSONObject product = new JSONObject();
                             product.put("product_id", cart_items.get(i).products.res_id);
                             product.put("quantity", cart_items.get(i).quantity);
-                            product.put("price", Float.parseFloat(cart_items.get(i).quantity)*Float.parseFloat(cart_items.get(i).products.cart_price));
+                            product.put("price", String.format("%.3f",Float.parseFloat(cart_items.get(i).quantity)*Float.parseFloat(cart_items.get(i).products.cart_price)));
+                         Log.e("pr",String.format("%.3f",Float.parseFloat(cart_items.get(i).quantity)*Float.parseFloat(cart_items.get(i).products.cart_price)));
                             product.put("special_request", cart_items.get(i).spl_request);
                             JSONArray addon_array = new JSONArray();
                             for (int j = 0; j < cart_items.get(i).products.groups.size(); j++) {
@@ -995,7 +1042,7 @@ public class FinalFragment extends Fragment {
                                     if (cart_items.get(i).products.groups.get(j).addons.get(k).isselected){
                                         addon.put("addon_id", cart_items.get(i).products.groups.get(j).addons.get(k).addon_id);
                                         Log.e("addonId", cart_items.get(i).products.groups.get(j).addons.get(k).addon_id);
-                                        addon.put("price", cart_items.get(i).products.groups.get(j).addons.get(k).price);
+                                        addon.put("price", String.format("%.3f",cart_items.get(i).products.groups.get(j).addons.get(k).price));
                                         Log.e("addonPrice", cart_items.get(i).products.groups.get(j).addons.get(k).price);
                                         addon_array.put(addon);
                                 }
@@ -1008,7 +1055,7 @@ public class FinalFragment extends Fragment {
                                 if (cart_items.get(i).products.options.get(l).isselected){
                                     options.put("options_id", cart_items.get(i).products.options.get(l).option_id);
                                     Log.e("optionId", cart_items.get(i).products.options.get(l).option_id);
-                                    options.put("price", cart_items.get(i).products.options.get(l).price);
+                                    options.put("price", String.format("%.3f",cart_items.get(i).products.options.get(l).price));
                                     Log.e("optionPrice", cart_items.get(i).products.options.get(l).price);
                                     product.put("options", options);
                             }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-ar/active_img (1).png" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-ar/active_img (2).png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/yellowsoft/darabeel/MyEditText.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/in/yellowsoft/darabeel/MyTextView.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-ar/active_img.png" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/active_img.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/active_img.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_language_screen.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_option_brown.png" charset="windows-1252" />

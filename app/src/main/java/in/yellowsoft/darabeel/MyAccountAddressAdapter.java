@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -45,7 +45,7 @@ public class MyAccountAddressAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView res_name,order_id,pri,date,pay_method,deli_status,order_details;
+        MyTextView res_name,order_id,pri,date,pay_method,deli_status,order_details;
 
       }
     @Override
@@ -54,7 +54,7 @@ public class MyAccountAddressAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.my_account_address_item, null);
-        holder.res_name=(TextView) rowView.findViewById(R.id.alias_item);
+        holder.res_name=(MyTextView) rowView.findViewById(R.id.alias_item);
         holder.res_name.setText(addresses.get(position).alias);
         return rowView;
     }

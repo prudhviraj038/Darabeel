@@ -55,14 +55,29 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp">
 
-                        <ImageView
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/company_image"
+                            app:riv_corner_radius="7dip"
+                            app:riv_border_width="0dip"
+                            app:riv_border_color="#333333"
+                            app:riv_mutate_background="true"
+                            app:riv_tile_mode="repeat"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/company_image"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="true"
-                            android:src="@drawable/img_restaurants" />
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/imageView34"
+                                android:src="@drawable/home_rounded_corners" />
+                        </FrameLayout>
 
                     </LinearLayout>
 
@@ -84,7 +99,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1">
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Chocolateness"
@@ -93,7 +108,7 @@
                                 android:textColor="#ffffff"
                                 android:textStyle="bold" />
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Desserts, Chocolates, Shakes, Arabic Sweets..."
@@ -117,7 +132,7 @@
                                 android:showDividers="middle|end"
                                 android:divider="@drawable/rating_divider" />
 
-                            <TextView
+                            <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/review_res_page"
@@ -163,7 +178,7 @@
                                 android:background="@drawable/bg_menu_category"
                                 android:gravity="center">
 
-                                <TextView
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Menu Category"

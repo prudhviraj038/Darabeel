@@ -13,13 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
-import android.widget.EditText;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -41,11 +41,11 @@ import java.util.Set;
 public class MyOrdersfragment extends Fragment {
     String head;
     LinearLayout rate_pop,rating_ll,submit,cancel;
-    TextView res_name, sta_ord_id, sta_ord_date, Sta_ord_name, sta_ord_mobile, sta_ord_area, sta_ord_block, sta_ord_street, sta_ord_bilding,
+    MyTextView res_name, sta_ord_id, sta_ord_date, Sta_ord_name, sta_ord_mobile, sta_ord_area, sta_ord_block, sta_ord_street, sta_ord_bilding,
             sta_discount_oreder, discount_order, sta_or_det_floor, sta_or_det_flat, or_det_floor,or_det_flat,sta_sub_total,sta_dara, sta_dc, sta_grand_total, ord_date, ord_id, ord_name,
             ord_mobile, ord_area, ord_block, ord_street, ord_building, ord_pay_mode, ord_sub_total, ord_dc,dara, ord_grand_total,delivery_date,
             sta_delivery_date,sta_reorder,cancel_tv,submit_tv,write_comments_tv,rateing_tv;
-    EditText comments;
+    MyEditText comments;
     String write="";
     AlertDialogManager alert = new AlertDialogManager();
     ViewFlipper viewFlipper;
@@ -92,48 +92,48 @@ public class MyOrdersfragment extends Fragment {
         progressBar=(ProgressBar)view.findViewById(R.id.progressBar5);
         orderses = new ArrayList<>();
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper7);
-        sta_ord_id = (TextView) view.findViewById(R.id.sta_order_id);
+        sta_ord_id = (MyTextView) view.findViewById(R.id.sta_order_id);
         sta_ord_id.setText(Settings.getword(getActivity(), "order_id"));
-        sta_ord_date = (TextView) view.findViewById(R.id.sta_order_date);
+        sta_ord_date = (MyTextView) view.findViewById(R.id.sta_order_date);
         sta_ord_date.setText(Settings.getword(getActivity(), "order_date"));
-        sta_delivery_date = (TextView) view.findViewById(R.id.sta_delivery_date);
+        sta_delivery_date = (MyTextView) view.findViewById(R.id.sta_delivery_date);
         sta_delivery_date.setText(Settings.getword(getActivity(), "selecte_delivery_date"));
-        Sta_ord_name = (TextView) view.findViewById(R.id.sta_or_det_name);
+        Sta_ord_name = (MyTextView) view.findViewById(R.id.sta_or_det_name);
         Sta_ord_name.setText(Settings.getword(getActivity(), "contact_us_name"));
-        sta_ord_mobile = (TextView) view.findViewById(R.id.sta_or_det_number);
+        sta_ord_mobile = (MyTextView) view.findViewById(R.id.sta_or_det_number);
         sta_ord_mobile.setText(Settings.getword(getActivity(), "mobile"));
-        sta_ord_area = (TextView) view.findViewById(R.id.sta_or_det_area);
+        sta_ord_area = (MyTextView) view.findViewById(R.id.sta_or_det_area);
         sta_ord_area.setText(Settings.getword(getActivity(), "area"));
-        sta_ord_block = (TextView) view.findViewById(R.id.sta_or_det_block);
+        sta_ord_block = (MyTextView) view.findViewById(R.id.sta_or_det_block);
         sta_ord_block.setText(Settings.getword(getActivity(), "block"));
-        sta_ord_street = (TextView) view.findViewById(R.id.sta_or_det_street);
+        sta_ord_street = (MyTextView) view.findViewById(R.id.sta_or_det_street);
         sta_ord_street.setText(Settings.getword(getActivity(), "street_name"));
-        sta_ord_bilding = (TextView) view.findViewById(R.id.sta_or_det_building);
+        sta_ord_bilding = (MyTextView) view.findViewById(R.id.sta_or_det_building);
         sta_ord_bilding.setText(Settings.getword(getActivity(), "building_name"));
-        sta_or_det_floor = (TextView) view.findViewById(R.id.sta_or_det_floor);
+        sta_or_det_floor = (MyTextView) view.findViewById(R.id.sta_or_det_floor);
         sta_or_det_floor.setText(Settings.getword(getActivity(), "floor_number"));
-        sta_or_det_flat = (TextView) view.findViewById(R.id.sta_or_det_flat);
+        sta_or_det_flat = (MyTextView) view.findViewById(R.id.sta_or_det_flat);
         sta_or_det_flat.setText(Settings.getword(getActivity(), "flat_number"));
-        sta_sub_total = (TextView) view.findViewById(R.id.sta_sub_total_details);
+        sta_sub_total = (MyTextView) view.findViewById(R.id.sta_sub_total_details);
         sta_sub_total.setText(Settings.getword(getActivity(), "sub_total"));
-        sta_dc = (TextView) view.findViewById(R.id.sta_res_dc_details);
+        sta_dc = (MyTextView) view.findViewById(R.id.sta_res_dc_details);
         sta_dc.setText(Settings.getword(getActivity(), "delivery_charges"));
-        sta_grand_total = (TextView) view.findViewById(R.id.sta_grand_tot_details);
+        sta_grand_total = (MyTextView) view.findViewById(R.id.sta_grand_tot_details);
         sta_grand_total.setText(Settings.getword(getActivity(), "grand_total"));
-        sta_discount_oreder = (TextView) view.findViewById(R.id.sta_discount_oreder);
+        sta_discount_oreder = (MyTextView) view.findViewById(R.id.sta_discount_oreder);
         sta_discount_oreder.setText(Settings.getword(getActivity(), "discount"));
-        sta_dara = (TextView) view.findViewById(R.id.sta_dara_charges);
+        sta_dara = (MyTextView) view.findViewById(R.id.sta_dara_charges);
         sta_dara.setText(Settings.getword(getActivity(), "darabeel_charges"));
 
-        comments=(EditText)view.findViewById(R.id.write_comm_ett);
+        comments=(MyEditText)view.findViewById(R.id.write_comm_ett);
         comments.setHint(Settings.getword(getActivity(), "comments"));
-        rateing_tv=(TextView)view.findViewById(R.id.rate_tv);
+        rateing_tv=(MyTextView)view.findViewById(R.id.rate_tv);
         rateing_tv.setText(Settings.getword(getActivity(), "rate"));
-        write_comments_tv=(TextView)view.findViewById(R.id.comm_tv_alertt);
+        write_comments_tv=(MyTextView)view.findViewById(R.id.comm_tv_alertt);
         write_comments_tv.setText(Settings.getword(getActivity(), "comments"));
-        submit_tv=(TextView)view.findViewById(R.id.alert_submitt);
+        submit_tv=(MyTextView)view.findViewById(R.id.alert_submitt);
         submit_tv.setText(Settings.getword(getActivity(), "submit"));
-        cancel_tv=(TextView)view.findViewById(R.id.cancel_pop_tv);
+        cancel_tv=(MyTextView)view.findViewById(R.id.cancel_pop_tv);
         cancel_tv.setText(Settings.getword(getActivity(), "cancel"));
         submit=(LinearLayout)view.findViewById(R.id.alert_submit_lll);
         cancel=(LinearLayout)view.findViewById(R.id.cancel_pop_ll);
@@ -160,22 +160,22 @@ public class MyOrdersfragment extends Fragment {
             }
         });
 
-        ord_date = (TextView) view.findViewById(R.id.order_dat);
-        delivery_date = (TextView) view.findViewById(R.id.delivery_dat);
-        ord_id = (TextView) view.findViewById(R.id.order_id_details);
-        ord_name = (TextView) view.findViewById(R.id.or_det_name);
-        ord_mobile = (TextView) view.findViewById(R.id.or_det_number);
-        ord_area = (TextView) view.findViewById(R.id.or_det_area);
-        ord_block = (TextView) view.findViewById(R.id.or_det_block);
-        ord_street = (TextView) view.findViewById(R.id.or_det_street);
-        ord_building = (TextView) view.findViewById(R.id.or_det_building);
-        or_det_floor = (TextView) view.findViewById(R.id.or_det_floor);
-        or_det_flat = (TextView) view.findViewById(R.id.or_det_flat);
-        ord_sub_total = (TextView) view.findViewById(R.id.sub_total_details);
-        ord_dc = (TextView) view.findViewById(R.id.res_dc_details);
-        ord_grand_total = (TextView) view.findViewById(R.id.grand_tot_details);
-        discount_order = (TextView) view.findViewById(R.id.discount_order);
-        dara = (TextView) view.findViewById(R.id.dara_charges);
+        ord_date = (MyTextView) view.findViewById(R.id.order_dat);
+        delivery_date = (MyTextView) view.findViewById(R.id.delivery_dat);
+        ord_id = (MyTextView) view.findViewById(R.id.order_id_details);
+        ord_name = (MyTextView) view.findViewById(R.id.or_det_name);
+        ord_mobile = (MyTextView) view.findViewById(R.id.or_det_number);
+        ord_area = (MyTextView) view.findViewById(R.id.or_det_area);
+        ord_block = (MyTextView) view.findViewById(R.id.or_det_block);
+        ord_street = (MyTextView) view.findViewById(R.id.or_det_street);
+        ord_building = (MyTextView) view.findViewById(R.id.or_det_building);
+        or_det_floor = (MyTextView) view.findViewById(R.id.or_det_floor);
+        or_det_flat = (MyTextView) view.findViewById(R.id.or_det_flat);
+        ord_sub_total = (MyTextView) view.findViewById(R.id.sub_total_details);
+        ord_dc = (MyTextView) view.findViewById(R.id.res_dc_details);
+        ord_grand_total = (MyTextView) view.findViewById(R.id.grand_tot_details);
+        discount_order = (MyTextView) view.findViewById(R.id.discount_order);
+        dara = (MyTextView) view.findViewById(R.id.dara_charges);
 
 
         get_orders();

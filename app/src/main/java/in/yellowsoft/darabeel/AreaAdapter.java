@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -76,12 +76,12 @@ public class AreaAdapter extends BaseAdapter {
         switch (type) {
             case TYPE_PERSON:
                 Area person = getItem(position);
-                TextView name = (TextView)convertView.findViewById(R.id.nameLabel);
+                MyTextView name = (MyTextView)convertView.findViewById(R.id.nameLabel);
                 name.setText(person.getArea(context));
 
                 break;
             case TYPE_DIVIDER:
-                TextView title = (TextView)convertView.findViewById(R.id.headerTitle);
+                MyTextView title = (MyTextView)convertView.findViewById(R.id.headerTitle);
                 String titleString = getItem(position).getArea(context);
                 title.setText(titleString);
                 break;

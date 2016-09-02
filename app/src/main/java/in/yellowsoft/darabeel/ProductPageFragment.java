@@ -9,13 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.EditText;
+
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -36,8 +36,8 @@ public class ProductPageFragment extends Fragment {
     GridView optionas_grid;
     LinearLayout rating,group_ll,minus,pluse,option_ll,add_to_cart_ll,option_img_ll,options_ll_list,spl_request_ll,add_more_ll,go_to_cart_ll,alert_add_cart;
     ImageView plus_img_option,plus_spl_request;
-    EditText et_spl_request;
-    TextView pro_name,pro_items,add_cart,number,spl_request,cost,pro_cost,option_title,add_more,go_to_cart,add_text;
+    MyEditText et_spl_request;
+    MyTextView pro_name,pro_items,add_cart,number,spl_request,cost,pro_cost,option_title,add_more,go_to_cart,add_text;
     ProductPageAdapter productPageAdapter ;
     ArrayList<Area> groupItems;
     private SliderLayout mDemoSlider;
@@ -104,32 +104,32 @@ public class ProductPageFragment extends Fragment {
         setGridViewHeightBasedOnItems(optionas_grid);
 //        rating=(LinearLayout)view.findViewById(R.id.rating_product_page);
 //        Settings.set_rating(getActivity(), restaurants.rating, rating);
-//        review=(TextView)view.findViewById(R.id.review_product_page);
+//        review=(MyTextView)view.findViewById(R.id.review_product_page);
 //        review.setText("(" + restaurants.reviews + ")");
-        option_title = (TextView) view.findViewById(R.id.choice_product_page);
+        option_title = (MyTextView) view.findViewById(R.id.choice_product_page);
         option_title.setText(products.getoption_title(getActivity()));
-        pro_name = (TextView) view.findViewById(R.id.product_name);
-        add_more = (TextView) view.findViewById(R.id.add_more_pp);
-        pro_cost = (TextView) view.findViewById(R.id.product_page_price);
+        pro_name = (MyTextView) view.findViewById(R.id.product_name);
+        add_more = (MyTextView) view.findViewById(R.id.add_more_pp);
+        pro_cost = (MyTextView) view.findViewById(R.id.product_page_price);
         pro_cost.setText(products.price+" KD");
         add_more.setText(Settings.getword(getActivity(), "text_continue"));
-        go_to_cart = (TextView) view.findViewById(R.id.go_to_cart_tv);
+        go_to_cart = (MyTextView) view.findViewById(R.id.go_to_cart_tv);
         go_to_cart.setText(Settings.getword(getActivity(), "text_checkout"));
-        add_text = (TextView) view.findViewById(R.id.add_to_cart_msg);
+        add_text = (MyTextView) view.findViewById(R.id.add_to_cart_msg);
         add_text.setText(Settings.getword(getActivity(), "message_open_cart"));
-        spl_request = (TextView) view.findViewById(R.id.spl_request_product);
+        spl_request = (MyTextView) view.findViewById(R.id.spl_request_product);
         spl_request.setText(Settings.getword(getActivity(), "special_request"));
-        pro_items = (TextView) view.findViewById(R.id.product_items);
-        et_spl_request = (EditText) view.findViewById(R.id.about_product);
+        pro_items = (MyTextView) view.findViewById(R.id.product_items);
+        et_spl_request = (MyEditText) view.findViewById(R.id.about_product);
         et_spl_request.setHint(Settings.getword(getActivity(),"special_request"));
-        add_cart = (TextView) view.findViewById(R.id.add_cart);
+        add_cart = (MyTextView) view.findViewById(R.id.add_cart);
 //        add_cart.setText(Settings.getword(getActivity(), "add_to_cart"));
-        cost = (TextView) view.findViewById(R.id.sta_cost_pro);
+        cost = (MyTextView) view.findViewById(R.id.sta_cost_pro);
         cost.setText(Settings.getword(getActivity(), "cost"));
         add_to_cart_ll = (LinearLayout) view.findViewById(R.id.ll_add_to_cart);
         minus = (LinearLayout) view.findViewById(R.id.ll_minus);
         pluse = (LinearLayout) view.findViewById(R.id.ll_plus);
-        number = (TextView) view.findViewById(R.id.number_pro);
+        number = (MyTextView) view.findViewById(R.id.number_pro);
         mCallBack.product_page();
         groupItems = new ArrayList<>();
         group_list = (ListView) view.findViewById(R.id.group_list);
@@ -281,8 +281,8 @@ public class ProductPageFragment extends Fragment {
                       if(Integer.parseInt(products.qut)<quantity){
                           alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"out_stock")+" select "+products.qut+" Products", true);
                       }else{
-
-                          alert_add_cart.setVisibility(View.VISIBLE);
+                          mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
+//                          alert_add_cart.setVisibility(View.VISIBLE);
                       }
 
                   }else
@@ -294,22 +294,22 @@ public class ProductPageFragment extends Fragment {
             }
 //            }
         });
-        add_more_ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCallBack.add_to_cart(products, String.valueOf(quantity), et_spl_request.getText().toString());
-                mCallBack.back_to_product();
-                alert_add_cart.setVisibility(View.GONE);
-            }
-        });
-        go_to_cart_ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
-                alert_add_cart.setVisibility(View.GONE);
-            }
-        });
-
+//        add_more_ll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
+//                mCallBack.back_to_product();
+//                alert_add_cart.setVisibility(View.GONE);
+//            }
+//        });
+//        go_to_cart_ll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
+//                alert_add_cart.setVisibility(View.GONE);
+//            }
+//        });
+//
 
         view.setFocusableInTouchMode(true);
         view.requestFocus();

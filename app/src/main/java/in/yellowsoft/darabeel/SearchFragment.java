@@ -12,11 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
-import android.widget.EditText;
+
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -37,11 +37,11 @@ public class SearchFragment extends Fragment {
     CompanylistAdapter companylistAdapter;
     FragmentTouchListner mCallBack;
     ProgressBar progressBar;
-    EditText search;
+    MyEditText search;
     String search1;
     boolean loaded=false;
     ImageView search_img;
-    TextView no_products;
+    MyTextView no_products;
     public interface FragmentTouchListner {
         public void songselected(Restaurants restaurant);
         public void text_back_butt(String head2);
@@ -77,9 +77,9 @@ public class SearchFragment extends Fragment {
         String head2=Settings.getword(getActivity(), "title_search_restaurants");
         mCallBack.text_back_butt(head2);
         progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
-        no_products = (TextView) view.findViewById(R.id.no_products);
+        no_products = (MyTextView) view.findViewById(R.id.no_products);
         no_products.setText(Settings.getword(getActivity(),"no_products"));
-        search=(EditText) view.findViewById(R.id.search_edit);
+        search=(MyEditText) view.findViewById(R.id.search_edit);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

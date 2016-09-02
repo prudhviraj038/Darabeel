@@ -9,7 +9,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -51,7 +51,7 @@ public class ProductPageAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView group_title;
+        MyTextView group_title;
         GridView addon_gv;
         AddonAdapter addonAdapter;
         ImageView pluse_list;
@@ -65,7 +65,7 @@ public class ProductPageAdapter extends BaseAdapter{
         rowView = inflater.inflate(R.layout.addon_item, null);
         holder.addon_list=(LinearLayout)rowView.findViewById(R.id.addon_ll);
         holder.pluse_list=(ImageView)rowView.findViewById(R.id.pluse_list);
-        holder.group_title=(TextView) rowView.findViewById(R.id.group_name);
+        holder.group_title=(MyTextView) rowView.findViewById(R.id.group_name);
         holder.addon_gv=(GridView)rowView.findViewById(R.id.addon_grid);
         holder.group_title.setText(productses.groups.get(position).get_group(context));
         holder.addonAdapter=new AddonAdapter(context,productses,position,productses.groups.get(position).max);

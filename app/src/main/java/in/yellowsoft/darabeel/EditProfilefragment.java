@@ -12,11 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.EditText;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -37,9 +37,9 @@ public class EditProfilefragment extends Fragment {
     FragmentTouchListner mCallBack;
     boolean loaded=false;
     ViewFlipper viewFlipper;
-    EditText et_fname,et_lname,et_phone,et_home,et_work;
+    MyEditText et_fname,et_lname,et_phone,et_home,et_work;
     LinearLayout edit;
-    TextView edit_tv;
+    MyTextView edit_tv;
     ProgressBar progressBar;
     ImageView tick_fname,tick_lname;
     AlertDialogManager alert = new AlertDialogManager();
@@ -77,7 +77,7 @@ public class EditProfilefragment extends Fragment {
         tick_fname=(ImageView)view.findViewById(R.id.tick_fname_my_acc);
         tick_lname=(ImageView)view.findViewById(R.id.tick_lname_my_acc);
 //        loaded=true;
-        et_fname = (EditText) view.findViewById(R.id.edit_fname);
+        et_fname = (MyEditText) view.findViewById(R.id.edit_fname);
         et_fname.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -99,7 +99,7 @@ public class EditProfilefragment extends Fragment {
 
             }
         });
-        et_lname = (EditText) view.findViewById(R.id.edit_lname);
+        et_lname = (MyEditText) view.findViewById(R.id.edit_lname);
         et_lname.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -120,21 +120,21 @@ public class EditProfilefragment extends Fragment {
 
             }
         });
-        et_phone = (EditText) view.findViewById(R.id.edit_mobile);
-        et_home = (EditText) view.findViewById(R.id.edit_home_phone);
-        et_work = (EditText) view.findViewById(R.id.edit_work_phone);
-//        et_street = (EditText) view.findViewById(R.id.edit_street);
+        et_phone = (MyEditText) view.findViewById(R.id.edit_mobile);
+        et_home = (MyEditText) view.findViewById(R.id.edit_home_phone);
+        et_work = (MyEditText) view.findViewById(R.id.edit_work_phone);
+//        et_street = (MyEditText) view.findViewById(R.id.edit_street);
 //        et_street.setHint(Settings.getword(getActivity(), "street") + "*");
-//        et_house = (EditText) view.findViewById(R.id.edit_house);
+//        et_house = (MyEditText) view.findViewById(R.id.edit_house);
 //        et_house.setHint(Settings.getword(getActivity(), "house") + "*");
-//        et_floor = (EditText) view.findViewById(R.id.edit_floor);
+//        et_floor = (MyEditText) view.findViewById(R.id.edit_floor);
 //        et_floor.setHint(Settings.getword(getActivity(), "floor_number"));
-//        et_flat = (EditText) view.findViewById(R.id.edit_flat);
+//        et_flat = (MyEditText) view.findViewById(R.id.edit_flat);
 //        et_flat.setHint(Settings.getword(getActivity(), "flat_number"));
         edit = (LinearLayout) view.findViewById(R.id.edit_ll);
-        edit_tv = (TextView) view.findViewById(R.id.edit_tv);
+        edit_tv = (MyTextView) view.findViewById(R.id.edit_tv);
         edit_tv.setText(Settings.getword(getActivity(),"edit"));
-//        edit_email = (TextView) view.findViewById(R.id.edit_email_tv);
+//        edit_email = (MyTextView) view.findViewById(R.id.edit_email_tv);
 
 
         edit.setOnClickListener(new View.OnClickListener() {

@@ -11,10 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 /**
  * Created by Chinni on 04-05-2016.
@@ -23,8 +22,8 @@ public class VerificationFragment extends Fragment {
     String head,code,id;
     boolean loaded=false;
     FragmentTouchListner mCallBack;
-    EditText enter_code;
-    TextView submit_tv;
+    MyEditText enter_code;
+    MyTextView submit_tv;
     LinearLayout submit_ll;
     ImageView tick;
     AlertDialogManager alert = new AlertDialogManager();
@@ -63,10 +62,10 @@ public class VerificationFragment extends Fragment {
         code=(String)getArguments().getString("code");
         id=(String)getArguments().getString("id");
         tick=(ImageView)view.findViewById(R.id.tick_verification);
-        enter_code=(EditText)view.findViewById(R.id.eenter_your_code);
+        enter_code=(MyEditText)view.findViewById(R.id.eenter_your_code);
         enter_code.setHint(Settings.getword(getActivity(),"enter_coupon"));
         submit_ll=(LinearLayout)view.findViewById(R.id.submit_verif_ll);
-        submit_tv=(TextView)view.findViewById(R.id.submit_verif_tv);
+        submit_tv=(MyTextView)view.findViewById(R.id.submit_verif_tv);
         submit_tv.setText(Settings.getword(getActivity(), "submit"));
         head=Settings.getword(getActivity(),"title_verfication");
         mCallBack.text_back_butt(head);

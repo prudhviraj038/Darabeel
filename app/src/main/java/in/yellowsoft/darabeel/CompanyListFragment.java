@@ -12,12 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
-import android.widget.EditText;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -37,15 +37,15 @@ import java.util.ArrayList;
 public class CompanyListFragment extends Fragment {
     CompanylistAdapter companylistAdapter;
     String id,head,type;
-    TextView no_res;
-    EditText search;
+    MyTextView no_res;
+    MyEditText search;
     String search1;
     boolean p1=false;
     boolean p2=false;
     String sta="",pay1="",pay2="",rate="",date="";
     LinearLayout filter_ll,open_ll,busy_ll,close_ll,cash_ll,knet_ll,r1_ll,r2_ll,r3_ll,r4_ll,r5_ll,submit,reset_ll,d1,d2,d3,d4,d5,d6,d7,d8;
     ImageView open_img,busy_img,close_img,cash_img,knet_img,r1_img,r2_img,r3_img,r4_img,r5_img,d1_im,d2_im,d3_im,d4_im,d5_im,d6_im,d7_im,d8_im;
-    TextView open_tv,busy_tv,close_tv,cash_tv,knet_tv,sta_status,sta_rate,sta_pay,submit_tv,sta_del_date;
+    MyTextView open_tv,busy_tv,close_tv,cash_tv,knet_tv,sta_status,sta_rate,sta_pay,submit_tv,sta_del_date;
     LinearLayout s_ll;
     ImageView filter,search_img;
     boolean loaded=false;
@@ -92,9 +92,9 @@ public class CompanyListFragment extends Fragment {
         type=(String)getArguments().getSerializable("cat");
         id=(String)getArguments().getSerializable("url");
         ListView listView=(ListView)view.findViewById(R.id.com_list);
-        no_res=(TextView)view.findViewById(R.id.no_res);
+        no_res=(MyTextView)view.findViewById(R.id.no_res);
         s_ll=(LinearLayout)view.findViewById(R.id.s_ll);
-        search=(EditText) view.findViewById(R.id.search_com_list_et);
+        search=(MyEditText) view.findViewById(R.id.search_com_list_et);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -167,25 +167,25 @@ public class CompanyListFragment extends Fragment {
         d7_im=(ImageView)view.findViewById(R.id.d7_im);
         d8_im=(ImageView)view.findViewById(R.id.d8_im);
 
-        sta_status=(TextView)view.findViewById(R.id.sta_status_pop_tv);
+        sta_status=(MyTextView)view.findViewById(R.id.sta_status_pop_tv);
         sta_status.setText(Settings.getword(getActivity(),"choose_status"));
-        sta_rate=(TextView)view.findViewById(R.id.sta_rate_tv);
+        sta_rate=(MyTextView)view.findViewById(R.id.sta_rate_tv);
         sta_rate.setText(Settings.getword(getActivity(),"rating"));
-        sta_pay=(TextView)view.findViewById(R.id.sta_pay_tv);
+        sta_pay=(MyTextView)view.findViewById(R.id.sta_pay_tv);
         sta_pay.setText(Settings.getword(getActivity(),"choose_payment"));
-        open_tv=(TextView)view.findViewById(R.id.open_tv);
+        open_tv=(MyTextView)view.findViewById(R.id.open_tv);
         open_tv.setText(Settings.getword(getActivity(),"status_open"));
-        busy_tv=(TextView)view.findViewById(R.id.busy_tv);
+        busy_tv=(MyTextView)view.findViewById(R.id.busy_tv);
         busy_tv.setText(Settings.getword(getActivity(),"status_busy"));
-        close_tv=(TextView)view.findViewById(R.id.close_tv);
+        close_tv=(MyTextView)view.findViewById(R.id.close_tv);
         close_tv.setText(Settings.getword(getActivity(),"status_close"));
-        cash_tv=(TextView)view.findViewById(R.id.cash_tvv);
+        cash_tv=(MyTextView)view.findViewById(R.id.cash_tvv);
         cash_tv.setText(Settings.getword(getActivity(),"cash"));
-        knet_tv=(TextView)view.findViewById(R.id.knet_tvv);
+        knet_tv=(MyTextView)view.findViewById(R.id.knet_tvv);
         knet_tv.setText(Settings.getword(getActivity(),"knet"));
-        submit_tv=(TextView)view.findViewById(R.id.sub_pop);
+        submit_tv=(MyTextView)view.findViewById(R.id.sub_pop);
         submit_tv.setText(Settings.getword(getActivity(), "submit"));
-        sta_del_date=(TextView)view.findViewById(R.id.sta_del_date);
+        sta_del_date=(MyTextView)view.findViewById(R.id.sta_del_date);
         sta_del_date.setText(Settings.getword(getActivity(), "text_delivery_time"));
 
         reset_ll.setOnClickListener(new View.OnClickListener() {

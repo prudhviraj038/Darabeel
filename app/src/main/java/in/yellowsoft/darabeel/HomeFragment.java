@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -40,7 +39,7 @@ public class HomeFragment extends Fragment {
     ArrayList<Category> categories;
     boolean loaded=false;
     LinearLayout ll_search_sweets,what_you_want,choose_area,l1,l2,l3,l4;
-    TextView what_you_wanr_txt,area_txt,tv_search_sweets,we_recommend,select_cat,t1,t2,t3,t4;
+    MyTextView what_you_wanr_txt,area_txt,tv_search_sweets,we_recommend,select_cat,t1,t2,t3,t4;
     ImageView im1,im2,im3,im4;
     ListView cat_listView;
     CategoryAdapter categoryAdapter;
@@ -76,19 +75,19 @@ public class HomeFragment extends Fragment {
         im2=(ImageView)view.findViewById(R.id.im2);
         im3=(ImageView)view.findViewById(R.id.im3);
         im4=(ImageView)view.findViewById(R.id.im4);
-        t1=(TextView)view.findViewById(R.id.t1);
-        t2=(TextView)view.findViewById(R.id.t2);
-        t3=(TextView)view.findViewById(R.id.t3);
-        t4=(TextView)view.findViewById(R.id.t4);
+        t1=(MyTextView)view.findViewById(R.id.t1);
+        t2=(MyTextView)view.findViewById(R.id.t2);
+        t3=(MyTextView)view.findViewById(R.id.t3);
+        t4=(MyTextView)view.findViewById(R.id.t4);
         l1=(LinearLayout)view.findViewById(R.id.l1);
         l2=(LinearLayout)view.findViewById(R.id.l2);
         l3=(LinearLayout)view.findViewById(R.id.l3);
         l4=(LinearLayout)view.findViewById(R.id.l4);
 //        gridElementAdapter = new GridElementAdapter(getActivity(),restaurantses,this);
 //        horizontalGridView.setAdapter(gridElementAdapter);
-        what_you_wanr_txt = (TextView) view.findViewById(R.id.tv_what_do_you_want);
+        what_you_wanr_txt = (MyTextView) view.findViewById(R.id.tv_what_do_you_want);
         what_you_wanr_txt.setText(Settings.getword(getActivity(), "what_do_you_want"));
-        select_cat = (TextView) view.findViewById(R.id.select_cat_text);
+        select_cat = (MyTextView) view.findViewById(R.id.select_cat_text);
         select_cat.setText(Settings.getword(getActivity(), "title_select_category"));
 
         categoryAdapter = new CategoryAdapter(getActivity(), categories);
@@ -102,7 +101,7 @@ public class HomeFragment extends Fragment {
                 viewFlipper.setDisplayedChild(0);
             }
         });
-        area_txt = (TextView) view.findViewById(R.id.tv_choose_area);
+        area_txt = (MyTextView) view.findViewById(R.id.tv_choose_area);
 //        if(Settings.getArea_id(getActivity()).equals("-1")){
             area_txt.setText(Settings.getword(getActivity(), "choose_area"));
 //        }else{
@@ -120,7 +119,7 @@ public class HomeFragment extends Fragment {
                 area_txt.setText(Settings.getArea_name(getActivity()));
             }
         });
-        tv_search_sweets = (TextView) view.findViewById(R.id.tv_search_sweets);
+        tv_search_sweets = (MyTextView) view.findViewById(R.id.tv_search_sweets);
         tv_search_sweets.setText(Settings.getword(getActivity(), "choose"));
         ll_search_sweets = (LinearLayout) view.findViewById(R.id.ll_search_sweets);
         ll_search_sweets.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +151,7 @@ public class HomeFragment extends Fragment {
                 viewFlipper.setDisplayedChild(1);
             }
         });
-        we_recommend = (TextView) view.findViewById(R.id.we_recommend);
+        we_recommend = (MyTextView) view.findViewById(R.id.we_recommend);
         we_recommend.setText(Settings.getword(getActivity(), "trending"));
 
         view.setFocusableInTouchMode(true);

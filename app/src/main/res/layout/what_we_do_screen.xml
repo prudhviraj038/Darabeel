@@ -12,7 +12,7 @@
         android:background="@drawable/background"
         android:padding="20dp" >
 
-        <TextView
+        <in.yellowsoft.darabeel.MyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="What We Do"
@@ -29,15 +29,15 @@
             android:id="@+id/scrollView4"
             android:background="@color/yellow_background" >
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="dddgvdgvfdfvdfvdfvgdfdfdfefdrhrggd"
+                android:text="dddgvdgvfdfvdfvdfvgdfdfdfefdrhrggd,nnnjkjjhjhjjbjbbhjbj gbbbb gvhg fhhgvfhg cfhb fhg"
                 android:id="@+id/descri_what_we_do"
-                android:gravity="center|center_horizontal"
                 android:padding="5dp"
                 android:textColor="@color/brown"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:gravity="center_vertical" />
         </ScrollView>
     </LinearLayout>
 </LinearLayout>

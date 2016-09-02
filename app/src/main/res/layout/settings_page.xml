@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <TextView
+    <in.yellowsoft.darabeel.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
@@ -31,11 +31,11 @@
             android:paddingBottom="10dp"
             android:id="@+id/sett_eng">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="English"
-                android:id="@+id/textView28"
+                android:id="@+id/in.yellowsoft.darabeel.MyTextView28"
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -51,11 +51,11 @@
             android:layout_marginTop="10dp"
             android:id="@+id/set_arabic">
 
-            <TextView
+            <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="العربية"
-                android:id="@+id/textView29"
+                android:id="@+id/in.yellowsoft.darabeel.MyTextView29"
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
         </LinearLayout>
