@@ -436,7 +436,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         Bundle bundle = new Bundle();
         bundle.putSerializable("product",products);
         productPageFragment.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.container_main, productPageFragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.container_main, productPageFragment).addToBackStack(null).commit();
     }
 
     @Override
