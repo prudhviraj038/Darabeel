@@ -74,7 +74,7 @@ public class ProductPageAdapter extends BaseAdapter{
         if(click.get(position)==2){
             holder.addon_list.setVisibility(View.VISIBLE);
             holder.pluse_list.setImageResource(R.drawable.minus_for_dara);
-        //    productPageFragment.call_list();
+//            productPageFragment.call_list();
 //            click.set(position,1);
         }
         holder.pluse_list.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +82,7 @@ public class ProductPageAdapter extends BaseAdapter{
             public void onClick(View view) {
                 if(click.get(position)==1){
                     holder.addon_list.setVisibility(View.VISIBLE);
-                  //  productPageFragment.call_list();
+//                    productPageFragment.call_list();
                     holder.pluse_list.setImageResource(R.drawable.minus_for_dara);
                     click.set(position,2);
 //                    notifyDataSetChanged();
@@ -94,6 +94,7 @@ public class ProductPageAdapter extends BaseAdapter{
                 }
             }
         });
+//        holder.pluse_list.performClick();
         return rowView;
     }
     public static boolean setGridViewHeightBasedOnItems(GridView gridView) {

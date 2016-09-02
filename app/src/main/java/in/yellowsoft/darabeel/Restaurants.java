@@ -169,7 +169,7 @@ public class Restaurants implements Serializable{
         }
     }
     public class AllReviws implements Serializable{
-        String m_id,namee,ratingg,review;
+        String m_id,namee,ratingg,review,date;
 
         AllReviws(JSONObject jsonObject) {
             try {
@@ -177,6 +177,7 @@ public class Restaurants implements Serializable{
                 namee=jsonObject.getJSONObject("member").getString("name");
                 ratingg=jsonObject.getString("rating");
                 review=jsonObject.getString("review");
+                date=jsonObject.getString("date");
             } catch (JSONException e) {
                 e.printStackTrace();
             }

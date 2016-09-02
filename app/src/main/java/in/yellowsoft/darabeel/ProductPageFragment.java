@@ -141,10 +141,12 @@ public class ProductPageFragment extends Fragment {
                 if (options_ll_list.getVisibility()==View.VISIBLE) {
                     options_ll_list.setVisibility(View.GONE);
                     plus_img_option.setImageResource(R.drawable.plus_for_dara);
+                    setGridViewHeightBasedOnItems(optionas_grid);
                     click = 2;
                 } else {
                     options_ll_list.setVisibility(View.VISIBLE);
                     plus_img_option.setImageResource(R.drawable.minus_for_dara);
+                    setGridViewHeightBasedOnItems(optionas_grid);
                     click = 1;
                 }
             }
@@ -275,11 +277,12 @@ public class ProductPageFragment extends Fragment {
                 if (addon_ok) {
                     Log.e("status",products.restaurant.status);
                   if(products.restaurant.status.equals("Open")) {
-//                    alert_add_cart.setVisibility(View.VISIBLE);
+//
                       if(Integer.parseInt(products.qut)<quantity){
                           alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"out_stock")+" select "+products.qut+" Products", true);
                       }else{
-                          mCallBack.add_to_cart(products, String.valueOf(quantity), et_spl_request.getText().toString());
+
+                          alert_add_cart.setVisibility(View.VISIBLE);
                       }
 
                   }else
@@ -291,20 +294,21 @@ public class ProductPageFragment extends Fragment {
             }
 //            }
         });
-//        add_more_ll.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                mCallBack.back_to_product();
-//                alert_add_cart.setVisibility(View.GONE);
-//            }
-//        });
-//        go_to_cart_ll.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
-//                alert_add_cart.setVisibility(View.GONE);
-//            }
-//        });
+        add_more_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCallBack.add_to_cart(products, String.valueOf(quantity), et_spl_request.getText().toString());
+                mCallBack.back_to_product();
+                alert_add_cart.setVisibility(View.GONE);
+            }
+        });
+        go_to_cart_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
+                alert_add_cart.setVisibility(View.GONE);
+            }
+        });
 
 
         view.setFocusableInTouchMode(true);

@@ -45,7 +45,7 @@ public class ReviewsAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView name,description;
+        TextView name,description,date;
         LinearLayout rating;
       }
     @Override
@@ -56,8 +56,10 @@ public class ReviewsAdapter extends BaseAdapter{
         rowView = inflater.inflate(R.layout.reviews_item, null);
         Log.e("res_name",restaurants.getTitle(context));
         holder.name=(TextView) rowView.findViewById(R.id.review_name);
+        holder.date=(TextView) rowView.findViewById(R.id.date_reviews);
         holder.description=(TextView) rowView.findViewById(R.id.review_des);
         holder.name.setText(restaurants.allReviwses.get(position).namee);
+        holder.date.setText(restaurants.allReviwses.get(position).date);
         holder.description.setText(restaurants.allReviwses.get(position).review);
         holder.rating=(LinearLayout)rowView.findViewById(R.id.reviews_list_rating);
         Settings.set_rating_yellow(context, restaurants.allReviwses.get(position).ratingg,holder.rating);

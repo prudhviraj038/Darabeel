@@ -247,6 +247,7 @@ public class CompanyPageFragment extends Fragment {
         com_min_order.setText(restaurants.min+" KD ");
         com_delivery_charges=(TextView)view.findViewById(R.id.rest_deli_charges);
         delivery_charges();
+
         com_payment_type=(LinearLayout)view.findViewById(R.id.payment_type);
         for(int i=0;i<restaurants.payment.size();i++){
             ImageView temp_img = new ImageView(getActivity());
@@ -280,42 +281,46 @@ public class CompanyPageFragment extends Fragment {
 
     public void delivery_charges(){
         String url;
-        url = Settings.SERVERURL + "charges.php?"+"rest_id="+restaurants.res_id+"&area="+Settings.getArea_id(getActivity());
-        Log.e("url--->", url);
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.show();
-        progressDialog.setMessage(Settings.getword(getActivity(),"please_wait"));
-        progressDialog.setCancelable(false);
-        final JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject jsonObject) {
-                if(progressDialog!=null)
-                progressDialog.dismiss();
-                Log.e("orders response is: ", jsonObject.toString());
-                try {
+        if(Settings.getArea_id(getActivity()).equals("-1")) {
+            com_delivery_charges.setText("0.000" + " KD ");
+        }else {
+
+            url = Settings.SERVERURL + "charges.php?" + "rest_id=" + restaurants.res_id + "&area=" + Settings.getArea_id(getActivity());
+            Log.e("url--->", url);
+            final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+            progressDialog.show();
+            progressDialog.setMessage(Settings.getword(getActivity(), "please_wait"));
+            progressDialog.setCancelable(false);
+            final JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject jsonObject) {
+                    if (progressDialog != null)
+                        progressDialog.dismiss();
+                    Log.e("orders response is: ", jsonObject.toString());
+                    try {
                         String deliv_charges = jsonObject.getString("price");
-                        com_delivery_charges.setText(deliv_charges+ " KD ");
-                        Settings.setDelivery_charges(getActivity(),deliv_charges);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        com_delivery_charges.setText(deliv_charges + " KD ");
+                        Settings.setDelivery_charges(getActivity(), deliv_charges);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        }, new Response.ErrorListener() {
+            }, new Response.ErrorListener() {
 
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // TODO Auto-generated method stub
-                Log.e("response is:", error.toString());
-                Toast.makeText(getActivity(),Settings.getword(getActivity(),"server_not_connected"),Toast.LENGTH_SHORT).show();
-                if(progressDialog!=null)
-                progressDialog.dismiss();
-            }
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    // TODO Auto-generated method stub
+                    Log.e("response is:", error.toString());
+                    Toast.makeText(getActivity(), Settings.getword(getActivity(), "server_not_connected"), Toast.LENGTH_SHORT).show();
+                    if (progressDialog != null)
+                        progressDialog.dismiss();
+                }
 
-        });
+            });
 
 // Access the RequestQueue through your singleton class.
-        AppController.getInstance().addToRequestQueue(jsObjRequest);
-
+            AppController.getInstance().addToRequestQueue(jsObjRequest);
+        }
     }
     private void getarea() {
         String url = null;

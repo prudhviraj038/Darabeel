@@ -62,7 +62,7 @@ public class AddonAdapter extends BaseAdapter{
         holder.addon_title=(TextView) rowView.findViewById(R.id.addon_name);
 
         if (Float.parseFloat(products.groups.get(posi).addons.get(position).price)==0){
-            holder.addon_title.setText(products.groups.get(posi).addons.get(position).get_addon(context));
+            holder.addon_title.setText(products.groups.get(posi).addons.get(position).get_addon(context)+" ( )");
         }else {
             holder.addon_title.setText(products.groups.get(posi).addons.get(position).get_addon(context)+"  ("+products.groups.get(posi).addons.get(position).price+" KD ) ");
         }

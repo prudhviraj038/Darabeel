@@ -206,27 +206,27 @@ public class FinalFragment extends Fragment {
 
         e_area.setText(Settings.getArea_name(getActivity()));
         areaa.setText(Settings.getArea_name(getActivity()));
-        if (!Settings.get_Address_json(getActivity()).equals("-1")) {
-            try {
-                JSONObject jsonObject = new JSONObject(Settings.get_Address_json(getActivity()));
-//                e_area.setText(jsonObject.getString("area"));
-                e_block.setText(jsonObject.getString("block"));
-                e_street.setText(jsonObject.getString("street"));
-                e_building.setText(jsonObject.getString("building"));
-                e_floor.setText(jsonObject.getString("floor"));
-                e_aprtment.setText(jsonObject.getString("flat"));
-                e_mobile.setText(jsonObject.getString("mobile"));
-//                areaa.setText(jsonObject.getString("area"));
-                block.setText(jsonObject.getString("block"));
-                street.setText(jsonObject.getString("street"));
-                building.setText(jsonObject.getString("building"));
-                floor.setText(jsonObject.getString("floor"));
-                apartment.setText(jsonObject.getString("flat"));
-                mobile.setText(jsonObject.getString("mobile"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
+//        if (!Settings.get_Address_json(getActivity()).equals("-1")) {
+//            try {
+//                JSONObject jsonObject = new JSONObject(Settings.get_Address_json(getActivity()));
+////                e_area.setText(jsonObject.getString("area"));
+//                e_block.setText(jsonObject.getString("block"));
+//                e_street.setText(jsonObject.getString("street"));
+//                e_building.setText(jsonObject.getString("building"));
+//                e_floor.setText(jsonObject.getString("floor"));
+//                e_aprtment.setText(jsonObject.getString("flat"));
+//                e_mobile.setText(jsonObject.getString("mobile"));
+////                areaa.setText(jsonObject.getString("area"));
+//                block.setText(jsonObject.getString("block"));
+//                street.setText(jsonObject.getString("street"));
+//                building.setText(jsonObject.getString("building"));
+//                floor.setText(jsonObject.getString("floor"));
+//                apartment.setText(jsonObject.getString("flat"));
+//                mobile.setText(jsonObject.getString("mobile"));
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
         sub_total=(TextView)view.findViewById(R.id.sub_total_final);
         discount=(TextView)view.findViewById(R.id.discount_final);
         delivery_charges=(TextView)view.findViewById(R.id.delivery_charges_final);
@@ -362,14 +362,14 @@ public class FinalFragment extends Fragment {
             total=total+(quty*price);
 
         }
-        discount.setText("0 KD");
-        sub_total.setText(String.valueOf(total) + " KD");
+        discount.setText("0.000 KD");
+        sub_total.setText(String.format("%.3f", total) + " KD");
         del_total = Float.parseFloat(Settings.getDelivery_charges(getActivity()));
         dara_charges=Float.parseFloat(Settings.getSettings(getActivity(), "darabeel_charges"));
 
         grn_total= total+del_total+dara_charges;
         g_total=grn_total;
-        grand_total.setText(String.valueOf(g_total) + " KD");
+        grand_total.setText(String.format("%.3f", g_total) + " KD");
 
         spl_comment = (EditText) view.findViewById(R.id.spl_instructions);
         spl_comment.setHint(Settings.getword(getActivity(), "special_comments"));
@@ -498,6 +498,7 @@ public class FinalFragment extends Fragment {
 //        });
         selected_area_id=Settings.getArea_id(getActivity());
         get_address_list();
+        edit=(LinearLayout)view.findViewById(R.id.edit_address);
 //        address_guest_ll=(LinearLayout)view.findViewById(R.id.address_guest_ll);
         drop_down=(ImageView)view.findViewById(R.id.drop_down);
         if(Settings.getUserid(getActivity()).equals("-1")){
@@ -522,6 +523,7 @@ public class FinalFragment extends Fragment {
                 builder.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        edit.setVisibility(View.VISIBLE);
                         addrs_id = address_id.get(which);
                         selected_area_id = address_list.get(which).area_id;
 //                        addr_name.setText(address_list.get(which).alias);
@@ -549,7 +551,7 @@ public class FinalFragment extends Fragment {
             }
 
         });
-        edit=(LinearLayout)view.findViewById(R.id.edit_address);
+
         add=(LinearLayout)view.findViewById(R.id.add_address);
         cancel=(LinearLayout)view.findViewById(R.id.cancel_ll);
         save_ll=(LinearLayout)view.findViewById(R.id.save_ll);
@@ -653,7 +655,7 @@ public class FinalFragment extends Fragment {
 //            addr_name.setText("");
 
         }else {
-            edit.setVisibility(View.VISIBLE);
+//            edit.setVisibility(View.VISIBLE);
             add.setVisibility(View.VISIBLE);
 //            address_guest_ll.setVisibility(View.VISIBLE);
             address_guest.setText(Settings.getword(getActivity(), "address"));
@@ -718,10 +720,8 @@ public class FinalFragment extends Fragment {
 //                    if (addr_name.getText().toString().equals(""))
 //                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_address_name"), false);
 ////                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_address_name"), Toast.LENGTH_SHORT).show();
-                    if (e_mobile.getText().toString().equals(""))
-                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_mobile"), false);
-//                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_mobile"), Toast.LENGTH_SHORT).show();
-                    else if (e_block.getText().toString().equals(""))
+
+                   if (e_block.getText().toString().equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_block"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_block"), Toast.LENGTH_SHORT).show();
                     else if (e_street.getText().toString().equals(""))
@@ -730,6 +730,9 @@ public class FinalFragment extends Fragment {
                     else if (e_building.getText().toString().equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_building"), false);
 //                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_building"), Toast.LENGTH_SHORT).show();
+                   else if (e_mobile.getText().toString().equals(""))
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "please_enter_mobile"), false);
+//                        Toast.makeText(getActivity(), Settings.getword(getActivity(),"please_enter_mobile"), Toast.LENGTH_SHORT).show();
                     else {
                         add_address(addrs_id);
                     }
@@ -968,9 +971,9 @@ public class FinalFragment extends Fragment {
                         place_order_object.put("coupon_code", coupon_code.getText().toString());
                         place_order_object.put("discount_amount", dis_amount);
                         place_order_object.put("darabeel_charges", Settings.getSettings(getActivity(), "darabeel_charges"));
-                        place_order_object.put("price", String.valueOf(total));
+                        place_order_object.put("price", String.format("%.3f",total));
                         place_order_object.put("delivery_charges", Settings.getDelivery_charges(getActivity()));
-                        place_order_object.put("total_price", String.valueOf(g_total));
+                        place_order_object.put("total_price", String.format("%.3f", g_total));
                         place_order_object.put("payment_method", pay_met);
                         place_order_object.put("delivery", delivery);
                         place_order_object.put("delivery_date", date);
@@ -1063,13 +1066,13 @@ public class FinalFragment extends Fragment {
                             dis_amount=Float.parseFloat(dis_value);
                             grn_total=total-dis_amount;
                             g_total = grn_total+del_total+dara_charges;
-                            grand_total.setText(String.valueOf(g_total) + " KD");
+                            grand_total.setText(String.format("%.3f", g_total) + " KD");
                             discount.setText(dis_value+" KD");
                         }else{
                             dis_amount=total/Float.parseFloat(dis_value);
                             grn_total=total-dis_amount;
                             g_total=grn_total+del_total+dara_charges;
-                            grand_total.setText(String.valueOf(g_total) + " KD");
+                            grand_total.setText(String.format("%.3f",g_total) + " KD");
                             discount.setText(dis_value+" KD");
                         }
 
@@ -1208,7 +1211,7 @@ public class FinalFragment extends Fragment {
                             add.performClick();
                             cancel.setVisibility(View.GONE);
                         } else {
-                            drop_down.performClick();
+//                            drop_down.performClick();
                         }
                     }
                 } catch (JSONException e) {
@@ -1282,11 +1285,14 @@ public class FinalFragment extends Fragment {
         @Override
         protected Map<String,String> getParams(){
             Map<String,String> params = new HashMap<String, String>();
+            if(id.equals("-1"))
             params.put("alias",add_et_addresss_name.getText().toString());
+            else
+            params.put("alias",address_guest.getText().toString());
             if(!id.equals("-1"))
                 params.put("area",selected_area_id);
             else
-            params.put("area",Settings.getArea_id(getActivity()));
+                params.put("area",Settings.getArea_id(getActivity()));
             params.put("block",e_block.getText().toString());
             params.put("street",e_street.getText().toString());
             params.put("building",e_building.getText().toString());
@@ -1295,7 +1301,7 @@ public class FinalFragment extends Fragment {
             params.put("phone",e_mobile.getText().toString());
             params.put("member_id",Settings.getUserid(getActivity()));
             if(!id.equals("-1"))
-                params.put("address_id",addrs_id);
+                params.put("address_id",id);
             return params;
         }
     };

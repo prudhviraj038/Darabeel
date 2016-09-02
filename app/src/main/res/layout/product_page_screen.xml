@@ -418,80 +418,90 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
-            android:background="@drawable/companylist_item_rounded_corners"
-            android:id="@+id/alert_cart_add"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:focusable="false"
-            android:visibility="gone"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/add_to_cart_msg"
-                android:textColor="@color/brown"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:padding="5dp" />
+            android:background="#77000000"
+            android:id="@+id/alert_cart_add"
+            android:visibility="gone">
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:showDividers="middle" >
+                android:layout_height="170dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:background="@drawable/pink_rounded_corners_empty"
+                android:id="@+id/alert_cart_ad"
+                android:gravity="center"
+                android:focusable="false"
+                android:padding="10dp">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/add_more_ll"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:background="@drawable/pink_rounded_corners"
-                    android:layout_margin="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="New Text"
-                        android:id="@+id/add_more_pp"
-                        android:textSize="18sp"
-                        android:textColor="#ffffff"
-                        android:singleLine="true"
-                        android:ellipsize="end" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/go_to_cart_ll"
+                    android:text="New Text"
+                    android:id="@+id/add_to_cart_msg"
+                    android:textColor="@color/brown"
+                    android:textSize="18sp"
                     android:layout_weight="1"
-                    android:padding="5dp"
                     android:gravity="center"
-                    android:background="@drawable/pink_rounded_corners"
-                    android:layout_margin="10dp">
+                    android:padding="5dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="New Text"
-                        android:id="@+id/go_to_cart_tv"
-                        android:textSize="18sp"
-                        android:textColor="#ffffff"
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:showDividers="middle" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/add_more_ll"
                         android:layout_weight="1"
-                        android:singleLine="true"
-                        android:ellipsize="end" />
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/pink_rounded_corners"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New Text"
+                            android:id="@+id/add_more_pp"
+                            android:textSize="18sp"
+                            android:textColor="#ffffff"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/go_to_cart_ll"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/pink_rounded_corners"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New Text"
+                            android:id="@+id/go_to_cart_tv"
+                            android:textSize="18sp"
+                            android:textColor="#ffffff"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:ellipsize="end" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
     </RelativeLayout>
 
 </LinearLayout>

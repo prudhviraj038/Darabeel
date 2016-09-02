@@ -27,13 +27,14 @@
                     android:layout_height="match_parent"
                     android:id="@+id/pro_image"
                     android:src="@drawable/img_sweet_item"
-                    android:padding="4dp" />
+                    android:padding="8dp"
+                    android:scaleType="centerCrop" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/imageView10"
-                    android:src="@drawable/home_rounded_corners"
+                    android:src="@drawable/home_rounded_corners1"
                     android:scaleType="centerCrop" />
             </FrameLayout>
 

@@ -60,7 +60,7 @@ public class FinalPageAdapter extends BaseAdapter{
         holder.final_item_price=(TextView) rowView.findViewById(R.id.final_item_price);
         holder.final_items_name.setText(cart_items.get(position).products.getTitle(context));
         holder.final_multification.setText(cart_items.get(position).quantity+" x "+cart_items.get(position).products.cart_price);
-        holder.final_item_price.setText(String.valueOf(Integer.parseInt(cart_items.get(position).quantity) * Float.parseFloat(cart_items.get(position).products.cart_price))+ "KD" );
+        holder.final_item_price.setText(String.format("%.3f",Integer.parseInt(cart_items.get(position).quantity) * Float.parseFloat(cart_items.get(position).products.cart_price))+ "KD" );
         return rowView;
     }
 }

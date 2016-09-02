@@ -16,7 +16,8 @@
             android:id="@+id/icon"
             android:padding="5dp"
             android:adjustViewBounds="true"
-            android:visibility="invisible" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
         <LinearLayout
             android:orientation="vertical"

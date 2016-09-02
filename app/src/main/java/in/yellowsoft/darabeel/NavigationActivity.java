@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
@@ -49,6 +48,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     ArrayList<CartItem> cart_items=new ArrayList<>();
     public  static final long DURATION=300;
     boolean animation_direction=true;
+    String c_size="0";
     AlertDialogManager alert = new AlertDialogManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,9 +87,13 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mDrawerLayout.openDrawer(GravityCompat.START);
             }
         });
+        if(mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+            c_size=String.valueOf(cart_items.size());
+        }
         back=(ImageView)findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,25 +133,25 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
                 fragmentManager.beginTransaction().replace(R.id.container_main, fragment4).addToBackStack(null).commit();
             }
         });
-        prgmImages.add(R.drawable.home_icon);
+        prgmImages.add(R.drawable.menu_ic_home);
         prgmImages.add(R.drawable.cart_icon_white);
-        prgmImages.add(R.drawable.my_account_icon);
-        prgmImages.add(R.drawable.my_account_icon);
-        prgmImages.add(R.drawable.home_icon);
-        prgmImages.add(R.drawable.cart_icon);
-        prgmImages.add(R.drawable.my_account_icon);
-        prgmImages.add(R.drawable.notification_icon);
-        prgmImages.add(R.drawable.home_icon);
-        prgmImages.add(R.drawable.cart_icon);
-        prgmImages.add(R.drawable.my_account_icon);
-        prgmImages.add(R.drawable.notification_icon);
-        prgmImages.add(R.drawable.home_icon);
-        prgmImages.add(R.drawable.cart_icon);
-        prgmImages.add(R.drawable.my_account_icon);
-        prgmImages.add(R.drawable.notification_icon);
-        prgmImages.add(R.drawable.notification_icon);
+        prgmImages.add(R.drawable.menu_ic_myaccount);
+        prgmImages.add(R.drawable.menu_ic_myaccount);
+        prgmImages.add(R.drawable.menu_ic_myorders);
+        prgmImages.add(R.drawable.menu_ic_ratemyorder);
+        prgmImages.add(R.drawable.menu_ic_mostselling);
+        prgmImages.add(R.drawable.menu_ic_newarrivals);
+        prgmImages.add(R.drawable.menu_ic_promotions);
+        prgmImages.add(R.drawable.menu_ic_offers);
+        prgmImages.add(R.drawable.menu_ic_trending);
+        prgmImages.add(R.drawable.menu_ic_twitter);
+        prgmImages.add(R.drawable.menu_ic_instagram);
+        prgmImages.add(R.drawable.menu_ic_aboutus);
+        prgmImages.add(R.drawable.menu_ic_terms);
+        prgmImages.add(R.drawable.menu_ic_share);
+        prgmImages.add(R.drawable.menu_ic_contactus);
         prgmTitles.add(Settings.getword(this,"home"));
-        prgmTitles.add(Settings.getword(this,"cart")+"("+cart_items.size()+")");
+        prgmTitles.add(Settings.getword(this,"cart")+" ("+c_size+")");
         prgmTitles.add(Settings.getword(this, "live_support"));
         prgmTitles.add(Settings.getword(this,"my_account"));
         prgmTitles.add(Settings.getword(this, "my_orders"));
@@ -462,9 +466,23 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         lang_ll.setVisibility(View.GONE);
         search.setVisibility(View.GONE);
         logout.setVisibility(View.GONE);
-        back.setVisibility(View.GONE);
+        back.setVisibility(View.INVISIBLE);
         waste.setVisibility(View.GONE);
         menu_back.setVisibility(View.VISIBLE);
+        filter.setVisibility(View.GONE);
+        menu.setVisibility(View.GONE);
+        cart_icon.setVisibility(View.GONE);
+    }
+    @Override
+    public void text_butt(String header) {
+        nav_title.setVisibility(View.VISIBLE);
+        nav_title.setText(header);
+        lang_ll.setVisibility(View.GONE);
+        search.setVisibility(View.GONE);
+        logout.setVisibility(View.GONE);
+        back.setVisibility(View.GONE);
+        waste.setVisibility(View.GONE);
+        menu_back.setVisibility(View.GONE);
         filter.setVisibility(View.GONE);
         menu.setVisibility(View.GONE);
         cart_icon.setVisibility(View.GONE);

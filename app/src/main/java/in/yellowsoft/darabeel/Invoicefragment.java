@@ -27,7 +27,7 @@ public class Invoicefragment extends Fragment {
     InvoiceDetailsAdapter invoiceDetailsAdapter;
     FragmentTouchListner mCallBack;
     public interface FragmentTouchListner {
-        public void text_back_butt(String header);
+        public void text_butt(String header);
         public void clear_cart();
         public  Animation get_animation(Boolean enter,Boolean loaded);
         public void to_home();
@@ -58,8 +58,8 @@ public class Invoicefragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view = getView();
 //        loaded=true;
-//        String head=Settings.getword(getActivity(), "");
-//        mCallBack.text_back_butt(head);
+        String head=Settings.getword(getActivity(), "receipt");
+        mCallBack.text_butt(head);
         orderses=(JsonOrders)getArguments().getSerializable("invoice");
         tq = (TextView) view.findViewById(R.id.tv_tq);
         tq.setText(Settings.getword(getActivity(), "order_confirmation_message"));

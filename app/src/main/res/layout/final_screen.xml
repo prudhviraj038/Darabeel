@@ -360,7 +360,6 @@
                                         <TextView
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
-                                            android:text="Salmiya"
                                             android:id="@+id/tv_area"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
@@ -376,7 +375,6 @@
                                             android:background="#eaeaea"
                                             android:padding="3dp"
                                             android:singleLine="true"
-                                            android:text="Salmiya"
                                             android:visibility="gone"
                                             android:layout_weight="1" />
                                     </LinearLayout>
@@ -399,7 +397,6 @@
                                         <TextView
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
-                                            android:text="10"
                                             android:id="@+id/tv_block"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
@@ -416,7 +413,6 @@
                                             android:padding="3dp"
                                             android:visibility="gone"
                                             android:singleLine="true"
-                                            android:text="10"
                                             android:layout_weight="1" />
                                     </LinearLayout>
 
@@ -438,7 +434,6 @@
                                         <TextView
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
-                                            android:text="Yusuf Al Badr Street"
                                             android:id="@+id/tv_street"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
@@ -455,7 +450,6 @@
                                             android:padding="3dp"
                                             android:visibility="gone"
                                             android:singleLine="true"
-                                            android:text="Yusuf Al Badr Street"
                                             android:layout_weight="1" />
                                     </LinearLayout>
 
@@ -477,7 +471,6 @@
                                         <TextView
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
-                                            android:text="11"
                                             android:id="@+id/tv_buildng"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
@@ -494,7 +487,6 @@
                                             android:padding="3dp"
                                             android:visibility="gone"
                                             android:singleLine="true"
-                                            android:text="11"
                                             android:layout_weight="1" />
                                     </LinearLayout>
 
@@ -516,7 +508,6 @@
                                         <TextView
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
-                                            android:text="10"
                                             android:id="@+id/tv_floor"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
@@ -533,7 +524,6 @@
                                             android:padding="3dp"
                                             android:visibility="gone"
                                             android:singleLine="true"
-                                            android:text="10"
                                             android:layout_weight="1" />
                                     </LinearLayout>
 
@@ -555,7 +545,6 @@
                                         <TextView
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
-                                            android:text="22"
                                             android:id="@+id/tv_flat"
                                             android:textColor="#c78e1e"
                                             android:padding="3dp"
@@ -572,7 +561,6 @@
                                             android:padding="3dp"
                                             android:visibility="gone"
                                             android:singleLine="true"
-                                            android:text="22"
                                             android:layout_weight="1" />
                                     </LinearLayout>
 
@@ -597,7 +585,6 @@
                                             android:layout_height="wrap_content"
                                             android:id="@+id/tv_mobile"
                                             android:textColor="#c78e1e"
-                                            android:text="9898989898"
                                             android:padding="3dp"
                                             android:textSize="12sp"
                                             android:layout_weight="1" />
@@ -612,7 +599,6 @@
                                             android:padding="3dp"
                                             android:visibility="gone"
                                             android:singleLine="true"
-                                            android:text="9898989898"
                                             android:layout_weight="1"
                                             android:inputType="phone" />
                                     </LinearLayout>
@@ -636,7 +622,8 @@
                                         android:padding="7dp"
                                         android:gravity="center"
                                         android:layout_marginLeft="3dp"
-                                        android:layout_marginRight="3dp">
+                                        android:layout_marginRight="3dp"
+                                        android:visibility="gone">
 
                                         <TextView
                                             android:layout_width="wrap_content"
