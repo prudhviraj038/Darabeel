@@ -127,7 +127,7 @@
                 android:gravity="center_vertical">
 
                 <in.yellowsoft.darabeel.MyTextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Naif"
                     android:id="@+id/res_name"
@@ -198,7 +198,7 @@
                         android:textStyle="bold" />
 
                     <in.yellowsoft.darabeel.MyTextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/date"
                         android:textSize="15sp"

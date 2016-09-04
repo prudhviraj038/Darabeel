@@ -134,7 +134,8 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
                         android:singleLine="true"
-                        android:textColorHint="#918d8d" />
+                        android:textColorHint="#918d8d"
+                        android:maxLength="8" />
                 </LinearLayout>
 
                 <LinearLayout

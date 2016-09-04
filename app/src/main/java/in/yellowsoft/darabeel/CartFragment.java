@@ -33,6 +33,7 @@ public class CartFragment extends Fragment {
         public void to_login();
         public void final_page(ArrayList<CartItem> cartItem);
         public  Animation get_animation(Boolean enter,Boolean loaded);
+        public void incart_page();
     }
     @Override
     public void onAttach(Activity activity) {
@@ -97,13 +98,14 @@ public class CartFragment extends Fragment {
 //            Log.e("cart_count",String.valueOf(cart_items.get(0).products.restaurant.getTitle(getActivity())));
             min_order_amount.setText(cart_items.get(0).products.restaurant.min +" KD");
         }
-        total_amount.setText(String.valueOf(total)+"KD");
+        total_amount.setText(String.valueOf(total)+" KD");
         CartPageAdapter cartPageAdapter=new CartPageAdapter(getActivity(),cart_items,this);
         cart_list=(GridView)v.findViewById(R.id.cart_grid);
         cart_list.setAdapter(cartPageAdapter);
         cart_continue=(LinearLayout)v.findViewById(R.id.continue_cart);
         String head=Settings.getword(getActivity(),"cart");
         mCallBack.text_back_butt(head);
+        mCallBack.incart_page();
         cart_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -68,7 +68,8 @@
                         android:textColor="#918d8d"
                         android:textSize="15sp"
                         android:textColorHint="#918d8d"
-                        android:textCursorDrawable = "@null"/>
+                        android:textCursorDrawable = "@null"
+                        android:gravity="right" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -99,7 +100,8 @@
                         android:textColor="#918d8d"
                         android:textSize="15sp"
                         android:textColorHint="#918d8d"
-                        android:textCursorDrawable = "@null"/>
+                        android:textCursorDrawable = "@null"
+                        android:gravity="right" />
 
                 </LinearLayout>
 
@@ -128,6 +130,7 @@
                         android:layout_marginBottom="5dp"
                         android:textColorHint="#918d8d"
                         android:textCursorDrawable = "@null"
+                        android:gravity="right"
                         android:maxLength="8" />
                 </LinearLayout>
 
@@ -153,7 +156,7 @@
                         android:textColorHint="#918d8d"
                         android:textCursorDrawable = "@null"
                         android:minLines="5"
-                        android:gravity="top" />
+                        android:gravity="top|right" />
                 </LinearLayout>
 
             </LinearLayout>

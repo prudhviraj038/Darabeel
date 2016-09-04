@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -32,6 +33,8 @@ public class AdvertisementActivity extends Activity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.advertisement_screen);
+        TextView done_btn = (TextView) findViewById(R.id.done_btn);
+        done_btn.setText(Settings.getword(this,"done"));
         img = (ImageView) findViewById (R.id.splash_image);
         LinearLayout skip_btn = (LinearLayout) findViewById(R.id.skip_btn);
         getAdvertisements();

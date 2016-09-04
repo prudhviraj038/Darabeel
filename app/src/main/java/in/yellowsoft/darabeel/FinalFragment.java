@@ -231,6 +231,7 @@ public class FinalFragment extends Fragment {
         discount=(MyTextView)view.findViewById(R.id.discount_final);
         delivery_charges=(MyTextView)view.findViewById(R.id.delivery_charges_final);
         delivery_charges.setText(Settings.getDelivery_charges(getActivity())+" KD");
+
         dara=(MyTextView)view.findViewById(R.id.dara_charges_final);
         dara.setText(Settings.getSettings(getActivity(), "darabeel_charges")+" KD");
         grand_total=(MyTextView)view.findViewById(R.id.grand_total_final);

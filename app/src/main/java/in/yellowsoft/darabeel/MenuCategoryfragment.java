@@ -31,6 +31,7 @@ public class MenuCategoryfragment extends Fragment {
     FragmentTouchListner mCallBack;
     public interface FragmentTouchListner {
         public void text_back_butt(String header);
+
         public void product_list(String rest_id,String cat_id,String cat_name,String type);
         public  Animation get_animation(Boolean enter,Boolean loaded);
     }

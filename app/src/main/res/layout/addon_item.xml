@@ -32,15 +32,15 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/pluse_list"
                 android:src="@drawable/plus_for_dara"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:visibility="invisible" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/addon_ll"
-            android:visibility="gone">
+            android:id="@+id/addon_ll">
 
             <GridView
                 android:layout_width="match_parent"

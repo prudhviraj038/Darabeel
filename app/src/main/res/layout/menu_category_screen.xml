@@ -22,16 +22,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/de">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:id="@+id/top_image">
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="300dp"
                             android:id="@+id/company_background_image_cat"
                             android:src="@drawable/bg_category_item"
                             android:adjustViewBounds="false"
@@ -41,9 +42,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/imageView7"
-                            android:scaleType="matrix"
-                            android:src="@drawable/bg_shadow" />
+                            android:id="@+id/imageView7" />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -139,74 +138,75 @@
                                 android:textColor="#ffffff" />
                         </LinearLayout>
                     </LinearLayout>
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/linearLayout14"
-                    android:layout_below="@+id/de"
-                    android:layout_marginTop="-130dp">
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@drawable/background"
-                        android:id="@+id/jj"></LinearLayout>
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/yellow_background"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp">
+                        android:id="@+id/linearLayout14"
+                        android:layout_below="@+id/top_image"
+                        android:layout_marginTop="-100dp">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/background"
+                            android:id="@+id/jj"></LinearLayout>
 
                         <LinearLayout
                             android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/menu_cat_rounded_corners">
+                            android:layout_height="match_parent"
+                            android:background="@color/yellow_background"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp">
 
                             <LinearLayout
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
-                                android:layout_height="35dp"
-                                android:background="@drawable/bg_menu_category"
-                                android:gravity="center">
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/menu_cat_rounded_corners">
 
-                                <in.yellowsoft.darabeel.MyTextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Menu Category"
-                                    android:id="@+id/sta_menu_category"
-                                    android:gravity="center"
-                                    android:textColor="#ffffff"
-                                    android:textSize="15sp" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="5dp">
-
-                                <ListView
+                                <LinearLayout
+                                    android:orientation="vertical"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/menu_cat_list" />
+                                    android:layout_height="35dp"
+                                    android:background="@drawable/bg_menu_category"
+                                    android:gravity="center">
+
+                                    <in.yellowsoft.darabeel.MyTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Menu Category"
+                                        android:id="@+id/sta_menu_category"
+                                        android:gravity="center"
+                                        android:textColor="#ffffff"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="5dp">
+
+                                    <ListView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/menu_cat_list" />
+                                </LinearLayout>
                             </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
+                </RelativeLayout>
 
-                </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

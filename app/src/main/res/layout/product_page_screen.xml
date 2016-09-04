@@ -208,7 +208,7 @@
                                         android:layout_height="match_parent"
                                         android:padding="10dp"
                                         android:id="@+id/option_ll"
-                                        android:visibility="gone">
+                                        android:visibility="visible">
 
                                         <GridView
                                             android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
@@ -50,6 +51,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     boolean animation_direction=true;
     String c_size="0";
     AlertDialogManager alert = new AlertDialogManager();
+    boolean clear_twopages = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         fragmentManager = getSupportFragmentManager();
         HomeFragment fragment = new HomeFragment();
         fragmentManager.beginTransaction().add(R.id.container_main, fragment).commit();
+        clear_twopages=false;
         nav_title=(MyTextView)findViewById(R.id.nav_title);
         waste=(MyTextView)findViewById(R.id.nav_waste);
         lang_tv=(MyTextView)findViewById(R.id.lang_nav_tv);
@@ -182,6 +185,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mDrawerLayout.closeDrawer(GravityCompat.START);
 //                if(current_position!=position)
+                clear_twopages=false;
                 switch (position) {
                     case 0:
                         mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -391,6 +395,11 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     @Override
     public void onBackPressed() {
         animation_direction=false;
+        if(clear_twopages){
+            clear_twopages=false;
+            onBackPressed();
+        }
+
         super.onBackPressed();
     }
     @Override
@@ -408,6 +417,13 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
                 return MoveAnimation.create(MoveAnimation.LEFT, enter, DURATION);
         }
     }
+
+    @Override
+    public void incart_page() {
+        clear_twopages=true;
+    }
+
+
     private void shareTextUrl() {
         Intent share = new Intent(android.content.Intent.ACTION_SEND);
         share.setType("text/plain");
@@ -437,6 +453,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         bundle.putSerializable("product",products);
         productPageFragment.setArguments(bundle);
         fragmentManager.beginTransaction().replace(R.id.container_main, productPageFragment).addToBackStack(null).commit();
+
     }
 
     @Override
@@ -602,6 +619,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         FinalFragment finalFragment = new FinalFragment();
         finalFragment.setArguments(bundle);
         fragmentManager.beginTransaction().replace(R.id.container_main, finalFragment).addToBackStack(null).commit();
+        clear_twopages=false;
     }
     @Override
     public void clear_cart() {
@@ -757,6 +775,22 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         CartFragment cartFragment = new CartFragment();
         cartFragment.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.container_main, cartFragment).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container_main, cartFragment).commit();
+        clear_twopages=true;
     }
+
+    @Override
+    public int get_cart_count(String product_id) {
+        int cart_qty =0;
+
+            for(int i=0;i<cart_items.size(); i++){
+                if(cart_items.get(i).products.res_id.equals(product_id))
+                    cart_qty = cart_qty + Integer.parseInt(cart_items.get(i).quantity);
+            }
+        Log.e("cart_count",String.valueOf(cart_qty));
+
+
+        return cart_qty;
+    }
+
 }

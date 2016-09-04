@@ -27,6 +27,7 @@ public class OffersListFragment extends Fragment {
     OffersAdapter offersAdapter;
     FragmentTouchListner mCallBack;
     boolean loaded=false;
+    AlertDialogManager alert = new AlertDialogManager();
     public interface FragmentTouchListner {
         public void text_back_butt(String header);
         public void songselected(Restaurants restaurant);
@@ -79,12 +80,19 @@ public class OffersListFragment extends Fragment {
         show_menu_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (restaurants.menu.size() == 0)
-                    mCallBack.product_list(restaurants.res_id,restaurants.res_id,restaurants.getTitle(getActivity()),"1");
+
+                if (Settings.getArea_id(getActivity()).equals("-1")) {
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_area"), false);
+                } else {
+                    if (restaurants.menu.size() == 0)
+                        mCallBack.product_list(restaurants.res_id,restaurants.res_id,restaurants.getTitle(getActivity()),"1");
 //                        alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "no_prodcts_in_restaurant"), false);
-                else
-                    mCallBack.showmenu(restaurants);
-            }
+                    else
+                        mCallBack.showmenu(restaurants);
+
+               //     mCallBack.to_promotions(restaurants);
+                }
+                            }
         });
         view.setFocusableInTouchMode(true);
         view.requestFocus();

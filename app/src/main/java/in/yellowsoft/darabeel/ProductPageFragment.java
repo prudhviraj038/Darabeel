@@ -49,6 +49,7 @@ public class ProductPageFragment extends Fragment {
         public void add_to_cart(Products products, String quantity, String spl_req);
         public void cart_icon_dis(String header);
         public  Animation get_animation(Boolean enter,Boolean loaded);
+        public int get_cart_count(String product_id);
         public void back_to_product();
 //        public void text_back_butt(String header);
     }
@@ -278,8 +279,15 @@ public class ProductPageFragment extends Fragment {
                     Log.e("status",products.restaurant.status);
                   if(products.restaurant.status.equals("Open")) {
 //
-                      if(Integer.parseInt(products.qut)<quantity){
-                          alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"out_stock")+" select "+products.qut+" Products", true);
+                      if(Integer.parseInt(products.qut) <quantity + mCallBack.get_cart_count(products.res_id)){
+
+                          if(mCallBack.get_cart_count(products.res_id)>0)
+                              alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"out_stock")+" select "+String.valueOf(Integer.parseInt(products.qut)-mCallBack.get_cart_count(products.res_id))+" products, " + String.valueOf(mCallBack.get_cart_count(products.res_id)) + " products already in cart" , true);
+
+                          else
+                          alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"out_stock")+" select "+products.qut+" products", true);
+
+
                       }else{
                           mCallBack.add_to_cart(products, String.valueOf(quantity),et_spl_request.getText().toString());
 //                          alert_add_cart.setVisibility(View.VISIBLE);
@@ -390,7 +398,7 @@ public class ProductPageFragment extends Fragment {
 
     }
     public  void call_list(){
-        setListViewHeightBasedOnItems(group_list);
+       // setListViewHeightBasedOnItems(group_list);
     }
 
 }

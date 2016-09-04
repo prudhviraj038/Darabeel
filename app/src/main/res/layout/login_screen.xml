@@ -308,7 +308,8 @@
                             android:singleLine="true"
                             android:textColorHint="#918d8d"
                             android:textCursorDrawable = "@null"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:maxLength="8" />
 
                         <ImageView
                             android:layout_width="wrap_content"

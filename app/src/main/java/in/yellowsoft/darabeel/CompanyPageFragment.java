@@ -215,11 +215,13 @@ public class CompanyPageFragment extends Fragment {
         ll_promotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Settings.getArea_id(getActivity()).equals("-1")) {
+                mCallBack.to_promotions(restaurants);
+
+                /*if (Settings.getArea_id(getActivity()).equals("-1")) {
                     alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_area"), false);
                 } else {
                     mCallBack.to_promotions(restaurants);
-                }
+                }*/
             }
         });
 

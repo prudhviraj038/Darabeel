@@ -1,6 +1,7 @@
 package in.yellowsoft.darabeel;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,11 @@ import android.widget.LinearLayout;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CartPageAdapter extends BaseAdapter{
     float total;
-    int number;
+    HashMap<Integer,Integer> number;
     String [] result;
     Context context;
     String opt_price;
@@ -34,6 +36,7 @@ public class CartPageAdapter extends BaseAdapter{
         this.cart_items=cart_items;
         this.cartFragment=cartFragment;
         //  imageId=prgmImages;
+        number = new HashMap<>();
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -85,21 +88,25 @@ public class CartPageAdapter extends BaseAdapter{
             @Override
             public void onClick(View view) {
                 cart_items.remove(position);
+                if(cart_items.size()==0)
+                    cartFragment.total_amount.setText(String.format("%.3f",0.0)+" KD");
+                cartFragment.min_order_amount.setText(String.format("%.3f",0.0)+" KD");
                 notifyDataSetChanged();
             }
         });
         holder.cart_item_name.setText(cart_items.get(position).products.getTitle(context));
         holder.cart_item_quantity.setText(" "+cart_items.get(position).quantity);
-        number=Integer.parseInt(cart_items.get(position).quantity);
+        number.put(position,Integer.parseInt(cart_items.get(position).quantity));
+
         holder.pluse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if((Integer.parseInt(cart_items.get(position).products.qut)-1)<number){
-                    alert.showAlertDialog(context, "Info",Settings.getword(context,"out_stock")+"   select"+cart_items.get(position).products.qut+" Products", true);
+                if((Integer.parseInt(cart_items.get(position).products.qut)-1)<get_cart_count(cart_items.get(position).products.res_id)){
+                    alert.showAlertDialog(context, "Info",Settings.getword(context,"out_stock")+" select "+cart_items.get(position).products.qut+" products", true);
                 }else {
-                    number++;
-                    holder.cart_item_quantity.setText(" " + String.valueOf(number));
-                    cart_items.get(position).quantity = String.valueOf(number);
+                    number.put(position,number.get(position)+1);
+                    holder.cart_item_quantity.setText(" " + String.valueOf(number.get(position)));
+                    cart_items.get(position).quantity = String.valueOf(number.get(position));
                     notifyDataSetChanged();
                 }
             }
@@ -107,10 +114,10 @@ public class CartPageAdapter extends BaseAdapter{
         holder. minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (number > 1) {
-                    number--;
-                    holder.cart_item_quantity.setText(" "+String.valueOf(number));
-                    cart_items.get(position).quantity =String.valueOf(number);
+                if (number.get(position) > 1) {
+                    number.put(position,number.get(position)-1);
+                    holder.cart_item_quantity.setText(" "+String.valueOf(number.get(position)));
+                    cart_items.get(position).quantity =String.valueOf(number.get(position));
                     notifyDataSetChanged();
                 }
             }
@@ -123,8 +130,10 @@ public class CartPageAdapter extends BaseAdapter{
 //                }
 //            }
 //        }
-        holder.catr_item_price.setText(cart_items.get(position).products.cart_price+ " KD " );
-         total = number * Float.parseFloat(cart_items.get(position).products.cart_price);
+
+        String temp = String.format("%.3f",Float.parseFloat(cart_items.get(position).products.cart_price));
+        holder.catr_item_price.setText(temp+ " KD");
+         total = number.get(position) * Float.parseFloat(cart_items.get(position).products.cart_price);
         holder.cart_item_total.setText(String.format("%.3f",total)+ " KD " );
         getsum();
 
@@ -145,5 +154,20 @@ public class CartPageAdapter extends BaseAdapter{
             cartFragment.total_amount.setText(String.format("%.3f",temp)+" KD");
         }
     }
+
+
+    public int get_cart_count(String product_id) {
+        int cart_qty =0;
+
+        for(int i=0;i<cart_items.size(); i++){
+            if(cart_items.get(i).products.res_id.equals(product_id))
+                cart_qty = cart_qty + Integer.parseInt(cart_items.get(i).quantity);
+        }
+        Log.e("cart_count",String.valueOf(cart_qty));
+
+
+        return cart_qty;
+    }
+
 
 }

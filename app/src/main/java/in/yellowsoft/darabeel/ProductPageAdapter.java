@@ -70,19 +70,19 @@ public class ProductPageAdapter extends BaseAdapter{
         holder.group_title.setText(productses.groups.get(position).get_group(context));
         holder.addonAdapter=new AddonAdapter(context,productses,position,productses.groups.get(position).max);
         holder.addon_gv.setAdapter(holder.addonAdapter);
-        setGridViewHeightBasedOnItems(holder.addon_gv);
-        if(click.get(position)==2){
+     //   setGridViewHeightBasedOnItems(holder.addon_gv);
+
             holder.addon_list.setVisibility(View.VISIBLE);
             holder.pluse_list.setImageResource(R.drawable.minus_for_dara);
-//            productPageFragment.call_list();
+            productPageFragment.call_list();
 //            click.set(position,1);
-        }
+
         holder.pluse_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(click.get(position)==1){
+                if(holder.addon_list.getVisibility()==View.GONE){
                     holder.addon_list.setVisibility(View.VISIBLE);
-//                    productPageFragment.call_list();
+                    productPageFragment.call_list();
                     holder.pluse_list.setImageResource(R.drawable.minus_for_dara);
                     click.set(position,2);
 //                    notifyDataSetChanged();
@@ -90,6 +90,7 @@ public class ProductPageAdapter extends BaseAdapter{
                     holder.addon_list.setVisibility(View.GONE);
                     holder.pluse_list.setImageResource(R.drawable.plus_for_dara);
                     click.set(position,1);
+                    productPageFragment.call_list();
 //                    notifyDataSetChanged();
                 }
             }
@@ -97,6 +98,7 @@ public class ProductPageAdapter extends BaseAdapter{
 //        holder.pluse_list.performClick();
         return rowView;
     }
+
     public static boolean setGridViewHeightBasedOnItems(GridView gridView) {
 
         ListAdapter listAdapter = gridView.getAdapter();
