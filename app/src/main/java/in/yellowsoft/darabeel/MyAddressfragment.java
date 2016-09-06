@@ -188,10 +188,10 @@ public class MyAddressfragment extends Fragment {
                         Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_street"), Toast.LENGTH_SHORT).show();
                     else if (et_my_building.getText().toString().equals(""))
                         Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_building"), Toast.LENGTH_SHORT).show();
-                    else if (et_my_floor.getText().toString().equals(""))
-                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_floor"), Toast.LENGTH_SHORT).show();
-                    else if (et_my_flat.getText().toString().equals(""))
-                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_flat"), Toast.LENGTH_SHORT).show();
+                   // else if (et_my_floor.getText().toString().equals(""))
+                     //   Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_floor"), Toast.LENGTH_SHORT).show();
+                    //else if (et_my_flat.getText().toString().equals(""))
+                      //  Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_flat"), Toast.LENGTH_SHORT).show();
                     else {
                         add_address("-1");
                     }
@@ -204,10 +204,10 @@ public class MyAddressfragment extends Fragment {
                         Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_street"), Toast.LENGTH_SHORT).show();
                     else if (et_my_building.getText().toString().equals(""))
                         Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_building"), Toast.LENGTH_SHORT).show();
-                    else if (et_my_floor.getText().toString().equals(""))
-                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_floor"), Toast.LENGTH_SHORT).show();
-                    else if (et_my_flat.getText().toString().equals(""))
-                        Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_flat"), Toast.LENGTH_SHORT).show();
+                  //  else if (et_my_floor.getText().toString().equals(""))
+                    //    Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_floor"), Toast.LENGTH_SHORT).show();
+                    //else if (et_my_flat.getText().toString().equals(""))
+                      //  Toast.makeText(getActivity(), Settings.getword(getActivity(), "please_enter_flat"), Toast.LENGTH_SHORT).show();
                     else {
                         add_address(adds_id);
                     }

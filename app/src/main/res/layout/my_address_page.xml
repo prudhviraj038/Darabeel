@@ -386,7 +386,8 @@
                                 android:textColor="@color/brown"
                                 android:padding="3dp"
                                 android:textSize="15sp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:maxLength="8" />
 
                             <LinearLayout
                                 android:orientation="vertical"

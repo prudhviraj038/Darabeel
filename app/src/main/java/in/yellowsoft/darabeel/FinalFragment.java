@@ -1305,6 +1305,7 @@ public class FinalFragment extends Fragment {
                         String head2=Settings.getword(getActivity(), "final");
                         mCallBack.text_back_butt(head2);
                         selected_area_id=Settings.getArea_id(getActivity());
+
                     }else{
                         add.setVisibility(View.VISIBLE);
                         edit.setVisibility(View.VISIBLE);

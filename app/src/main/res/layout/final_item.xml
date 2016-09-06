@@ -16,8 +16,7 @@
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center|left">
+            android:layout_weight="1">
 
             <in.yellowsoft.darabeel.MyTextView
                 android:layout_width="wrap_content"
@@ -26,7 +25,7 @@
                 android:id="@+id/final_item_name"
                 android:textColor="@color/brown"
                 android:textSize="12sp"
-                android:gravity="center_vertical|end"
+                android:gravity="center_vertical"
                 android:minLines="2" />
         </LinearLayout>
 
@@ -60,7 +59,9 @@
                 android:text="New Text"
                 android:id="@+id/final_item_price"
                 android:textColor="@color/pink_text"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" />
         </LinearLayout>
 
     </LinearLayout>
