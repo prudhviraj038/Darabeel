@@ -1466,17 +1466,14 @@
                 android:layout_height="match_parent"
                 android:background="#77000000"
                 android:id="@+id/reward_pop"
-                android:gravity="bottom"
-                android:visibility="gone">
+                android:gravity="center_vertical"
+                android:padding="20dp">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="@drawable/pink_rounded_corners_empty"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="100dp">
+                    android:background="@drawable/pink_rounded_corners_empty">
 
                     <LinearLayout
                         android:orientation="vertical"
