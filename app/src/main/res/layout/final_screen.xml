@@ -1467,7 +1467,8 @@
                 android:background="#77000000"
                 android:id="@+id/reward_pop"
                 android:gravity="center_vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:orientation="vertical"
