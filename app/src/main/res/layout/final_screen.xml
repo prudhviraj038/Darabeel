@@ -10,1287 +10,1415 @@
         android:layout_height="wrap_content"
         android:id="@+id/viewFlipper6" >
 
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ScrollView
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/scrollView3"
-                android:layout_marginTop="10dp"
-                android:background="#ffffff">
+                android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:orientation="vertical"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/scrollView3"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff">
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:showDividers="middle"
-                        android:divider="@drawable/company_page_main_divider">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:id="@+id/personal_details_rl"
-                            android:orientation="vertical"
-                            android:background="@drawable/full_rounded_corners"
-                            android:visibility="gone">
-
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_centerHorizontal="true"
-                                android:id="@+id/linearLayout29"
-                                android:gravity="center"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:background="@drawable/brown_rounded_corners_full">
-
-                                <in.yellowsoft.darabeel.MyTextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/personal_details"
-                                    android:layout_alignParentStart="false"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_alignParentTop="false"
-                                    android:padding="8dp"
-                                    android:textColor="#ffffff"
-                                    android:textSize="15sp"
-                                    android:layout_weight="1"
-                                    android:text="Personal Details" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:background="@drawable/fields_rounded_corners"
-                                android:weightSum="1"
-                                android:id="@+id/linearLayout26"
-                                android:showDividers="middle"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="5dp"
-                                android:paddingRight="10dp">
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:divider="@drawable/final_page_divider"
-                                    android:showDividers="middle|end"
-                                    android:layout_marginBottom="10dp" >
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="First Name"
-                                            android:id="@+id/guest_fname"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_guest_fname"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12sp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:layout_margin="1dp" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:layout_margin="1dp">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Last Name"
-                                            android:id="@+id/guest_lname"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_guest_lname"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12sp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:singleLine="true"
-                                            android:layout_weight="1" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:layout_margin="1dp" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Email Id"
-                                            android:id="@+id/guest_email"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_guest_email"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12sp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:inputType="textEmailAddress" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:layout_margin="1dp">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Mobile"
-                                            android:id="@+id/guest_home_ph"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_guest_home_ph"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12sp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:inputType="phone" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:layout_margin="1dp">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Extra Mobile"
-                                            android:id="@+id/guest_work_ph"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_guest_work_ph"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12sp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:inputType="phone" />
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:background="@drawable/full_rounded_corners">
-
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:background="@drawable/brown_rounded_corners_full"
-                                android:layout_centerHorizontal="true"
-                                android:id="@+id/drop_down_ll"
-                                android:gravity="center"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp">
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1">
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="30dp"
-                                        android:text="New Text"
-                                        android:id="@+id/address_guest"
-                                        android:textColor="#ffffff"
-                                        android:layout_weight="1"
-                                        android:gravity="center_vertical"
-                                        android:textSize="15sp" />
-                                </LinearLayout>
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="25dp"
-                                    android:id="@+id/drop_down"
-                                    android:src="@drawable/down_arrow_full_white"
-                                    android:visibility="gone" />
-
-                                <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:id="@+id/address_guest_ll"
-                                    android:visibility="gone">
-
-                                    <in.yellowsoft.darabeel.MyEditText
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/et_addr_name"
-                                        android:layout_alignParentStart="false"
-                                        android:layout_centerHorizontal="true"
-                                        android:layout_alignParentTop="false"
-                                        android:textColor="#000000"
-                                        android:textSize="13dp"
-                                        android:layout_weight="1"
-                                        android:textColorHint="#000000"
-                                        android:background="#ffffff"
-                                        android:visibility="gone"
-                                        android:gravity="center"
-                                        android:layout_margin="8dp"
-                                        android:hint="Enter address name" />
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="New Text"
-                                        android:id="@+id/et_addr_name_tv"
-                                        android:textColor="#ffffff"
-                                        android:textSize="15dp"
-                                        android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:layout_margin="8dp" />
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:background="@drawable/fields_rounded_corners"
-                                android:weightSum="1"
-                                android:id="@+id/linearLayout18"
-                                android:showDividers="middle">
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:divider="@drawable/final_page_divider"
-                                    android:showDividers="middle|end"
-                                    android:padding="10dp">
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Area"
-                                            android:id="@+id/static_tv_area"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/tv_area"
-                                            android:textColor="#c78e1e"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_area"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12dp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:singleLine="true"
-                                            android:visibility="gone"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Block"
-                                            android:id="@+id/static_tv_block"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/tv_block"
-                                            android:textColor="#c78e1e"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_block"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12dp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:visibility="gone"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Street Name / Number"
-                                            android:id="@+id/static_tv_street"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/tv_street"
-                                            android:textColor="#c78e1e"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_street"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12dp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:visibility="gone"
-                                            android:singleLine="true"
-                                            android:layout_weight="1" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Building Name / Number"
-                                            android:id="@+id/static_tv_building"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/tv_buildng"
-                                            android:textColor="#c78e1e"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_building"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12dp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:visibility="gone"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:gravity="clip_horizontal" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Floor"
-                                            android:id="@+id/static_tv_floor"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/tv_floor"
-                                            android:textColor="#c78e1e"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_floor"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12dp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:visibility="gone"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Apartment / Flat"
-                                            android:id="@+id/static_tv_aprtment"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/tv_flat"
-                                            android:textColor="#c78e1e"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_flat"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12dp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:visibility="gone"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:id="@+id/mobile_ll_final">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="Mobile"
-                                            android:id="@+id/static_tv_mobile"
-                                            android:textColor="@color/brown"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1" />
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/tv_mobile"
-                                            android:textColor="#c78e1e"
-                                            android:padding="3dp"
-                                            android:textSize="12sp"
-                                            android:layout_weight="1"
-                                            android:gravity="start" />
-
-                                        <in.yellowsoft.darabeel.MyEditText
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/et_mobile"
-                                            android:textColor="#c78e1e"
-                                            android:textSize="12dp"
-                                            android:background="#eaeaea"
-                                            android:padding="3dp"
-                                            android:visibility="gone"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
-                                            android:inputType="phone"
-                                            android:gravity="start" />
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:showDividers="middle"
-                                    android:layout_margin="10dp">
-
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:background="@drawable/pink_rounded_corners"
-                                        android:id="@+id/edit_address"
-                                        android:layout_weight="1"
-                                        android:padding="7dp"
-                                        android:gravity="center"
-                                        android:layout_marginLeft="3dp"
-                                        android:layout_marginRight="3dp"
-                                        android:visibility="gone">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Edit Address"
-                                            android:id="@+id/tv_edit_address"
-                                            android:textColor="#ffffff"
-                                            android:textSize="15sp"
-                                            android:gravity="center" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:background="@drawable/pink_rounded_corners"
-                                        android:id="@+id/add_address"
-                                        android:gravity="center"
-                                        android:layout_weight="1"
-                                        android:padding="7dp"
-                                        android:layout_marginLeft="3dp"
-                                        android:layout_marginRight="3dp">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Add Address"
-                                            android:id="@+id/tv_add_address"
-                                            android:textColor="#ffffff"
-                                            android:textSize="15sp" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:background="@drawable/pink_rounded_corners"
-                                        android:id="@+id/save_ll"
-                                        android:gravity="center"
-                                        android:layout_weight="1"
-                                        android:padding="7dp"
-                                        android:layout_marginLeft="3dp"
-                                        android:layout_marginRight="3dp"
-                                        android:visibility="gone">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="SAVE"
-                                            android:id="@+id/save_tv"
-                                            android:textColor="#ffffff"
-                                            android:textSize="15dp" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:background="@drawable/pink_rounded_corners"
-                                        android:id="@+id/cancel_ll"
-                                        android:gravity="center"
-                                        android:layout_weight="1"
-                                        android:padding="7dp"
-                                        android:layout_marginLeft="3dp"
-                                        android:layout_marginRight="3dp"
-                                        android:visibility="gone">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Cancel"
-                                            android:id="@+id/cancel"
-                                            android:textColor="#ffffff"
-                                            android:textSize="15dp" />
-                                    </LinearLayout>
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:background="@drawable/full_rounded_corners">
-
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="35dp"
-                                android:background="@drawable/brown_rounded_corners_full"
-                                android:gravity="center_vertical">
-
-                                <in.yellowsoft.darabeel.MyTextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:text="Special Comments"
-                                    android:id="@+id/tv_spl_comments"
-                                    android:layout_alignParentStart="false"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_alignParentTop="false"
-                                    android:textColor="#ffffff"
-                                    android:layout_weight="1"
-                                    android:textSize="15sp"
-                                    android:gravity="center_vertical"
-                                    android:layout_marginRight="8dp"
-                                    android:layout_marginLeft="8dp" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/plus_img_spl_comm"
-                                    android:src="@drawable/plus_for_dara"
-                                    android:adjustViewBounds="true"
-                                    android:padding="5dp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:background="@drawable/fields_rounded_corners"
-                                android:id="@+id/spl_comm_ll"
-                                android:padding="10dp"
-                                android:visibility="gone">
-
-                                <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/spl_instructions"
-                                    android:textColor="@color/brown"
-                                    android:textSize="12sp"
-                                    android:hint="Enter any special instructions"
-                                    android:background="#00000000"
-                                    android:minLines="5"
-                                    android:textColorHint="@color/brown"
-                                    android:gravity="top" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:background="@drawable/full_rounded_corners">
-
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="35dp"
-                                android:background="@drawable/brown_rounded_corners_full"
-                                android:gravity="center">
-
-                                <in.yellowsoft.darabeel.MyTextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:text="Coupon Code"
-                                    android:id="@+id/tv_coupon"
-                                    android:layout_alignParentStart="false"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_alignParentTop="false"
-                                    android:textColor="#ffffff"
-                                    android:layout_weight="1"
-                                    android:textSize="15sp"
-                                    android:gravity="center_vertical"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginRight="8dp" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/plus_img_coupon"
-                                    android:src="@drawable/plus_for_dara"
-                                    android:adjustViewBounds="true"
-                                    android:padding="5dp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:background="@drawable/fields_rounded_corners"
-                                android:id="@+id/coupon_ll_select"
-                                android:padding="10dp"
-                                android:visibility="gone">
-
-                                <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/coupon_codes"
-                                    android:hint="ENTER YOUR CODE"
-                                    android:textColor="#868686"
-                                    android:textColorHint="#868686"
-                                    android:textSize="12sp"
-                                    android:gravity="center" />
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:id="@+id/submit_final"
-                                    android:gravity="center"
-                                    android:layout_marginLeft="70dp"
-                                    android:layout_marginRight="70dp"
-                                    android:layout_marginTop="10dp"
-                                    android:background="@drawable/bg_show_mwnu">
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Submit"
-                                        android:id="@+id/tv_submit_final"
-                                        android:textColor="#ffffff"
-                                        android:textSize="15sp"
-                                        android:gravity="center"
-                                        android:textStyle="bold" />
-                                </LinearLayout>
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:background="@drawable/full_rounded_corners">
-
-                            <in.yellowsoft.darabeel.MyTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Summery"
-                                android:id="@+id/summery"
-                                android:layout_alignParentStart="false"
-                                android:layout_centerHorizontal="true"
-                                android:layout_alignParentTop="false"
-                                android:textColor="#ffffff"
-                                android:background="@drawable/brown_rounded_corners_full"
-                                android:textSize="15sp"
-                                android:padding="8dp" />
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:weightSum="1"
-                                android:id="@+id/linearLayout22"
-                                android:layout_marginTop="10dp"
-                                android:showDividers="middle" >
-
-                                <ListView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/final_listview"
-                                    android:paddingLeft="10dp"
-                                    android:paddingRight="10dp" />
-
-                                <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="@color/brown"
-                                    android:layout_marginBottom="5dp"
-                                    android:layout_marginTop="5dp"></LinearLayout>
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:padding="10dp">
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:id="@+id/static_sub_total"
-                                                android:textColor="@color/brown"
-                                                android:padding="3dp"
-                                                android:textSize="12sp"
-                                                android:text="Sub-Total" />
-                                        </LinearLayout>
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"></LinearLayout>
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="100dp"
-                                            android:layout_height="wrap_content"
-                                            android:gravity="right">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="16.200 KD"
-                                                android:id="@+id/sub_total_final"
-                                                android:textColor="@color/pink_text"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="Grand - Total"
-                                                android:id="@+id/sta_discount"
-                                                android:textColor="@color/brown"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1" />
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="100dp"
-                                            android:layout_height="match_parent"
-                                            android:gravity="right">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="16.700 KD"
-                                                android:id="@+id/discount_final"
-                                                android:textColor="@color/pink_text"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:text="Delivery Charges"
-                                                android:id="@+id/static_delivery_charges"
-                                                android:textColor="@color/brown"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1" />
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="100dp"
-                                            android:layout_height="match_parent"
-                                            android:gravity="right">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="0.500 KD"
-                                                android:id="@+id/delivery_charges_final"
-                                                android:textColor="@color/pink_text"
-                                                android:padding="3dp"
-                                                android:textSize="12sp"
-                                                android:gravity="right" />
-                                        </LinearLayout>
-
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="Darabeel Charges"
-                                                android:id="@+id/sta_dara_charges_final"
-                                                android:textColor="@color/brown"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1" />
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="100dp"
-                                            android:layout_height="match_parent"
-                                            android:gravity="right">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="16.700 KD"
-                                                android:id="@+id/dara_charges_final"
-                                                android:textColor="@color/pink_text"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent" >
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:text="Grand - Total"
-                                                android:id="@+id/static_grand_total"
-                                                android:textColor="@color/brown"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1" />
-
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="100dp"
-                                            android:layout_height="match_parent"
-                                            android:gravity="right">
-
-                                            <in.yellowsoft.darabeel.MyTextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="16.700 KD"
-                                                android:id="@+id/grand_total_final"
-                                                android:textColor="@color/pink_text"
-                                                android:padding="3dp"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                        android:layout_height="match_parent">
 
                         <LinearLayout
                             android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/full_rounded_corners">
+                            android:padding="10dp"
+                            android:showDividers="middle"
+                            android:divider="@drawable/company_page_main_divider">
 
-                            <in.yellowsoft.darabeel.MyTextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Payment Option"
-                                android:id="@+id/in.yellowsoft.darabeel.MyTextView24"
-                                android:layout_alignParentStart="false"
-                                android:background="@drawable/brown_rounded_corners_full"
-                                android:layout_centerHorizontal="true"
-                                android:layout_alignParentTop="false"
-                                android:padding="8dp"
-                                android:textColor="#ffffff"
+                                android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:textSize="15sp" />
+                                android:id="@+id/personal_details_rl"
+                                android:orientation="vertical"
+                                android:background="@drawable/full_rounded_corners"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:id="@+id/linearLayout29"
+                                    android:gravity="center"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="10dp"
+                                    android:background="@drawable/brown_rounded_corners_full">
+
+                                    <in.yellowsoft.darabeel.MyTextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/personal_details"
+                                        android:layout_alignParentStart="false"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_alignParentTop="false"
+                                        android:padding="8dp"
+                                        android:textColor="#ffffff"
+                                        android:textSize="15sp"
+                                        android:layout_weight="1"
+                                        android:text="Personal Details" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:background="@drawable/fields_rounded_corners"
+                                    android:weightSum="1"
+                                    android:id="@+id/linearLayout26"
+                                    android:showDividers="middle"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingRight="10dp">
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:divider="@drawable/final_page_divider"
+                                        android:showDividers="middle|end"
+                                        android:layout_marginBottom="10dp" >
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="First Name"
+                                                android:id="@+id/guest_fname"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_guest_fname"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12sp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:layout_margin="1dp"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="1dp">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Last Name"
+                                                android:id="@+id/guest_lname"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_guest_lname"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12sp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="1dp" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Email Id"
+                                                android:id="@+id/guest_email"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_guest_email"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12sp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:inputType="textEmailAddress"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="1dp">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Mobile"
+                                                android:id="@+id/guest_home_ph"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_guest_home_ph"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12sp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:inputType="phone"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="1dp">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Extra Mobile"
+                                                android:id="@+id/guest_work_ph"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_guest_work_ph"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12sp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:inputType="phone"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:background="@drawable/full_rounded_corners">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:background="@drawable/brown_rounded_corners_full"
+                                    android:layout_centerHorizontal="true"
+                                    android:id="@+id/drop_down_ll"
+                                    android:gravity="center"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="10dp">
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:text="New Text"
+                                            android:id="@+id/address_guest"
+                                            android:textColor="#ffffff"
+                                            android:layout_weight="1"
+                                            android:gravity="center_vertical"
+                                            android:textSize="15sp" />
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="25dp"
+                                        android:id="@+id/drop_down"
+                                        android:src="@drawable/down_arrow_full_white"
+                                        android:visibility="gone" />
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:id="@+id/address_guest_ll"
+                                        android:visibility="gone">
+
+                                        <in.yellowsoft.darabeel.MyEditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/et_addr_name"
+                                            android:layout_alignParentStart="false"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_alignParentTop="false"
+                                            android:textColor="#000000"
+                                            android:textSize="13dp"
+                                            android:layout_weight="1"
+                                            android:textColorHint="#000000"
+                                            android:background="#ffffff"
+                                            android:visibility="gone"
+                                            android:gravity="center"
+                                            android:layout_margin="8dp"
+                                            android:hint="Enter address name" />
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="New Text"
+                                            android:id="@+id/et_addr_name_tv"
+                                            android:textColor="#ffffff"
+                                            android:textSize="15dp"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:layout_margin="8dp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:background="@drawable/fields_rounded_corners"
+                                    android:weightSum="1"
+                                    android:id="@+id/linearLayout18"
+                                    android:showDividers="middle">
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:divider="@drawable/final_page_divider"
+                                        android:showDividers="middle|end"
+                                        android:padding="10dp">
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Area"
+                                                android:id="@+id/static_tv_area"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_area"
+                                                android:textColor="#c78e1e"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_area"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12dp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:singleLine="true"
+                                                android:visibility="gone"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Block"
+                                                android:id="@+id/static_tv_block"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_block"
+                                                android:textColor="#c78e1e"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_block"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12dp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:visibility="gone"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Street Name / Number"
+                                                android:id="@+id/static_tv_street"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_street"
+                                                android:textColor="#c78e1e"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_street"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12dp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:visibility="gone"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Building Name / Number"
+                                                android:id="@+id/static_tv_building"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_buildng"
+                                                android:textColor="#c78e1e"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_building"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12dp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:visibility="gone"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Floor"
+                                                android:id="@+id/static_tv_floor"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_floor"
+                                                android:textColor="#c78e1e"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_floor"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12dp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:visibility="gone"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Apartment / Flat"
+                                                android:id="@+id/static_tv_aprtment"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_flat"
+                                                android:textColor="#c78e1e"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_flat"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12dp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:visibility="gone"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/mobile_ll_final">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Mobile"
+                                                android:id="@+id/static_tv_mobile"
+                                                android:textColor="@color/brown"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1" />
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_mobile"
+                                                android:textColor="#c78e1e"
+                                                android:padding="3dp"
+                                                android:textSize="12sp"
+                                                android:layout_weight="1"
+                                                android:gravity="start" />
+
+                                            <in.yellowsoft.darabeel.MyEditText
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/et_mobile"
+                                                android:textColor="#c78e1e"
+                                                android:textSize="12dp"
+                                                android:background="#eaeaea"
+                                                android:padding="3dp"
+                                                android:visibility="gone"
+                                                android:singleLine="true"
+                                                android:layout_weight="1"
+                                                android:inputType="phone"
+                                                android:gravity="start" />
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:showDividers="middle"
+                                        android:layout_margin="10dp">
+
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/pink_rounded_corners"
+                                            android:id="@+id/edit_address"
+                                            android:layout_weight="1"
+                                            android:padding="7dp"
+                                            android:gravity="center"
+                                            android:layout_marginLeft="3dp"
+                                            android:layout_marginRight="3dp"
+                                            android:visibility="gone">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Edit Address"
+                                                android:id="@+id/tv_edit_address"
+                                                android:textColor="#ffffff"
+                                                android:textSize="15sp"
+                                                android:gravity="center" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/pink_rounded_corners"
+                                            android:id="@+id/add_address"
+                                            android:gravity="center"
+                                            android:layout_weight="1"
+                                            android:padding="7dp"
+                                            android:layout_marginLeft="3dp"
+                                            android:layout_marginRight="3dp">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Add Address"
+                                                android:id="@+id/tv_add_address"
+                                                android:textColor="#ffffff"
+                                                android:textSize="15sp" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/pink_rounded_corners"
+                                            android:id="@+id/save_ll"
+                                            android:gravity="center"
+                                            android:layout_weight="1"
+                                            android:padding="7dp"
+                                            android:layout_marginLeft="3dp"
+                                            android:layout_marginRight="3dp"
+                                            android:visibility="gone">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="SAVE"
+                                                android:id="@+id/save_tv"
+                                                android:textColor="#ffffff"
+                                                android:textSize="15dp" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/pink_rounded_corners"
+                                            android:id="@+id/cancel_ll"
+                                            android:gravity="center"
+                                            android:layout_weight="1"
+                                            android:padding="7dp"
+                                            android:layout_marginLeft="3dp"
+                                            android:layout_marginRight="3dp"
+                                            android:visibility="gone">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Cancel"
+                                                android:id="@+id/cancel"
+                                                android:textColor="#ffffff"
+                                                android:textSize="15dp" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:background="@drawable/full_rounded_corners">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:background="@drawable/brown_rounded_corners_full"
+                                    android:gravity="center_vertical">
+
+                                    <in.yellowsoft.darabeel.MyTextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Special Comments"
+                                        android:id="@+id/tv_spl_comments"
+                                        android:layout_alignParentStart="false"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_alignParentTop="false"
+                                        android:textColor="#ffffff"
+                                        android:layout_weight="1"
+                                        android:textSize="15sp"
+                                        android:gravity="center_vertical"
+                                        android:layout_marginRight="8dp"
+                                        android:layout_marginLeft="8dp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/plus_img_spl_comm"
+                                        android:src="@drawable/plus_for_dara"
+                                        android:adjustViewBounds="true"
+                                        android:padding="5dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:background="@drawable/fields_rounded_corners"
+                                    android:id="@+id/spl_comm_ll"
+                                    android:padding="10dp"
+                                    android:visibility="gone">
+
+                                    <in.yellowsoft.darabeel.MyEditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/spl_instructions"
+                                        android:textColor="@color/brown"
+                                        android:textSize="12sp"
+                                        android:hint="Enter any special instructions"
+                                        android:background="#00000000"
+                                        android:minLines="5"
+                                        android:textColorHint="@color/brown"
+                                        android:gravity="top" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:background="@drawable/full_rounded_corners">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:background="@drawable/brown_rounded_corners_full"
+                                    android:gravity="center">
+
+                                    <in.yellowsoft.darabeel.MyTextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Coupon Code"
+                                        android:id="@+id/tv_coupon"
+                                        android:layout_alignParentStart="false"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_alignParentTop="false"
+                                        android:textColor="#ffffff"
+                                        android:layout_weight="1"
+                                        android:textSize="15sp"
+                                        android:gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="8dp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/plus_img_coupon"
+                                        android:src="@drawable/plus_for_dara"
+                                        android:adjustViewBounds="true"
+                                        android:padding="5dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:background="@drawable/fields_rounded_corners"
+                                    android:id="@+id/coupon_ll_select"
+                                    android:padding="10dp"
+                                    android:visibility="gone">
+
+                                    <in.yellowsoft.darabeel.MyEditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/coupon_codes"
+                                        android:hint="ENTER YOUR CODE"
+                                        android:textColor="#868686"
+                                        android:textColorHint="#868686"
+                                        android:textSize="12sp"
+                                        android:gravity="center" />
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:id="@+id/submit_final"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="70dp"
+                                        android:layout_marginRight="70dp"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@drawable/bg_show_mwnu">
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Submit"
+                                            android:id="@+id/tv_submit_final"
+                                            android:textColor="#ffffff"
+                                            android:textSize="15sp"
+                                            android:gravity="center"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:background="@drawable/full_rounded_corners">
+
+                                <in.yellowsoft.darabeel.MyTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Summery"
+                                    android:id="@+id/summery"
+                                    android:layout_alignParentStart="false"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_alignParentTop="false"
+                                    android:textColor="#ffffff"
+                                    android:background="@drawable/brown_rounded_corners_full"
+                                    android:textSize="15sp"
+                                    android:padding="8dp" />
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:weightSum="1"
+                                    android:id="@+id/linearLayout22"
+                                    android:layout_marginTop="10dp"
+                                    android:showDividers="middle" >
+
+                                    <ListView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/final_listview"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp" />
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@color/brown"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginTop="5dp"></LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="10dp">
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:id="@+id/static_sub_total"
+                                                    android:textColor="@color/brown"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp"
+                                                    android:text="Sub-Total" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"></LinearLayout>
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="100dp"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="right">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="16.200 KD"
+                                                    android:id="@+id/sub_total_final"
+                                                    android:textColor="@color/pink_text"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Grand - Total"
+                                                    android:id="@+id/sta_discount"
+                                                    android:textColor="@color/brown"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1" />
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="100dp"
+                                                android:layout_height="match_parent"
+                                                android:gravity="right">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="16.700 KD"
+                                                    android:id="@+id/discount_final"
+                                                    android:textColor="@color/pink_text"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Delivery Charges"
+                                                    android:id="@+id/static_delivery_charges"
+                                                    android:textColor="@color/brown"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1" />
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="100dp"
+                                                android:layout_height="match_parent"
+                                                android:gravity="right">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="0.500 KD"
+                                                    android:id="@+id/delivery_charges_final"
+                                                    android:textColor="@color/pink_text"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp"
+                                                    android:gravity="right" />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Darabeel Charges"
+                                                    android:id="@+id/sta_dara_charges_final"
+                                                    android:textColor="@color/brown"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1" />
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="100dp"
+                                                android:layout_height="match_parent"
+                                                android:gravity="right">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="16.700 KD"
+                                                    android:id="@+id/dara_charges_final"
+                                                    android:textColor="@color/pink_text"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" >
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Grand - Total"
+                                                    android:id="@+id/static_grand_total"
+                                                    android:textColor="@color/brown"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1" />
+
+                                            <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="100dp"
+                                                android:layout_height="match_parent"
+                                                android:gravity="right">
+
+                                                <in.yellowsoft.darabeel.MyTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="16.700 KD"
+                                                    android:id="@+id/grand_total_final"
+                                                    android:textColor="@color/pink_text"
+                                                    android:padding="3dp"
+                                                    android:textSize="12sp" />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
 
                             <LinearLayout
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/full_rounded_corners">
+
+                                <in.yellowsoft.darabeel.MyTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Payment Option"
+                                    android:id="@+id/in.yellowsoft.darabeel.MyTextView24"
+                                    android:layout_alignParentStart="false"
+                                    android:background="@drawable/brown_rounded_corners_full"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_alignParentTop="false"
+                                    android:padding="8dp"
+                                    android:textColor="#ffffff"
+                                    android:gravity="center"
+                                    android:textSize="15sp" />
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="5dp">
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center_vertical"
+                                        android:id="@+id/now_ll">
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/now_img"
+                                            android:src="@drawable/ic_option_brown"
+                                            android:adjustViewBounds="true" />
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Now"
+                                            android:id="@+id/now_tv"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/brown"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:gravity="center_vertical" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:padding="5dp">
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:id="@+id/later_ll"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/later_img"
+                                            android:src="@drawable/ic_option_brown"
+                                            android:adjustViewBounds="true" />
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Later On"
+                                            android:id="@+id/later_tv"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/brown"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp" />
+                                    </LinearLayout>
+
+                                    <in.yellowsoft.darabeel.MyTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="New Text"
+                                        android:id="@+id/in.yellowsoft.darabeel.MyTextView26"
+                                        android:layout_weight="1"
+                                        android:visibility="gone" />
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/date_time">
+
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/date"
+                                            android:gravity="center"
+                                            android:padding="5dp">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text=" Date"
+                                                android:id="@+id/delivery_date"
+                                                android:textColor="@color/brown"
+                                                android:textSize="15sp" />
+                                        </LinearLayout>
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="-"
+                                            android:id="@+id/in.yellowsoft.darabeel.MyTextView27"
+                                            android:textSize="20dp"
+                                            android:textColor="@color/brown"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:id="@+id/time"
+                                            android:padding="5dp">
+
+                                            <in.yellowsoft.darabeel.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Time"
+                                                android:id="@+id/delivery_time"
+                                                android:textColor="@color/brown"
+                                                android:textSize="15sp" />
+                                        </LinearLayout>
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/date_time1"
+                                            android:src="@drawable/down_arrow_full" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:padding="5dp">
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:background="@drawable/full_rounded_corners">
+
+                                <in.yellowsoft.darabeel.MyTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Payment Option"
+                                    android:id="@+id/tv_payment_option"
+                                    android:layout_alignParentStart="false"
+                                    android:background="@drawable/brown_rounded_corners_full"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_alignParentTop="false"
+                                    android:padding="8dp"
+                                    android:textColor="#ffffff"
+                                    android:gravity="center"
+                                    android:textSize="15sp" />
 
                                 <LinearLayout
                                     android:orientation="horizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
-                                    android:id="@+id/now_ll">
-
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/now_img"
-                                        android:src="@drawable/ic_option_brown"
-                                        android:adjustViewBounds="true" />
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Now"
-                                        android:id="@+id/now_tv"
-                                        android:textSize="15sp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/brown"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginRight="10dp"
-                                        android:gravity="center_vertical" />
-                                </LinearLayout>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:padding="5dp">
-
-                                <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_vertical"
-                                    android:id="@+id/later_ll"
-                                    android:layout_weight="1">
-
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/later_img"
-                                        android:src="@drawable/ic_option_brown"
-                                        android:adjustViewBounds="true" />
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Later On"
-                                        android:id="@+id/later_tv"
-                                        android:textSize="15sp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/brown"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginRight="10dp" />
-                                </LinearLayout>
-
-                                <in.yellowsoft.darabeel.MyTextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="New Text"
-                                    android:id="@+id/in.yellowsoft.darabeel.MyTextView26"
-                                    android:layout_weight="1"
-                                    android:visibility="gone" />
-
-                                <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/date_time">
-
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/date"
-                                        android:gravity="center"
-                                        android:padding="5dp">
-
-                                        <in.yellowsoft.darabeel.MyTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text=" Date"
-                                            android:id="@+id/delivery_date"
-                                            android:textColor="@color/brown"
-                                            android:textSize="15sp" />
-                                    </LinearLayout>
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="-"
-                                        android:id="@+id/in.yellowsoft.darabeel.MyTextView27"
-                                        android:textSize="20dp"
-                                        android:textColor="@color/brown"
-                                        android:textStyle="bold" />
+                                    android:gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="5dp">
 
                                     <LinearLayout
                                         android:orientation="vertical"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:id="@+id/time"
-                                        android:padding="5dp">
+                                        android:id="@+id/cash_final"
+                                        android:layout_weight="1">
 
                                         <in.yellowsoft.darabeel.MyTextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Time"
-                                            android:id="@+id/delivery_time"
-                                            android:textColor="@color/brown"
-                                            android:textSize="15sp" />
+                                            android:text="Cash"
+                                            android:id="@+id/tv_cash_final"
+                                            android:textColor="#285b6e"
+                                            android:visibility="gone" />
+
+                                        <ImageView
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:id="@+id/cash_img_dis"
+                                            android:layout_marginBottom="5dp" />
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/cash_img"
+                                            android:src="@drawable/ic_option_brown"
+                                            android:adjustViewBounds="true" />
                                     </LinearLayout>
 
-                                    <ImageView
+                                    <LinearLayout
+                                        android:orientation="vertical"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/date_time1"
-                                        android:src="@drawable/down_arrow_full" />
+                                        android:gravity="center"
+                                        android:id="@+id/knet_final"
+                                        android:focusableInTouchMode="false"
+                                        android:layout_weight="1">
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Knet"
+                                            android:id="@+id/tv_knet_final"
+                                            android:textColor="#285b6e"
+                                            android:visibility="gone" />
+
+                                        <ImageView
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:id="@+id/knet_img_dis"
+                                            android:layout_marginBottom="5dp" />
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/knet_img"
+                                            android:src="@drawable/ic_option_brown"
+                                            android:adjustViewBounds="true" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:id="@+id/credit_card_final"
+                                        android:layout_weight="1"
+                                        android:visibility="gone">
+
+                                        <in.yellowsoft.darabeel.MyTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Credit Card"
+                                            android:id="@+id/tv_credit_card_final"
+                                            android:textColor="#285b6e" />
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/credit_card_img"
+                                            android:src="@drawable/ic_option_brown" />
+                                    </LinearLayout>
                                 </LinearLayout>
 
                             </LinearLayout>
@@ -1298,157 +1426,193 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:id="@+id/linearLayout17"
                             android:gravity="center"
-                            android:orientation="vertical"
-                            android:background="@drawable/full_rounded_corners">
-
-                            <in.yellowsoft.darabeel.MyTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Payment Option"
-                                android:id="@+id/tv_payment_option"
-                                android:layout_alignParentStart="false"
-                                android:background="@drawable/brown_rounded_corners_full"
-                                android:layout_centerHorizontal="true"
-                                android:layout_alignParentTop="false"
-                                android:padding="8dp"
-                                android:textColor="#ffffff"
-                                android:gravity="center"
-                                android:textSize="15sp" />
+                            android:paddingLeft="30dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="30dp"
+                            android:paddingBottom="10dp">
 
                             <LinearLayout
-                                android:orientation="horizontal"
+                                android:orientation="vertical"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/proceed_pay"
                                 android:gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="5dp">
+                                android:background="@drawable/pink_rounded_corners">
 
-                                <LinearLayout
-                                    android:orientation="vertical"
+                                <in.yellowsoft.darabeel.MyTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:text="PROCEED TO PAY"
+                                    android:id="@+id/tv_proceed_pay"
+                                    android:textColor="#ffffff"
+                                    android:textSize="15sp"
+                                    android:padding="7dp"
                                     android:gravity="center"
-                                    android:id="@+id/cash_final"
-                                    android:layout_weight="1">
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Cash"
-                                        android:id="@+id/tv_cash_final"
-                                        android:textColor="#285b6e"
-                                        android:visibility="gone" />
-
-                                    <ImageView
-                                        android:layout_width="30dp"
-                                        android:layout_height="30dp"
-                                        android:id="@+id/cash_img_dis"
-                                        android:layout_marginBottom="5dp" />
-
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/cash_img"
-                                        android:src="@drawable/ic_option_brown"
-                                        android:adjustViewBounds="true" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:id="@+id/knet_final"
-                                    android:focusableInTouchMode="false"
-                                    android:layout_weight="1">
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Knet"
-                                        android:id="@+id/tv_knet_final"
-                                        android:textColor="#285b6e"
-                                        android:visibility="gone" />
-
-                                    <ImageView
-                                        android:layout_width="30dp"
-                                        android:layout_height="30dp"
-                                        android:id="@+id/knet_img_dis"
-                                        android:layout_marginBottom="5dp" />
-
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/knet_img"
-                                        android:src="@drawable/ic_option_brown"
-                                        android:adjustViewBounds="true" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:id="@+id/credit_card_final"
-                                    android:layout_weight="1"
-                                    android:visibility="gone">
-
-                                    <in.yellowsoft.darabeel.MyTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Credit Card"
-                                        android:id="@+id/tv_credit_card_final"
-                                        android:textColor="#285b6e" />
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/credit_card_img"
-                                        android:src="@drawable/ic_option_brown" />
-                                </LinearLayout>
+                                    android:textStyle="bold" />
                             </LinearLayout>
-
                         </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#77000000"
+                android:id="@+id/reward_pop"
+                android:gravity="bottom"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/pink_rounded_corners_empty"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="100dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pink_rounded_corners_half">
+
+                        <in.yellowsoft.darabeel.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New Text"
+                            android:id="@+id/sta_title_reward"
+                            android:textColor="#ffffff"
+                            android:textSize="15sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/linearLayout17"
-                        android:gravity="center"
-                        android:paddingLeft="30dp"
-                        android:paddingTop="10dp"
-                        android:paddingRight="30dp"
-                        android:paddingBottom="10dp">
+                        android:gravity="center">
 
                         <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/proceed_pay"
-                            android:gravity="center"
-                            android:background="@drawable/pink_rounded_corners">
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="end">
+
+                                <in.yellowsoft.darabeel.MyTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="New Text"
+                                    android:id="@+id/sta_reward_tv"
+                                    android:textColor="@color/brown"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
 
                             <in.yellowsoft.darabeel.MyTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="PROCEED TO PAY"
-                                android:id="@+id/tv_proceed_pay"
-                                android:textColor="#ffffff"
+                                android:text=":"
+                                android:id="@+id/textView2"
+                                android:textColor="@color/brown"
                                 android:textSize="15sp"
-                                android:padding="7dp"
-                                android:gravity="center"
-                                android:textStyle="bold" />
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <in.yellowsoft.darabeel.MyTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/reward_tv"
+                                    android:textColor="@color/pink_text"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/pink_rounded_corners"
+                                    android:id="@+id/final_use_ll">
+
+                                    <in.yellowsoft.darabeel.MyTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Use"
+                                        android:id="@+id/final_use"
+                                        android:textColor="#ffffff"
+                                        android:textSize="15sp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="15dp"
+                                        android:layout_marginBottom="5dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/pink_rounded_corners"
+                                    android:id="@+id/final_dnt_use_ll">
+
+                                    <in.yellowsoft.darabeel.MyTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Dont Use"
+                                        android:id="@+id/dnt_use"
+                                        android:textColor="#ffffff"
+                                        android:textSize="15sp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="15dp"
+                                        android:layout_marginBottom="5dp" />
+                                </LinearLayout>
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
+
                 </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:orientation="vertical"

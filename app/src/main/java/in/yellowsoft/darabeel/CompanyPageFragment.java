@@ -354,6 +354,7 @@ public class CompanyPageFragment extends Fragment {
             @Override
             public void onResponse(JSONArray jsonArray) {
                 progressDialog.dismiss();
+                area_list.clear();
                 Log.e("orders response is: ", jsonArray.toString());
 
                 try {

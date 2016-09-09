@@ -58,21 +58,23 @@ public class FinalFragment extends Fragment {
             tv_cash,tv_knet,tv_credit_card,payment_option,tv_proceed_pay,stat_sub_total,sta_discount,stat_delivery_charges,sta_dara,dara,address_guest,
             stat_grand_total,stat_tv_area,stat_tv_block,stat_tv_street,stat_tv_building,stat_tv_floor,stat_tv_apartment,addr_name_tv,
             stat_tv_mobile,tv_edit,cancel_tv,save_tv,tv_add,tv_spl_com,tv_coupon_code,tv_submit,date_tv,time_tv,gues_fname,
-            guest_lname,guest_email,guest_home_ph,guest_work_ph,add_add,add_area,later_tv,now_tv,cancel_add_tv;
+            guest_lname,guest_email,guest_home_ph,guest_work_ph,add_add,add_area,later_tv,now_tv,cancel_add_tv,sta_reward_title,
+            sta_reward_tv,reward_tv,use_tv,dnt_use_tv;
     MyEditText e_area, e_block, e_street, e_building, e_floor,e_aprtment,e_mobile,spl_comment,coupon_code,addr_name,
             et_fname,et_lname,et_email,et_work_ph,et_home_ph,add_et_addresss_name,add_et_block,add_et_street,add_et_floor,
             add_et_buillding,add_et_flat,add_et_mobile,add_et_directions;
     LinearLayout edit,add,cancel,save_ll,submit,ll_cash,ll_knet,ll_credit_card,ll_proceed_pay,date_lll,time_ll,drop_down_ll,
-            address_guest_ll,mobile_ll_final,spl_com_ll,coupon_ll,add_add_ll,cancel_add_address_fin,later,now,dt_ll;
+            address_guest_ll,mobile_ll_final,spl_com_ll,coupon_ll,add_add_ll,cancel_add_address_fin,later,now,dt_ll,
+            reward_pop,use_ll,dnt_use_ll;
     JSONObject jsonObjecttosend = new JSONObject();
     FinalPageAdapter finalPageAdapter;
-    String rest_id,product_id,quantity,pricee,coupon,date="0",time="0",date1,time1;
+    String rest_id,product_id,quantity,pricee,coupon,date="0",time="0",date1,time1,t1;
     String check;
     Float total = 0f;
     Float dara_charges=0f;
     Float del_total = 0f;
     Float grn_total = 0f;
-    String delivery;
+    String delivery,reward_price,rew_price="0";
     boolean islater=false;
     int hour,minutes;
     Float g_total = 0f;
@@ -87,7 +89,7 @@ public class FinalFragment extends Fragment {
     LinearLayout personal_details;
     ArrayList<String> address_id;
     ArrayList<String> address_title;
-    String addrs_id,selected_area_id,t1;
+    String addrs_id,selected_area_id;
     String spl_req;
     ArrayList<Addresss> address_list;
     int click=1,click1=1;
@@ -135,6 +137,7 @@ public class FinalFragment extends Fragment {
         date="";
         time1="";
         date1="";
+        get_reward();
         address_list=new ArrayList<>();
         cart_items=new ArrayList<>();
         cart_items=(ArrayList)getArguments().getSerializable("cart_items");
@@ -142,6 +145,20 @@ public class FinalFragment extends Fragment {
         address_title=new ArrayList<>();
         address_list=new ArrayList<>();
         mobile_ll_final=(LinearLayout)view.findViewById(R.id.mobile_ll_final);
+        sta_reward_title=(MyTextView)view.findViewById(R.id.sta_title_reward);
+        sta_reward_title.setText(Settings.getword(getActivity(),"title_reward"));
+        reward_tv=(MyTextView)view.findViewById(R.id.reward_tv);
+//        reward_tv.setText(Settings.getword(getActivity(),"reward_price"));
+        sta_reward_tv=(MyTextView)view.findViewById(R.id.sta_reward_tv);
+        sta_reward_tv.setText(Settings.getword(getActivity(),"reward_price"));
+        use_tv=(MyTextView)view.findViewById(R.id.final_use);
+        use_tv.setText(Settings.getword(getActivity(),"use"));
+        dnt_use_tv=(MyTextView)view.findViewById(R.id.dnt_use);
+        dnt_use_tv.setText(Settings.getword(getActivity(),"dont_use"));
+        reward_pop=(LinearLayout)view.findViewById(R.id.reward_pop);
+        use_ll=(LinearLayout)view.findViewById(R.id.final_use_ll);
+        dnt_use_ll=(LinearLayout)view.findViewById(R.id.final_dnt_use_ll);
+
         summery=(MyTextView)view.findViewById(R.id.summery);
         summery.setText(Settings.getword(getActivity(),"summary"));
         gues_fname=(MyTextView)view.findViewById(R.id.guest_fname);
@@ -418,6 +435,7 @@ public class FinalFragment extends Fragment {
                 time="";
                 date1="0";
                 time1="0";
+                t1="0";
 
             }
         });
@@ -548,6 +566,7 @@ public class FinalFragment extends Fragment {
                         addrs_id = address_id.get(which);
                         selected_area_id = address_list.get(which).area_id;
 //                        addr_name.setText(address_list.get(which).alias);
+                        delivery_charges();
                         address_guest.setText(address_list.get(which).alias);
                         e_area.setText(address_list.get(which).area_title + Settings.get_lan(getActivity()));
                         e_block.setText(address_list.get(which).block);
@@ -875,6 +894,7 @@ public class FinalFragment extends Fragment {
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_payment"), false);
                     else {
                         if (delivery.equals("1"))
+//                            reward_pop.setVisibility(View.VISIBLE);
                             place_set_data();
                         else
                             check_date_time();
@@ -902,15 +922,55 @@ public class FinalFragment extends Fragment {
                     else if (pay_met.equals(""))
                         alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "empty_payment"), false);
                     else {
-                        if (delivery.equals("1"))
-                            place_set_data();
-                        else
+                        if (delivery.equals("1")) {
+                            if (reward_price.equals("0")) {
+                                reward_pop.setVisibility(View.GONE);
+                                place_set_data();
+                            }else{
+                                reward_pop.setVisibility(View.VISIBLE);
+                            }
+                        }else
                             check_date_time();
                     }
                 }
             }
         });
+        use_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                if(g_total<Float.parseFloat(reward_price)){
+                    g_total=0f;
+                    pay_met = "cash";
+                    Float temp=Float.parseFloat(reward_price)-g_total;
+                    rew_price=String.format("%.3f",(Float.parseFloat(reward_price)-temp));
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+temp, false);
+                    place_set_data();
+                    reward_pop.setVisibility(View.GONE);
+                }else if(g_total==Float.parseFloat(reward_price)) {
+                    g_total = g_total - Float.parseFloat(reward_price);
+                    pay_met = "cash";
+                    rew_price=reward_price;
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+"0", false);
+                    place_set_data();
+                    reward_pop.setVisibility(View.GONE);
+                }else{
+                    g_total = g_total - Float.parseFloat(reward_price);
+                    rew_price=reward_price;
+                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+"0", false);
+                    place_set_data();
+                    reward_pop.setVisibility(View.GONE);
+                }
+            }
+        });
+        dnt_use_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reward_price="0";
+                reward_pop.setVisibility(View.GONE);
+                place_set_data();
+            }
+        });
 
         view.setFocusableInTouchMode(true);
         view.requestFocus();
@@ -933,6 +993,8 @@ public class FinalFragment extends Fragment {
     }
     public  void check_date_time(){
         String url = null;
+        Log.e("date",date1);
+        Log.e("time",t1);
         try {
             url = Settings.SERVERURL+"delivery-date-check.php?rest_id="+ URLEncoder.encode(cart_items.get(0).products.restaurant.res_id, "utf-8")+
                     "&date="+URLEncoder.encode(date1, "utf-8")+"&time="+URLEncoder.encode(t1, "utf-8");
@@ -956,7 +1018,13 @@ public class FinalFragment extends Fragment {
                     if(reply.equals("Success")) {
                         String msg = jsonObject.getString("message");
                         Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
-                        place_set_data();
+//                        place_set_data();
+                        if(reward_price.equals("0")) {
+                            reward_pop.setVisibility(View.GONE);
+                            place_set_data();
+                        }else{
+                            reward_pop.setVisibility(View.VISIBLE);
+                        }
                     }
                     else {
                         String msg = jsonObject.getString("message");
@@ -986,7 +1054,107 @@ public class FinalFragment extends Fragment {
 
 
     }
+    String reward_points;
+    public  void get_reward(){
+        String url = null;
+            url = Settings.SERVERURL+"rewards.php?member_id="+Settings.getUserid(getActivity());
+        Log.e("url--->", url);
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage(Settings.getword(getActivity(), "please_wait"));
+        progressDialog.show();
+        progressDialog.setCancelable(false);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,new Response.Listener<JSONObject>() {
 
+            @Override
+            public void onResponse(JSONObject jsonObject) {
+                progressDialog.dismiss();
+                Log.e("response is: ", jsonObject.toString());
+
+                try {
+                    String reply=jsonObject.getString("status");
+                    if(reply.equals("Success")) {
+//                        String msg = jsonObject.getString("message");
+//                        Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+                        reward_price=jsonObject.getString("reward_price");
+                        reward_points=jsonObject.getString("reward_points");
+                        reward_tv.setText(String.format("%.3f",Float.parseFloat(reward_price)));
+//                        place_set_data();
+                    }
+                    else {
+                        String msg = jsonObject.getString("message");
+                        alert.showAlertDialog(getActivity(), "Info",msg, false);
+//                        Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO Auto-generated method stub
+                Log.e("response is:", error.toString());
+                Toast.makeText(getActivity(),Settings.getword(getActivity(),"server_not_connected"), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+            }
+
+        });
+
+// Access the RequestQueue through your singleton class.
+        AppController.getInstance().addToRequestQueue(jsonObjectRequest);
+
+
+    }
+    public void delivery_charges(){
+        String url;
+        if(Settings.getArea_id(getActivity()).equals("-1")) {
+        }else {
+
+            url = Settings.SERVERURL + "charges.php?" + "rest_id=" +cart_items.get(0).products.restaurant.res_id+ "&area=" + selected_area_id;
+            Log.e("url--->", url);
+            final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+            progressDialog.show();
+            progressDialog.setMessage(Settings.getword(getActivity(), "please_wait"));
+            progressDialog.setCancelable(false);
+            final JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject jsonObject) {
+                    if (progressDialog != null)
+                        progressDialog.dismiss();
+                    Log.e("orders response is: ", jsonObject.toString());
+                    try {
+                        String deliv_charges = jsonObject.getString("price");
+//                        com_delivery_charges.setText(deliv_charges + " KD ");
+                        delivery_charges.setText(deliv_charges + " KD");
+                        del_total=Float.parseFloat(deliv_charges);
+                        grn_total= total+del_total+dara_charges;
+                        g_total=grn_total;
+                        grand_total.setText(String.format("%.3f", g_total) + " KD");
+                        Settings.setDelivery_charges(getActivity(), deliv_charges);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    // TODO Auto-generated method stub
+                    Log.e("response is:", error.toString());
+                    Toast.makeText(getActivity(), Settings.getword(getActivity(), "server_not_connected"), Toast.LENGTH_SHORT).show();
+                    if (progressDialog != null)
+                        progressDialog.dismiss();
+                }
+
+            });
+
+// Access the RequestQueue through your singleton class.
+            AppController.getInstance().addToRequestQueue(jsObjRequest);
+        }
+    }
         public  void place_set_data(){
                 JSONObject address_object = new JSONObject();
                      JSONArray products_array = new JSONArray();
@@ -1022,6 +1190,9 @@ public class FinalFragment extends Fragment {
                         place_order_object.put("total_price", String.format("%.3f", g_total));
                         Log.e("tp", String.format("%.3f", g_total));
                         place_order_object.put("payment_method", pay_met);
+                        if (!Settings.getUserid(getActivity()).equals("-1")) {
+                            place_order_object.put("reward_amount", String.format("%.3f", Float.parseFloat(rew_price)));
+                        }
                         place_order_object.put("delivery", delivery);
                         place_order_object.put("delivery_date", date);
                         place_order_object.put("delivery_time", time);
@@ -1043,7 +1214,7 @@ public class FinalFragment extends Fragment {
                                     if (cart_items.get(i).products.groups.get(j).addons.get(k).isselected){
                                         addon.put("addon_id", cart_items.get(i).products.groups.get(j).addons.get(k).addon_id);
                                         Log.e("addonId", cart_items.get(i).products.groups.get(j).addons.get(k).addon_id);
-                                        addon.put("price", String.format("%.3f",cart_items.get(i).products.groups.get(j).addons.get(k).price));
+                                        addon.put("price", String.format("%.3f",Float.parseFloat(cart_items.get(i).products.groups.get(j).addons.get(k).price)));
                                         Log.e("addonPrice", cart_items.get(i).products.groups.get(j).addons.get(k).price);
                                         addon_array.put(addon);
                                 }
@@ -1116,12 +1287,14 @@ public class FinalFragment extends Fragment {
                             g_total = grn_total+del_total+dara_charges;
                             grand_total.setText(String.format("%.3f", g_total) + " KD");
                             discount.setText(dis_value+" KD");
+                            delivery_charges();
                         }else{
                             dis_amount=total/Float.parseFloat(dis_value);
                             grn_total=total-dis_amount;
                             g_total=grn_total+del_total+dara_charges;
                             grand_total.setText(String.format("%.3f",g_total) + " KD");
                             discount.setText(dis_value+" KD");
+                            delivery_charges();
                         }
 
                     }

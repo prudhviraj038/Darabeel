@@ -1,6 +1,7 @@
 package in.yellowsoft.darabeel;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -15,8 +16,10 @@ import android.widget.AdapterView;
 
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 
 import com.android.volley.Response;
@@ -42,11 +45,14 @@ public class CompanyListFragment extends Fragment {
     String search1;
     boolean p1=false;
     boolean p2=false;
-    String sta="",pay1="",pay2="",rate="",date="";
-    LinearLayout filter_ll,open_ll,busy_ll,close_ll,cash_ll,knet_ll,r1_ll,r2_ll,r3_ll,r4_ll,r5_ll,submit,reset_ll,d1,d2,d3,d4,d5,d6,d7,d8;
-    ImageView open_img,busy_img,close_img,cash_img,knet_img,r1_img,r2_img,r3_img,r4_img,r5_img,d1_im,d2_im,d3_im,d4_im,d5_im,d6_im,d7_im,d8_im;
+    ArrayList<Days> dayses;
+    String sta="",pay1="",pay2="",rate="",date="",temp="";
+    LinearLayout lv_ll,filter_ll,open_ll,busy_ll,close_ll,cash_ll,knet_ll,r1_ll,r2_ll,r3_ll,r4_ll,r5_ll,submit,reset_ll,d1,d2,d3,d4,d5,d6,d7,d8;
+    ImageView drop_img,open_img,busy_img,close_img,cash_img,knet_img,r1_img,r2_img,r3_img,r4_img,r5_img,d1_im,d2_im,d3_im,d4_im,d5_im,d6_im,d7_im,d8_im;
     MyTextView open_tv,busy_tv,close_tv,cash_tv,knet_tv,sta_status,sta_rate,sta_pay,submit_tv,sta_del_date;
     LinearLayout s_ll;
+    ListView time_list;
+    DateAdapter dateAdapter;
     ImageView filter,search_img;
     boolean loaded=false;
     FragmentTouchListner mCallBack;
@@ -88,13 +94,23 @@ public class CompanyListFragment extends Fragment {
          head="Restaurants List";
 //         mCallBack.text_back_butt(head);
         mCallBack.filter(head);
+        dayses=new ArrayList<>();
+        get_dates();
+        drop_img=(ImageView)view.findViewById(R.id.drop_img);
+        lv_ll=(LinearLayout)view.findViewById(R.id.lv_ll);
         progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
         type=(String)getArguments().getSerializable("cat");
         id=(String)getArguments().getSerializable("url");
         ListView listView=(ListView)view.findViewById(R.id.com_list);
+        time_list=(ListView)view.findViewById(R.id.time_lv);
+        dateAdapter=new DateAdapter(getActivity(),dayses);
+        time_list.setAdapter(dateAdapter);
+        sta_del_date=(MyTextView)view.findViewById(R.id.sta_del_date);
+        sta_del_date.setText(Settings.getword(getActivity(), "text_delivery_time"));
         no_res=(MyTextView)view.findViewById(R.id.no_res);
         s_ll=(LinearLayout)view.findViewById(R.id.s_ll);
         search=(MyEditText) view.findViewById(R.id.search_com_list_et);
+
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -117,6 +133,18 @@ public class CompanyListFragment extends Fragment {
                 }
             }
         });
+        drop_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(lv_ll.getVisibility()==View.VISIBLE){
+                    lv_ll.setVisibility(View.GONE);
+                    setListViewHeightBasedOnItems(time_list);
+                }else{
+                    lv_ll.setVisibility(View.VISIBLE);
+                    setListViewHeightBasedOnItems(time_list);
+                }
+            }
+        });
         search_img=(ImageView)view.findViewById(R.id.s_img);
         search_img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,7 +153,14 @@ public class CompanyListFragment extends Fragment {
                 getResta();
             }
         });
-
+        time_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                date=dayses.get(position).str;
+                sta_del_date.setText(dayses.get(position).getTitle(getActivity()));
+                lv_ll.setVisibility(View.GONE);
+            }
+        });
         filter_ll=(LinearLayout)view.findViewById(R.id.filter_lll);
         open_ll=(LinearLayout)view.findViewById(R.id.open_ll);
         busy_ll=(LinearLayout)view.findViewById(R.id.busy_ll);
@@ -185,14 +220,14 @@ public class CompanyListFragment extends Fragment {
         knet_tv.setText(Settings.getword(getActivity(),"knet"));
         submit_tv=(MyTextView)view.findViewById(R.id.sub_pop);
         submit_tv.setText(Settings.getword(getActivity(), "submit"));
-        sta_del_date=(MyTextView)view.findViewById(R.id.sta_del_date);
-        sta_del_date.setText(Settings.getword(getActivity(), "text_delivery_time"));
+
 
         reset_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sta="";rate="";date="";pay1="";pay2="";
                 p1=false; p2=false;
+                sta_del_date.setText(Settings.getword(getActivity(), "text_delivery_time"));
                 open_img.setImageResource(R.drawable.ic_option_brown);
                 busy_img.setImageResource(R.drawable.ic_option_brown);
                 close_img.setImageResource(R.drawable.ic_option_brown);
@@ -454,11 +489,11 @@ public class CompanyListFragment extends Fragment {
 //                    String constraint = sta + "@_@" + pay + "@_@" + pay + "@_@" + rate;
 //                    companylistAdapter.getFilter().filter(constraint);
                 get_filter_Resta();
-                    filter_ll.setVisibility(View.GONE);
+                filter_ll.setVisibility(View.GONE);
 
             }
         });
-
+        setListViewHeightBasedOnItems(time_list);
         companylistAdapter=new CompanylistAdapter(getActivity(),restaurants);
 //        mCallBack.five_items();
         listView.setAdapter(companylistAdapter);
@@ -485,6 +520,10 @@ public class CompanyListFragment extends Fragment {
                 return false;
             }
         });
+        temp=Settings.getArea_id(getActivity());
+        if(temp.equals("-1")){
+            temp="";
+        }
     }
     public  void filter(){
         if(filter_ll.getVisibility()==View.VISIBLE) {
@@ -657,7 +696,7 @@ public class CompanyListFragment extends Fragment {
 
         try {
 
-            url = Settings.SERVERURL + "restaurants.php?area_id=" + Settings.getArea_id(getActivity())+"&cur_status="+ URLEncoder.encode(sta, "utf-8")+
+            url = Settings.SERVERURL + "restaurants.php?area_id=" +temp +"&cur_status="+ URLEncoder.encode(sta, "utf-8")+
                     "&del_time="+ URLEncoder.encode(date, "utf-8")+ "&payment_type1="+ URLEncoder.encode(pay1, "utf-8")+
                     "&payment_type2="+ URLEncoder.encode(pay2, "utf-8");
         } catch (UnsupportedEncodingException e) {
@@ -724,6 +763,8 @@ public class CompanyListFragment extends Fragment {
                         no_res.setVisibility(View.VISIBLE);
                     }
 
+                }else{
+                    restaurants.add(temp);
                 }
 
 
@@ -743,5 +784,87 @@ public class CompanyListFragment extends Fragment {
         }
 
     }
+    private void get_dates() {
+        String url = null;
+        try {
+            url = Settings.SERVERURL + "delivery_times.php";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Log.e("url--->", url);
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Please wait....");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
 
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray jsonArray) {
+                progressDialog.dismiss();
+//                dayses.clear();
+                Log.e("orders response is: ", jsonArray.toString());
+
+                try {
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                            JSONObject sub = jsonArray.getJSONObject(i);
+//                            String id = jsonArray.getJSONObject(i).getString("id");
+//                            String area = jsonArray.getJSONObject(i).getString("title");
+//                            String area_ar = jsonArray.getJSONObject(i).getString("title_ar");
+                            Days person = new Days(jsonArray.getJSONObject(i));
+                            dayses.add(person);
+
+                    }
+                    dateAdapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO Auto-generated method stub
+                Log.e("response is:", error.toString());
+                Toast.makeText(getActivity(), Settings.getword(getActivity(), "server_not_connected"), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+            }
+
+        });
+
+// Access the RequestQueue through your singleton class.
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
+    }
+    public static boolean setListViewHeightBasedOnItems(ListView listView) {
+
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter != null) {
+
+            int numberOfItems = listAdapter.getCount();
+
+            // Get total height of all items.
+            int totalItemsHeight = 0;
+            for (int itemPos = 0; itemPos < numberOfItems; itemPos++) {
+                View item = listAdapter.getView(itemPos, null, listView);
+                item.measure(0, 0);
+                totalItemsHeight += item.getMeasuredHeight();
+            }
+
+            // Get total height of all item dividers.
+            int totalDividersHeight = listView.getDividerHeight() *
+                    (numberOfItems - 1);
+
+            // Set list height.
+            ViewGroup.LayoutParams params = listView.getLayoutParams();
+            params.height = totalItemsHeight + totalDividersHeight;
+            listView.setLayoutParams(params);
+            listView.requestLayout();
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
 }

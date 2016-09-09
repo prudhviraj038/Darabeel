@@ -138,8 +138,8 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         });
         prgmImages.add(R.drawable.menu_ic_home);
         prgmImages.add(R.drawable.cart_icon_white);
-        prgmImages.add(R.drawable.menu_ic_myaccount);
-        prgmImages.add(R.drawable.menu_ic_myaccount);
+        prgmImages.add(R.drawable.menu_ic_my);
+        prgmImages.add(R.drawable.menu_ic_my);
         prgmImages.add(R.drawable.menu_ic_myorders);
         prgmImages.add(R.drawable.menu_ic_ratemyorder);
         prgmImages.add(R.drawable.menu_ic_mostselling);
@@ -579,6 +579,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
     @Override
     public void to_login() {
         animation_direction=true;
+        clear_twopages=false;
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         LoginFragment loginFragment = new LoginFragment();
         fragmentManager.beginTransaction().replace(R.id.container_main, loginFragment).addToBackStack(null).commit();
