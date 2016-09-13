@@ -15,7 +15,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="60dp"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -26,67 +27,89 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginBottom="30dp">
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_alignParentLeft="false"
-                android:layout_alignParentStart="false"
-                android:id="@+id/relativeLayout_english">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView35"
+                android:src="@drawable/splash"
+                android:adjustViewBounds="false"
+                android:scaleType="fitXY" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView5"
-                    android:src="@drawable/bg_language"
-                    android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp">
 
-                <in.yellowsoft.darabeel.MyTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="English"
-                    android:id="@+id/english"
-                    android:textColor="#ffffff"
-                    android:layout_centerInParent="true"
-                    android:textSize="15sp" />
-            </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentStart="false"
+                        android:id="@+id/relativeLayout_english">
 
-            <RelativeLayout
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:id="@+id/relativeLayout_arabic"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/relativeLayout_english"
-                android:layout_toEndOf="@+id/relativeLayout_english"
-                android:layout_marginTop="30dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/imageView5"
+                            android:src="@drawable/bg_language"
+                            android:adjustViewBounds="false"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView6"
-                    android:src="@drawable/bg_language"
-                    android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/relativeLayout_english"
-                    android:layout_toStartOf="@+id/relativeLayout_english" />
+                        <in.yellowsoft.darabeel.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="English"
+                            android:id="@+id/english"
+                            android:textColor="#ffffff"
+                            android:layout_centerInParent="true"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
 
-                <in.yellowsoft.darabeel.MyTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="العربية"
-                    android:id="@+id/arabic"
-                    android:textColor="#ffffff"
-                    android:layout_centerInParent="true"
-                    android:textSize="15sp" />
+                    <RelativeLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:id="@+id/relativeLayout_arabic"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/relativeLayout_english"
+                        android:layout_toEndOf="@+id/relativeLayout_english"
+                        android:layout_marginTop="30dp">
 
-            </RelativeLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/imageView6"
+                            android:src="@drawable/bg_language"
+                            android:adjustViewBounds="false"
+                            android:layout_alignParentTop="true"
+                            android:layout_toLeftOf="@+id/relativeLayout_english"
+                            android:layout_toStartOf="@+id/relativeLayout_english" />
+
+                        <in.yellowsoft.darabeel.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="العربية"
+                            android:id="@+id/arabic"
+                            android:textColor="#ffffff"
+                            android:layout_centerInParent="true"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
 
         </RelativeLayout>
+
     </LinearLayout>
 
 </LinearLayout>

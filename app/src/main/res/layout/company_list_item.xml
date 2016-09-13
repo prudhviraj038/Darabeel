@@ -258,7 +258,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/pink_text"></LinearLayout>
+            android:background="#ff107a"></LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"

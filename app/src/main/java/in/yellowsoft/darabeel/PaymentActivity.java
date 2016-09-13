@@ -30,7 +30,7 @@ public class PaymentActivity extends Activity {
         webView.setWebChromeClient(new MyWebViewClient());
         String cust_id = getIntent().getStringExtra("cust_id");
         pack_price = getIntent().getStringExtra("pack_price");
-        webView.loadUrl(Settings.PAYMENT_URL + "member_id=" + cust_id + "&amount=" + pack_price);
+            webView.loadUrl(Settings.PAYMENT_URL + "member_id=" + cust_id + "&amount=" + pack_price);
         Log.e("pay_url", Settings.PAYMENT_URL + "member_id=" + cust_id + "&amount=" + pack_price);
         progress = (ProgressBar) findViewById(R.id.progressBar);
         progress.setMax(100);

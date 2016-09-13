@@ -92,7 +92,8 @@ public class CompanylistAdapter extends BaseAdapter implements Filterable{
         }else {
             holder.status.setTextColor(context.getResources().getColor(R.color.yellow_text));
         }
-        holder.status.setText("("+restaurants.get(position).status+")");
+        holder.status.setText("("+Settings.getword(context,restaurants.get(position).status)+")");
+
 //        holder.reviews.setText("("+restaurants.get(position).reviews+")");
         holder.com_name=(MyTextView) rowView.findViewById(R.id.company_list_name);
         holder.com_items=(MyTextView) rowView.findViewById(R.id.company_list_items);

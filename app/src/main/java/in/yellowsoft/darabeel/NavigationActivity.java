@@ -30,7 +30,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         OffersListFragment.FragmentTouchListner, PromotionsListFragment.FragmentTouchListner, SearchFragment.FragmentTouchListner,
         VerificationFragment.FragmentTouchListner, MyOrdersfragment.FragmentTouchListner, MyAddressfragment.FragmentTouchListner,
         ChangePasswordfragment.FragmentTouchListner, EditProfilefragment.FragmentTouchListner, Settingsfragment.FragmentTouchListner,
-        AreaFragment.FragmentTouchListner, Reviewsfragment.FragmentTouchListner {
+        AreaFragment.FragmentTouchListner, Reviewsfragment.FragmentTouchListner, LiveSupportfragment.FragmentTouchListner {
     ArrayList<Integer> prgmImages = new ArrayList<>();
     ArrayList<String> prgmTitles = new ArrayList<>();
     ArrayList<Integer> subprgmImages = new ArrayList<>();
@@ -138,7 +138,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         });
         prgmImages.add(R.drawable.menu_ic_home);
         prgmImages.add(R.drawable.cart_icon_white);
-        prgmImages.add(R.drawable.menu_ic_my);
+        prgmImages.add(R.drawable.live_chat);
         prgmImages.add(R.drawable.menu_ic_my);
         prgmImages.add(R.drawable.menu_ic_myorders);
         prgmImages.add(R.drawable.menu_ic_ratemyorder);
@@ -211,6 +211,11 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
 
                     case 2:
                         mDrawerLayout.closeDrawer(GravityCompat.START);
+                        animation_direction=true;
+                        FragmentManager fragmentManager1 = getSupportFragmentManager();
+                        LiveSupportfragment liveSupportfragment = new LiveSupportfragment();
+                        fragmentManager1.beginTransaction().replace(R.id.container_main, liveSupportfragment).addToBackStack(null).commit();
+
                         break;
                     case 3:
                         mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -583,6 +588,7 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         LoginFragment loginFragment = new LoginFragment();
         fragmentManager.beginTransaction().replace(R.id.container_main, loginFragment).addToBackStack(null).commit();
+        clear_twopages=false;
     }
 
     @Override
@@ -740,6 +746,12 @@ public class NavigationActivity extends FragmentActivity implements HomeFragment
         menu.setVisibility(View.VISIBLE);
         cart_icon.setVisibility(View.GONE);
     }
+
+    @Override
+    public void clear_backstack() {
+        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    }
+
     @Override
     public void product_list(String rest_id,String cat_id,String cat_name,String type) {
         animation_direction=true;

@@ -241,7 +241,7 @@ public class CompanyPageFragment extends Fragment {
             }
         });
         com_status=(MyTextView)view.findViewById(R.id.status);
-        com_status.setText(restaurants.status);
+        com_status.setText(Settings.getword(getActivity(),restaurants.status));
         com_cuisines=(MyTextView)view.findViewById(R.id.cuisines);
         String temp="";
         for(int i=0;i<restaurants.category.size();i++){
@@ -289,6 +289,8 @@ public class CompanyPageFragment extends Fragment {
             }
         });
     }
+
+
 
     public void dis_area(){
 

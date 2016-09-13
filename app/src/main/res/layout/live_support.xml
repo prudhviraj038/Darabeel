@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow_background"
+        android:padding="2dp">
+
+        <in.yellowsoft.darabeel.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:id="@+id/tittle_aboutus"
+            android:textColor="@color/pink_text"
+            android:autoText="false"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/progressBar7"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webView2" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView5"
+            android:visibility="gone">
+
+            <in.yellowsoft.darabeel.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="dddgvdgvfdfvdfvdfvgdfdfdfefdrhrggd"
+                android:id="@+id/aboutus_descri"
+                android:gravity="center|center_horizontal"
+                android:padding="5dp"
+                android:textColor="@color/brown"
+                android:textSize="14sp" />
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

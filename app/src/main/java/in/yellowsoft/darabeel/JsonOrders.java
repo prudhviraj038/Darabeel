@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class JsonOrders implements java.io.Serializable {
     String id,fname,lname,home_ph,work_ph,area_id,area_title,area_title_ar,block,street,building,flor,flat,phone,
             comments,coupon_code,dis_amount,pricee,del_charges,tot_price,payment_method,res_id,res_title,res_title_ar,res_image,
-            deli_date,deli_time,pay_status,deli_status,date,ratingg,review,dara;
+            deli_date,deli_time,pay_status,deli_status,date,ratingg,review,dara,reward;
     ArrayList<Product> product;
     JsonOrders(JSONObject order){
         product=new ArrayList<>();
@@ -38,6 +38,7 @@ public class JsonOrders implements java.io.Serializable {
             coupon_code=order.getString("coupon_code");
             dis_amount=order.getString("discount_amount");
             dara=order.getString("darabeel_charges");
+            reward = order.getString("reward_amount");
             pricee=order.getString("price");
             del_charges=order.getString("delivery_charges");
             tot_price=order.getString("total_price");

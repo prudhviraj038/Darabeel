@@ -52,6 +52,7 @@ public class HomeFragment extends Fragment {
     @Override
     public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
         return mCallBack.get_animation(enter,loaded);
+
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -373,6 +374,7 @@ public class HomeFragment extends Fragment {
         public void songselected(Restaurants restaurants);
         public void companyfragment(String cat);
         public void home_head(String head);
+        public void clear_backstack();
         public Animation get_animation(Boolean enter,Boolean loaded);
     }
         public void res_selected(int position) {

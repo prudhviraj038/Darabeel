@@ -149,8 +149,10 @@ public class FinalFragment extends Fragment {
         sta_reward_title.setText(Settings.getword(getActivity(),"title_reward"));
         reward_tv=(MyTextView)view.findViewById(R.id.reward_tv);
 //        reward_tv.setText(Settings.getword(getActivity(),"reward_price"));
+
         sta_reward_tv=(MyTextView)view.findViewById(R.id.sta_reward_tv);
         sta_reward_tv.setText(Settings.getword(getActivity(),"reward_price"));
+
         use_tv=(MyTextView)view.findViewById(R.id.final_use);
         use_tv.setText(Settings.getword(getActivity(),"use"));
         dnt_use_tv=(MyTextView)view.findViewById(R.id.dnt_use);
@@ -940,24 +942,27 @@ public class FinalFragment extends Fragment {
             public void onClick(View v) {
 
                 if(g_total<Float.parseFloat(reward_price)){
-                    g_total=0f;
+
                     pay_met = "cash";
                     Float temp=Float.parseFloat(reward_price)-g_total;
-                    rew_price=String.format("%.3f",(Float.parseFloat(reward_price)-temp));
-                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+temp, false);
+                    rew_price=String.format("%.3f",g_total);
+                 //   alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+temp, false);
+                    g_total=0f;
                     place_set_data();
+
                     reward_pop.setVisibility(View.GONE);
+
                 }else if(g_total==Float.parseFloat(reward_price)) {
                     g_total = g_total - Float.parseFloat(reward_price);
                     pay_met = "cash";
                     rew_price=reward_price;
-                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+"0", false);
+                  //  alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+"0", false);
                     place_set_data();
                     reward_pop.setVisibility(View.GONE);
                 }else{
                     g_total = g_total - Float.parseFloat(reward_price);
                     rew_price=reward_price;
-                    alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+"0", false);
+                  //  alert.showAlertDialog(getActivity(), "Info", Settings.getword(getActivity(), "thank_you_reward")+" : "+"0", false);
                     place_set_data();
                     reward_pop.setVisibility(View.GONE);
                 }
@@ -1190,6 +1195,7 @@ public class FinalFragment extends Fragment {
                         place_order_object.put("total_price", String.format("%.3f", g_total));
                         Log.e("tp", String.format("%.3f", g_total));
                         place_order_object.put("payment_method", pay_met);
+
                         if (!Settings.getUserid(getActivity()).equals("-1")) {
                             place_order_object.put("reward_amount", String.format("%.3f", Float.parseFloat(rew_price)));
                         }
