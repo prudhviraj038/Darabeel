@@ -87,7 +87,7 @@ public class OrderAdapter extends BaseAdapter{
         holder.order_id=(MyTextView) rowView.findViewById(R.id.order_id);
         holder.order_id.setText(orderses.get(position).id);
         holder.pri=(MyTextView) rowView.findViewById(R.id.tot_price);
-        holder.pri.setText(" KD "+orderses.get(position).tot_price);
+        holder.pri.setText(orderses.get(position).tot_price +" KD");
         holder.date=(MyTextView) rowView.findViewById(R.id.date);
         holder.date.setText(orderses.get(position).date);
         holder.pay_method=(MyTextView) rowView.findViewById(R.id.pay_method);

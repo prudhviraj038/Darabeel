@@ -122,7 +122,7 @@
                                 android:layout_weight="1">
 
                                 <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/my_alias_et"
                                     android:textColor="@color/pink_text"
@@ -157,11 +157,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:id="@+id/area_list_my_acc">
+                                android:id="@+id/area_list_my_acc"
+                                android:gravity="center_vertical">
 
                                 <in.yellowsoft.darabeel.MyTextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/my_area_et"
                                     android:textColor="@color/pink_text"
@@ -169,15 +169,22 @@
                                     android:background="#00000000"
                                     android:padding="3dp"
                                     android:singleLine="true"
-                                    android:text="Salmiya"
-                                    android:layout_weight="1" />
+                                    android:text="Salmiya" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"></LinearLayout>
 
                                 <ImageView
-                                    android:layout_width="0dp"
-                                    android:layout_height="20dp"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
                                     android:id="@+id/imageView24"
                                     android:src="@drawable/down_arrow_pink"
-                                    android:layout_weight="1" />
+                                    android:adjustViewBounds="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp" />
                             </LinearLayout>
 
                         </LinearLayout>
@@ -206,7 +213,7 @@
                                 android:layout_weight="1">
 
                                 <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/my_block_et"
                                     android:textColor="@color/pink_text"
@@ -243,7 +250,7 @@
                                 android:layout_weight="1">
 
                                 <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/my_street_et"
                                     android:textColor="@color/pink_text"
@@ -281,7 +288,7 @@
                                 android:layout_weight="1">
 
                                 <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/my_buiding_et"
                                     android:textColor="@color/pink_text"
@@ -319,7 +326,7 @@
                                 android:layout_weight="1">
 
                                 <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/my_floor_et"
                                     android:textColor="@color/pink_text"
@@ -357,7 +364,7 @@
                                 android:layout_weight="1">
 
                                 <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/my_flat_et"
                                     android:textColor="@color/pink_text"
@@ -396,7 +403,7 @@
                                 android:layout_weight="1">
 
                                 <in.yellowsoft.darabeel.MyEditText
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:id="@+id/my_mobile_et"
                                     android:textColor="@color/pink_text"

@@ -1176,7 +1176,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Payment Option"
-                                    android:id="@+id/in.yellowsoft.darabeel.MyTextView24"
+                                    android:id="@+id/tv_delivery_time_option"
                                     android:layout_alignParentStart="false"
                                     android:background="@drawable/brown_rounded_corners_full"
                                     android:layout_centerHorizontal="true"

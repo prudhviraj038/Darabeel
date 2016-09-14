@@ -57,8 +57,10 @@ public class ContactUsFragment extends Fragment {
         View v = getView();
 //        loaded=true;
         LinearLayout contact_us=(LinearLayout)v.findViewById(R.id.contact_us);
-        contact_us_txt=(MyTextView)v.findViewById(R.id.address_contact);
+
+        contact_us_txt=(MyTextView)v.findViewById(R.id.contact_us_tv);
         contact_us_txt.setText(Settings.getword(getActivity(),"contact_us"));
+
         address_contact=(MyTextView)v.findViewById(R.id.address_contact);
         address_contact.setText(Html.fromHtml(Settings.getSettings(getActivity(), "contact" + Settings.get_lan(getActivity()))));
         head=String.valueOf(Settings.getword(getActivity(),"contact_us"));

@@ -43,8 +43,7 @@ public class Settings {
     public static final String USERID = "minwain_id";
     public static final String NAME = "minwain_name";
     static SharedPreferences sharedPreferences;
-
-
+    static Context context;
     public  static Animation get_animation(Boolean enter,Boolean loaded){
 //            return MoveAnimation.create(MoveAnimation.RIGHT, enter, DURATION);
         if(loaded)
@@ -132,8 +131,12 @@ public class Settings {
         editor.commit();
     }
     public static String get_user_language(Context context){
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString(lan_key,"-1");
+        try {
+            sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            return sharedPreferences.getString(lan_key, "en");
+        }catch (Exception ex){
+            return "en";
+        }
     }
     public static void set_user_language_words(Context context,String user_id){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -280,6 +283,7 @@ public class Settings {
     }
     public static   void forceRTLIfSupported(Activity activity)
     {
+        context = activity.getApplicationContext();
         SharedPreferences sharedPref;
         sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
         Log.e("lan", sharedPref.getString(lan_key, "-1"));

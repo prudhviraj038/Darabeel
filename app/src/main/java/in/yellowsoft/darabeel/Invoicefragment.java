@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 
 public class Invoicefragment extends Fragment {
-    MyTextView sta_ord_id, sta_ord_date, Sta_ord_name, sta_ord_mobile, sta_ord_area, sta_ord_block, sta_ord_street, sta_ord_bilding,sta_delivery_date,
+    MyTextView sta_personal_details, sta_products_details, sta_ord_id, sta_ord_date, Sta_ord_name, sta_ord_mobile, sta_ord_area, sta_ord_block, sta_ord_street, sta_ord_bilding,sta_delivery_date,
             sta_discount_oreder, discount_order, sta_or_det_floor, sta_or_det_flat, or_det_floor,or_det_flat,sta_sub_total, sta_dc, sta_grand_total, ord_date, ord_id, ord_name,
             ord_mobile, ord_area, ord_block, ord_street, ord_building,ord_sub_total, ord_dc, ord_grand_total,tq,delivery_date,sta_dara,dara,sta_reward,reward,home_tv;
     ListView ord_detail_list;
@@ -28,7 +28,7 @@ public class Invoicefragment extends Fragment {
     InvoiceDetailsAdapter invoiceDetailsAdapter;
     FragmentTouchListner mCallBack;
     LinearLayout reward_pop_up,reward_close;
-    TextView reward_txt;
+    TextView reward_txt,reward_title,reward_close_tv;
     public interface FragmentTouchListner {
         public void text_butt(String header);
         public void clear_cart();
@@ -67,12 +67,17 @@ public class Invoicefragment extends Fragment {
         reward_pop_up.setVisibility(View.VISIBLE);
         reward_close = (LinearLayout) view.findViewById(R.id.final_use_ll);
         reward_txt = (TextView) view.findViewById(R.id.sta_reward_tv);
+        reward_title = (TextView) view.findViewById(R.id.sta_title_reward);
+        reward_title.setText(Settings.getword(getActivity(),"congratulations"));
         reward_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reward_pop_up.setVisibility(View.GONE);
             }
         });
+        reward_close_tv = (TextView) view.findViewById(R.id.final_use);
+        reward_close_tv.setText(Settings.getword(getActivity(),"ok"));
+
         Float reward_fraction = 0.5f ;
         try {
              reward_fraction = Float.parseFloat(Settings.getSettings(getActivity(), "reward_price"));
@@ -81,11 +86,20 @@ public class Invoicefragment extends Fragment {
         }
 
         String temp_reward = "you have got 3 reward points( " + String.format("%.3f",3.0 * reward_fraction) + " KD )";
-        reward_txt.setText(temp_reward);
+
+        String temp_reward_ar = Settings.getword(getActivity(),"got_reward_points") + " ( " + String.format("%.3f",3.0 * reward_fraction) + " KD )";
+        reward_txt.setText(temp_reward_ar);
+
 
         orderses=(JsonOrders)getArguments().getSerializable("invoice");
         tq = (MyTextView) view.findViewById(R.id.tv_tq);
         tq.setText(Settings.getword(getActivity(), "order_confirmation_message"));
+
+        sta_personal_details = (MyTextView) view.findViewById(R.id.tq_personal_details);
+        sta_products_details = (MyTextView) view.findViewById(R.id.products_tq);
+
+        sta_personal_details.setText(Settings.getword(getActivity(),"personal_details"));
+        sta_products_details.setText(Settings.getword(getActivity(),"product_details"));
 
         sta_ord_id = (MyTextView) view.findViewById(R.id.sta_tq_order_id);
         sta_ord_id.setText(Settings.getword(getActivity(), "order_id"));

@@ -4,60 +4,77 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <in.yellowsoft.darabeel.MyTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/choose_lang_settings"
-        android:textSize="15sp"
-        android:textColor="@color/brown"
-        android:layout_marginBottom="10dp" />
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingLeft="70dp"
-        android:paddingRight="70dp">
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageView37"
+            android:src="@drawable/logo"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp" />
+
+        <in.yellowsoft.darabeel.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/choose_lang_settings"
+            android:textSize="15sp"
+            android:textColor="@color/brown"
+            android:layout_marginBottom="10dp" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:background="@drawable/pink_circle"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:id="@+id/sett_eng">
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp">
 
-            <in.yellowsoft.darabeel.MyTextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="English"
-                android:id="@+id/in.yellowsoft.darabeel.MyTextView28"
-                android:textColor="#ffffff"
-                android:textSize="15sp" />
+                android:gravity="center"
+                android:background="@drawable/pink_circle"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:id="@+id/sett_eng">
+
+                <in.yellowsoft.darabeel.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English"
+                    android:id="@+id/in.yellowsoft.darabeel.MyTextView28"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/pink_circle"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/set_arabic">
+
+                <in.yellowsoft.darabeel.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="العربية"
+                    android:id="@+id/in.yellowsoft.darabeel.MyTextView29"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@drawable/pink_circle"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/set_arabic">
-
-            <in.yellowsoft.darabeel.MyTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="العربية"
-                android:id="@+id/in.yellowsoft.darabeel.MyTextView29"
-                android:textColor="#ffffff"
-                android:textSize="15sp" />
-        </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>

@@ -55,7 +55,7 @@ public class FinalFragment extends Fragment {
     ArrayList<CartItem> cart_items;
     ImageView cash_image,knet_image,cash_img,knet_img,credit_card_image,drop_down,plus_spl_comments,plue_img_coupon,later_img,now_img,date_time;
     MyTextView areaa,block,street,building,floor,apartment,mobile,sub_total,discount,delivery_charges,grand_total,summery,
-            tv_cash,tv_knet,tv_credit_card,payment_option,tv_proceed_pay,stat_sub_total,sta_discount,stat_delivery_charges,sta_dara,dara,address_guest,
+            tv_cash,tv_knet,tv_credit_card,payment_option,delivery_option,tv_proceed_pay,stat_sub_total,sta_discount,stat_delivery_charges,sta_dara,dara,address_guest,
             stat_grand_total,stat_tv_area,stat_tv_block,stat_tv_street,stat_tv_building,stat_tv_floor,stat_tv_apartment,addr_name_tv,
             stat_tv_mobile,tv_edit,cancel_tv,save_tv,tv_add,tv_spl_com,tv_coupon_code,tv_submit,date_tv,time_tv,gues_fname,
             guest_lname,guest_email,guest_home_ph,guest_work_ph,add_add,add_area,later_tv,now_tv,cancel_add_tv,sta_reward_title,
@@ -271,8 +271,13 @@ public class FinalFragment extends Fragment {
         tv_knet.setText(Settings.getword(getActivity(),"knet"));
         tv_credit_card=(MyTextView)view.findViewById(R.id.tv_credit_card_final);
         tv_credit_card.setText(Settings.getword(getActivity(),"credit_cards"));
+
         payment_option=(MyTextView)view.findViewById(R.id.tv_payment_option);
         payment_option.setText(Settings.getword(getActivity(),"payment_option"));
+
+        delivery_option=(MyTextView)view.findViewById(R.id.tv_delivery_time_option);
+        delivery_option.setText(Settings.getword(getActivity(),"delivery_option"));
+
         tv_proceed_pay=(MyTextView)view.findViewById(R.id.tv_proceed_pay);
         tv_proceed_pay.setText(Settings.getword(getActivity(),"proceed_to_pay"));
         address_guest=(MyTextView)view.findViewById(R.id.address_guest);
@@ -570,14 +575,14 @@ public class FinalFragment extends Fragment {
 //                        addr_name.setText(address_list.get(which).alias);
                         delivery_charges();
                         address_guest.setText(address_list.get(which).alias);
-                        e_area.setText(address_list.get(which).area_title + Settings.get_lan(getActivity()));
+                        e_area.setText(address_list.get(which).getTitle(getActivity()));
                         e_block.setText(address_list.get(which).block);
                         e_street.setText(address_list.get(which).street);
                         e_building.setText(address_list.get(which).house);
                         e_floor.setText(address_list.get(which).floor);
                         e_aprtment.setText(address_list.get(which).flat);
                         e_mobile.setText(address_list.get(which).phone);
-                        areaa.setText(address_list.get(which).area_title + Settings.get_lan(getActivity()));
+                        areaa.setText(address_list.get(which).getTitle(getActivity()));
                         block.setText(address_list.get(which).block);
                         street.setText(address_list.get(which).street);
                         building.setText(address_list.get(which).house);
@@ -1021,7 +1026,7 @@ public class FinalFragment extends Fragment {
                 try {
                     String reply=jsonObject.getString("status");
                     if(reply.equals("Success")) {
-                        String msg = jsonObject.getString("message");
+                        String msg = jsonObject.getString("message"+Settings.get_lan(getActivity()));
                         Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
 //                        place_set_data();
                         if(reward_price.equals("0")) {
@@ -1082,7 +1087,7 @@ public class FinalFragment extends Fragment {
 //                        Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
                         reward_price=jsonObject.getString("reward_price");
                         reward_points=jsonObject.getString("reward_points");
-                        reward_tv.setText(String.format("%.3f",Float.parseFloat(reward_price)));
+                        reward_tv.setText(String.format("%.3f",Float.parseFloat(reward_price)) + " KD");
 //                        place_set_data();
                     }
                     else {

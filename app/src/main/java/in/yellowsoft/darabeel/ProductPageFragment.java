@@ -269,7 +269,7 @@ public class ProductPageFragment extends Fragment {
                     }
 //                            Toast.makeText(getActivity(),"cont updated",Toast.LENGTH_SHORT).show();
                     if (count < Integer.parseInt(products.groups.get(i).min)) {
-                        alert.showAlertDialog(getActivity(), "Info", "you should select " + Integer.parseInt(products.groups.get(i).min) + "addons in " + products.groups.get(i).group, false);
+                        alert.showAlertDialog(getActivity(), "Info",Settings.getword(getActivity(),"you_should_select")+" "+Integer.parseInt(products.groups.get(i).min)+" "+Settings.getword(getActivity(),"addons_in")+" "+ products.groups.get(i).group, false);
 //                            Toast.makeText(getActivity(), "you should select " +Integer.parseInt(products.groups.get(i).min)+"addons in "+products.groups.get(i).group, Toast.LENGTH_SHORT).show();
                         addon_ok = false;
                     }

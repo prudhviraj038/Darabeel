@@ -164,8 +164,9 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:padding="5dp"
-                                    android:id="@+id/about_tab_ll">
+                                    android:id="@+id/about_tab_ll"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="5dp">
 
                                     <in.yellowsoft.darabeel.MyTextView
                                         android:layout_width="wrap_content"

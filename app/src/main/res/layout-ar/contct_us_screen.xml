@@ -4,184 +4,190 @@
     android:layout_height="match_parent"
     android:background="@color/yellow_background">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal">
+        android:id="@+id/scrollView13" >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginTop="10dp">
-
-            <in.yellowsoft.darabeel.MyTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/address_contact"
-                android:textColor="#000"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="40dp"
-            android:paddingTop="10dp"
-            android:paddingRight="40dp"
-            android:paddingBottom="10dp"
-            android:showDividers="middle"
-            android:divider="@drawable/logindividerbig"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:divider="@drawable/logindivider"
-                android:showDividers="middle" >
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/brown_rounded_corners"
-                    android:padding="2dp"
-                    android:gravity="center">
-
-                    <in.yellowsoft.darabeel.MyEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/et_contctus_name"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#00000000"
-                        android:hint="Name"
-                        android:textColor="#918d8d"
-                        android:textSize="15sp"
-                        android:textColorHint="#918d8d"
-                        android:textCursorDrawable = "@null"
-                        android:gravity="right" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/brown_rounded_corners"
-                    android:gravity="center"
-                    android:paddingLeft="2dp"
-                    android:paddingRight="2dp"
-                    android:paddingBottom="2dp"
-                    android:paddingTop="2dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
-
-                    <in.yellowsoft.darabeel.MyEditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:inputType="textEmailAddress"
-                        android:id="@+id/et_contactus_email"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_weight="1"
-                        android:background="#00000000"
-                        android:hint="Email Address"
-                        android:textColor="#918d8d"
-                        android:textSize="15sp"
-                        android:textColorHint="#918d8d"
-                        android:textCursorDrawable = "@null"
-                        android:gravity="right" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/brown_rounded_corners"
-                    android:padding="2dp"
-                    android:gravity="center"
-                    android:layout_marginBottom="5dp">
-
-                    <in.yellowsoft.darabeel.MyEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="phone"
-                        android:id="@+id/et_contactus_mobile"
-                        android:hint="Mobile Number"
-                        android:textColor="#918d8d"
-                        android:textSize="15sp"
-                        android:autoText="false"
-                        android:background="#00000000"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:textColorHint="#918d8d"
-                        android:textCursorDrawable = "@null"
-                        android:gravity="right"
-                        android:maxLength="8" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/brown_rounded_corners"
-                    android:padding="2dp">
-
-                    <in.yellowsoft.darabeel.MyEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/et_contact_msg"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#00000000"
-                        android:hint="Message"
-                        android:textColor="#918d8d"
-                        android:textSize="15sp"
-                        android:textColorHint="#918d8d"
-                        android:textCursorDrawable = "@null"
-                        android:minLines="5"
-                        android:gravity="top|right" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/pink_rounded_corners"
-                android:id="@+id/contact_us"
-                android:gravity="center">
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
 
                 <in.yellowsoft.darabeel.MyTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CONTACT US"
-                    android:id="@+id/contact_us_tv"
-                    android:textColor="#ffffff"
-                    android:textSize="15sp"
-                    android:layout_margin="7dp"
-                    android:padding="2dp" />
+                    android:text="New Text"
+                    android:id="@+id/address_contact"
+                    android:textColor="#000"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingTop="10dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="10dp"
+                android:showDividers="middle"
+                android:divider="@drawable/logindividerbig"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/logindivider"
+                    android:showDividers="middle" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/brown_rounded_corners"
+                        android:padding="2dp"
+                        android:gravity="center">
+
+                        <in.yellowsoft.darabeel.MyEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_contctus_name"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#00000000"
+                            android:hint="Name"
+                            android:textColor="#918d8d"
+                            android:textSize="15sp"
+                            android:textColorHint="#918d8d"
+                            android:textCursorDrawable = "@null"
+                            android:gravity="right" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/brown_rounded_corners"
+                        android:gravity="center"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <in.yellowsoft.darabeel.MyEditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:inputType="textEmailAddress"
+                            android:id="@+id/et_contactus_email"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:background="#00000000"
+                            android:hint="Email Address"
+                            android:textColor="#918d8d"
+                            android:textSize="15sp"
+                            android:textColorHint="#918d8d"
+                            android:textCursorDrawable = "@null"
+                            android:gravity="right" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/brown_rounded_corners"
+                        android:padding="2dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp">
+
+                        <in.yellowsoft.darabeel.MyEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:id="@+id/et_contactus_mobile"
+                            android:hint="Mobile Number"
+                            android:textColor="#918d8d"
+                            android:textSize="15sp"
+                            android:autoText="false"
+                            android:background="#00000000"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:textColorHint="#918d8d"
+                            android:textCursorDrawable = "@null"
+                            android:gravity="right"
+                            android:maxLength="8" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/brown_rounded_corners"
+                        android:padding="2dp">
+
+                        <in.yellowsoft.darabeel.MyEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_contact_msg"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#00000000"
+                            android:hint="Message"
+                            android:textColor="#918d8d"
+                            android:textSize="15sp"
+                            android:textColorHint="#918d8d"
+                            android:textCursorDrawable = "@null"
+                            android:minLines="5"
+                            android:gravity="top|right" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pink_rounded_corners"
+                    android:id="@+id/contact_us"
+                    android:gravity="center">
+
+                    <in.yellowsoft.darabeel.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CONTACT US"
+                        android:id="@+id/contact_us_tv"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp"
+                        android:layout_margin="7dp"
+                        android:padding="2dp" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
