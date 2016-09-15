@@ -540,14 +540,27 @@ public class CompanyListFragment extends Fragment {
 //        restaurants.clear();
         if (id.equals("cat")) {
             if(type.equals("0")){
-                url = Settings.SERVERURL + "restaurants.php?"+"area_id=" + Settings.getArea_id(getActivity());
+                if(Settings.get_user_language(getActivity()).equals("ar")){
+                    url = Settings.SERVERURL + "restaurants.php?lang=ar&" + "area_id=" + Settings.getArea_id(getActivity());
+                }else {
+                    url = Settings.SERVERURL + "restaurants.php?" + "area_id=" + Settings.getArea_id(getActivity());
+                }
                 Log.e("url", url);
             }else {
-                url = Settings.SERVERURL + "restaurants.php?" + "category_id=" + type + "&area_id=" + Settings.getArea_id(getActivity());
+                if(Settings.get_user_language(getActivity()).equals("ar")) {
+                    url = Settings.SERVERURL + "restaurants.php?lang=ar&" + "category_id=" + type + "&area_id=" + Settings.getArea_id(getActivity());
+                }else{
+                    url = Settings.SERVERURL + "restaurants.php?" + "category_id=" + type + "&area_id=" + Settings.getArea_id(getActivity());
+                }
                 Log.e("url", url);
             }
         }else{
-            url = Settings.SERVERURL + "restaurants.php?type="+type;
+            if(Settings.get_user_language(getActivity()).equals("ar")) {
+                url = Settings.SERVERURL + "restaurants.php?lang=ar&type="+type;
+            }else {
+                url = Settings.SERVERURL + "restaurants.php?type="+type;
+            }
+
             Log.e("url", url);
         }
         JsonArrayRequest jsObjRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
@@ -618,9 +631,18 @@ public class CompanyListFragment extends Fragment {
 
         progressBar.setVisibility(View.VISIBLE);
         try {
-            url = Settings.SERVERURL + "restaurants.php?search="+ URLEncoder.encode(search1, "utf-8");
+            if(Settings.get_user_language(getActivity()).equals("ar")) {
+                url = Settings.SERVERURL + "restaurants.php?lang=ar&search=" + URLEncoder.encode(search1, "utf-8");
+            }else {
+                url = Settings.SERVERURL + "restaurants.php?search=" + URLEncoder.encode(search1, "utf-8");
+            }
         } catch (UnsupportedEncodingException e) {
-            url = Settings.SERVERURL + "restaurants.php?search="+search1;
+            if(Settings.get_user_language(getActivity()).equals("ar")) {
+                url = Settings.SERVERURL + "restaurants.php?lang=ar&search="+search1;
+            }else {
+                url = Settings.SERVERURL + "restaurants.php?search="+search1;
+            }
+
             e.printStackTrace();
         }
         Log.e("url", url);
@@ -695,10 +717,16 @@ public class CompanyListFragment extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
 
         try {
+            if(Settings.get_user_language(getActivity()).equals("ar")) {
+                url = Settings.SERVERURL + "restaurants.php?lang=ar&area_id=" +temp +"&cur_status="+ URLEncoder.encode(sta, "utf-8")+
+                        "&del_time="+ URLEncoder.encode(date, "utf-8")+ "&payment_type1="+ URLEncoder.encode(pay1, "utf-8")+
+                        "&payment_type2="+ URLEncoder.encode(pay2, "utf-8");
+            }else {
+                url = Settings.SERVERURL + "restaurants.php?area_id=" +temp +"&cur_status="+ URLEncoder.encode(sta, "utf-8")+
+                        "&del_time="+ URLEncoder.encode(date, "utf-8")+ "&payment_type1="+ URLEncoder.encode(pay1, "utf-8")+
+                        "&payment_type2="+ URLEncoder.encode(pay2, "utf-8");
+            }
 
-            url = Settings.SERVERURL + "restaurants.php?area_id=" +temp +"&cur_status="+ URLEncoder.encode(sta, "utf-8")+
-                    "&del_time="+ URLEncoder.encode(date, "utf-8")+ "&payment_type1="+ URLEncoder.encode(pay1, "utf-8")+
-                    "&payment_type2="+ URLEncoder.encode(pay2, "utf-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

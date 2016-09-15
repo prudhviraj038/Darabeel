@@ -346,7 +346,12 @@ public class HomeFragment extends Fragment {
         private void getRestaurants(){
                 String url;
                 restaurantses.clear();
+            if(Settings.get_user_language(getActivity()).equals("ar")) {
+                url = Settings.SERVERURL + "restaurants.php?type=trending&lang=ar";
+            }else {
                 url = Settings.SERVERURL + "restaurants.php?type=trending";
+            }
+
                 Log.e("url", url);
                 JsonArrayRequest jsObjRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
 

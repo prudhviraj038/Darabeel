@@ -91,9 +91,9 @@ public class OrderAdapter extends BaseAdapter{
         holder.date=(MyTextView) rowView.findViewById(R.id.date);
         holder.date.setText(orderses.get(position).date);
         holder.pay_method=(MyTextView) rowView.findViewById(R.id.pay_method);
-        holder.pay_method.setText(orderses.get(position).payment_method);
+        holder.pay_method.setText(Settings.getword(context,orderses.get(position).payment_method));
         holder.deli_status=(MyTextView) rowView.findViewById(R.id.delivery_status);
-        holder.deli_status.setText(orderses.get(position).deli_status);
+        holder.deli_status.setText(Settings.getword(context,orderses.get(position).deli_status));
 
         holder.sta_order_id=(MyTextView) rowView.findViewById(R.id.sta_order_id);
         holder.sta_order_id.setText(Settings.getword(context, "order_id"));
@@ -107,7 +107,6 @@ public class OrderAdapter extends BaseAdapter{
         holder.sta_deli_status.setText(Settings.getword(context, "order_status"));
         holder.sta_reorder = (MyTextView)rowView.findViewById(R.id.reorder_tv);
         holder.sta_reorder.setText(Settings.getword(context, "reorder"));
-
         holder.rating_tv=(MyTextView) rowView.findViewById(R.id.order_rating_tv);
         holder.rating_tv.setText(Settings.getword(context, "rate_order"));
         holder.res_image=(ImageView)rowView.findViewById(R.id.res_image);
@@ -174,7 +173,12 @@ public class OrderAdapter extends BaseAdapter{
         progressDialog.show();
         progressDialog.setCancelable(false);
         String url;
-        url = Settings.SERVERURL + "restaurants.php?rest_id=" + id;
+        if(Settings.get_user_language(context).equals("ar")) {
+            url = Settings.SERVERURL + "restaurants.php?lang=ar&rest_id=" + id;
+        }else {
+            url = Settings.SERVERURL + "restaurants.php?rest_id=" + id;
+        }
+
         Log.e("url", url);
         JsonArrayRequest jsObjRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
